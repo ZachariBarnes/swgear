@@ -1,0 +1,1379 @@
+[
+  {
+    "id": "defense_general",
+    "name": "Defense General",
+    "ratio": 1,
+    "category": "core_armor",
+    "isCore": true,
+    "hasPowerup": true,
+    "combinationCount": 5000
+  },
+  {
+    "id": "endurance_boost",
+    "name": "Endurance Boost",
+    "ratio": 1,
+    "category": "core_armor",
+    "isCore": true,
+    "hasPowerup": true,
+    "combinationCount": 5000
+  },
+  {
+    "id": "melee_general",
+    "name": "Melee General",
+    "ratio": 1,
+    "category": "core_armor",
+    "isCore": true,
+    "hasPowerup": true,
+    "combinationCount": 5000
+  },
+  {
+    "id": "opportune_chance",
+    "name": "Opportune Chance",
+    "ratio": 1,
+    "category": "core_armor",
+    "isCore": true,
+    "hasPowerup": true,
+    "combinationCount": 5000
+  },
+  {
+    "id": "ranged_general",
+    "name": "Ranged General",
+    "ratio": 1,
+    "category": "core_armor",
+    "isCore": true,
+    "hasPowerup": true,
+    "combinationCount": 5000
+  },
+  {
+    "id": "toughness_boost",
+    "name": "Toughness Boost",
+    "ratio": 1,
+    "category": "core_armor",
+    "isCore": true,
+    "hasPowerup": true,
+    "combinationCount": 5000
+  },
+  {
+    "id": "surveying",
+    "name": "Surveying",
+    "ratio": 2,
+    "category": "profession_trader",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 100
+  },
+  {
+    "id": "foraging",
+    "name": "Foraging",
+    "ratio": 2,
+    "category": "profession_trader",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 100
+  },
+  {
+    "id": "expertise_critical_1h",
+    "name": "1-H Critical Chance",
+    "ratio": 10,
+    "category": "combat_weapon_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 32
+  },
+  {
+    "id": "expertise_damage_weapon_4",
+    "name": "1-Handed Melee Damage",
+    "ratio": 14,
+    "category": "combat_weapon_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 20
+  },
+  {
+    "id": "advanced_assembly",
+    "name": "Advanced Assembly",
+    "ratio": 3,
+    "category": "profession_shipwright",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 13
+  },
+  {
+    "id": "advanced_ship_experimentation",
+    "name": "Advanced Component Experimentation",
+    "ratio": 4,
+    "category": "profession_shipwright",
+    "isCore": false,
+    "hasPowerup": false,
+    "combinationCount": 10
+  },
+  {
+    "id": "agility_modified",
+    "name": "Agility",
+    "ratio": 1,
+    "category": "core_stats",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 2001
+  },
+  {
+    "id": "armor_assembly",
+    "name": "Armor Assembly",
+    "ratio": 3,
+    "category": "profession_trader",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 20
+  },
+  {
+    "id": "armor_experimentation",
+    "name": "Armor Experimentation",
+    "ratio": 4,
+    "category": "profession_trader",
+    "isCore": false,
+    "hasPowerup": false,
+    "combinationCount": 18
+  },
+  {
+    "id": "general_assembly",
+    "name": "Artisan Assembly",
+    "ratio": 3,
+    "category": "profession_trader",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 46
+  },
+  {
+    "id": "general_experimentation",
+    "name": "Artisan Experimentation",
+    "ratio": 4,
+    "category": "profession_trader",
+    "isCore": false,
+    "hasPowerup": false,
+    "combinationCount": 17
+  },
+  {
+    "id": "expertise_action_line_sp_dm",
+    "name": "Assassinate Action Cost",
+    "ratio": 8,
+    "category": "combat_profession_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 52
+  },
+  {
+    "id": "expertise_critical_line_sp_dm",
+    "name": "Assassinate Critical Chance",
+    "ratio": 8,
+    "category": "combat_profession_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 24
+  },
+  {
+    "id": "expertise_damage_line_sp_dm",
+    "name": "Assassinate Damage",
+    "ratio": 8,
+    "category": "combat_profession_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 29
+  },
+  {
+    "id": "expertise_freeshot_sp_dm",
+    "name": "Assassinate Freeshot Chance",
+    "ratio": 8,
+    "category": "combat_profession_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 26
+  },
+  {
+    "id": "expertise_action_line_dm",
+    "name": "Assault Action Cost",
+    "ratio": 8,
+    "category": "combat_profession_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 23
+  },
+  {
+    "id": "expertise_critical_line_dm",
+    "name": "Assault Critical Chance",
+    "ratio": 8,
+    "category": "combat_profession_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 22
+  },
+  {
+    "id": "expertise_damage_line_dm",
+    "name": "Assault Damage",
+    "ratio": 8,
+    "category": "combat_profession_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 30
+  },
+  {
+    "id": "expertise_freeshot_dm",
+    "name": "Assault Freeshot Chance",
+    "ratio": 8,
+    "category": "combat_profession_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 53
+  },
+  {
+    "id": "bm_xp_mod_boost",
+    "name": "Beast Experience Bonus",
+    "ratio": 7,
+    "category": "beast_master",
+    "isCore": false,
+    "hasPowerup": false,
+    "combinationCount": 1
+  },
+  {
+    "id": "absorption_bleeding",
+    "name": "Bleeding Absorption",
+    "ratio": 4,
+    "category": "combat_defense",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 39
+  },
+  {
+    "id": "resistance_bleeding",
+    "name": "Bleeding Resistance",
+    "ratio": 4,
+    "category": "combat_defense",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 61
+  },
+  {
+    "id": "combat_block_chance",
+    "name": "Block Chance",
+    "ratio": 4,
+    "category": "combat_defense",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 18
+  },
+  {
+    "id": "combat_block_value",
+    "name": "Block Value",
+    "ratio": 1,
+    "category": "combat_defense",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 37
+  },
+  {
+    "id": "booster_assembly",
+    "name": "Booster Assembly",
+    "ratio": 3,
+    "category": "profession_shipwright",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 33
+  },
+  {
+    "id": "booster_experimentation",
+    "name": "Booster Experimentation",
+    "ratio": 4,
+    "category": "profession_shipwright",
+    "isCore": false,
+    "hasPowerup": false,
+    "combinationCount": 22
+  },
+  {
+    "id": "camouflage",
+    "name": "Camouflage",
+    "ratio": 1,
+    "category": "combat_profession_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 69
+  },
+  {
+    "id": "expertise_action_weapon_1",
+    "name": "Carbine Action Cost",
+    "ratio": 10,
+    "category": "combat_weapon_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 78
+  },
+  {
+    "id": "expertise_critical_carbine",
+    "name": "Carbine Critical Chance",
+    "ratio": 10,
+    "category": "combat_weapon_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 23
+  },
+  {
+    "id": "expertise_damage_weapon_1",
+    "name": "Carbine Damage",
+    "ratio": 14,
+    "category": "combat_weapon_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 103
+  },
+  {
+    "id": "chassis_assembly",
+    "name": "Chassis Assembly",
+    "ratio": 3,
+    "category": "profession_shipwright",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 18
+  },
+  {
+    "id": "chassis_experimentation",
+    "name": "Chassis Experimentation",
+    "ratio": 4,
+    "category": "profession_shipwright",
+    "isCore": false,
+    "hasPowerup": false,
+    "combinationCount": 24
+  },
+  {
+    "id": "clothing_assembly",
+    "name": "Clothing Assembly",
+    "ratio": 3,
+    "category": "profession_trader",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 57
+  },
+  {
+    "id": "clothing_experimentation",
+    "name": "Clothing Experimentation",
+    "ratio": 4,
+    "category": "profession_trader",
+    "isCore": false,
+    "hasPowerup": false,
+    "combinationCount": 16
+  },
+  {
+    "id": "combat_strikethrough_value",
+    "name": "Combat Offense: Strikethrough Value",
+    "ratio": 4,
+    "category": "combat_offense",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 26
+  },
+  {
+    "id": "constitution_modified",
+    "name": "Constitution",
+    "ratio": 1,
+    "category": "core_stats",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 1962
+  },
+  {
+    "id": "expertise_critical_niche_creature",
+    "name": "Creature Critical Chance",
+    "ratio": 10,
+    "category": "combat_offense",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 20
+  },
+  {
+    "id": "expertise_critical_niche_all",
+    "name": "Critical Chance Increase",
+    "ratio": 15,
+    "category": "combat_offense",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 6
+  },
+  {
+    "id": "combat_critical_hit_reduction",
+    "name": "Critical Hit Reduction",
+    "ratio": 4,
+    "category": "combat_defense",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 19
+  },
+  {
+    "id": "cybernetic_assembly",
+    "name": "Cybernetic Assembly",
+    "ratio": 3,
+    "category": "profession_trader",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 210
+  },
+  {
+    "id": "cybernetic_experimentation",
+    "name": "Cybernetic Experimentation",
+    "ratio": 4,
+    "category": "profession_trader",
+    "isCore": false,
+    "hasPowerup": false,
+    "combinationCount": 253
+  },
+  {
+    "id": "healing_dance_ability",
+    "name": "Dance Knowledge",
+    "ratio": 3,
+    "category": "profession_entertainer",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 17
+  },
+  {
+    "id": "prop_assembly",
+    "name": "Dance Prop Assembly",
+    "ratio": 3,
+    "category": "profession_entertainer",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 16
+  },
+  {
+    "id": "healing_dance_wound",
+    "name": "Dancing Enhancement",
+    "ratio": 3,
+    "category": "profession_entertainer",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 34
+  },
+  {
+    "id": "detect_hidden",
+    "name": "Detect Camouflage",
+    "ratio": 3,
+    "category": "combat_offense",
+    "isCore": false,
+    "hasPowerup": false,
+    "combinationCount": 1
+  },
+  {
+    "id": "commando_devastation",
+    "name": "Devastation",
+    "ratio": 15,
+    "category": "profession_commando",
+    "isCore": false,
+    "hasPowerup": false,
+    "combinationCount": 1
+  },
+  {
+    "id": "absorption_disease",
+    "name": "Disease Absorption",
+    "ratio": 4,
+    "category": "combat_defense",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 8
+  },
+  {
+    "id": "resistance_disease",
+    "name": "Disease Resistance",
+    "ratio": 4,
+    "category": "combat_defense",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 17
+  },
+  {
+    "id": "combat_dodge",
+    "name": "Dodge Chance",
+    "ratio": 8,
+    "category": "combat_defense",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 20
+  },
+  {
+    "id": "exotic_dodge_reduction",
+    "name": "Dodge Reduction",
+    "ratio": 8,
+    "category": "combat_offense",
+    "isCore": false,
+    "hasPowerup": false,
+    "combinationCount": 2
+  },
+  {
+    "id": "droid_assembly",
+    "name": "Droid Assembly",
+    "ratio": 3,
+    "category": "profession_trader",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 20
+  },
+  {
+    "id": "expertise_critical_niche_droid",
+    "name": "Droid Critical Chance",
+    "ratio": 10,
+    "category": "combat_offense",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 50
+  },
+  {
+    "id": "droid_experimentation",
+    "name": "Droid Experimentation",
+    "ratio": 4,
+    "category": "profession_trader",
+    "isCore": false,
+    "hasPowerup": false,
+    "combinationCount": 55
+  },
+  {
+    "id": "droid_find_speed",
+    "name": "Droid Speed",
+    "ratio": 3,
+    "category": "combat_profession_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 16
+  },
+  {
+    "id": "exotic_acid_penetration",
+    "name": "Elemental Penetration: Acid",
+    "ratio": 10,
+    "category": "elemental_penetration",
+    "isCore": false,
+    "hasPowerup": false,
+    "combinationCount": 2
+  },
+  {
+    "id": "exotic_cold_penetration",
+    "name": "Elemental Penetration: Cold",
+    "ratio": 10,
+    "category": "elemental_penetration",
+    "isCore": false,
+    "hasPowerup": false,
+    "combinationCount": 1
+  },
+  {
+    "id": "exotic_electricity_penetration",
+    "name": "Elemental Penetration: Electricity",
+    "ratio": 10,
+    "category": "elemental_penetration",
+    "isCore": false,
+    "hasPowerup": false,
+    "combinationCount": 1
+  },
+  {
+    "id": "exotic_heat_penetration",
+    "name": "Elemental Penetration: Heat",
+    "ratio": 10,
+    "category": "elemental_penetration",
+    "isCore": false,
+    "hasPowerup": false,
+    "combinationCount": 1
+  },
+  {
+    "id": "engine_assembly",
+    "name": "Engine Assembly",
+    "ratio": 3,
+    "category": "profession_shipwright",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 27
+  },
+  {
+    "id": "engine_experimentation",
+    "name": "Engine Experimentation",
+    "ratio": 4,
+    "category": "profession_shipwright",
+    "isCore": false,
+    "hasPowerup": false,
+    "combinationCount": 18
+  },
+  {
+    "id": "combat_evasion_chance",
+    "name": "Evasion Chance",
+    "ratio": 3,
+    "category": "combat_defense",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 14
+  },
+  {
+    "id": "combat_evasion_value",
+    "name": "Evasion Value",
+    "ratio": 4,
+    "category": "combat_defense",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 15
+  },
+  {
+    "id": "expertise_critical_line_sm_dm",
+    "name": "Fast Draw Critical Chance",
+    "ratio": 8,
+    "category": "combat_profession_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 12
+  },
+  {
+    "id": "expertise_damage_line_sm_dm",
+    "name": "Fast Draw Damage",
+    "ratio": 8,
+    "category": "combat_profession_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 56
+  },
+  {
+    "id": "expertise_action_line_sm_dm",
+    "name": "Fast Draw/Precision Strike Action Cost",
+    "ratio": 8,
+    "category": "combat_profession_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 27
+  },
+  {
+    "id": "expertise_freeshot_sm_dm",
+    "name": "Fast Draw/Precision Strike Freeshot Chance",
+    "ratio": 8,
+    "category": "combat_profession_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 40
+  },
+  {
+    "id": "bm_mutation_chance_increase",
+    "name": "Fervent Mutation",
+    "ratio": 10,
+    "category": "beast_master",
+    "isCore": false,
+    "hasPowerup": false,
+    "combinationCount": 1
+  },
+  {
+    "id": "absorption_fire",
+    "name": "Fire Absorption",
+    "ratio": 4,
+    "category": "combat_defense",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 30
+  },
+  {
+    "id": "resistance_fire",
+    "name": "Fire Resistance",
+    "ratio": 4,
+    "category": "combat_defense",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 24
+  },
+  {
+    "id": "bm_incubator_dps_armor",
+    "name": "Focused Enzyme Manipulation",
+    "ratio": 10,
+    "category": "beast_master",
+    "isCore": false,
+    "hasPowerup": false,
+    "combinationCount": 19
+  },
+  {
+    "id": "expertise_action_line_co_dm",
+    "name": "Focused Fire Action",
+    "ratio": 8,
+    "category": "combat_profession_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 62
+  },
+  {
+    "id": "expertise_critical_line_co_dm",
+    "name": "Focused Fire Critical Chance",
+    "ratio": 8,
+    "category": "combat_profession_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 20
+  },
+  {
+    "id": "expertise_damage_line_co_dm",
+    "name": "Focused Fire Damage",
+    "ratio": 8,
+    "category": "combat_profession_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 68
+  },
+  {
+    "id": "expertise_freeshot_co_dm",
+    "name": "Focused Fire Freeshot Chance",
+    "ratio": 8,
+    "category": "combat_profession_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 22
+  },
+  {
+    "id": "food_assembly",
+    "name": "Food Assembly",
+    "ratio": 3,
+    "category": "profession_trader",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 32
+  },
+  {
+    "id": "food_experimentation",
+    "name": "Food Experimentation",
+    "ratio": 4,
+    "category": "profession_trader",
+    "isCore": false,
+    "hasPowerup": false,
+    "combinationCount": 21
+  },
+  {
+    "id": "expertise_glancing_blow_all",
+    "name": "Glancing Blow Increase",
+    "ratio": 18,
+    "category": "combat_defense",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 22
+  },
+  {
+    "id": "expertise_glancing_blow_melee",
+    "name": "Glancing Blow Increase (Melee)",
+    "ratio": 14,
+    "category": "combat_defense",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 21
+  },
+  {
+    "id": "expertise_glancing_blow_ranged",
+    "name": "Glancing Blow Increase (Ranged)",
+    "ratio": 14,
+    "category": "combat_defense",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 25
+  },
+  {
+    "id": "exotic_heal_action_reduction",
+    "name": "Heal Action Cost Reduction",
+    "ratio": 10,
+    "category": "combat_profession_specific",
+    "isCore": false,
+    "hasPowerup": false,
+    "combinationCount": 2
+  },
+  {
+    "id": "expertise_healing_all",
+    "name": "Healing Potency",
+    "ratio": 8,
+    "category": "combat_defense",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 22
+  },
+  {
+    "id": "expertise_action_weapon_3",
+    "name": "Heavy Weapon Action Cost",
+    "ratio": 10,
+    "category": "combat_weapon_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 22
+  },
+  {
+    "id": "expertise_critical_heavy",
+    "name": "Heavy Weapon Critical Chance",
+    "ratio": 10,
+    "category": "combat_weapon_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 26
+  },
+  {
+    "id": "expertise_damage_weapon_3",
+    "name": "Heavy Weapon Damage",
+    "ratio": 14,
+    "category": "combat_weapon_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 19
+  },
+  {
+    "id": "expertise_critical_niche_npc",
+    "name": "Humanoid Critical Chance",
+    "ratio": 10,
+    "category": "combat_offense",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 69
+  },
+  {
+    "id": "incubation_time_reduction",
+    "name": "Incubation Time Reduction",
+    "ratio": 3,
+    "category": "beast_master",
+    "isCore": false,
+    "hasPowerup": false,
+    "combinationCount": 69
+  },
+  {
+    "id": "instrument_assembly",
+    "name": "Instrument Assembly",
+    "ratio": 3,
+    "category": "profession_entertainer",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 15
+  },
+  {
+    "id": "expertise_action_line_fs_dm",
+    "name": "Jedi Strike Action Cost",
+    "ratio": 8,
+    "category": "profession_jedi",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 25
+  },
+  {
+    "id": "expertise_critical_line_fs_dm",
+    "name": "Jedi Strike Critical Chance",
+    "ratio": 8,
+    "category": "profession_jedi",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 70
+  },
+  {
+    "id": "expertise_freeshot_fs_dm",
+    "name": "Jedi Strike Freeshot Chance",
+    "ratio": 8,
+    "category": "profession_jedi",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 19
+  },
+  {
+    "id": "jedi_saber_assembly",
+    "name": "Lightsaber Assembly",
+    "ratio": 3,
+    "category": "profession_jedi",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 25
+  },
+  {
+    "id": "jedi_saber_experimentation",
+    "name": "Lightsaber Experimentation",
+    "ratio": 5,
+    "category": "profession_jedi",
+    "isCore": false,
+    "hasPowerup": false,
+    "combinationCount": 9
+  },
+  {
+    "id": "luck_modified",
+    "name": "Luck",
+    "ratio": 1,
+    "category": "core_stats",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 774
+  },
+  {
+    "id": "healing_music_ability",
+    "name": "Music Knowledge",
+    "ratio": 3,
+    "category": "profession_entertainer",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 88
+  },
+  {
+    "id": "healing_music_wound",
+    "name": "Musical Enhancement",
+    "ratio": 3,
+    "category": "profession_entertainer",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 98
+  },
+  {
+    "id": "expertise_damage_weapon_9",
+    "name": "One-Hand Lightsaber Damage",
+    "ratio": 14,
+    "category": "profession_jedi",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 17
+  },
+  {
+    "id": "expertise_action_weapon_4",
+    "name": "One-Hand Melee Action Cost",
+    "ratio": 10,
+    "category": "combat_weapon_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 15
+  },
+  {
+    "id": "expertise_action_weapon_9",
+    "name": "One-Handed Lightsaber Action Cost",
+    "ratio": 10,
+    "category": "profession_jedi",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 50
+  },
+  {
+    "id": "combat_parry",
+    "name": "Parry Rating",
+    "ratio": 6,
+    "category": "combat_defense",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 28
+  },
+  {
+    "id": "exotic_parry_reduction",
+    "name": "Parry Reduction",
+    "ratio": 6,
+    "category": "combat_offense",
+    "isCore": false,
+    "hasPowerup": false,
+    "combinationCount": 2
+  },
+  {
+    "id": "expertise_action_weapon_2",
+    "name": "Pistol Action Cost",
+    "ratio": 10,
+    "category": "combat_weapon_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 9
+  },
+  {
+    "id": "expertise_critical_pistol",
+    "name": "Pistol Critical Chance",
+    "ratio": 10,
+    "category": "combat_weapon_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 39
+  },
+  {
+    "id": "expertise_damage_weapon_2",
+    "name": "Pistol Damage",
+    "ratio": 14,
+    "category": "combat_weapon_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 39
+  },
+  {
+    "id": "absorption_poison",
+    "name": "Poison Absorption",
+    "ratio": 4,
+    "category": "combat_defense",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 9
+  },
+  {
+    "id": "resistance_poison",
+    "name": "Poison Resistance",
+    "ratio": 4,
+    "category": "combat_defense",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 14
+  },
+  {
+    "id": "expertise_action_weapon_7",
+    "name": "Polearm Action Cost",
+    "ratio": 10,
+    "category": "combat_weapon_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 14
+  },
+  {
+    "id": "expertise_critical_polearm",
+    "name": "Polearm Critical Chance",
+    "ratio": 10,
+    "category": "combat_weapon_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 25
+  },
+  {
+    "id": "expertise_damage_weapon_7",
+    "name": "Polearm Damage",
+    "ratio": 14,
+    "category": "combat_weapon_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 13
+  },
+  {
+    "id": "expertise_action_weapon_11",
+    "name": "Polearm Lightsaber Action Cost",
+    "ratio": 10,
+    "category": "profession_jedi",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 52
+  },
+  {
+    "id": "expertise_damage_weapon_11",
+    "name": "Polearm Lightsaber Damage",
+    "ratio": 14,
+    "category": "profession_jedi",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 31
+  },
+  {
+    "id": "power_systems",
+    "name": "Power Systems Assembly",
+    "ratio": 3,
+    "category": "profession_shipwright",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 43
+  },
+  {
+    "id": "power_systems_experimentation",
+    "name": "Power Systems Experimentation",
+    "ratio": 4,
+    "category": "profession_shipwright",
+    "isCore": false,
+    "hasPowerup": false,
+    "combinationCount": 23
+  },
+  {
+    "id": "precision_modified",
+    "name": "Precision",
+    "ratio": 1,
+    "category": "core_stats",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 5729
+  },
+  {
+    "id": "expertise_critical_niche_pvp",
+    "name": "PvP Critical Chance",
+    "ratio": 10,
+    "category": "combat_offense",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 18
+  },
+  {
+    "id": "expertise_reverse_engineering_bonus",
+    "name": "Reverse Engineering Chance",
+    "ratio": 10,
+    "category": "profession_trader",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 8
+  },
+  {
+    "id": "expertise_action_weapon_0",
+    "name": "Rifle Action Cost",
+    "ratio": 10,
+    "category": "combat_weapon_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 31
+  },
+  {
+    "id": "expertise_critical_rifle",
+    "name": "Rifle Critical Chance",
+    "ratio": 10,
+    "category": "combat_weapon_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 27
+  },
+  {
+    "id": "expertise_damage_weapon_0",
+    "name": "Rifle Damage",
+    "ratio": 14,
+    "category": "combat_weapon_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 33
+  },
+  {
+    "id": "shields_experimentation",
+    "name": "Shield Experimentation",
+    "ratio": 4,
+    "category": "profession_shipwright",
+    "isCore": false,
+    "hasPowerup": false,
+    "combinationCount": 8
+  },
+  {
+    "id": "shields_assembly",
+    "name": "Shields Assembly",
+    "ratio": 3,
+    "category": "profession_shipwright",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 19
+  },
+  {
+    "id": "stamina_modified",
+    "name": "Stamina",
+    "ratio": 1,
+    "category": "core_stats",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 2497
+  },
+  {
+    "id": "strength_modified",
+    "name": "Strength",
+    "ratio": 1,
+    "category": "core_stats",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 656
+  },
+  {
+    "id": "expertise_damage_line_fs_dm",
+    "name": "Strike Damage",
+    "ratio": 8,
+    "category": "profession_jedi",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 36
+  },
+  {
+    "id": "combat_strikethrough_chance",
+    "name": "Strikethrough Chance",
+    "ratio": 6,
+    "category": "combat_offense",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 35
+  },
+  {
+    "id": "structure_assembly",
+    "name": "Structure Assembly",
+    "ratio": 3,
+    "category": "profession_trader",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 23
+  },
+  {
+    "id": "structure_experimentation",
+    "name": "Structure Experimentation",
+    "ratio": 4,
+    "category": "profession_trader",
+    "isCore": false,
+    "hasPowerup": false,
+    "combinationCount": 18
+  },
+  {
+    "id": "expertise_action_line_of_sure",
+    "name": "Sure Shot Action Cost",
+    "ratio": 8,
+    "category": "combat_profession_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 7
+  },
+  {
+    "id": "expertise_critical_line_of_sure",
+    "name": "Sure Shot Critical Chance",
+    "ratio": 8,
+    "category": "combat_profession_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 11
+  },
+  {
+    "id": "expertise_damage_line_of_sure",
+    "name": "Sure Shot Damage",
+    "ratio": 8,
+    "category": "combat_profession_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 30
+  },
+  {
+    "id": "expertise_freeshot_of_sure",
+    "name": "Sure Shot Freeshot Chance",
+    "ratio": 8,
+    "category": "combat_profession_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 20
+  },
+  {
+    "id": "droid_tracks",
+    "name": "Tracking Droids",
+    "ratio": 4,
+    "category": "combat_profession_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 13
+  },
+  {
+    "id": "expertise_action_weapon_10",
+    "name": "Two-Hand Lightsaber Action Cost",
+    "ratio": 10,
+    "category": "profession_jedi",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 13
+  },
+  {
+    "id": "expertise_damage_weapon_10",
+    "name": "Two-Hand Lightsaber Damage",
+    "ratio": 14,
+    "category": "profession_jedi",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 46
+  },
+  {
+    "id": "expertise_action_weapon_5",
+    "name": "Two-Hand Melee Action Cost",
+    "ratio": 10,
+    "category": "combat_weapon_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 34
+  },
+  {
+    "id": "expertise_critical_2h",
+    "name": "Two-Hand Melee Critical Chance",
+    "ratio": 10,
+    "category": "combat_weapon_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 73
+  },
+  {
+    "id": "expertise_damage_weapon_5",
+    "name": "Two-Hand Melee Damage",
+    "ratio": 14,
+    "category": "combat_weapon_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 62
+  },
+  {
+    "id": "expertise_action_weapon_6",
+    "name": "Unarmed Action Cost",
+    "ratio": 10,
+    "category": "combat_weapon_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 44
+  },
+  {
+    "id": "expertise_critical_unarmed",
+    "name": "Unarmed Critical Chance",
+    "ratio": 10,
+    "category": "combat_weapon_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 15
+  },
+  {
+    "id": "expertise_damage_weapon_6",
+    "name": "Unarmed Damage",
+    "ratio": 14,
+    "category": "combat_weapon_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 15
+  },
+  {
+    "id": "expertise_action_line_me_dm",
+    "name": "Vital Strike Action Cost",
+    "ratio": 8,
+    "category": "combat_profession_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 28
+  },
+  {
+    "id": "expertise_critical_line_me_dm",
+    "name": "Vital Strike Critical Chance",
+    "ratio": 8,
+    "category": "combat_profession_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 20
+  },
+  {
+    "id": "expertise_damage_line_me_dm",
+    "name": "Vital Strike Damage",
+    "ratio": 8,
+    "category": "combat_profession_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 54
+  },
+  {
+    "id": "expertise_freeshot_me_dm",
+    "name": "Vital Strike Freeshot Chance",
+    "ratio": 8,
+    "category": "combat_profession_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 40
+  },
+  {
+    "id": "weapon_assembly",
+    "name": "Weapon Assembly",
+    "ratio": 3,
+    "category": "profession_trader",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 47
+  },
+  {
+    "id": "weapon_experimentation",
+    "name": "Weapon Experimentation",
+    "ratio": 4,
+    "category": "profession_trader",
+    "isCore": false,
+    "hasPowerup": false,
+    "combinationCount": 37
+  },
+  {
+    "id": "weapon_systems",
+    "name": "Weapon Systems",
+    "ratio": 3,
+    "category": "profession_shipwright",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 40
+  },
+  {
+    "id": "weapon_systems_experimentation",
+    "name": "Weapon Systems Experimentation",
+    "ratio": 4,
+    "category": "profession_shipwright",
+    "isCore": false,
+    "hasPowerup": false,
+    "combinationCount": 14
+  }
+]
