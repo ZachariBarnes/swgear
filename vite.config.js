@@ -1,8 +1,8 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  // GitHub Pages base path - change 'SEABuilder' to your repo name
-  base: process.env.GITHUB_PAGES ? '/SEABuilder/' : '/',
+  // GitHub Pages base path
+  base: process.env.GITHUB_PAGES ? '/swgear/' : '/',
   
   // Enable JSON imports
   json: {

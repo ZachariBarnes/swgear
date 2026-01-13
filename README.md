@@ -1,13 +1,13 @@
-# SEA Builder
+# SWGear
 
-A build planner for Skill Enhancing Attachments (SEA) in Star Wars Galaxies Restoration.
+Build planner for Star Wars Galaxies Restoration - plan your armor, SEAs, buffs, and stat loadouts.
 
 ## Features
-- Visual armor slot builder with drag-and-drop
+- Visual armor slot builder
 - Stat optimization with diminishing returns warnings
 - Crafter combination explorer
+- External buffs (food, jewelry, abilities)
 - Shareable build URLs
-- Quick preset builds
 
 ## Development
 

@@ -1,9 +1,9 @@
 {
-  "name": "seabuilder",
+  "name": "swgear",
   "version": "1.0.0",
-  "description": "SEA Builder for SWG Restoration - Plan your Skill Enhancing Attachment builds",
+  "description": "SWGear - Build planner for Star Wars Galaxies Restoration",
   "type": "module",
-  "homepage": "https://yourusername.github.io/SEABuilder/",
+  "homepage": "https://zacharibarnes.github.io/swgear/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
