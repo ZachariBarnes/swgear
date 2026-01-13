@@ -3,9 +3,8 @@
  * Logs share events to a Google Sheet via Apps Script webhook
  */
 
-// Configure your Google Apps Script webhook URL here
-// Set to null to disable logging
-const SHEETS_WEBHOOK_URL = null; // Replace with your webhook URL after setup
+// Google Apps Script webhook URL
+const SHEETS_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbwxKmIe9xzWM8Ftt7bAPq8DS1zQj11thp6G519AaW_2rdIfL23oQ5JiJHqLgepmFRTX4A/exec';
 
 /**
  * Log a share event to Google Sheets
