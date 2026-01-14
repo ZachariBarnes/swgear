@@ -86,8 +86,11 @@ const MODIFIER_CODES = {
   'Surveying': 'SRV',
   'Foraging': 'FRG',
   'Camouflage': 'CAM',
-  'Constitution': 'COT',  // Avoid CON
-  'Agility': 'AGL',       // Avoid AGI  
+  
+  // Legacy/mislabeled items (game uses Toughness/Endurance instead)
+  // Kept for compatibility with any old data that might reference these
+  'Constitution': 'COT',
+  'Agility': 'AGL',
   'Stamina': 'STA',
   'Luck': 'LCK'
 };
