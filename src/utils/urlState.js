@@ -6,26 +6,90 @@
 import { SLOT_CONFIG } from '../components/SlotBuilder.js';
 
 // Modifier abbreviation map for URL compression
-// Format: full name -> 2-3 char code
+// Format: full name -> 2-4 char code
+// IMPORTANT: Avoid common game abbreviations (STR, CON, AGI, DEX, INT, etc.)
 const MODIFIER_CODES = {
   // Core stats
-  'Ranged General': 'RG',
-  'Melee General': 'MG',
-  'Defense General': 'DG',
-  'Toughness Boost': 'TB',
-  'Endurance Boost': 'EB',
-  'Opportune Chance': 'OC',
-  // Exotic stats
-  'Strikethrough Chance': 'SC',
-  'Block Value': 'BV',
-  'Critical Hit Chance': 'CC',
-  'Evasion Value': 'EV',
-  'Evasion Chance': 'EC',
-  'Glancing Blow': 'GB',
-  'Parry': 'PA',
-  'Critical Hit Value': 'CV',
-  'Action Cost Reduction': 'AC',
-  'Healing Potency': 'HP'
+  'Ranged General': 'RNG',
+  'Melee General': 'MEL',
+  'Defense General': 'DEF',
+  'Toughness Boost': 'TGH',
+  'Endurance Boost': 'END',
+  'Opportune Chance': 'OPP',
+  
+  // Combat defense
+  'Strikethrough Chance': 'STC',
+  'Block Value': 'BKV',
+  'Block Chance': 'BKC',
+  'Critical Hit Chance': 'CHC',
+  'Critical Hit Reduction': 'CHR',
+  'Evasion Value': 'EVV',
+  'Evasion Chance': 'EVC',
+  'Glancing Blow Increase': 'GBI',
+  'Glancing Blow Increase (Melee)': 'GBM',
+  'Glancing Blow Increase (Ranged)': 'GBR',
+  'Parry': 'PRY',
+  'Critical Hit Value': 'CRV',
+  'Action Cost Reduction': 'ACR',
+  'Healing Potency': 'HPO',
+  'Dodge Chance': 'DDG',
+  
+  // Trader - use ASM/EXP suffixes
+  'Structure Assembly': 'SAS',
+  'Structure Experimentation': 'SEX',
+  'Armor Assembly': 'AAS',
+  'Armor Experimentation': 'AEX',
+  'Weapon Assembly': 'WAS',
+  'Weapon Experimentation': 'WEX',
+  'Droid Assembly': 'DAS',
+  'Droid Experimentation': 'DEX',
+  'Food Assembly': 'FAS',
+  'Food Experimentation': 'FEX',
+  'Clothing Assembly': 'CAS',
+  'Clothing Experimentation': 'CEX',
+  'Cybernetic Assembly': 'YAS',
+  'Cybernetic Experimentation': 'YEX',
+  'Artisan Assembly': 'ART',
+  'Artisan Experimentation': 'ARX',
+  
+  // Shipwright
+  'Chassis Assembly': 'HAS',
+  'Chassis Experimentation': 'HEX',
+  'Engine Assembly': 'NAS',
+  'Engine Experimentation': 'NEX',
+  'Booster Assembly': 'BAS',
+  'Booster Experimentation': 'BEX',
+  'Advanced Assembly': 'VAS',
+  'Advanced Component Experimentation': 'VEX',
+  
+  // Weapon specific
+  'Carbine Damage': 'CBD',
+  'Carbine Critical Chance': 'CBC',
+  'Carbine Action Cost': 'CBA',
+  'Rifle Damage': 'RFD',
+  'Rifle Critical Chance': 'RFC',
+  'Rifle Action Cost': 'RFA',
+  'Pistol Damage': 'PTD',
+  'Pistol Critical Chance': 'PTC',
+  'Pistol Action Cost': 'PTA',
+  'Heavy Weapon Damage': 'HWD',
+  'Heavy Weapon Critical Chance': 'HWC',
+  'Heavy Weapon Action Cost': 'HWA',
+  '1-Handed Melee Damage': 'M1D',
+  '1-H Critical Chance': 'M1C',
+  '2-Handed Melee Damage': 'M2D',
+  '2-H Critical Chance': 'M2C',
+  'Polearm Damage': 'POD',
+  'Polearm Critical Chance': 'POC',
+  
+  // Other common
+  'Surveying': 'SRV',
+  'Foraging': 'FRG',
+  'Camouflage': 'CAM',
+  'Constitution': 'COT',  // Avoid CON
+  'Agility': 'AGL',       // Avoid AGI  
+  'Stamina': 'STA',
+  'Luck': 'LCK'
 };
 
 // Reverse map for decoding
