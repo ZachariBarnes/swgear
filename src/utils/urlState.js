@@ -5,11 +5,48 @@
 
 import { SLOT_CONFIG } from '../components/SlotBuilder.js';
 
+// Modifier abbreviation map for URL compression
+// Format: full name -> 2-3 char code
+const MODIFIER_CODES = {
+  // Core stats
+  'Ranged General': 'RG',
+  'Melee General': 'MG',
+  'Defense General': 'DG',
+  'Toughness Boost': 'TB',
+  'Endurance Boost': 'EB',
+  'Opportune Chance': 'OC',
+  // Exotic stats
+  'Strikethrough Chance': 'SC',
+  'Block Value': 'BV',
+  'Critical Hit Chance': 'CC',
+  'Evasion Value': 'EV',
+  'Evasion Chance': 'EC',
+  'Glancing Blow': 'GB',
+  'Parry': 'PA',
+  'Critical Hit Value': 'CV',
+  'Action Cost Reduction': 'AC',
+  'Healing Potency': 'HP'
+};
+
+// Reverse map for decoding
+const CODE_TO_MODIFIER = Object.fromEntries(
+  Object.entries(MODIFIER_CODES).map(([name, code]) => [code, name])
+);
+
+// Slot abbreviations
+const SLOT_CODES = {
+  helmet: 'H', chest: 'C', shirt: 'S', belt: 'B', pants: 'P', boots: 'O',
+  lbicep: 'LB', lbracer: 'LR', gloves: 'G',
+  rbicep: 'RB', rbracer: 'RR', weapon: 'W'
+};
+
+const CODE_TO_SLOT = Object.fromEntries(
+  Object.entries(SLOT_CODES).map(([slot, code]) => [code, slot])
+);
+
 /**
- * Encode a build to a URL-safe string
- * Format: slot:power:mod1,mod2,mod3|slot:power:mod1,mod2,mod3|...|buffs:mod=val,mod=val
- * @param {Object} build - Build object
- * @returns {string} - Encoded string
+ * Encode a build to a compact URL-safe string
+ * Format: H.35.RG.DG.OC|C.35.MG|... (slot.power.mod1.mod2...)
  */
 export function encodeBuild(build) {
   const parts = [];
@@ -17,22 +54,26 @@ export function encodeBuild(build) {
   for (const [slotId, slot] of Object.entries(build.slots)) {
     if (!slot.stats || slot.stats.length === 0) continue;
     
+    const slotCode = SLOT_CODES[slotId] || slotId;
     const mods = slot.stats
       .filter(s => s.modifier)
-      .map(s => encodeURIComponent(s.modifier))
-      .join(',');
+      .map(s => MODIFIER_CODES[s.modifier] || s.modifier.substring(0, 3).toUpperCase())
+      .join('.');
     
     if (mods) {
-      parts.push(`${slotId}:${slot.powerBit || 35}:${mods}`);
+      parts.push(`${slotCode}.${slot.powerBit || 35}.${mods}`);
     }
   }
   
-  // Add external buffs (format: modifier=value:source)
+  // Add external buffs (format: X.modifier=value)
   if (build.externalBuffs && build.externalBuffs.length > 0) {
     const buffsStr = build.externalBuffs
-      .map(b => `${encodeURIComponent(b.modifier)}=${b.value}:${b.source || 'unknown'}`)
-      .join(',');
-    parts.push(`buffs:${buffsStr}`);
+      .map(b => {
+        const code = MODIFIER_CODES[b.modifier] || b.modifier.substring(0, 3).toUpperCase();
+        return `${code}=${b.value}`;
+      })
+      .join('.');
+    parts.push(`X.${buffsStr}`);
   }
   
   return parts.join('|');
@@ -40,8 +81,6 @@ export function encodeBuild(build) {
 
 /**
  * Decode a URL string back to a build object
- * @param {string} encoded - Encoded build string
- * @returns {Object} - Reconstructed build object
  */
 export function decodeBuild(encoded) {
   const build = {
@@ -63,10 +102,53 @@ export function decodeBuild(encoded) {
   
   if (!encoded) return build;
   
+  // Support legacy format (uses colons and commas)
+  const isLegacy = encoded.includes(':') && encoded.includes(',');
+  
+  if (isLegacy) {
+    return decodeLegacyBuild(encoded, build);
+  }
+  
   const parts = encoded.split('|');
   
   for (const part of parts) {
-    // Check for buffs part
+    const segments = part.split('.');
+    const slotCode = segments[0];
+    
+    // Check for external buffs (starts with X)
+    if (slotCode === 'X') {
+      for (let i = 1; i < segments.length; i++) {
+        const [code, val] = segments[i].split('=');
+        const modifier = CODE_TO_MODIFIER[code] || code;
+        build.externalBuffs.push({
+          modifier,
+          value: parseInt(val, 10) || 0,
+          source: 'imported'
+        });
+      }
+      continue;
+    }
+    
+    const slotId = CODE_TO_SLOT[slotCode] || slotCode;
+    
+    if (slotId && build.slots[slotId]) {
+      build.slots[slotId].powerBit = parseInt(segments[1], 10) || 35;
+      build.slots[slotId].stats = segments.slice(2)
+        .filter(code => code)
+        .map(code => ({ modifier: CODE_TO_MODIFIER[code] || code }));
+    }
+  }
+  
+  return build;
+}
+
+/**
+ * Decode legacy URL format (pre-compression)
+ */
+function decodeLegacyBuild(encoded, build) {
+  const parts = encoded.split('|');
+  
+  for (const part of parts) {
     if (part.startsWith('buffs:')) {
       const [_, buffsStr] = part.split('buffs:');
       if (buffsStr) {
@@ -85,8 +167,7 @@ export function decodeBuild(encoded) {
 
     const [slotId, powerStr, modsStr] = part.split(':');
     
-    // Safety check for valid slot
-    if (slotId && build.slots[slotId]) {
+    if (slotId && build.slots[slotId] && modsStr) {
       build.slots[slotId].powerBit = parseInt(powerStr, 10) || 35;
       build.slots[slotId].stats = modsStr
         .split(',')
