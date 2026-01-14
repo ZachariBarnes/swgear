@@ -63,14 +63,24 @@ export function renderStatSummary(container, build, modifiers, externalBuffs = [
 function renderCoreStats(coreStats, warnings) {
   const displayMax = 400; // Use 400 as the visible max for the bar
   
-  // Official stat descriptions from swgr.org wiki
+  // Official stat descriptions from swgr.org wiki with target ranges from Fez's spreadsheet
   const STAT_DESCRIPTIONS = {
-    'Ranged General': 'Per point: +0.33 Ranged Speed, +0.25 Ranged Defense, +0.25 Ranged Accuracy',
-    'Melee General': 'Per point: +0.33 Melee Speed, +0.25 Melee Defense, +0.25 Melee Accuracy',
-    'Defense General': 'Per point: +0.33 Defense, +0.5 Healing Efficiency. Per 100 pts: +1% State Resist',
-    'Toughness Boost': 'Per point: +2 Health. Per 100 pts: +1% State Resist',
-    'Endurance Boost': 'Per point: +1 Action, +1 Mind, +0.1% H/A/M Regen, +0.05% Healing, -0.05% Heal Cost',
-    'Opportune Chance': 'Per point: +0.33 Accuracy, +0.33 Med Speed. Per 100 pts: +1% Crit Hit Chance, +1% Crit Hit Reduction. Also affects rare loot, crafting crits, fishing, and foraging.'
+    'Ranged General': 'Per point: +0.33 Speed, +0.25 Defense, +0.25 Accuracy\n\n🎯 Target: 350-400 (primary) or 50-100 (secondary)',
+    'Melee General': 'Per point: +0.33 Speed, +0.25 Defense, +0.25 Accuracy\n\n🎯 Target: 350-400 (primary) or 50-100 (secondary)',
+    'Defense General': 'Per point: +0.33 Defense, +0.5 Heal Efficiency\nPer 100 pts: +1% State Resist\n\n🎯 Target: 300-350',
+    'Toughness Boost': 'Per point: +2 Health\nPer 100 pts: +1% State Resist\n\n🎯 Target: 200-250',
+    'Endurance Boost': 'Per point: +1 Action, +1 Mind, +0.1% Regen\n\n🎯 Target: 250-300',
+    'Opportune Chance': 'Per point: +0.33 Accuracy, +0.33 Med Speed\nPer 100 pts: +1% Crit Chance/Reduction\n\n🎯 Target: 300-350'
+  };
+  
+  // Recommended ranges from Fez's spreadsheet
+  const TARGET_RANGES = {
+    'Ranged General': { min: 350, max: 400, secondary: { min: 50, max: 100 } },
+    'Melee General': { min: 350, max: 400, secondary: { min: 50, max: 100 } },
+    'Defense General': { min: 300, max: 350 },
+    'Toughness Boost': { min: 200, max: 250 },
+    'Endurance Boost': { min: 250, max: 300 },
+    'Opportune Chance': { min: 300, max: 350 }
   };
   
   // Wiki URLs for stats
