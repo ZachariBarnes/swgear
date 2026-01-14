@@ -54,6 +54,17 @@ export function calculateTotals(build, modifiers, externalBuffs = []) {
     }
   }
   
+  // Add jewelry stats
+  if (build.jewelry) {
+    for (const stats of Object.values(build.jewelry)) {
+      for (const { stat, value } of stats) {
+        if (stat && value) {
+          totals[stat] = (totals[stat] || 0) + parseInt(value, 10);
+        }
+      }
+    }
+  }
+  
   return totals;
 }
 

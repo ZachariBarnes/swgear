@@ -79,21 +79,30 @@ function setupEventListeners() {
   const editorSection = document.getElementById('editor-section');
   const tabBtns = document.querySelectorAll('.tab-btn');
   const builderView = document.getElementById('builder-view');
+  const jewelryView = document.getElementById('jewelry-view');
   const crafterView = document.getElementById('crafter-view');
   const crafterContent = document.getElementById('crafter-content');
+  const jewelryContent = document.getElementById('jewelry-content');
   const shoppingList = document.getElementById('shopping-list');
   const copyShoppingBtn = document.getElementById('copy-shopping-btn');
   
   // Tab switching
   tabBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', async () => {
       tabBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       currentTab = btn.dataset.tab;
       
       // Toggle view containers
       builderView.classList.toggle('active', currentTab === 'builder');
+      jewelryView.classList.toggle('active', currentTab === 'jewelry');
       crafterView.classList.toggle('active', currentTab === 'crafter');
+      
+      // Render jewelry view when switching to it
+      if (currentTab === 'jewelry') {
+        const { renderJewelryEditor } = await import('./components/JewelryEditor.js');
+        renderJewelryEditor(jewelryContent, currentBuild.jewelry || {}, handleJewelryUpdate);
+      }
       
       // Render crafter view when switching to it
       if (currentTab === 'crafter') {
@@ -444,6 +453,14 @@ function render() {
  */
 function handleArmorHPUpdate(value) {
   currentBuild.armorBonusHP = value;
+  onBuildChanged();
+}
+
+/**
+ * Handle jewelry changes
+ */
+function handleJewelryUpdate(jewelry) {
+  currentBuild.jewelry = jewelry;
   onBuildChanged();
 }
 

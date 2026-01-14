@@ -44,7 +44,8 @@ export function createEmptyBuild() {
     name: 'New Build',
     slots: {},
     externalBuffs: [],
-    armorBonusHP: 0  // Bonus HP from crafted armor (up to ~800-900 from capped resources)
+    armorBonusHP: 0,  // Bonus HP from crafted armor (up to ~800-900 from capped resources)
+    jewelry: {}       // Jewelry slots with stats
   };
   
   for (const slot of SLOT_CONFIG) {
