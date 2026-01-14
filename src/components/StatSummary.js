@@ -57,53 +57,62 @@ export function renderStatSummary(container, build, modifiers, externalBuffs = [
 
 /**
  * Render core stats with progress bars and color-coded values
+ * Always shows all 6 core stats like the in-game Character Attributes panel
  */
 function renderCoreStats(coreStats, warnings) {
-  if (Object.keys(coreStats).length === 0) return '';
-  
   const displayMax = 400; // Use 400 as the visible max for the bar
   
-  // SVG icons
-  const cautionIcon = `<svg class="stat-icon caution" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" title="Diminishing Returns: Stats above 300 have reduced effectiveness"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg>`;
-  const exclamationIcon = `<svg class="stat-icon overcapped" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" title="Overcapped: Stats above 350 have very low efficiency"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>`;
-  const checkIcon = `<svg class="stat-icon ideal" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" title="Ideal Range: 250-300 for maximum effectiveness"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>`;
+  // Stat descriptions for tooltips
+  const STAT_DESCRIPTIONS = {
+    'Ranged General': 'Increases ranged accuracy. Affects carbines, pistols, rifles.',
+    'Melee General': 'Increases melee accuracy. Affects swords, polearms, unarmed.',
+    'Defense General': 'Reduces incoming damage from all sources.',
+    'Toughness Boost': 'Increases your maximum Health pool.',
+    'Endurance Boost': 'Increases your maximum Action pool.',
+    'Opportune Chance': 'Chance to deal bonus damage on attacks.'
+  };
   
-  const rows = CORE_STAT_ORDER
-    .filter(name => coreStats[name] !== undefined)
-    .map(name => {
-      const total = coreStats[name];
-      const warning = warnings[name];
-      const status = warning?.status || 'under';
-      
-      const percent = Math.min((total / displayMax) * 100, 100);
-      
-      // Determine icon and tooltip based on status
-      let statusIcon = '';
-      let tooltip = '';
-      if (status === 'ideal') {
-        statusIcon = checkIcon;
-        tooltip = 'Ideal Range: 250-300 for maximum effectiveness';
-      } else if (status === 'diminishing') {
-        statusIcon = cautionIcon;
-        tooltip = 'Diminishing Returns: Stats above 300 have reduced effectiveness';
-      } else if (status === 'hard-cap') {
-        statusIcon = exclamationIcon;
-        tooltip = 'Overcapped: Stats above 350 have very low efficiency';
-      }
-      
-      const label = warning?.label || '';
-      
-      return `
-        <div class="stat-row" title="${tooltip}">
-          <span class="stat-name">${name}</span>
-          <div class="stat-value-group">
-            <span class="stat-value ${status}">${total}</span>
-            ${statusIcon}
-          </div>
+  // SVG icons
+  const cautionIcon = `<svg class="stat-icon caution" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg>`;
+  const exclamationIcon = `<svg class="stat-icon overcapped" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>`;
+  const checkIcon = `<svg class="stat-icon ideal" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>`;
+  
+  // Always show all 6 core stats in order (like in-game character panel)
+  const rows = CORE_STAT_ORDER.map(name => {
+    const total = coreStats[name] || 0;
+    const warning = warnings[name];
+    const status = warning?.status || (total === 0 ? 'zero' : 'under');
+    const description = STAT_DESCRIPTIONS[name] || '';
+    
+    const percent = Math.min((total / displayMax) * 100, 100);
+    
+    // Determine icon and tooltip based on status
+    let statusIcon = '';
+    let statusTooltip = '';
+    if (status === 'ideal') {
+      statusIcon = checkIcon;
+      statusTooltip = 'Ideal Range: 250-300 for maximum effectiveness';
+    } else if (status === 'diminishing') {
+      statusIcon = cautionIcon;
+      statusTooltip = 'Diminishing Returns: Stats above 300 have reduced effectiveness';
+    } else if (status === 'hard-cap') {
+      statusIcon = exclamationIcon;
+      statusTooltip = 'Overcapped: Stats above 350 have very low efficiency';
+    }
+    
+    // Full tooltip with description and status
+    const fullTooltip = description + (statusTooltip ? `\n\n${statusTooltip}` : '');
+    
+    return `
+      <div class="stat-row ${status === 'zero' ? 'stat-zero' : ''}" title="${fullTooltip}">
+        <span class="stat-name">${name}</span>
+        <div class="stat-value-group">
+          <span class="stat-value ${status}">${total}</span>
+          ${statusIcon}
         </div>
-      `;
-    })
-    .join('');
+      </div>
+    `;
+  }).join('');
   
   return `
     <div class="stat-group">

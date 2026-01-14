@@ -10,27 +10,20 @@
       "fill": 27
     },
     {
-      "name": "Blob Candy",
+      "name": "T'illa-T'il",
       "effects": [
-        { "modifier": "Action Regen", "value": 192 }
+        { "modifier": "Endurance Boost", "value": 200 },
+        { "modifier": "Ranged General", "value": 40 }
       ],
-      "duration": "1:11:24",
-      "fill": 10
-    },
-    {
-      "name": "Tilla Til (Cafe)",
-      "effects": [
-        { "modifier": "Mind Regen", "value": 200 }
-      ],
-      "duration": "45:00",
-      "fill": 8,
-      "note": "Drink, not food"
+      "duration": "51:36",
+      "fill": 84,
+      "note": "Drink - Stamina/Precision in-game"
     },
     {
       "name": "Crispic (Melee)",
       "effects": [
-        { "modifier": "Melee Accuracy", "value": 76 },
-        { "modifier": "Ranged Accuracy", "value": 40 }
+        { "modifier": "Melee General", "value": 76 },
+        { "modifier": "Ranged General", "value": 40 }
       ],
       "duration": "16:12",
       "fill": 16
@@ -38,8 +31,8 @@
     {
       "name": "Crispic (Ranged)",
       "effects": [
-        { "modifier": "Ranged Accuracy", "value": 40 },
-        { "modifier": "Melee Accuracy", "value": 34 }
+        { "modifier": "Ranged General", "value": 40 },
+        { "modifier": "Melee General", "value": 34 }
       ],
       "duration": "22:19",
       "fill": 13
@@ -52,6 +45,14 @@
       ],
       "duration": "1:04:12",
       "fill": 68
+    },
+    {
+      "name": "K-18 Rations",
+      "effects": [
+        { "modifier": "Defense General", "value": 28 }
+      ],
+      "duration": "1:10:12",
+      "fill": 15
     },
     {
       "name": "Bantha Surprises",

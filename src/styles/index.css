@@ -794,6 +794,10 @@ body {
   font-size: 0.9375rem;
 }
 
+.stat-row.stat-zero {
+  opacity: 0.5;
+}
+
 .stat-row .stat-name {
   color: var(--color-text-secondary);
   text-transform: none;
@@ -803,6 +807,10 @@ body {
 .stat-value {
   font-weight: 600;
   color: var(--color-text-primary);
+}
+
+.stat-value.zero {
+  color: var(--color-text-muted);
 }
 
 .stat-value.at-cap {
