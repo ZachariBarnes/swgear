@@ -62,14 +62,24 @@ export function renderStatSummary(container, build, modifiers, externalBuffs = [
 function renderCoreStats(coreStats, warnings) {
   const displayMax = 400; // Use 400 as the visible max for the bar
   
-  // Stat descriptions for tooltips
+  // Official stat descriptions from swgr.org wiki
   const STAT_DESCRIPTIONS = {
-    'Ranged General': 'Increases ranged accuracy. Affects carbines, pistols, rifles.',
-    'Melee General': 'Increases melee accuracy. Affects swords, polearms, unarmed.',
-    'Defense General': 'Reduces incoming damage from all sources.',
-    'Toughness Boost': 'Increases your maximum Health pool.',
-    'Endurance Boost': 'Increases your maximum Action pool.',
-    'Opportune Chance': 'Chance to deal bonus damage on attacks.'
+    'Ranged General': 'Per point: +0.33 Ranged Speed, +0.25 Ranged Defense, +0.25 Ranged Accuracy',
+    'Melee General': 'Per point: +0.33 Melee Speed, +0.25 Melee Defense, +0.25 Melee Accuracy',
+    'Defense General': 'Per point: +0.33 Defense, +0.5 Healing Efficiency. Per 100 pts: +1% State Resist',
+    'Toughness Boost': 'Per point: +2 Health. Per 100 pts: +1% State Resist',
+    'Endurance Boost': 'Per point: +1 Action, +1 Mind, +0.1% H/A/M Regen, +0.05% Healing, -0.05% Heal Cost',
+    'Opportune Chance': 'Per point: +0.33 Accuracy, +0.33 Med Speed. Per 100 pts: +1% Crit Hit Chance, +1% Crit Hit Reduction. Also affects rare loot, crafting crits, fishing, and foraging.'
+  };
+  
+  // Wiki URLs for stats
+  const STAT_URLS = {
+    'Ranged General': 'https://swgr.org/wiki/ranged_general/',
+    'Melee General': 'https://swgr.org/wiki/melee_general/',
+    'Defense General': 'https://swgr.org/wiki/Defense_General',
+    'Toughness Boost': 'https://swgr.org/wiki/toughness/',
+    'Endurance Boost': 'https://swgr.org/wiki/endurance/',
+    'Opportune Chance': 'https://swgr.org/wiki/opportune_chance/'
   };
   
   // SVG icons
