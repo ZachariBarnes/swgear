@@ -87,19 +87,50 @@ function setupEventListeners(container, buffs, onUpdate) {
   
   // Add buff with specific source
   container.querySelectorAll('.add-buff-option').forEach(btn => {
-    btn.addEventListener('click', (e) => {
+    btn.addEventListener('click', async (e) => {
       e.stopPropagation();
       const source = btn.dataset.source;
       menu.hidden = true;
       
-      openModifierPicker(null, null, (slotId, statIndex, selection) => {
-        const newBuffs = [...buffs, { 
-          modifier: selection.modifier, 
-          value: 0, 
-          source: source 
-        }];
-        onUpdate(newBuffs);
-      }, true);
+      if (source === 'food') {
+        // Use FoodPicker for foods
+        const { openFoodPicker } = await import('./FoodPicker.js');
+        openFoodPicker((food) => {
+          if (food.isCustom) {
+            // Custom option - use modifier picker
+            openModifierPicker(null, null, (slotId, statIndex, selection) => {
+              const newBuffs = [...buffs, { 
+                modifier: selection.modifier, 
+                value: 0, 
+                source: source 
+              }];
+              onUpdate(newBuffs);
+            }, true);
+          } else {
+            // Add all effects from the selected food
+            const newBuffs = [...buffs];
+            food.effects.forEach(effect => {
+              newBuffs.push({
+                modifier: effect.modifier,
+                value: effect.value,
+                source: source,
+                foodName: food.name
+              });
+            });
+            onUpdate(newBuffs);
+          }
+        });
+      } else {
+        // Other sources use modifier picker
+        openModifierPicker(null, null, (slotId, statIndex, selection) => {
+          const newBuffs = [...buffs, { 
+            modifier: selection.modifier, 
+            value: 0, 
+            source: source 
+          }];
+          onUpdate(newBuffs);
+        }, true);
+      }
     });
   });
   
