@@ -8,8 +8,7 @@ const SHEETS_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbxMxo-nLW6Xk
 
 /**
  * Log a share event to Google Sheets
- * @param {string} buildUrl - The full sharing URL
- * @param {object} buildSummary - Optional summary of the build
+ * Uses GET request approach to avoid CORS issues with Google Apps Script
  */
 export async function logShareEvent(buildUrl, buildSummary = {}) {
   if (!SHEETS_WEBHOOK_URL) {
@@ -18,27 +17,21 @@ export async function logShareEvent(buildUrl, buildSummary = {}) {
   }
 
   try {
-    const payload = {
+    const params = new URLSearchParams({
       timestamp: new Date().toISOString(),
       url: buildUrl,
-      userAgent: navigator.userAgent,
+      userAgent: navigator.userAgent.substring(0, 200), // Truncate for URL length
       referrer: document.referrer || 'direct',
-      ...buildSummary
-    };
-
-    // Send to Google Sheets (fire and forget)
-    fetch(SHEETS_WEBHOOK_URL, {
-      method: 'POST',
-      mode: 'no-cors', // Google Apps Script doesn't support CORS
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(payload)
-    }).catch(err => {
-      console.warn('[Analytics] Failed to log share:', err);
+      statCount: buildSummary.statCount || 0,
+      exoticSlots: buildSummary.exoticSlots || 0,
+      topStats: buildSummary.topStats || ''
     });
 
-    console.log('[Analytics] Share logged successfully');
+    // Use Image beacon approach - works with Google Apps Script
+    const img = new Image();
+    img.src = `${SHEETS_WEBHOOK_URL}?${params.toString()}`;
+    
+    console.log('[Analytics] Share logged via beacon');
   } catch (error) {
     console.warn('[Analytics] Error logging share:', error);
   }
