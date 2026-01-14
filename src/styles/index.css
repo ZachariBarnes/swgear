@@ -1883,6 +1883,53 @@ body {
   font-size: 0.875rem;
 }
 
+/* Armor Bonus HP Section */
+.armor-bonus-section {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg-tertiary);
+}
+
+.armor-bonus-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.armor-bonus-label {
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+  cursor: help;
+}
+
+.armor-bonus-input {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.armor-bonus-input .prefix {
+  color: var(--color-accent-green);
+  font-weight: 600;
+}
+
+.armor-bonus-input input {
+  width: 80px;
+  padding: 4px 8px;
+  background: var(--color-bg-slot);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-primary);
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  text-align: right;
+}
+
+.armor-bonus-input input:focus {
+  outline: none;
+  border-color: var(--color-accent-primary);
+}
+
 /* Buff Groups */
 .buff-group {
   margin-bottom: var(--spacing-md);

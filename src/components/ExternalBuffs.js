@@ -7,10 +7,20 @@ import { openModifierPicker } from './ModifierPicker.js';
 
 // Buff source types
 const BUFF_SOURCES = {
-  jewelry: { label: 'Jewelry/Gear', icon: '💎', permanent: true },
+  jewelry: { label: 'Jewelry', icon: '💎', permanent: true },
+  armor: { label: 'Armor Bonuses', icon: '🛡️', permanent: true },
   food: { label: 'Food/Buffs', icon: '🍖', permanent: false },
   class: { label: 'Class/Abilities', icon: '⚔️', permanent: true }
 };
+
+// Jewelry slot configuration (5 pieces)
+const JEWELRY_SLOTS = [
+  { id: 'necklace', name: 'Necklace' },
+  { id: 'ring1', name: 'Ring 1' },
+  { id: 'ring2', name: 'Ring 2' },
+  { id: 'bracelet1', name: 'Left Bracelet' },
+  { id: 'bracelet2', name: 'Right Bracelet' }
+];
 
 /**
  * Render the external buffs editor
@@ -18,7 +28,7 @@ const BUFF_SOURCES = {
  * @param {Array} buffs - Current buffs array [{modifier, value, source}]
  * @param {Function} onUpdate - Callback when buffs change (newBuffs) => void
  */
-export function renderExternalBuffs(container, buffs, onUpdate) {
+export function renderExternalBuffs(container, buffs, onUpdate, armorBonusHP = 0, onArmorHPUpdate = () => {}) {
   if (!buffs) buffs = [];
   
   // Add index to each buff for tracking
@@ -27,12 +37,13 @@ export function renderExternalBuffs(container, buffs, onUpdate) {
   // Group buffs by source
   const grouped = {
     jewelry: indexedBuffs.filter(b => b.source === 'jewelry'),
+    armor: indexedBuffs.filter(b => b.source === 'armor'),
     food: indexedBuffs.filter(b => b.source === 'food'),
     class: indexedBuffs.filter(b => b.source === 'class'),
     unknown: indexedBuffs.filter(b => !b.source || !BUFF_SOURCES[b.source])
   };
   
-  const hasBuffs = buffs.length > 0;
+  const hasBuffs = buffs.length > 0 || armorBonusHP > 0;
   
   const html = `
     <div class="external-buffs-header">
@@ -48,11 +59,26 @@ export function renderExternalBuffs(container, buffs, onUpdate) {
         </div>
       </div>
     </div>
+    
+    <!-- Armor Bonus HP Section -->
+    <div class="armor-bonus-section">
+      <div class="armor-bonus-row">
+        <span class="armor-bonus-label" title="Bonus HP from crafted armor with capped resources (up to ~800-900)">
+          🛡️ Armor Bonus HP
+        </span>
+        <div class="armor-bonus-input">
+          <span class="prefix">+</span>
+          <input type="number" id="armor-bonus-hp" value="${armorBonusHP}" min="0" max="1000" step="50" autocomplete="off">
+        </div>
+      </div>
+    </div>
+    
     <div class="external-buffs-list">
       ${!hasBuffs ? `
         <p class="empty-state-sm">No external buffs. Add stats from jewelry, food, or abilities.</p>
       ` : `
         ${renderBuffGroup('jewelry', grouped.jewelry)}
+        ${renderBuffGroup('armor', grouped.armor)}
         ${renderBuffGroup('food', grouped.food)}
         ${renderBuffGroup('class', grouped.class)}
         ${grouped.unknown.length > 0 ? renderBuffGroup('unknown', grouped.unknown, 'Other') : ''}
@@ -61,6 +87,14 @@ export function renderExternalBuffs(container, buffs, onUpdate) {
   `;
   
   container.innerHTML = html;
+  
+  // Armor bonus HP listener
+  const armorHPInput = container.querySelector('#armor-bonus-hp');
+  if (armorHPInput) {
+    armorHPInput.addEventListener('change', (e) => {
+      onArmorHPUpdate(parseInt(e.target.value, 10) || 0);
+    });
+  }
   
   // Event Listeners
   setupEventListeners(container, buffs, onUpdate);

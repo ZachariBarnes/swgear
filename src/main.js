@@ -433,10 +433,18 @@ function onBuildChanged() {
  */
 function render() {
   renderSlots();
-  renderStatSummary(statSummary, currentBuild, modifiersData, currentBuild.externalBuffs);
-  renderExternalBuffs(externalBuffsContainer, currentBuild.externalBuffs, handleBuffsUpdate);
+  renderStatSummary(statSummary, currentBuild, modifiersData, currentBuild.externalBuffs, currentBuild.armorBonusHP || 0);
+  renderExternalBuffs(externalBuffsContainer, currentBuild.externalBuffs, handleBuffsUpdate, currentBuild.armorBonusHP || 0, handleArmorHPUpdate);
   
   // Note: Crafter view is now rendered on-demand when the Crafter tab is clicked
+}
+
+/**
+ * Handle armor bonus HP changes
+ */
+function handleArmorHPUpdate(value) {
+  currentBuild.armorBonusHP = value;
+  onBuildChanged();
 }
 
 /**

@@ -22,7 +22,7 @@ const CORE_STAT_ORDER = [
  * @param {Array} modifiers - All modifiers data
  * @param {Array} externalBuffs - External buffs data
  */
-export function renderStatSummary(container, build, modifiers, externalBuffs = []) {
+export function renderStatSummary(container, build, modifiers, externalBuffs = [], armorBonusHP = 0) {
   const totals = calculateTotals(build, modifiers, externalBuffs);
   const warnings = getSoftCapWarnings(totals, modifiers);
   
@@ -49,7 +49,7 @@ export function renderStatSummary(container, build, modifiers, externalBuffs = [
       <p class="empty-state">Add stats (or external buffs) to see totals here.</p>
     ` : `
       ${renderCoreStats(coreStats, warnings)}
-      ${renderHAMPools(totals)}
+      ${renderHAMPools(totals, armorBonusHP)}
       ${renderExoticStats(exoticStats, warnings, modifiers)}
       ${renderSummaryFooter(totals, totalWasted)}
     `}
@@ -141,24 +141,32 @@ function renderCoreStats(coreStats, warnings) {
 /**
  * Render HAM pools (Health, Action, Mind) display
  */
-function renderHAMPools(totals) {
+function renderHAMPools(totals, armorBonusHP = 0) {
   const ham = calculateHAM(totals);
+  
+  // Add armor bonus HP to health
+  const totalHealth = ham.health + armorBonusHP;
   
   // Only show if we have any stats
   const hasToughness = (totals['Toughness Boost'] || 0) > 0;
   const hasEndurance = (totals['Endurance Boost'] || 0) > 0;
   const hasDefense = (totals['Defense General'] || 0) > 0;
   const hasOpportune = (totals['Opportune Chance'] || 0) > 0;
+  const hasArmorHP = armorBonusHP > 0;
   
-  if (!hasToughness && !hasEndurance && !hasDefense && !hasOpportune) return '';
+  if (!hasToughness && !hasEndurance && !hasDefense && !hasOpportune && !hasArmorHP) return '';
+  
+  const healthTooltip = hasArmorHP 
+    ? `Base 3500 + (Effective Toughness × 2) + ${armorBonusHP} Armor Bonus`
+    : 'Base 3500 + (Effective Toughness × 2)';
   
   return `
     <div class="stat-group ham-pools">
       <div class="stat-group-title">Calculated Stats</div>
       <div class="ham-bars">
-        <div class="ham-bar health" title="Base 3500 + (Effective Toughness × 2)">
-          <span class="ham-label">Health</span>
-          <span class="ham-value">${ham.health.toLocaleString()}</span>
+        <div class="ham-bar health" title="${healthTooltip}">
+          <span class="ham-label">Health${hasArmorHP ? ' (+armor)' : ''}</span>
+          <span class="ham-value">${totalHealth.toLocaleString()}</span>
         </div>
         <div class="ham-bar action" title="Base 3500 + Effective Endurance">
           <span class="ham-label">Action</span>
