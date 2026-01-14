@@ -4,7 +4,7 @@
  */
 
 // Google Apps Script webhook URL
-const SHEETS_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbxMxo-nLW6Xkqntm6VBywJtDWvYD1MEBgHQNLs3jlgbY67JAX7ewU7Bx0evgPCdGdV0MA/exec';
+const SHEETS_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbykNWN87CHXnopNIW5g5daH3zDtdQgRgxcO6vyHAnBpB99TaZD9djq3l59UscVzIgYfHg/exec';
 
 /**
  * Log a share event to Google Sheets
