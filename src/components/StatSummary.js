@@ -3,7 +3,7 @@
  * Displays stat totals with thresholds and warnings
  */
 
-import { calculateTotals, getSoftCapWarnings, STAT_THRESHOLDS } from '../utils/calculator.js';
+import { calculateTotals, getSoftCapWarnings, STAT_THRESHOLDS, calculateHAM } from '../utils/calculator.js';
 
 // Core stats display order
 const CORE_STAT_ORDER = [
@@ -49,6 +49,7 @@ export function renderStatSummary(container, build, modifiers, externalBuffs = [
       <p class="empty-state">Add stats (or external buffs) to see totals here.</p>
     ` : `
       ${renderCoreStats(coreStats, warnings)}
+      ${renderHAMPools(totals)}
       ${renderExoticStats(exoticStats, warnings, modifiers)}
       ${renderSummaryFooter(totals, totalWasted)}
     `}
@@ -133,6 +134,47 @@ function renderCoreStats(coreStats, warnings) {
         <span class="legend-item hard-cap">350+ Overcapped</span>
       </div>
       ${rows}
+    </div>
+  `;
+}
+
+/**
+ * Render HAM pools (Health, Action, Mind) display
+ */
+function renderHAMPools(totals) {
+  const ham = calculateHAM(totals);
+  
+  // Only show if we have any stats
+  const hasToughness = (totals['Toughness Boost'] || 0) > 0;
+  const hasEndurance = (totals['Endurance Boost'] || 0) > 0;
+  const hasDefense = (totals['Defense General'] || 0) > 0;
+  const hasOpportune = (totals['Opportune Chance'] || 0) > 0;
+  
+  if (!hasToughness && !hasEndurance && !hasDefense && !hasOpportune) return '';
+  
+  return `
+    <div class="stat-group ham-pools">
+      <div class="stat-group-title">Calculated Stats</div>
+      <div class="ham-bars">
+        <div class="ham-bar health" title="Base 3500 + (Effective Toughness × 2)">
+          <span class="ham-label">Health</span>
+          <span class="ham-value">${ham.health.toLocaleString()}</span>
+        </div>
+        <div class="ham-bar action" title="Base 3500 + Effective Endurance">
+          <span class="ham-label">Action</span>
+          <span class="ham-value">${ham.action.toLocaleString()}</span>
+        </div>
+        <div class="ham-bar mind" title="Base 3500 + Effective Endurance">
+          <span class="ham-label">Mind</span>
+          <span class="ham-value">${ham.mind.toLocaleString()}</span>
+        </div>
+      </div>
+      <div class="secondary-stats">
+        ${hasDefense ? `<span class="sec-stat" title="Defense General × 0.33">Defense: +${ham.defense}</span>` : ''}
+        ${ham.stateResist > 0 ? `<span class="sec-stat" title="1% per 100 Toughness + Defense">State Resist: +${ham.stateResist}%</span>` : ''}
+        ${hasOpportune ? `<span class="sec-stat" title="1% per 100 Opportune">Crit: +${ham.critChance}%</span>` : ''}
+        ${hasEndurance ? `<span class="sec-stat" title="Endurance × 0.1%">Regen: +${ham.regenPercent.toFixed(1)}%</span>` : ''}
+      </div>
     </div>
   `;
 }

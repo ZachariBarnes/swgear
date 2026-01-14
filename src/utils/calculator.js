@@ -118,3 +118,84 @@ export function getSoftCapWarnings(totals, modifiers) {
 export function maxValueAtPowerBit(ratio, powerBit = 35) {
   return calculateStatValue(powerBit, ratio);
 }
+
+/**
+ * Calculate effective stat points with diminishing returns
+ * Based on Fez's Attribute/SEA Calculator formula
+ * Formula: When actual > 250, effective = (750 * actual) / (500 + actual)
+ * This caps at 500 effective points regardless of how high you stack
+ * @param {number} actual - Raw stat total
+ * @returns {number} - Effective stat value after diminishing returns
+ */
+export function calculateEffectivePoints(actual) {
+  if (actual <= 250) {
+    return actual;
+  }
+  // Diminishing returns formula from Fez's spreadsheet
+  return Math.floor((750 * actual) / (500 + actual));
+}
+
+/**
+ * Calculate HAM (Health, Action, Mind) pools from stats
+ * Based on Fez's Attribute/SEA Calculator
+ * @param {Object} totals - Map of stat name to total value
+ * @param {Object} baseStats - Optional base HAM values (species/profession dependent)
+ * @returns {Object} - HAM pool values and secondary stats
+ */
+export function calculateHAM(totals, baseStats = { health: 3500, action: 3500, mind: 3500 }) {
+  const toughness = totals['Toughness Boost'] || 0;
+  const endurance = totals['Endurance Boost'] || 0;
+  const defenseGeneral = totals['Defense General'] || 0;
+  const rangedGeneral = totals['Ranged General'] || 0;
+  const meleeGeneral = totals['Melee General'] || 0;
+  const opportune = totals['Opportune Chance'] || 0;
+  
+  // Calculate effective points for each stat
+  const effToughness = calculateEffectivePoints(toughness);
+  const effEndurance = calculateEffectivePoints(endurance);
+  const effDefense = calculateEffectivePoints(defenseGeneral);
+  const effRanged = calculateEffectivePoints(rangedGeneral);
+  const effMelee = calculateEffectivePoints(meleeGeneral);
+  const effOpportune = calculateEffectivePoints(opportune);
+  
+  return {
+    // HAM pools
+    health: baseStats.health + (effToughness * 2),
+    action: baseStats.action + effEndurance,
+    mind: baseStats.mind + effEndurance,
+    
+    // Regeneration (per second, as percentage)
+    regenPercent: effEndurance * 0.1,
+    
+    // Defense stats
+    defense: Math.floor(effDefense * 0.33),
+    rangedDefense: Math.floor(effRanged * 0.25),
+    meleeDefense: Math.floor(effMelee * 0.25),
+    
+    // Accuracy stats
+    rangedAccuracy: Math.floor(effRanged * 0.25),
+    meleeAccuracy: Math.floor(effMelee * 0.25),
+    allAccuracy: Math.floor(effOpportune * 0.33),
+    
+    // Speed stats (as percentage reduction)
+    rangedSpeed: Math.floor(effRanged * 0.33),
+    meleeSpeed: Math.floor(effMelee * 0.33),
+    medicSpeed: Math.floor(effOpportune * 0.33),
+    
+    // Special stats
+    stateResist: Math.floor((effToughness + effDefense) / 100),
+    healEfficiency: Math.floor((effDefense + effOpportune) * 0.5),
+    critChance: Math.floor(effOpportune / 100),
+    critReduction: Math.floor(effOpportune / 100),
+    
+    // Raw effective values for display
+    effective: {
+      toughness: effToughness,
+      endurance: effEndurance,
+      defense: effDefense,
+      ranged: effRanged,
+      melee: effMelee,
+      opportune: effOpportune
+    }
+  };
+}
