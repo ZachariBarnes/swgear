@@ -65,7 +65,7 @@ function renderCoreStats(coreStats, warnings) {
   
   // SVG icons
   const cautionIcon = `<svg class="stat-icon caution" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" title="Diminishing Returns: Stats above 300 have reduced effectiveness"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg>`;
-  const exclamationIcon = `<svg class="stat-icon wasted" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" title="Wasted Points: Stats above 350 provide almost no benefit"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>`;
+  const exclamationIcon = `<svg class="stat-icon overcapped" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" title="Overcapped: Stats above 350 have very low efficiency"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>`;
   const checkIcon = `<svg class="stat-icon ideal" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" title="Ideal Range: 250-300 for maximum effectiveness"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>`;
   
   const rows = CORE_STAT_ORDER
@@ -88,7 +88,7 @@ function renderCoreStats(coreStats, warnings) {
         tooltip = 'Diminishing Returns: Stats above 300 have reduced effectiveness';
       } else if (status === 'hard-cap') {
         statusIcon = exclamationIcon;
-        tooltip = 'Wasted Points: Stats above 350 provide almost no benefit';
+        tooltip = 'Overcapped: Stats above 350 have very low efficiency';
       }
       
       const label = warning?.label || '';
@@ -111,7 +111,7 @@ function renderCoreStats(coreStats, warnings) {
       <div class="stat-legend">
         <span class="legend-item ideal">250-300 Ideal</span>
         <span class="legend-item diminishing">300-350 Diminishing</span>
-        <span class="legend-item hard-cap">350+ Wasted</span>
+        <span class="legend-item hard-cap">350+ Overcapped</span>
       </div>
       ${rows}
     </div>
@@ -165,7 +165,7 @@ function renderSummaryFooter(totals, totalWasted) {
         <div class="stat-row warning-row">
           <span class="stat-name">
             <svg class="stat-icon caution" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg>
-            Totally Wasted Points
+            Overcapped Points
           </span>
           <span class="stat-value hard-cap">${totalWasted}</span>
         </div>
