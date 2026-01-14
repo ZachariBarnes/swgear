@@ -1767,6 +1767,59 @@ body {
   cursor: help;
 }
 
+/* Stat Bar with Target Zone */
+.stat-bar-container {
+  flex: 1;
+  margin: 0 var(--spacing-sm);
+  min-width: 80px;
+}
+
+.stat-bar-track {
+  position: relative;
+  height: 6px;
+  background: var(--color-bg-slot);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.stat-bar-target {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  background: rgba(59, 130, 246, 0.25);
+  border-left: 1px solid rgba(59, 130, 246, 0.5);
+  border-right: 1px solid rgba(59, 130, 246, 0.5);
+  z-index: 1;
+}
+
+.stat-bar-fill {
+  position: relative;
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+  z-index: 2;
+}
+
+.stat-bar-fill.under {
+  background: var(--color-text-muted);
+}
+
+.stat-bar-fill.ideal {
+  background: linear-gradient(90deg, var(--color-accent-green), #4ade80);
+}
+
+.stat-bar-fill.diminishing {
+  background: linear-gradient(90deg, #eab308, var(--color-accent-gold));
+}
+
+.stat-bar-fill.hard-cap {
+  background: linear-gradient(90deg, var(--color-accent-orange), var(--color-accent-red));
+}
+
+.stat-bar-fill.in-target {
+  box-shadow: 0 0 6px rgba(59, 130, 246, 0.6);
+}
+
 /* Value Group Layout */
 .stat-value-group {
   display: flex;

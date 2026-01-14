@@ -124,9 +124,25 @@ function renderCoreStats(coreStats, warnings) {
     // Full tooltip with description and status
     const fullTooltip = description + (statusTooltip ? `\n\n${statusTooltip}` : '');
     
+    // Progress bar calculation
+    const maxDisplay = 400;
+    const percent = Math.min((total / maxDisplay) * 100, 100);
+    
+    // Target zone indicator
+    const target = TARGET_RANGES[name];
+    const targetMin = target ? (target.min / maxDisplay) * 100 : 0;
+    const targetMax = target ? (target.max / maxDisplay) * 100 : 0;
+    const inTarget = target ? (total >= target.min && total <= target.max) : false;
+    
     return `
       <div class="stat-row ${status === 'zero' ? 'stat-zero' : ''}" title="${fullTooltip}">
         <span class="stat-name">${name}</span>
+        <div class="stat-bar-container">
+          <div class="stat-bar-track">
+            <div class="stat-bar-target" style="left: ${targetMin}%; width: ${targetMax - targetMin}%;"></div>
+            <div class="stat-bar-fill ${status} ${inTarget ? 'in-target' : ''}" style="width: ${percent}%;"></div>
+          </div>
+        </div>
         <div class="stat-value-group">
           <span class="stat-value ${status}">${total}</span>
           ${statusIcon}
