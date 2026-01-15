@@ -105,8 +105,6 @@ function renderCoreStats(coreStats, warnings) {
     const status = warning?.status || (total === 0 ? 'zero' : 'under');
     const description = STAT_DESCRIPTIONS[name] || '';
     
-    const percent = Math.min((total / displayMax) * 100, 100);
-    
     // Determine icon and tooltip based on status
     let statusIcon = '';
     let statusTooltip = '';
@@ -125,13 +123,12 @@ function renderCoreStats(coreStats, warnings) {
     const fullTooltip = description + (statusTooltip ? `\n\n${statusTooltip}` : '');
     
     // Progress bar calculation
-    const maxDisplay = 400;
-    const percent = Math.min((total / maxDisplay) * 100, 100);
+    const percent = Math.min((total / displayMax) * 100, 100);
     
     // Target zone indicator
     const target = TARGET_RANGES[name];
-    const targetMin = target ? (target.min / maxDisplay) * 100 : 0;
-    const targetMax = target ? (target.max / maxDisplay) * 100 : 0;
+    const targetMin = target ? (target.min / displayMax) * 100 : 0;
+    const targetMax = target ? (target.max / displayMax) * 100 : 0;
     const inTarget = target ? (total >= target.min && total <= target.max) : false;
     
     return `

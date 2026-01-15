@@ -2382,3 +2382,242 @@ body {
   font-family: var(--font-mono);
 }
 
+/* ========================================
+   Help Panel (Collapsible)
+   ======================================== */
+.help-panel {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  margin: var(--spacing-lg) var(--spacing-xl);
+  overflow: hidden;
+}
+
+.help-panel-toggle {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md) var(--spacing-lg);
+  cursor: pointer;
+  background: var(--color-bg-tertiary);
+  color: var(--color-text-primary);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  list-style: none;
+  transition: var(--transition-fast);
+}
+
+.help-panel-toggle::-webkit-details-marker {
+  display: none;
+}
+
+.help-panel-toggle:hover {
+  background: var(--color-bg-slot-hover);
+}
+
+.help-panel-toggle .help-icon {
+  color: var(--color-accent-primary);
+}
+
+.help-panel-toggle .expand-icon {
+  margin-left: auto;
+  transition: transform var(--transition-normal);
+}
+
+.help-panel[open] .expand-icon {
+  transform: rotate(180deg);
+}
+
+.help-panel-content {
+  padding: var(--spacing-lg);
+  border-top: 1px solid var(--color-border);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.help-panel-content h4 {
+  color: var(--color-accent-primary);
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-sm);
+  font-size: 1rem;
+}
+
+.help-panel-content h4:first-child {
+  margin-top: 0;
+}
+
+.help-panel-content p {
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.help-panel-content ul,
+.help-panel-content ol {
+  margin-left: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text-secondary);
+}
+
+.help-panel-content li {
+  margin-bottom: var(--spacing-xs);
+}
+
+.help-panel-content strong {
+  color: var(--color-text-primary);
+}
+
+.help-panel-content .threshold-ideal {
+  color: var(--color-accent-green);
+  font-weight: 600;
+}
+
+.help-panel-content .threshold-diminishing {
+  color: var(--color-accent-gold);
+  font-weight: 600;
+}
+
+.help-panel-content .threshold-overcapped {
+  color: var(--color-accent-red);
+  font-weight: 600;
+}
+
+/* ========================================
+   Backpack Section
+   ======================================== */
+.backpack-container {
+  margin-top: var(--spacing-lg);
+}
+
+.backpack-section {
+  background: var(--color-bg-panel);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+}
+
+.backpack-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.backpack-header h3 {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-text-header);
+}
+
+.backpack-select {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: var(--color-bg-slot);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-primary);
+  font-size: 0.875rem;
+  cursor: pointer;
+  min-width: 160px;
+}
+
+.backpack-select:focus {
+  outline: none;
+  border-color: var(--color-accent-primary);
+}
+
+.backpack-description {
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-md);
+  padding: var(--spacing-sm);
+  background: var(--color-bg-tertiary);
+  border-radius: var(--radius-sm);
+  font-style: italic;
+}
+
+.backpack-empty {
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  text-align: center;
+  padding: var(--spacing-md);
+}
+
+.backpack-stats {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-sm);
+}
+
+.backpack-stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: var(--color-bg-tertiary);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--color-accent-gold);
+}
+
+.backpack-stat-row.custom {
+  border-left-color: var(--color-accent-primary);
+}
+
+.backpack-stat-name {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}
+
+.backpack-stat-value {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-accent-green);
+  font-family: var(--font-mono);
+}
+
+.backpack-stat-input {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.backpack-stat-input .prefix {
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+}
+
+.backpack-value-input {
+  width: 60px;
+  padding: var(--spacing-xs);
+  background: var(--color-bg-slot);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-primary);
+  font-size: 0.875rem;
+  font-family: var(--font-mono);
+  text-align: right;
+}
+
+.backpack-value-input:focus {
+  outline: none;
+  border-color: var(--color-accent-primary);
+}
+
+.backpack-stat-row .remove-stat-btn {
+  padding: 2px 6px;
+  background: transparent;
+  border: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  font-size: 1.125rem;
+  line-height: 1;
+}
+
+.backpack-stat-row .remove-stat-btn:hover {
+  color: var(--color-accent-red);
+}
+
+.add-stat-btn {
+  width: 100%;
+  margin-top: var(--spacing-sm);
+}
+

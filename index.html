@@ -42,6 +42,56 @@
 
     <!-- Builder View -->
     <div id="builder-view" class="view-container active">
+      <!-- Collapsible Help Panel for New Players -->
+      <details class="help-panel">
+        <summary class="help-panel-toggle">
+          <svg class="help-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/></svg>
+          New Player Guide: Why You Need SEAs & Armor
+          <svg class="expand-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
+        </summary>
+        <div class="help-panel-content">
+          <h4>What is SWGear?</h4>
+          <p>SWGear is a build planner for <strong>Star Wars Galaxies Restoration</strong> that helps you plan your armor SEA (Skill Enhancing Attachment) loadout. SEAs are crafted items that attach to armor pieces to give you stat bonuses.</p>
+          
+          <h4>Why do I need both SEAs AND armor?</h4>
+          <p>In SWG Restoration, your character's effectiveness in combat depends heavily on <strong>stacking stats</strong> from multiple sources:</p>
+          <ul>
+            <li><strong>Armor SEAs</strong> - Provide the bulk of your stats (+35 per piece × 3 stats × 12 pieces = massive bonuses)</li>
+            <li><strong>Crafted Armor</strong> - Provides bonus HP (up to ~800-900 from capped resources)</li>
+            <li><strong>Jewelry</strong> - Looted items with additional stat bonuses</li>
+            <li><strong>Backpacks</strong> - Special items like the Kashykian Bandolier that give +15 to all stats</li>
+            <li><strong>Food/Buffs</strong> - Temporary boosts from crafted foods and player buffs</li>
+          </ul>
+          
+          <h4>Understanding Core Stats</h4>
+          <p>The six core stats affect different aspects of gameplay:</p>
+          <ul>
+            <li><strong>Ranged/Melee General</strong> - Speed, Defense, and Accuracy for your combat type</li>
+            <li><strong>Defense General</strong> - Defense value and Heal Efficiency</li>
+            <li><strong>Toughness Boost</strong> - Health pool (+2 HP per point)</li>
+            <li><strong>Endurance Boost</strong> - Action, Mind pools, and HAM regeneration</li>
+            <li><strong>Opportune Chance</strong> - Accuracy, Medical Speed, and Critical Chance</li>
+          </ul>
+          
+          <h4>Stat Thresholds</h4>
+          <p>Stats have diminishing returns after certain thresholds (general guidelines - optimal targets vary by stat):</p>
+          <ul>
+            <li><span class="threshold-ideal">250-300</span> - Ideal range for most stats</li>
+            <li><span class="threshold-diminishing">300-350</span> - Diminishing returns zone</li>
+            <li><span class="threshold-overcapped">350+</span> - Overcapped (wasted points)</li>
+          </ul>
+          
+          <h4>How to Use This Tool</h4>
+          <ol>
+            <li>Click on armor slots to add stats (or use Quick Presets)</li>
+            <li>Add backpack bonuses and external buffs</li>
+            <li>Watch the Stat Totals panel to stay within optimal thresholds</li>
+            <li>Switch to the Crafter tab to get a junk loot shopping list</li>
+            <li>Share your build using the "Copy Share Link" button</li>
+          </ol>
+        </div>
+      </details>
+
       <!-- Tool Description -->
       <section class="tool-description">
         <p>Plan your armor and weapon SEA loadout. Select armor slots to add stat modifiers, then switch to the Crafter tab for the junk loot shopping list.</p>
@@ -99,6 +149,11 @@
           </div>
           <div id="stat-summary" class="stat-summary">
             <p class="empty-state">No stats selected yet</p>
+          </div>
+          
+          <!-- Backpack Section -->
+          <div id="backpack-container" class="backpack-container">
+            <!-- Backpack section rendered here -->
           </div>
           
           <div id="external-buffs-container" class="external-buffs-container">
