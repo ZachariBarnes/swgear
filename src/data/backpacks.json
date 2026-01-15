@@ -1,0 +1,23 @@
+[
+  {
+    "id": "kashykian_bandolier",
+    "name": "Kashykian Bandolier",
+    "description": "A rare bandolier from Kashyyyk that provides +15 to all core stats.",
+    "isPopular": true,
+    "stats": [
+      { "modifier": "Ranged General", "value": 15 },
+      { "modifier": "Melee General", "value": 15 },
+      { "modifier": "Defense General", "value": 15 },
+      { "modifier": "Toughness Boost", "value": 15 },
+      { "modifier": "Endurance Boost", "value": 15 },
+      { "modifier": "Opportune Chance", "value": 15 }
+    ]
+  },
+  {
+    "id": "custom",
+    "name": "Custom Backpack",
+    "description": "Manually enter your backpack stats.",
+    "isPopular": false,
+    "stats": []
+  }
+]

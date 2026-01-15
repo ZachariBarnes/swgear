@@ -8,6 +8,7 @@ import { initModifierPicker, openModifierPicker } from './components/ModifierPic
 import { renderStatSummary } from './components/StatSummary.js';
 import { renderCrafterView, formatShoppingListText, resetSelectedCombos } from './components/CrafterOutput.js';
 import { renderExternalBuffs } from './components/ExternalBuffs.js';
+import { renderBackpackSection, getBackpackStats } from './components/BackpackSection.js';
 import { loadFromURL, updateURL, getShareableURL } from './utils/urlState.js';
 import { findCombinations, copyToClipboard } from './utils/export.js';
 import { logShareEvent, getBuildSummary } from './utils/analytics.js';
@@ -29,6 +30,7 @@ let copiedSlotConfig = null; // For copy/paste slot stats
 let slotContainer = null;
 let statSummary = null;
 let externalBuffsContainer = null;
+let backpackContainer = null;
 let shareBtn = null;
 let viewToggleBtns = null;
 
@@ -44,6 +46,7 @@ function init() {
   slotContainer = document.getElementById('slot-container');
   statSummary = document.getElementById('stat-summary');
   externalBuffsContainer = document.getElementById('external-buffs-container');
+  backpackContainer = document.getElementById('backpack-container');
   shareBtn = document.getElementById('share-btn');
   viewToggleBtns = document.querySelectorAll('.view-toggle .toggle-btn');
   
@@ -442,8 +445,24 @@ function onBuildChanged() {
  */
 function render() {
   renderSlots();
-  renderStatSummary(statSummary, currentBuild, modifiersData, currentBuild.externalBuffs, currentBuild.armorBonusHP || 0);
+  
+  // Get backpack stats for totals calculation
+  const backpackStats = getBackpackStats(currentBuild.backpack);
+  
+  // Combine external buffs with backpack stats for the summary
+  const allExternalStats = [...(currentBuild.externalBuffs || []), ...backpackStats.map(s => ({
+    modifier: s.modifier,
+    value: s.value,
+    source: 'backpack'
+  }))];
+  
+  renderStatSummary(statSummary, currentBuild, modifiersData, allExternalStats, currentBuild.armorBonusHP || 0);
   renderExternalBuffs(externalBuffsContainer, currentBuild.externalBuffs, handleBuffsUpdate, currentBuild.armorBonusHP || 0, handleArmorHPUpdate);
+  
+  // Render backpack section
+  if (backpackContainer) {
+    renderBackpackSection(backpackContainer, currentBuild.backpack, handleBackpackUpdate);
+  }
   
   // Note: Crafter view is now rendered on-demand when the Crafter tab is clicked
 }
@@ -461,6 +480,14 @@ function handleArmorHPUpdate(value) {
  */
 function handleJewelryUpdate(jewelry) {
   currentBuild.jewelry = jewelry;
+  onBuildChanged();
+}
+
+/**
+ * Handle backpack changes
+ */
+function handleBackpackUpdate(backpack) {
+  currentBuild.backpack = backpack;
   onBuildChanged();
 }
 
