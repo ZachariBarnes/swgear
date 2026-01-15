@@ -6,16 +6,6 @@
 import { openModifierPicker } from './ModifierPicker.js';
 import backpacksData from '../data/backpacks.json';
 
-// Core stats list
-const CORE_STATS = [
-  'Ranged General',
-  'Melee General',
-  'Defense General',
-  'Toughness Boost',
-  'Endurance Boost',
-  'Opportune Chance'
-];
-
 /**
  * Render the backpack section
  * @param {HTMLElement} container - Container element
