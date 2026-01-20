@@ -2621,3 +2621,130 @@ body {
   margin-top: var(--spacing-sm);
 }
 
+/* ==========================================================================
+   Backpack Picker Modal
+   ========================================================================== */
+
+.backpack-picker-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.backpack-picker-modal {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  max-width: 500px;
+  width: 90%;
+  max-height: 80vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.backpack-picker-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.backpack-picker-header h3 {
+  margin: 0;
+  color: var(--color-text-header);
+}
+
+.backpack-picker-list {
+  overflow-y: auto;
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.backpack-option {
+  background: var(--color-bg-slot);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.backpack-option:hover {
+  background: var(--color-bg-tertiary);
+  border-color: var(--color-accent-primary);
+}
+
+.backpack-name {
+  font-weight: 600;
+  color: var(--color-text-header);
+  margin-bottom: var(--spacing-xs);
+}
+
+.backpack-description {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-sm);
+}
+
+.backpack-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.backpack-stat {
+  background: var(--color-bg-panel);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  color: var(--color-accent-green);
+}
+
+/* ==========================================================================
+   Heroic Filter Toggle
+   ========================================================================== */
+
+.crafter-filter-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-sm) var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  background: var(--color-bg-tertiary);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+
+.heroic-filter-toggle {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  cursor: pointer;
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}
+
+.heroic-filter-toggle input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--color-accent-primary);
+}
+
+.heroic-filter-toggle span {
+  user-select: none;
+}
+
+.filter-hint {
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+  cursor: help;
+}

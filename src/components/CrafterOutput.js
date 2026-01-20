@@ -4,6 +4,7 @@
  */
 
 import { findCombinations } from '../utils/export.js';
+import { isHeroicItem } from '../data/backpacks.js';
 
 // Track selected combinations for each modifier
 let selectedCombos = {};
@@ -16,6 +17,9 @@ let combinationsDataCache = null;
 
 // Store references for re-rendering
 let lastRenderParams = null;
+
+// Filter heroic items from combinations (user preference)
+let hideHeroicItems = false;
 
 /**
  * Get all items that can combine with a given item to make the target modifier
@@ -145,8 +149,22 @@ export function renderCrafterView(contentContainer, shoppingContainer, build, co
     return;
   }
   
+  // Filter heroic items from combinations if toggle is enabled
+  const filterCombinations = (combos) => {
+    if (!hideHeroicItems) return combos;
+    return combos.filter(combo => 
+      !isHeroicItem(combo.item1) && !isHeroicItem(combo.item2)
+    );
+  };
+  
+  // Apply heroic filter to each stat's combinations
+  const filteredNeeded = needed.map(item => ({
+    ...item,
+    combinations: filterCombinations(item.combinations)
+  }));
+  
   // Process stats (consolidate or split)
-  const processedStats = processStats(needed);
+  const processedStats = processStats(filteredNeeded);
   
   const modMap = new Map(modifiers.map(m => [m.name, m]));
   
@@ -239,8 +257,16 @@ export function renderCrafterView(contentContainer, shoppingContainer, build, co
     `;
   };
   
-  // Render with section headers
-  let html = '';
+  // Render with section headers and heroic filter toggle
+  let html = `
+    <div class="crafter-filter-bar">
+      <label class="heroic-filter-toggle">
+        <input type="checkbox" id="heroic-filter-checkbox" ${hideHeroicItems ? 'checked' : ''}>
+        <span>Hide Heroic Junk Loot</span>
+        <span class="filter-hint" title="Filters out expensive heroic drops like Gackle Bat Wings, Krayt items, etc.">ⓘ</span>
+      </label>
+    </div>
+  `;
   if (coreStats.length > 0) {
     html += `<div class="crafter-section"><h3 class="crafter-section-title">Core Stats</h3>${coreStats.map(renderStatCard).join('')}</div>`;
   }
@@ -248,6 +274,16 @@ export function renderCrafterView(contentContainer, shoppingContainer, build, co
     html += `<div class="crafter-section"><h3 class="crafter-section-title">Exotic Stats</h3>${exoticStats.map(renderStatCard).join('')}</div>`;
   }
   contentContainer.innerHTML = html;
+  
+  // Heroic filter toggle listener
+  const heroicCheckbox = contentContainer.querySelector('#heroic-filter-checkbox');
+  if (heroicCheckbox) {
+    heroicCheckbox.addEventListener('change', (e) => {
+      hideHeroicItems = e.target.checked;
+      // Re-render with new filter state
+      renderCrafterView(contentContainer, shoppingContainer, build, combinationsData, modifiers);
+    });
+  }
   
   // Attach event listeners
   attachCrafterListeners(contentContainer, shoppingContainer, build, combinationsData, modifiers, processedStats);

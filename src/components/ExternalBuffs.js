@@ -4,9 +4,11 @@
  */
 
 import { openModifierPicker } from './ModifierPicker.js';
+import { BACKPACK_PRESETS } from '../data/backpacks.js';
 
 // Buff source types
 const BUFF_SOURCES = {
+  backpack: { label: 'Backpack', icon: '🎒', permanent: true },
   jewelry: { label: 'Jewelry', icon: '💎', permanent: true },
   armor: { label: 'Armor Bonuses', icon: '🛡️', permanent: true },
   food: { label: 'Food/Buffs', icon: '🍖', permanent: false },
@@ -36,6 +38,7 @@ export function renderExternalBuffs(container, buffs, onUpdate, armorBonusHP = 0
   
   // Group buffs by source
   const grouped = {
+    backpack: indexedBuffs.filter(b => b.source === 'backpack'),
     jewelry: indexedBuffs.filter(b => b.source === 'jewelry'),
     armor: indexedBuffs.filter(b => b.source === 'armor'),
     food: indexedBuffs.filter(b => b.source === 'food'),
@@ -75,8 +78,9 @@ export function renderExternalBuffs(container, buffs, onUpdate, armorBonusHP = 0
     
     <div class="external-buffs-list">
       ${!hasBuffs ? `
-        <p class="empty-state-sm">No external buffs. Add stats from jewelry, food, or abilities.</p>
+        <p class="empty-state-sm">No external buffs. Add backpack, jewelry, food, or ability stats.</p>
       ` : `
+        ${renderBuffGroup('backpack', grouped.backpack)}
         ${renderBuffGroup('jewelry', grouped.jewelry)}
         ${renderBuffGroup('armor', grouped.armor)}
         ${renderBuffGroup('food', grouped.food)}
@@ -126,7 +130,22 @@ function setupEventListeners(container, buffs, onUpdate) {
       const source = btn.dataset.source;
       menu.hidden = true;
       
-      if (source === 'food') {
+      if (source === 'backpack') {
+        // Show backpack preset picker
+        openBackpackPicker(container, (preset) => {
+          // Add all stats from the selected backpack
+          const newBuffs = [...buffs];
+          preset.stats.forEach(stat => {
+            newBuffs.push({
+              modifier: stat.modifier,
+              value: stat.value,
+              source: 'backpack',
+              backpackName: preset.name
+            });
+          });
+          onUpdate(newBuffs);
+        });
+      } else if (source === 'food') {
         // Use FoodPicker for foods
         const { openFoodPicker } = await import('./FoodPicker.js');
         openFoodPicker((food) => {
@@ -219,4 +238,61 @@ function renderBuffGroup(sourceKey, groupBuffs, overrideLabel = null) {
       `).join('')}
     </div>
   `;
+}
+
+/**
+ * Open backpack preset picker modal
+ */
+function openBackpackPicker(container, onSelect) {
+  // Remove any existing picker
+  const existing = document.querySelector('.backpack-picker-overlay');
+  if (existing) existing.remove();
+  
+  const overlay = document.createElement('div');
+  overlay.className = 'backpack-picker-overlay';
+  overlay.innerHTML = `
+    <div class="backpack-picker-modal">
+      <div class="backpack-picker-header">
+        <h3>🎒 Select Backpack</h3>
+        <button class="btn-icon close-picker">×</button>
+      </div>
+      <div class="backpack-picker-list">
+        ${BACKPACK_PRESETS.map(preset => `
+          <div class="backpack-option" data-id="${preset.id}">
+            <div class="backpack-name">${preset.name}</div>
+            <div class="backpack-description">${preset.description}</div>
+            <div class="backpack-stats">
+              ${preset.stats.map(s => `
+                <span class="backpack-stat">+${s.value} ${s.modifier}</span>
+              `).join('')}
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `;
+  
+  document.body.appendChild(overlay);
+  
+  // Close on overlay click
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) overlay.remove();
+  });
+  
+  // Close button
+  overlay.querySelector('.close-picker').addEventListener('click', () => {
+    overlay.remove();
+  });
+  
+  // Select backpack
+  overlay.querySelectorAll('.backpack-option').forEach(option => {
+    option.addEventListener('click', () => {
+      const presetId = option.dataset.id;
+      const preset = BACKPACK_PRESETS.find(p => p.id === presetId);
+      if (preset) {
+        onSelect(preset);
+        overlay.remove();
+      }
+    });
+  });
 }
