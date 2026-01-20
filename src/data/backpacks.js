@@ -36,35 +36,10 @@ export const BACKPACK_PRESETS = [
  * Heroic Junk Loot Items
  * Items that drop from heroic content and are rare/expensive
  * Used to filter combinations in the Crafter view
+ * TODO: Add more items when a proper list is found
  */
 export const HEROIC_JUNK_ITEMS = [
-  // Krayt Dragon / Tusken King heroic
-  'A Gackle Bat Wing',
-  'Krayt Dragon Tissue',
-  'Krayt Dragon Scale',
-  'Ancient Krayt Dragon Scale',
-  'Krayt Pearl Fragment',
-  
-  // Axkva Min (AM) heroic  
-  'Axkva Min Relic',
-  'Dark Jedi Heart',
-  'Axkva Fang',
-  
-  // Exar Kun (EK) heroic
-  'Exar Kun Fragment',
-  'Sith Artifact Shard',
-  'Dark Force Crystal',
-  
-  // Sher Kar / ISD heroic
-  'Sher Kar Fang',
-  'Sher Kar Scale',
-  'Imperial Medal Fragment',
-  
-  // General heroic drops
-  'Ancient Scroll Fragment',
-  'Rare Crystal Shard',
-  'Heroic Badge',
-  'Dark Side Token'
+  'A Gackle Bat Wing'
 ];
 
 /**
@@ -74,11 +49,6 @@ export const HEROIC_JUNK_ITEMS = [
  */
 export function isHeroicItem(itemName) {
   const lowerName = itemName.toLowerCase();
-  return HEROIC_JUNK_ITEMS.some(heroic => 
-    lowerName.includes(heroic.toLowerCase())
-  ) || lowerName.includes('gackle') || 
-     lowerName.includes('krayt') ||
-     lowerName.includes('axkva') ||
-     lowerName.includes('exar kun') ||
-     lowerName.includes('sher kar');
+  return lowerName.includes('gackle');
 }
+
