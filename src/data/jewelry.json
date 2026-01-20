@@ -1,0 +1,315 @@
+[
+  {
+    "id": "heroism",
+    "name": "Heroism",
+    "description": "Best for hybrid builds - all offensive stats",
+    "isPopular": true,
+    "stats": [
+      { "modifier": "Opportune Chance", "value": 30 },
+      { "modifier": "Ranged General", "value": 30 },
+      { "modifier": "Melee General", "value": 30 }
+    ]
+  },
+  {
+    "id": "assassin",
+    "name": "Assassin",
+    "description": "Ranged DPS focused with crit chance",
+    "isPopular": true,
+    "stats": [
+      { "modifier": "Ranged General", "value": 30 },
+      { "modifier": "Critical Chance Increase", "value": 3 }
+    ]
+  },
+  {
+    "id": "relentless",
+    "name": "Relentless",
+    "description": "Melee DPS with crit chance",
+    "isPopular": true,
+    "stats": [
+      { "modifier": "Melee General", "value": 30 },
+      { "modifier": "Critical Chance Increase", "value": 3 }
+    ]
+  },
+  {
+    "id": "first_responder",
+    "name": "First Responder",
+    "description": "Medic focused with healing potency",
+    "isPopular": true,
+    "stats": [
+      { "modifier": "Endurance Boost", "value": 30 },
+      { "modifier": "Healing Potency", "value": 2 }
+    ]
+  },
+  {
+    "id": "duelist",
+    "name": "Duelist",
+    "description": "Tank/Defense with state resist",
+    "isPopular": true,
+    "stats": [
+      { "modifier": "Defense General", "value": 30 }
+    ]
+  },
+  {
+    "id": "acrobat",
+    "name": "Acrobat",
+    "description": "Melee with knockdown defense",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Melee General", "value": 30 }
+    ]
+  },
+  {
+    "id": "bane",
+    "name": "Bane",
+    "description": "Opportune with state resist",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Opportune Chance", "value": 30 }
+    ]
+  },
+  {
+    "id": "blackbars_doom",
+    "name": "Blackbar's DOOM",
+    "description": "Endurance with medical debuff speed",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Endurance Boost", "value": 30 }
+    ]
+  },
+  {
+    "id": "dire_fate",
+    "name": "Dire Fate",
+    "description": "Ranged with carbine accuracy",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Ranged General", "value": 30 }
+    ]
+  },
+  {
+    "id": "flawless",
+    "name": "Flawless",
+    "description": "Toughness with snare resist",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Toughness Boost", "value": 30 }
+    ]
+  },
+  {
+    "id": "gambler",
+    "name": "Gambler",
+    "description": "Opportune with crit chance",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Opportune Chance", "value": 30 },
+      { "modifier": "Critical Chance Increase", "value": 2 }
+    ]
+  },
+  {
+    "id": "guardian",
+    "name": "Guardian",
+    "description": "Defense with block chance",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Defense General", "value": 30 },
+      { "modifier": "Block Chance", "value": 3 }
+    ]
+  },
+  {
+    "id": "gunslinger",
+    "name": "Gunslinger",
+    "description": "Ranged with crit defense",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Ranged General", "value": 30 }
+    ]
+  },
+  {
+    "id": "hellfire",
+    "name": "Hellfire",
+    "description": "Opportune with AoE focus",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Opportune Chance", "value": 30 }
+    ]
+  },
+  {
+    "id": "juggernaut",
+    "name": "Juggernaut",
+    "description": "Commando focused",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Opportune Chance", "value": 30 }
+    ]
+  },
+  {
+    "id": "manipulator",
+    "name": "Manipulator",
+    "description": "Force user with lightning focus",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Ranged General", "value": 30 }
+    ]
+  },
+  {
+    "id": "pathologist",
+    "name": "Pathologist",
+    "description": "Medic with cleanse speed",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Endurance Boost", "value": 30 }
+    ]
+  },
+  {
+    "id": "plaguespreader",
+    "name": "Plaguespreader",
+    "description": "Medical DoT focused",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Endurance Boost", "value": 30 }
+    ]
+  },
+  {
+    "id": "predator",
+    "name": "Predator",
+    "description": "Beast master with block",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Defense General", "value": 30 },
+      { "modifier": "Block Chance", "value": 4 }
+    ]
+  },
+  {
+    "id": "pursuit",
+    "name": "Pursuit",
+    "description": "Melee with armor penalty mitigation",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Melee General", "value": 30 }
+    ]
+  },
+  {
+    "id": "rampart",
+    "name": "Rampart",
+    "description": "Toughness with heavy weapon accuracy",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Toughness Boost", "value": 30 }
+    ]
+  },
+  {
+    "id": "razor",
+    "name": "Razor",
+    "description": "Melee with one-handed accuracy",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Melee General", "value": 30 }
+    ]
+  },
+  {
+    "id": "sage",
+    "name": "Sage",
+    "description": "Toughness with force overheal",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Toughness Boost", "value": 30 }
+    ]
+  },
+  {
+    "id": "scoundrel",
+    "name": "Scoundrel",
+    "description": "Defense with pistol accuracy",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Defense General", "value": 30 }
+    ]
+  },
+  {
+    "id": "slicer",
+    "name": "Slicer",
+    "description": "Opportune with RE chance (crafting)",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Opportune Chance", "value": 30 }
+    ]
+  },
+  {
+    "id": "soldier",
+    "name": "Soldier",
+    "description": "Ranged with armor mitigation and range bonus",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Ranged General", "value": 30 }
+    ]
+  },
+  {
+    "id": "strider",
+    "name": "Strider",
+    "description": "Opportune with camouflage",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Opportune Chance", "value": 30 },
+      { "modifier": "Camouflage", "value": 20 }
+    ]
+  },
+  {
+    "id": "symbiotic",
+    "name": "Symbiotic",
+    "description": "Beast master with weapon accuracy",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Opportune Chance", "value": 30 }
+    ]
+  },
+  {
+    "id": "templar",
+    "name": "Templar",
+    "description": "Jedi melee with crit defense",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Melee General", "value": 30 }
+    ]
+  },
+  {
+    "id": "tidstill",
+    "name": "Tidstill",
+    "description": "Melee with state resist",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Melee General", "value": 30 }
+    ]
+  },
+  {
+    "id": "tinkerer",
+    "name": "Tinkerer",
+    "description": "Crafter focused with crafting crit bonus",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Opportune Chance", "value": 30 }
+    ]
+  },
+  {
+    "id": "trapper",
+    "name": "Trapper",
+    "description": "Defense with trap and snare resist",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Defense General", "value": 30 }
+    ]
+  },
+  {
+    "id": "veteran",
+    "name": "Veteran",
+    "description": "Endurance with snare resist",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Endurance Boost", "value": 30 }
+    ]
+  },
+  {
+    "id": "custom",
+    "name": "Custom Jewelry",
+    "description": "Manually enter your jewelry stats.",
+    "isPopular": false,
+    "stats": []
+  }
+]

@@ -2748,3 +2748,135 @@ body {
   font-size: 0.75rem;
   cursor: help;
 }
+
+/* ==========================================================================
+   Jewelry Section (Heroic Sets)
+   ========================================================================== */
+
+.jewelry-container {
+  margin-top: var(--spacing-md);
+}
+
+.jewelry-section {
+  background: var(--color-bg-panel);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md);
+}
+
+.jewelry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.jewelry-header h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--color-text-header);
+}
+
+.jewelry-select {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: var(--color-bg-slot);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+  font-size: 0.875rem;
+  min-width: 160px;
+}
+
+.jewelry-select:focus {
+  outline: none;
+  border-color: var(--color-accent-primary);
+}
+
+.jewelry-description {
+  color: var(--color-text-muted);
+  font-size: 0.8125rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.jewelry-empty {
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  font-style: italic;
+}
+
+.jewelry-stats {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.jewelry-stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: var(--color-bg-slot);
+  border-radius: var(--radius-sm);
+}
+
+.jewelry-stat-row.preset {
+  background: var(--color-bg-slot);
+}
+
+.jewelry-stat-row.custom {
+  background: var(--color-bg-tertiary);
+}
+
+.jewelry-stat-name {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}
+
+.jewelry-stat-value {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--color-accent-green);
+  font-weight: 600;
+}
+
+.jewelry-stat-input {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.jewelry-stat-input .prefix {
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+}
+
+.jewelry-value-input {
+  width: 60px;
+  padding: var(--spacing-xs);
+  background: var(--color-bg-slot);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-primary);
+  font-size: 0.875rem;
+  font-family: var(--font-mono);
+  text-align: right;
+}
+
+.jewelry-value-input:focus {
+  outline: none;
+  border-color: var(--color-accent-primary);
+}
+
+.jewelry-stat-row .remove-stat-btn {
+  padding: 2px 6px;
+  background: transparent;
+  border: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  font-size: 1.125rem;
+  line-height: 1;
+}
+
+.jewelry-stat-row .remove-stat-btn:hover {
+  color: var(--color-accent-red);
+}
