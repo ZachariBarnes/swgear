@@ -34,21 +34,23 @@ export const BACKPACK_PRESETS = [
 
 /**
  * Heroic Junk Loot Items
- * Items that drop from heroic content and are rare/expensive
+ * Items starting with "A " or "An " are special drops (heroic/dungeon loot)
  * Used to filter combinations in the Crafter view
- * TODO: Add more items when a proper list is found
  */
 export const HEROIC_JUNK_ITEMS = [
   'A Gackle Bat Wing'
 ];
 
 /**
- * Check if a junk loot item is from heroic content
+ * Check if a junk loot item is from heroic/dungeon content
+ * Items starting with "A " or "An " (case insensitive) are special drops
  * @param {string} itemName - Name of the junk loot item
- * @returns {boolean} - True if the item is heroic loot
+ * @returns {boolean} - True if the item is heroic/special loot
  */
 export function isHeroicItem(itemName) {
-  const lowerName = itemName.toLowerCase();
-  return lowerName.includes('gackle');
+  const trimmed = itemName.trim();
+  // Check if starts with "A " or "An " (case insensitive)
+  const lowerName = trimmed.toLowerCase();
+  return lowerName.startsWith('a ') || lowerName.startsWith('an ');
 }
 
