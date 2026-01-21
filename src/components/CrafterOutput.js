@@ -134,12 +134,28 @@ function processStats(needed) {
   return result;
 }
 
+// Available powerbit values
+const POWERBIT_OPTIONS = [25, 28, 30, 33, 35];
+
+/**
+ * Calculate optimal powerbit for a modifier based on its ratio
+ * Optimal is ratio * 2, capped to available options
+ */
+function getOptimalPowerbit(ratio) {
+  const optimal = ratio * 2;
+  // Find closest available powerbit >= optimal
+  for (const pb of POWERBIT_OPTIONS) {
+    if (pb >= optimal) return pb;
+  }
+  return POWERBIT_OPTIONS[POWERBIT_OPTIONS.length - 1]; // Max if none found
+}
+
 /**
  * Render the crafter view with combination explorer
  */
-export function renderCrafterView(contentContainer, shoppingContainer, build, combinationsData, modifiers) {
+export function renderCrafterView(contentContainer, shoppingContainer, build, combinationsData, modifiers, onPowerBitChange = null) {
   combinationsDataCache = combinationsData;
-  lastRenderParams = { contentContainer, shoppingContainer, build, combinationsData, modifiers };
+  lastRenderParams = { contentContainer, shoppingContainer, build, combinationsData, modifiers, onPowerBitChange };
   
   const needed = findCombinations(build, combinationsData);
   
@@ -212,6 +228,27 @@ export function renderCrafterView(contentContainer, shoppingContainer, build, co
     const showSplitBtn = item.count > 1 && !item.isSplit;
     const showMergeBtn = item.isSplit;
     
+    // Calculate optimal powerbit for exotics
+    const ratio = mod?.ratio || 1;
+    const isExotic = ratio > 1;
+    const optimalPowerbit = isExotic ? getOptimalPowerbit(ratio) : 35;
+    const currentPowerbit = item.powerBit || 35;
+    
+    // Powerbit dropdown HTML
+    const powerbitDropdown = `
+      <div class="powerbit-control">
+        <label class="powerbit-label">Bit:</label>
+        <select class="powerbit-select" data-card-id="${cardId}" data-slots="${item.slots.join(',')}" data-modifier="${item.modifier}">
+          ${POWERBIT_OPTIONS.map(pb => `
+            <option value="${pb}" ${pb === currentPowerbit ? 'selected' : ''} ${pb === optimalPowerbit && isExotic ? 'class="recommended"' : ''}>
+              +${pb}${pb === optimalPowerbit && isExotic ? ' ✓' : ''}
+            </option>
+          `).join('')}
+        </select>
+        ${isExotic ? `<span class="powerbit-hint" title="Optimal for ${ratio}:1 ratio">rec: +${optimalPowerbit}</span>` : ''}
+      </div>
+    `;
+    
     return `
       <div class="stat-card" data-card-id="${cardId}" data-modifier="${item.modifier}" data-count="${item.count}">
         <div class="stat-card-header">
@@ -222,7 +259,10 @@ export function renderCrafterView(contentContainer, shoppingContainer, build, co
             ${showSplitBtn ? `<button class="split-btn" data-modifier="${item.modifier}">Split</button>` : ''}
             ${showMergeBtn ? `<button class="split-btn merge-btn" data-modifier="${item.modifier}">Merge</button>` : ''}
           </div>
-          <span class="stat-card-value">+${value}</span>
+          <div class="stat-card-right">
+            ${powerbitDropdown}
+            <span class="stat-card-value">+${value}</span>
+          </div>
         </div>
         <div class="stat-card-body">
           ${item.combinations.length > 0 ? `
@@ -281,12 +321,12 @@ export function renderCrafterView(contentContainer, shoppingContainer, build, co
     heroicCheckbox.addEventListener('change', (e) => {
       hideHeroicItems = e.target.checked;
       // Re-render with new filter state
-      renderCrafterView(contentContainer, shoppingContainer, build, combinationsData, modifiers);
+      renderCrafterView(contentContainer, shoppingContainer, build, combinationsData, modifiers, onPowerBitChange);
     });
   }
   
   // Attach event listeners
-  attachCrafterListeners(contentContainer, shoppingContainer, build, combinationsData, modifiers, processedStats);
+  attachCrafterListeners(contentContainer, shoppingContainer, build, combinationsData, modifiers, processedStats, onPowerBitChange);
   
   // Render shopping list
   updateShoppingList(shoppingContainer, processedStats, modifiers);
@@ -295,7 +335,25 @@ export function renderCrafterView(contentContainer, shoppingContainer, build, co
 /**
  * Attach event listeners to combination selectors
  */
-function attachCrafterListeners(contentContainer, shoppingContainer, build, combinationsData, modifiers, processedStats) {
+function attachCrafterListeners(contentContainer, shoppingContainer, build, combinationsData, modifiers, processedStats, onPowerBitChange) {
+  
+  // Powerbit dropdown handlers
+  contentContainer.querySelectorAll('.powerbit-select').forEach(select => {
+    select.addEventListener('change', (e) => {
+      const slots = e.target.dataset.slots.split(',');
+      const newPowerBit = parseInt(e.target.value, 10);
+      const modifier = e.target.dataset.modifier;
+      
+      if (onPowerBitChange) {
+        // Call the callback for each slot affected
+        slots.forEach(slotId => {
+          if (slotId) {
+            onPowerBitChange(slotId.trim(), newPowerBit, modifier);
+          }
+        });
+      }
+    });
+  });
   
   // Split button handlers
   contentContainer.querySelectorAll('.split-btn:not(.merge-btn)').forEach(btn => {
@@ -325,7 +383,8 @@ function attachCrafterListeners(contentContainer, shoppingContainer, build, comb
           lastRenderParams.shoppingContainer,
           lastRenderParams.build,
           lastRenderParams.combinationsData,
-          lastRenderParams.modifiers
+          lastRenderParams.modifiers,
+          lastRenderParams.onPowerBitChange
         );
       }
     });
@@ -351,7 +410,8 @@ function attachCrafterListeners(contentContainer, shoppingContainer, build, comb
           lastRenderParams.shoppingContainer,
           lastRenderParams.build,
           lastRenderParams.combinationsData,
-          lastRenderParams.modifiers
+          lastRenderParams.modifiers,
+          lastRenderParams.onPowerBitChange
         );
       }
     });
@@ -498,7 +558,21 @@ function updateShoppingList(container, processedStats, modifiers) {
     }
   });
   
+  // Track powerbits needed
+  const powerbits = {};
+  processedStats.forEach(stat => {
+    const pb = stat.powerBit || 35;
+    if (!powerbits[pb]) {
+      powerbits[pb] = { qty: 0, forStats: [] };
+    }
+    powerbits[pb].qty += stat.count;
+    if (!powerbits[pb].forStats.includes(stat.modifier)) {
+      powerbits[pb].forStats.push(stat.modifier);
+    }
+  });
+  
   const sortedItems = Object.entries(items).sort((a, b) => b[1].qty - a[1].qty);
+  const sortedPowerbits = Object.entries(powerbits).sort((a, b) => parseInt(b[0]) - parseInt(a[0]));
   
   if (sortedItems.length === 0) {
     container.innerHTML = `<p class="empty-state">Select combinations above to build your shopping list.</p>`;
@@ -518,6 +592,26 @@ function updateShoppingList(container, processedStats, modifiers) {
         ${sortedItems.map(([itemName, data]) => `
           <tr>
             <td>${itemName}</td>
+            <td class="shopping-qty">${data.qty}x</td>
+            <td class="shopping-for">${[...new Set(data.forStats)].join(', ')}</td>
+          </tr>
+        `).join('')}
+      </tbody>
+    </table>
+    
+    <h4 class="shopping-section-title">Power Bits Needed</h4>
+    <table class="shopping-table powerbit-table">
+      <thead>
+        <tr>
+          <th>Power Bit</th>
+          <th>Qty</th>
+          <th>For Stats</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${sortedPowerbits.map(([pb, data]) => `
+          <tr>
+            <td class="powerbit-name">+${pb} Power Bit</td>
             <td class="shopping-qty">${data.qty}x</td>
             <td class="shopping-for">${[...new Set(data.forStats)].join(', ')}</td>
           </tr>

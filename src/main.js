@@ -112,7 +112,7 @@ function setupEventListeners() {
       
       // Render crafter view when switching to it
       if (currentTab === 'crafter') {
-        renderCrafterView(crafterContent, shoppingList, currentBuild, combinationsData, modifiersData);
+        renderCrafterView(crafterContent, shoppingList, currentBuild, combinationsData, modifiersData, handlePowerBitChange);
       }
     });
   });
@@ -172,7 +172,7 @@ function setupEventListeners() {
     if (currentTab === 'crafter') {
       const crafterContent = document.getElementById('crafter-content');
       const shoppingList = document.getElementById('shopping-list');
-      renderCrafterView(crafterContent, shoppingList, currentBuild, combinationsData, modifiersData);
+      renderCrafterView(crafterContent, shoppingList, currentBuild, combinationsData, modifiersData, handlePowerBitChange);
     }
   });
   
@@ -267,7 +267,7 @@ function setupQuickPresets() {
       if (currentTab === 'crafter') {
         const crafterContent = document.getElementById('crafter-content');
         const shoppingList = document.getElementById('shopping-list');
-        renderCrafterView(crafterContent, shoppingList, currentBuild, combinationsData, modifiersData);
+        renderCrafterView(crafterContent, shoppingList, currentBuild, combinationsData, modifiersData, handlePowerBitChange);
       }
     });
   }
@@ -505,6 +505,22 @@ function handleJewelrySetUpdate(jewelrySet) {
  */
 function handleBackpackUpdate(backpack) {
   currentBuild.backpack = backpack;
+  onBuildChanged();
+}
+
+/**
+ * Handle powerbit changes from Crafter view
+ */
+function handlePowerBitChange(slotId, newPowerBit, modifier) {
+  // Find the stat in this slot that matches the modifier and update its powerbit
+  const slot = currentBuild.slots[slotId];
+  if (slot && slot.stats) {
+    slot.stats.forEach(stat => {
+      if (stat.modifier === modifier) {
+        stat.powerBit = newPowerBit;
+      }
+    });
+  }
   onBuildChanged();
 }
 
