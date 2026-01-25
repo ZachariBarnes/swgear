@@ -5,9 +5,9 @@
     "description": "Best for hybrid builds - all offensive stats",
     "isPopular": true,
     "stats": [
-      { "modifier": "Opportune Chance", "value": 30 },
-      { "modifier": "Ranged General", "value": 30 },
-      { "modifier": "Melee General", "value": 30 }
+      { "modifier": "Opportune Chance", "value": 150 },
+      { "modifier": "Ranged General", "value": 150 },
+      { "modifier": "Melee General", "value": 150 }
     ]
   },
   {
@@ -16,8 +16,8 @@
     "description": "Ranged DPS focused with crit chance",
     "isPopular": true,
     "stats": [
-      { "modifier": "Ranged General", "value": 30 },
-      { "modifier": "Critical Chance Increase", "value": 3 }
+      { "modifier": "Ranged General", "value": 150 },
+      { "modifier": "Critical Chance Increase", "value": 15 }
     ]
   },
   {
@@ -26,8 +26,8 @@
     "description": "Melee DPS with crit chance",
     "isPopular": true,
     "stats": [
-      { "modifier": "Melee General", "value": 30 },
-      { "modifier": "Critical Chance Increase", "value": 3 }
+      { "modifier": "Melee General", "value": 150 },
+      { "modifier": "Critical Chance Increase", "value": 15 }
     ]
   },
   {
@@ -36,8 +36,8 @@
     "description": "Medic focused with healing potency",
     "isPopular": true,
     "stats": [
-      { "modifier": "Endurance Boost", "value": 30 },
-      { "modifier": "Healing Potency", "value": 2 }
+      { "modifier": "Endurance Boost", "value": 150 },
+      { "modifier": "Healing Potency", "value": 10 }
     ]
   },
   {
@@ -46,7 +46,7 @@
     "description": "Tank/Defense with state resist",
     "isPopular": true,
     "stats": [
-      { "modifier": "Defense General", "value": 30 }
+      { "modifier": "Defense General", "value": 150 }
     ]
   },
   {
@@ -55,7 +55,7 @@
     "description": "Melee with knockdown defense",
     "isPopular": false,
     "stats": [
-      { "modifier": "Melee General", "value": 30 }
+      { "modifier": "Melee General", "value": 150 }
     ]
   },
   {
@@ -64,7 +64,7 @@
     "description": "Opportune with state resist",
     "isPopular": false,
     "stats": [
-      { "modifier": "Opportune Chance", "value": 30 }
+      { "modifier": "Opportune Chance", "value": 150 }
     ]
   },
   {
@@ -73,7 +73,7 @@
     "description": "Endurance with medical debuff speed",
     "isPopular": false,
     "stats": [
-      { "modifier": "Endurance Boost", "value": 30 }
+      { "modifier": "Endurance Boost", "value": 150 }
     ]
   },
   {
@@ -82,7 +82,7 @@
     "description": "Ranged with carbine accuracy",
     "isPopular": false,
     "stats": [
-      { "modifier": "Ranged General", "value": 30 }
+      { "modifier": "Ranged General", "value": 150 }
     ]
   },
   {
@@ -91,7 +91,7 @@
     "description": "Toughness with snare resist",
     "isPopular": false,
     "stats": [
-      { "modifier": "Toughness Boost", "value": 30 }
+      { "modifier": "Toughness Boost", "value": 150 }
     ]
   },
   {
@@ -100,8 +100,8 @@
     "description": "Opportune with crit chance",
     "isPopular": false,
     "stats": [
-      { "modifier": "Opportune Chance", "value": 30 },
-      { "modifier": "Critical Chance Increase", "value": 2 }
+      { "modifier": "Opportune Chance", "value": 150 },
+      { "modifier": "Critical Chance Increase", "value": 10 }
     ]
   },
   {
@@ -110,8 +110,8 @@
     "description": "Defense with block chance",
     "isPopular": false,
     "stats": [
-      { "modifier": "Defense General", "value": 30 },
-      { "modifier": "Block Chance", "value": 3 }
+      { "modifier": "Defense General", "value": 150 },
+      { "modifier": "Block Chance", "value": 15 }
     ]
   },
   {
@@ -120,7 +120,7 @@
     "description": "Ranged with crit defense",
     "isPopular": false,
     "stats": [
-      { "modifier": "Ranged General", "value": 30 }
+      { "modifier": "Ranged General", "value": 150 }
     ]
   },
   {
@@ -129,7 +129,7 @@
     "description": "Opportune with AoE focus",
     "isPopular": false,
     "stats": [
-      { "modifier": "Opportune Chance", "value": 30 }
+      { "modifier": "Opportune Chance", "value": 150 }
     ]
   },
   {
@@ -138,7 +138,7 @@
     "description": "Commando focused",
     "isPopular": false,
     "stats": [
-      { "modifier": "Opportune Chance", "value": 30 }
+      { "modifier": "Opportune Chance", "value": 150 }
     ]
   },
   {
@@ -147,7 +147,7 @@
     "description": "Force user with lightning focus",
     "isPopular": false,
     "stats": [
-      { "modifier": "Ranged General", "value": 30 }
+      { "modifier": "Ranged General", "value": 150 }
     ]
   },
   {
@@ -156,7 +156,7 @@
     "description": "Medic with cleanse speed",
     "isPopular": false,
     "stats": [
-      { "modifier": "Endurance Boost", "value": 30 }
+      { "modifier": "Endurance Boost", "value": 150 }
     ]
   },
   {
@@ -165,7 +165,7 @@
     "description": "Medical DoT focused",
     "isPopular": false,
     "stats": [
-      { "modifier": "Endurance Boost", "value": 30 }
+      { "modifier": "Endurance Boost", "value": 150 }
     ]
   },
   {
@@ -174,8 +174,8 @@
     "description": "Beast master with block",
     "isPopular": false,
     "stats": [
-      { "modifier": "Defense General", "value": 30 },
-      { "modifier": "Block Chance", "value": 4 }
+      { "modifier": "Defense General", "value": 150 },
+      { "modifier": "Block Chance", "value": 20 }
     ]
   },
   {
@@ -184,7 +184,7 @@
     "description": "Melee with armor penalty mitigation",
     "isPopular": false,
     "stats": [
-      { "modifier": "Melee General", "value": 30 }
+      { "modifier": "Melee General", "value": 150 }
     ]
   },
   {
@@ -193,7 +193,7 @@
     "description": "Toughness with heavy weapon accuracy",
     "isPopular": false,
     "stats": [
-      { "modifier": "Toughness Boost", "value": 30 }
+      { "modifier": "Toughness Boost", "value": 150 }
     ]
   },
   {
@@ -202,7 +202,7 @@
     "description": "Melee with one-handed accuracy",
     "isPopular": false,
     "stats": [
-      { "modifier": "Melee General", "value": 30 }
+      { "modifier": "Melee General", "value": 150 }
     ]
   },
   {
@@ -211,7 +211,7 @@
     "description": "Toughness with force overheal",
     "isPopular": false,
     "stats": [
-      { "modifier": "Toughness Boost", "value": 30 }
+      { "modifier": "Toughness Boost", "value": 150 }
     ]
   },
   {
@@ -220,7 +220,7 @@
     "description": "Defense with pistol accuracy",
     "isPopular": false,
     "stats": [
-      { "modifier": "Defense General", "value": 30 }
+      { "modifier": "Defense General", "value": 150 }
     ]
   },
   {
@@ -229,7 +229,7 @@
     "description": "Opportune with RE chance (crafting)",
     "isPopular": false,
     "stats": [
-      { "modifier": "Opportune Chance", "value": 30 }
+      { "modifier": "Opportune Chance", "value": 150 }
     ]
   },
   {
@@ -238,7 +238,7 @@
     "description": "Ranged with armor mitigation and range bonus",
     "isPopular": false,
     "stats": [
-      { "modifier": "Ranged General", "value": 30 }
+      { "modifier": "Ranged General", "value": 150 }
     ]
   },
   {
@@ -247,8 +247,8 @@
     "description": "Opportune with camouflage",
     "isPopular": false,
     "stats": [
-      { "modifier": "Opportune Chance", "value": 30 },
-      { "modifier": "Camouflage", "value": 20 }
+      { "modifier": "Opportune Chance", "value": 150 },
+      { "modifier": "Camouflage", "value": 100 }
     ]
   },
   {
@@ -257,7 +257,7 @@
     "description": "Beast master with weapon accuracy",
     "isPopular": false,
     "stats": [
-      { "modifier": "Opportune Chance", "value": 30 }
+      { "modifier": "Opportune Chance", "value": 150 }
     ]
   },
   {
@@ -266,7 +266,7 @@
     "description": "Jedi melee with crit defense",
     "isPopular": false,
     "stats": [
-      { "modifier": "Melee General", "value": 30 }
+      { "modifier": "Melee General", "value": 150 }
     ]
   },
   {
@@ -275,7 +275,7 @@
     "description": "Melee with state resist",
     "isPopular": false,
     "stats": [
-      { "modifier": "Melee General", "value": 30 }
+      { "modifier": "Melee General", "value": 150 }
     ]
   },
   {
@@ -284,7 +284,7 @@
     "description": "Crafter focused with crafting crit bonus",
     "isPopular": false,
     "stats": [
-      { "modifier": "Opportune Chance", "value": 30 }
+      { "modifier": "Opportune Chance", "value": 150 }
     ]
   },
   {
@@ -293,7 +293,7 @@
     "description": "Defense with trap and snare resist",
     "isPopular": false,
     "stats": [
-      { "modifier": "Defense General", "value": 30 }
+      { "modifier": "Defense General", "value": 150 }
     ]
   },
   {
@@ -302,7 +302,7 @@
     "description": "Endurance with snare resist",
     "isPopular": false,
     "stats": [
-      { "modifier": "Endurance Boost", "value": 30 }
+      { "modifier": "Endurance Boost", "value": 150 }
     ]
   },
   {
