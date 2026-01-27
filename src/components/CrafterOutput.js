@@ -134,20 +134,21 @@ function processStats(needed) {
   return result;
 }
 
-// Available powerbit values
-const POWERBIT_OPTIONS = [25, 28, 30, 33, 35];
+// Available powerbit values (standard range 20-35)
+const POWERBIT_OPTIONS = Array.from({length: 16}, (_, i) => i + 20);
 
 /**
  * Calculate optimal powerbit for a modifier based on its ratio
- * Optimal is ratio * 2, capped to available options
+ * We want the minimum powerbit cost that achieves the maximum possible stat points
+ * Max Points = floor(35 / ratio)
+ * Optimal Bit = Max Points * ratio
  */
 function getOptimalPowerbit(ratio) {
-  const optimal = ratio * 2;
-  // Find closest available powerbit >= optimal
-  for (const pb of POWERBIT_OPTIONS) {
-    if (pb >= optimal) return pb;
-  }
-  return POWERBIT_OPTIONS[POWERBIT_OPTIONS.length - 1]; // Max if none found
+  if (!ratio || ratio <= 1) return 35;
+  const maxPoints = Math.floor(35 / ratio);
+  const optimalBit = maxPoints * ratio;
+  // If optimal is below our minimum option, use minimum, otherwise use optimal
+  return Math.max(optimalBit, 20);
 }
 
 /**
@@ -237,15 +238,20 @@ export function renderCrafterView(contentContainer, shoppingContainer, build, co
     // Powerbit dropdown HTML
     const powerbitDropdown = `
       <div class="powerbit-control">
-        <label class="powerbit-label">Bit:</label>
-        <select class="powerbit-select" data-card-id="${cardId}" data-slots="${item.slots.join(',')}" data-modifier="${item.modifier}">
-          ${POWERBIT_OPTIONS.map(pb => `
-            <option value="${pb}" ${pb === currentPowerbit ? 'selected' : ''} ${pb === optimalPowerbit && isExotic ? 'class="recommended"' : ''}>
-              +${pb}${pb === optimalPowerbit && isExotic ? ' ✓' : ''}
-            </option>
-          `).join('')}
-        </select>
-        ${isExotic ? `<span class="powerbit-hint" title="Optimal for ${ratio}:1 ratio">rec: +${optimalPowerbit}</span>` : ''}
+        <div class="powerbit-info">
+          <label class="powerbit-label">Bit Strength:</label>
+          ${isExotic ? `<span class="ratio-badge" title="Cost ratio">Ratio: 1:${ratio}</span>` : ''}
+        </div>
+        <div class="powerbit-select-wrapper">
+          <select class="powerbit-select" data-card-id="${cardId}" data-slots="${item.slots.join(',')}" data-modifier="${item.modifier}">
+            ${POWERBIT_OPTIONS.map(pb => `
+              <option value="${pb}" ${pb === currentPowerbit ? 'selected' : ''} ${pb === optimalPowerbit && isExotic ? 'class="recommended-option"' : ''}>
+                +${pb}${pb === optimalPowerbit && isExotic ? ' (Recommended)' : ''}
+              </option>
+            `).join('')}
+          </select>
+          ${isExotic ? `<div class="powerbit-hint">Recommended: +${optimalPowerbit} (Max stat at lowest cost)</div>` : ''}
+        </div>
       </div>
     `;
     

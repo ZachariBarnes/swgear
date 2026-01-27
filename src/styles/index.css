@@ -2887,30 +2887,57 @@ body {
 
 .stat-card-right {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: var(--spacing-md);
+  height: 100%;
 }
 
 .powerbit-control {
   display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  margin-right: var(--spacing-sm);
+}
+
+.powerbit-info {
+  display: flex;
   align-items: center;
   gap: var(--spacing-xs);
+  margin-bottom: 2px;
 }
 
 .powerbit-label {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.ratio-badge {
+  font-size: 0.75rem;
+  background: var(--color-bg-tertiary);
+  padding: 1px 4px;
+  border-radius: var(--radius-sm);
+  color: var(--color-accent-blue);
+  font-family: var(--font-mono);
+}
+
+.powerbit-select-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .powerbit-select {
-  padding: 2px 6px;
+  padding: 4px 8px;
   background: var(--color-bg-slot);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   color: var(--color-text-primary);
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   font-family: var(--font-mono);
-  min-width: 60px;
+  min-width: 140px;
+  cursor: pointer;
 }
 
 .powerbit-select:focus {
@@ -2918,15 +2945,23 @@ body {
   border-color: var(--color-accent-primary);
 }
 
-.powerbit-select option.recommended {
+.powerbit-select option {
+  font-size: 0.9rem;
+  padding: 4px;
+}
+
+.powerbit-select option.recommended-option {
   font-weight: 600;
   color: var(--color-accent-green);
+  background-color: rgba(76, 175, 80, 0.1);
 }
 
 .powerbit-hint {
-  font-size: 0.625rem;
+  font-size: 0.75rem;
   color: var(--color-accent-green);
-  opacity: 0.8;
+  opacity: 0.9;
+  margin-top: 2px;
+  white-space: nowrap;
 }
 
 .shopping-section-title {
