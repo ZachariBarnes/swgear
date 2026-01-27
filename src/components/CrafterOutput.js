@@ -185,6 +185,16 @@ export function renderCrafterView(contentContainer, shoppingContainer, build, co
   
   const modMap = new Map(modifiers.map(m => [m.name, m]));
   
+  // Set default powerbits if not set
+  processedStats.forEach(stat => {
+    if (!stat.powerBit) {
+      const mod = modMap.get(stat.modifier);
+      const ratio = mod?.ratio || 1;
+      // Default to optimal for exotics (ratio > 1), or standard 35 for core
+      stat.powerBit = ratio > 1 ? getOptimalPowerbit(ratio) : 35;
+    }
+  });
+  
   // Define core stats
   const CORE_STAT_NAMES = ['Ranged General', 'Melee General', 'Defense General', 'Toughness Boost', 'Endurance Boost', 'Opportune Chance'];
   
