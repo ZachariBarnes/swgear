@@ -115,22 +115,44 @@ const CODE_TO_SLOT = Object.fromEntries(
 
 /**
  * Encode a build to a compact URL-safe string
- * Format: H.35.RG.DG.OC|C.35.MG|... (slot.power.mod1.mod2...)
+ * New format: HCPO.OPP.RNG.END|GLRR.OPP.RNG.TGH (grouped slots, no powerbit if 35)
+ * With powerbit: HCPO.28.OPP.RNG.END (includes powerbit if not 35)
  */
 export function encodeBuild(build) {
-  const parts = [];
+  // Group slots by their config signature (powerbit + modifiers)
+  const configGroups = new Map();
   
   for (const [slotId, slot] of Object.entries(build.slots)) {
     if (!slot.stats || slot.stats.length === 0) continue;
     
     const slotCode = SLOT_CODES[slotId] || slotId;
+    const powerBit = slot.powerBit || 35;
     const mods = slot.stats
       .filter(s => s.modifier)
       .map(s => MODIFIER_CODES[s.modifier] || s.modifier.substring(0, 3).toUpperCase())
+      .sort() // Sort for consistent grouping
       .join('.');
     
-    if (mods) {
-      parts.push(`${slotCode}.${slot.powerBit || 35}.${mods}`);
+    if (!mods) continue;
+    
+    // Create signature: powerbit.mods (for grouping identical configs)
+    const signature = `${powerBit}.${mods}`;
+    
+    if (!configGroups.has(signature)) {
+      configGroups.set(signature, { powerBit, mods, slots: [] });
+    }
+    configGroups.get(signature).slots.push(slotCode);
+  }
+  
+  // Build compact URL parts
+  const parts = [];
+  for (const [signature, group] of configGroups) {
+    const slotsStr = group.slots.join('');
+    // Omit powerbit if default (35)
+    if (group.powerBit === 35) {
+      parts.push(`${slotsStr}.${group.mods}`);
+    } else {
+      parts.push(`${slotsStr}.${group.powerBit}.${group.mods}`);
     }
   }
   
@@ -150,6 +172,7 @@ export function encodeBuild(build) {
 
 /**
  * Decode a URL string back to a build object
+ * Supports both new compact format and old format
  */
 export function decodeBuild(encoded) {
   const build = {
@@ -182,10 +205,10 @@ export function decodeBuild(encoded) {
   
   for (const part of parts) {
     const segments = part.split('.');
-    const slotCode = segments[0];
+    const firstSegment = segments[0];
     
     // Check for external buffs (starts with X)
-    if (slotCode === 'X') {
+    if (firstSegment === 'X') {
       for (let i = 1; i < segments.length; i++) {
         const [code, val] = segments[i].split('=');
         const modifier = CODE_TO_MODIFIER[code] || code;
@@ -198,17 +221,56 @@ export function decodeBuild(encoded) {
       continue;
     }
     
-    const slotId = CODE_TO_SLOT[slotCode] || slotCode;
+    // Parse slot codes (can be single like "H" or grouped like "HCPO")
+    const slotCodes = parseSlotCodes(firstSegment);
     
-    if (slotId && build.slots[slotId]) {
-      build.slots[slotId].powerBit = parseInt(segments[1], 10) || 35;
-      build.slots[slotId].stats = segments.slice(2)
-        .filter(code => code)
-        .map(code => ({ modifier: CODE_TO_MODIFIER[code] || code }));
+    // Determine if second segment is powerbit or modifier
+    // If it's a number, it's powerbit; otherwise it's the first modifier
+    let powerBit = 35;
+    let modStartIndex = 1;
+    
+    if (segments.length > 1 && /^\d+$/.test(segments[1])) {
+      powerBit = parseInt(segments[1], 10);
+      modStartIndex = 2;
+    }
+    
+    const modCodes = segments.slice(modStartIndex).filter(code => code);
+    const stats = modCodes.map(code => ({ modifier: CODE_TO_MODIFIER[code] || code }));
+    
+    // Apply to all slots in this group
+    for (const slotCode of slotCodes) {
+      const slotId = CODE_TO_SLOT[slotCode] || slotCode;
+      if (slotId && build.slots[slotId]) {
+        build.slots[slotId].powerBit = powerBit;
+        build.slots[slotId].stats = [...stats]; // Clone stats array
+      }
     }
   }
   
   return build;
+}
+
+/**
+ * Parse slot codes - handles both single (H) and grouped (HCPO) formats
+ */
+function parseSlotCodes(str) {
+  const codes = [];
+  let i = 0;
+  
+  while (i < str.length) {
+    // Check for 2-char codes first (LB, LR, RB, RR)
+    const twoChar = str.substring(i, i + 2);
+    if (CODE_TO_SLOT[twoChar]) {
+      codes.push(twoChar);
+      i += 2;
+    } else {
+      // Single char code
+      codes.push(str[i]);
+      i += 1;
+    }
+  }
+  
+  return codes;
 }
 
 /**
