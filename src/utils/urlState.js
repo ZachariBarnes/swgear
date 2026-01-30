@@ -75,6 +75,8 @@ const MODIFIER_CODES = {
   'Heavy Weapon Damage': 'HWD',
   'Heavy Weapon Critical Chance': 'HWC',
   'Heavy Weapon Action Cost': 'HWA',
+  'Pistol Accuracy': 'PAC',
+  'Pistol Speed': 'PSP',
   '1-Handed Melee Damage': 'M1D',
   '1-H Critical Chance': 'M1C',
   '2-Handed Melee Damage': 'M2D',

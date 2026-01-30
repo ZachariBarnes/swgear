@@ -954,6 +954,24 @@
     "combinationCount": 2
   },
   {
+    "id": "expertise_accuracy_pistol",
+    "name": "Pistol Accuracy",
+    "ratio": 2,
+    "category": "combat_weapon_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 20
+  },
+  {
+    "id": "expertise_speed_pistol",
+    "name": "Pistol Speed",
+    "ratio": 2,
+    "category": "combat_weapon_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 10
+  },
+  {
     "id": "expertise_action_weapon_2",
     "name": "Pistol Action Cost",
     "ratio": 10,
