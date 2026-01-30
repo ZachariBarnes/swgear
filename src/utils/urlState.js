@@ -311,29 +311,13 @@ function decodeLegacyBuild(encoded, build) {
 }
 
 /**
- * Update the URL with the current build state
- * @param {Object} build - Current build
- */
-export function updateURL(build) {
-  const encoded = encodeBuild(build);
-  const url = new URL(window.location.href);
-  
-  if (encoded) {
-    url.searchParams.set('build', encoded);
-  } else {
-    url.searchParams.delete('build');
-  }
-  
-  window.history.replaceState(null, '', url.toString());
-}
-
-/**
  * Load build from current URL
  * @returns {Object|null} - Decoded build or null if no build in URL
  */
 export function loadFromURL() {
   const url = new URL(window.location.href);
-  const encoded = url.searchParams.get('build');
+  // Support both 'b' (new short) and 'build' (legacy) params
+  const encoded = url.searchParams.get('b') || url.searchParams.get('build');
   
   if (encoded) {
     try {
@@ -357,8 +341,28 @@ export function getShareableURL(build) {
   const encoded = encodeBuild(build);
   
   if (encoded) {
-    url.searchParams.set('build', encoded);
+    url.searchParams.set('b', encoded); // Use short param
   }
   
   return url.toString();
+}
+
+/**
+ * Update the URL with the current build state
+ * @param {Object} build - Current build
+ */
+export function updateURL(build) {
+  const encoded = encodeBuild(build);
+  const url = new URL(window.location.href);
+  
+  // Remove legacy 'build' param if present
+  url.searchParams.delete('build');
+  
+  if (encoded) {
+    url.searchParams.set('b', encoded);
+  } else {
+    url.searchParams.delete('b');
+  }
+  
+  window.history.replaceState(null, '', url.toString());
 }
