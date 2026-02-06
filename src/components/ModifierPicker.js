@@ -23,26 +23,22 @@ const CATEGORY_DISPLAY = {
   elemental_penetration: 'Elemental Penetration'
 };
 
-// Popular stats that should appear at top
+// Popular stats that should appear at top (using correct SWGR names)
 const POPULAR_STATS = [
   'Healing Potency',
   'Medical Combat Speed',
-  'Weapon Speed',
-  'Surveying',
-  'Experimentation',
-  'Luck',
-  'Precision',
-  'Agility',
-  'Strength',
-  'Constitution',
-  'Stamina',
+  'Defense General',
+  'Ranged General',
+  'Melee General',
+  'Toughness Boost',
+  'Endurance Boost',
+  'Opportune Chance',
   'Block Chance',
   'Block Value',
   'Evasion Chance',
   'Evasion Value',
-  'Critical Hit Chance',
-  'Strikethrough Chance',
-  'Action Cost Reduction'
+  'Critical Chance Increase',
+  'Surveying'
 ];
 
 // Core armor stats - ONLY these can be used in normal (non-exotic) armor slots
@@ -249,12 +245,14 @@ function renderModifierList(searchQuery, categoryFilter, isExotic = false) {
   
   listContainer.innerHTML = filtered.map(mod => {
     const isPopular = POPULAR_STATS.includes(mod.name);
+    const isCore = CORE_ARMOR_STATS.includes(mod.name);
     const maxVal = maxValueAtPowerBit(mod.ratio, 35);
-    const categoryName = CATEGORY_DISPLAY[mod.category] || mod.category;
+    const categoryName = isCore ? 'CORE STATS' : (CATEGORY_DISPLAY[mod.category] || mod.category);
     
     const classes = [
       'modifier-item',
-      isPopular ? 'popular' : ''
+      isPopular ? 'popular' : '',
+      isCore ? 'core-stat' : 'exotic-stat'
     ].filter(Boolean).join(' ');
     
     return `
