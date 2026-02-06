@@ -634,7 +634,45 @@ function updateShoppingList(container, processedStats, modifiers) {
         `).join('')}
       </tbody>
     </table>
+    
+    <div class="shopping-actions">
+      <button class="btn btn-sm btn-accent" id="copy-shopping-list">📋 Copy to Clipboard</button>
+    </div>
   `;
+  
+  // Add copy button listener
+  const copyBtn = container.querySelector('#copy-shopping-list');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', async () => {
+      const text = generateCopyText(sortedItems, sortedPowerbits);
+      try {
+        await navigator.clipboard.writeText(text);
+        copyBtn.textContent = '✓ Copied!';
+        setTimeout(() => { copyBtn.textContent = '📋 Copy to Clipboard'; }, 2000);
+      } catch (err) {
+        console.error('Copy failed:', err);
+      }
+    });
+  }
+}
+
+/**
+ * Generate formatted text for clipboard
+ */
+function generateCopyText(sortedItems, sortedPowerbits) {
+  let text = "=== SEA Builder Shopping List ===\n\n";
+  
+  text += "JUNK LOOT ITEMS:\n";
+  sortedItems.forEach(([item, data]) => {
+    text += `  ${data.qty}x ${item}\n`;
+  });
+  
+  text += "\nPOWER BITS:\n";
+  sortedPowerbits.forEach(([pb, data]) => {
+    text += `  ${data.qty}x +${pb} Power Bit\n`;
+  });
+  
+  return text;
 }
 
 /**

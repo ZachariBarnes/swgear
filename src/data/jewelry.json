@@ -306,6 +306,414 @@
     ]
   },
   {
+    "id": "bracelet_surveying",
+    "name": "Bracelet: Surveying",
+    "description": "Treasure Map Reward",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Surveying", "value": 5 }
+    ]
+  },
+  {
+    "id": "bracelet_crafting_assembly",
+    "name": "Bracelet: Assembly",
+    "description": "Treasure Map Reward (General Assembly +5)",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Artisan Assembly", "value": 5 }
+    ]
+  },
+  {
+    "id": "bracelet_crafting_experimentation",
+    "name": "Bracelet: Experimentation",
+    "description": "Treasure Map Reward (General Experimentation +5)",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Artisan Experimentation", "value": 5 }
+    ]
+  },
+  {
+    "id": "bracelet_entertainer",
+    "name": "Bracelet: Entertainer",
+    "description": "Treasure Map Reward",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Musical Enhancement", "value": 5 },
+      { "modifier": "Dancing Enhancement", "value": 5 }
+    ]
+  },
+  {
+    "id": "bracelet_left_pistol",
+    "name": "Left Bracelet: Pistol",
+    "description": "Pistol Speed/Accuracy +5",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Pistol Speed", "value": 5 },
+      { "modifier": "Pistol Accuracy", "value": 5 }
+    ]
+  },
+  {
+    "id": "bracelet_right_pistol",
+    "name": "Right Bracelet: Pistol",
+    "description": "Pistol Damage +5",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Pistol Damage", "value": 5 }
+    ]
+  },
+  {
+    "id": "bracelet_left_rifle",
+    "name": "Left Bracelet: Rifle",
+    "description": "Rifle Speed/Accuracy +5",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Rifle Speed", "value": 5 },
+      { "modifier": "Rifle Accuracy", "value": 5 }
+    ]
+  },
+  {
+    "id": "bracelet_right_rifle",
+    "name": "Right Bracelet: Rifle",
+    "description": "Rifle Damage +5",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Rifle Damage", "value": 5 }
+    ]
+  },
+  {
+    "id": "bracelet_left_carbine",
+    "name": "Left Bracelet: Carbine",
+    "description": "Carbine Speed/Accuracy +5",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Carbine Speed", "value": 5 },
+      { "modifier": "Carbine Accuracy", "value": 5 }
+    ]
+  },
+  {
+    "id": "bracelet_right_carbine",
+    "name": "Right Bracelet: Carbine",
+    "description": "Carbine Damage +5",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Carbine Damage", "value": 5 }
+    ]
+  },
+  {
+    "id": "blastech_alpha",
+    "name": "BlasTech Alpha Bracelet",
+    "description": "Combat: +25 Defense, +25 Ranged",
+    "category": "Combat",
+    "isPopular": true,
+    "stats": [
+      { "modifier": "Defense General", "value": 25 },
+      { "modifier": "Ranged General", "value": 25 }
+    ]
+  },
+  {
+    "id": "blastech_beta",
+    "name": "BlasTech Beta Bracelet",
+    "description": "Combat: +10 Carbine Accuracy/Speed",
+    "category": "Combat",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Carbine Accuracy", "value": 10 },
+      { "modifier": "Carbine Speed", "value": 10 }
+    ]
+  },
+  {
+    "id": "blastech_gamma",
+    "name": "BlasTech Gamma Bracelet",
+    "description": "Combat: +10 Rifle Accuracy/Speed",
+    "category": "Combat",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Rifle Accuracy", "value": 10 },
+      { "modifier": "Rifle Speed", "value": 10 }
+    ]
+  },
+  {
+    "id": "blastech_zulu",
+    "name": "BlasTech Zulu Bracelet",
+    "description": "Combat: +10 Pistol Accuracy/Speed",
+    "category": "Combat",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Pistol Accuracy", "value": 10 },
+      { "modifier": "Pistol Speed", "value": 10 }
+    ]
+  },
+  {
+    "id": "corellidyne_green",
+    "name": "Corellidyne Green Bracelet",
+    "description": "Combat: +25 Defense, +25 Melee",
+    "category": "Combat",
+    "isPopular": true,
+    "stats": [
+      { "modifier": "Defense General", "value": 25 },
+      { "modifier": "Melee General", "value": 25 }
+    ]
+  },
+  {
+    "id": "merr_sonn_v1",
+    "name": "Merr-Sonn v1 Bracelet",
+    "description": "Weapon: +10 Two-Handed Accuracy/Speed",
+    "category": "Weapon",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Two-Handed Accuracy", "value": 10 },
+      { "modifier": "Two-Handed Speed", "value": 10 }
+    ]
+  },
+  {
+    "id": "merr_sonn_v2",
+    "name": "Merr-Sonn v2 Bracelet",
+    "description": "Weapon: +10 One-Handed Accuracy/Speed",
+    "category": "Weapon",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "One-Handed Accuracy", "value": 10 },
+      { "modifier": "One-Handed Speed", "value": 10 }
+    ]
+  },
+  {
+    "id": "merr_sonn_v3",
+    "name": "Merr-Sonn v3 Bracelet",
+    "description": "Weapon: +10 Polearm Accuracy/Speed",
+    "category": "Weapon",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Polearm Accuracy", "value": 10 },
+      { "modifier": "Polearm Speed", "value": 10 }
+    ]
+  },
+  {
+    "id": "merr_sonn_v4",
+    "name": "Merr-Sonn v4 Bracelet",
+    "description": "Weapon: +10 Unarmed Accuracy/Speed",
+    "category": "Weapon",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Unarmed Accuracy", "value": 10 },
+      { "modifier": "Unarmed Speed", "value": 10 }
+    ]
+  },
+  {
+    "id": "traxes_i",
+    "name": "Traxes I Bracelet",
+    "description": "Weapon: +5 Thrown Accuracy/Speed",
+    "category": "Weapon",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Thrown Accuracy", "value": 5 },
+      { "modifier": "Thrown Speed", "value": 5 }
+    ]
+  },
+  {
+    "id": "traxes_ii",
+    "name": "Traxes II Bracelet",
+    "description": "Weapon: +10 Thrown Accuracy/Speed",
+    "category": "Weapon",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Thrown Accuracy", "value": 10 },
+      { "modifier": "Thrown Speed", "value": 10 }
+    ]
+  },
+  {
+    "id": "traxes_iii",
+    "name": "Traxes III Bracelet",
+    "description": "Weapon: +5 Heavy Weapon Accuracy/Speed",
+    "category": "Weapon",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Heavy Weapon Accuracy", "value": 5 },
+      { "modifier": "Heavy Weapon Speed", "value": 5 }
+    ]
+  },
+  {
+    "id": "traxes_iv",
+    "name": "Traxes IV Bracelet",
+    "description": "Weapon: +10 Heavy Weapon Accuracy/Speed",
+    "category": "Weapon",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Heavy Weapon Accuracy", "value": 10 },
+      { "modifier": "Heavy Weapon Speed", "value": 10 }
+    ]
+  },
+  {
+    "id": "initiate_meditation",
+    "name": "Initiate's Meditation Bracelet",
+    "description": "Jedi: +3 LS Assembly, +5 LS Experimentation",
+    "category": "Jedi",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Lightsaber Assembly", "value": 3 },
+      { "modifier": "Lightsaber Experimentation", "value": 5 }
+    ]
+  },
+  {
+    "id": "jedi_meditation",
+    "name": "Jedi's Meditation Bracelet",
+    "description": "Jedi: +6 LS Assembly, +10 LS Experimentation",
+    "category": "Jedi",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Lightsaber Assembly", "value": 6 },
+      { "modifier": "Lightsaber Experimentation", "value": 10 }
+    ]
+  },
+  {
+    "id": "jedi_knight_meditation",
+    "name": "Jedi Knight's Meditation Bracelet",
+    "description": "Jedi: +9 LS Assembly, +15 LS Experimentation",
+    "category": "Jedi",
+    "isPopular": true,
+    "stats": [
+      { "modifier": "Lightsaber Assembly", "value": 9 },
+      { "modifier": "Lightsaber Experimentation", "value": 15 }
+    ]
+  },
+  {
+    "id": "initiate_wristguard",
+    "name": "Initiate's Wristguard",
+    "description": "Jedi: +8 Force Acc, +60 FP Max, +3 FP Regen, +20 Melee",
+    "category": "Jedi",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Force Accuracy", "value": 8 },
+      { "modifier": "Force Power Max", "value": 60 },
+      { "modifier": "Force Power Regen", "value": 3 },
+      { "modifier": "Melee General", "value": 20 }
+    ]
+  },
+  {
+    "id": "jedi_wristguard",
+    "name": "Jedi's Wristguard",
+    "description": "Jedi: +12 Force Acc, +80 FP Max, +4 FP Regen, +30 Melee",
+    "category": "Jedi",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Force Accuracy", "value": 12 },
+      { "modifier": "Force Power Max", "value": 80 },
+      { "modifier": "Force Power Regen", "value": 4 },
+      { "modifier": "Melee General", "value": 30 }
+    ]
+  },
+  {
+    "id": "jedi_knight_wristguard",
+    "name": "Jedi Knight's Wristguard",
+    "description": "Jedi: +16 Force Acc, +100 FP Max, +5 FP Regen, +40 Melee",
+    "category": "Jedi",
+    "isPopular": true,
+    "stats": [
+      { "modifier": "Force Accuracy", "value": 16 },
+      { "modifier": "Force Power Max", "value": 100 },
+      { "modifier": "Force Power Regen", "value": 5 },
+      { "modifier": "Melee General", "value": 40 }
+    ]
+  },
+  {
+    "id": "veridicator_100",
+    "name": "Veridicator 100 Bracelet",
+    "description": "Medical: +5 Medicine Use",
+    "category": "Medical",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Medicine Use", "value": 5 }
+    ]
+  },
+  {
+    "id": "veridicator_110",
+    "name": "Veridicator 110 Bracelet",
+    "description": "Medical: +5 Medical Assembly/Experimentation",
+    "category": "Medical",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Medical Crafting Assembly", "value": 5 },
+      { "modifier": "Medical Crafting Experimentation", "value": 5 }
+    ]
+  },
+  {
+    "id": "veridicator_200",
+    "name": "Veridicator 200 Bracelet",
+    "description": "Medical: +15 Medicine Use, +2 Healing Potency",
+    "category": "Medical",
+    "isPopular": true,
+    "stats": [
+      { "modifier": "Medicine Use", "value": 15 },
+      { "modifier": "Healing Potency", "value": 2 }
+    ]
+  },
+  {
+    "id": "veridicator_200a",
+    "name": "Veridicator 200a Bracelet",
+    "description": "Medical: +15 Medical Assembly/Experimentation",
+    "category": "Medical",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Medical Crafting Assembly", "value": 15 },
+      { "modifier": "Medical Crafting Experimentation", "value": 15 }
+    ]
+  },
+  {
+    "id": "sorosuub_p3",
+    "name": "SoroSuub P3 Bracelet",
+    "description": "Utility: +5 Surveying, +1 Resource Quality",
+    "category": "Utility",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Surveying", "value": 5 },
+      { "modifier": "Resource Quality", "value": 1 }
+    ]
+  },
+  {
+    "id": "scnv1",
+    "name": "SCNv1 Bracelet",
+    "description": "Utility: +5 all core stats",
+    "category": "Utility",
+    "isPopular": true,
+    "stats": [
+      { "modifier": "Defense General", "value": 5 },
+      { "modifier": "Ranged General", "value": 5 },
+      { "modifier": "Melee General", "value": 5 },
+      { "modifier": "Toughness Boost", "value": 5 },
+      { "modifier": "Endurance Boost", "value": 5 },
+      { "modifier": "Opportune Chance", "value": 5 }
+    ]
+  },
+  {
+    "id": "idellian_2000",
+    "name": "Idellian 2000 Bracelet",
+    "description": "Utility: +10 Stealth",
+    "category": "Utility",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Stealth", "value": 10 }
+    ]
+  },
+  {
+    "id": "idellian_4000",
+    "name": "Idellian 4000 Bracelet",
+    "description": "Utility: +10 Camouflage",
+    "category": "Utility",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Camouflage", "value": 10 }
+    ]
+  },
+  {
+    "id": "inspired_status",
+    "name": "Bracelet of Inspired Status",
+    "description": "Utility: +1 Inspiration Pulse",
+    "category": "Utility",
+    "isPopular": false,
+    "stats": [
+      { "modifier": "Inspiration Pulse", "value": 1 }
+    ]
+  },
+  {
     "id": "custom",
     "name": "Custom Jewelry",
     "description": "Manually enter your jewelry stats.",

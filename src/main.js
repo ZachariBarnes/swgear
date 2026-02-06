@@ -10,6 +10,10 @@ import { renderCrafterView, formatShoppingListText, resetSelectedCombos } from '
 import { renderExternalBuffs } from './components/ExternalBuffs.js';
 import { renderBackpackSection, getBackpackStats } from './components/BackpackSection.js';
 import { renderJewelrySection, getJewelryStats } from './components/JewelrySection.js';
+import { renderBakeInEditor, calculateBakeInTotals } from './components/BakeInEditor.js';
+import { renderFamiliarPicker, getFamiliarStats } from './components/FamiliarPicker.js';
+import { renderBeltTypeToggle, isBeltExotic } from './components/BeltTypeToggle.js';
+import { renderImplantEditor, getImplantStats } from './components/ImplantEditor.js';
 import { loadFromURL, updateURL, getShareableURL } from './utils/urlState.js';
 import { findCombinations, copyToClipboard } from './utils/export.js';
 import { logShareEvent, getBuildSummary } from './utils/analytics.js';
@@ -33,6 +37,10 @@ let statSummary = null;
 let externalBuffsContainer = null;
 let backpackContainer = null;
 let jewelryContainer = null;
+let bakeInContainer = null;
+let familiarContainer = null;
+let beltToggleContainer = null;
+let implantContainer = null;
 let shareBtn = null;
 let viewToggleBtns = null;
 
@@ -50,6 +58,10 @@ function init() {
   externalBuffsContainer = document.getElementById('external-buffs-container');
   backpackContainer = document.getElementById('backpack-container');
   jewelryContainer = document.getElementById('jewelry-container');
+  bakeInContainer = document.getElementById('bakein-container');
+  familiarContainer = document.getElementById('familiar-container');
+  beltToggleContainer = document.getElementById('belt-toggle-container');
+  implantContainer = document.getElementById('implant-container');
   shareBtn = document.getElementById('share-btn');
   viewToggleBtns = document.querySelectorAll('.view-toggle .toggle-btn');
   
@@ -447,17 +459,28 @@ function onBuildChanged() {
  * Render all components
  */
 function render() {
+  // Render belt type toggle (clothing vs PSG)
+  if (beltToggleContainer) {
+    renderBeltTypeToggle(beltToggleContainer, currentBuild.beltType || 'clothing', handleBeltTypeChange);
+  }
+  
   renderSlots();
   
-  // Get backpack and jewelry stats for totals calculation
+  // Get backpack, jewelry, familiar, and implant stats for totals calculation
   const backpackStats = getBackpackStats(currentBuild.backpack);
   const jewelryStats = getJewelryStats(currentBuild.jewelrySet);
+  const bakeInTotals = calculateBakeInTotals(currentBuild.bakeInStats);
+  const familiarStats = getFamiliarStats(currentBuild.familiar || 'none');
+  const implantStats = getImplantStats(currentBuild.implants || {});
   
-  // Combine external buffs with backpack and jewelry stats for the summary
+  // Combine external buffs with backpack, jewelry, familiar, implant, and bake-in stats for the summary
   const allExternalStats = [
     ...(currentBuild.externalBuffs || []),
     ...backpackStats.map(s => ({ modifier: s.modifier, value: s.value, source: 'backpack' })),
-    ...jewelryStats.map(s => ({ modifier: s.modifier, value: s.value, source: 'jewelry' }))
+    ...jewelryStats.map(s => ({ modifier: s.modifier, value: s.value, source: 'jewelry' })),
+    ...bakeInTotals.map(s => ({ modifier: s.modifier, value: s.value, source: 'armor' })),
+    ...familiarStats,
+    ...implantStats
   ];
   
   renderStatSummary(statSummary, currentBuild, modifiersData, allExternalStats, currentBuild.armorBonusHP || 0);
@@ -468,9 +491,28 @@ function render() {
     renderBackpackSection(backpackContainer, currentBuild.backpack, handleBackpackUpdate);
   }
   
+  // Render bake-in section
+  if (bakeInContainer) {
+    // Initialize bakeInStats if not present
+    if (!currentBuild.bakeInStats) {
+      currentBuild.bakeInStats = { enabled: false, global: null, perSlot: {} };
+    }
+    renderBakeInEditor(bakeInContainer, currentBuild.bakeInStats, handleBakeInUpdate);
+  }
+  
   // Render jewelry section
   if (jewelryContainer) {
     renderJewelrySection(jewelryContainer, currentBuild.jewelrySet, handleJewelrySetUpdate);
+  }
+  
+  // Render familiar section
+  if (familiarContainer) {
+    renderFamiliarPicker(familiarContainer, currentBuild.familiar || 'none', handleFamiliarUpdate);
+  }
+  
+  // Render implant section
+  if (implantContainer) {
+    renderImplantEditor(implantContainer, currentBuild.implants || {}, handleImplantUpdate);
   }
   
   // Note: Crafter view is now rendered on-demand when the Crafter tab is clicked
@@ -505,6 +547,45 @@ function handleJewelrySetUpdate(jewelrySet) {
  */
 function handleBackpackUpdate(backpack) {
   currentBuild.backpack = backpack;
+  onBuildChanged();
+}
+
+/**
+ * Handle bake-in stats changes
+ */
+function handleBakeInUpdate(bakeInStats) {
+  currentBuild.bakeInStats = bakeInStats;
+  onBuildChanged();
+}
+
+/**
+ * Handle familiar selection changes
+ */
+function handleFamiliarUpdate(familiarId) {
+  currentBuild.familiar = familiarId;
+  onBuildChanged();
+}
+
+/**
+ * Handle belt type changes (clothing/PSG toggle)
+ */
+function handleBeltTypeChange(beltType) {
+  currentBuild.beltType = beltType;
+  // Clear belt stats if switching to armor (PSG) mode with exotic stats
+  const beltSlot = currentBuild.slots.belt;
+  if (beltType === 'armor' && beltSlot && beltSlot.stats) {
+    // Keep only core armor stats when switching to PSG
+    const CORE_STATS = ['Camouflage', 'Defense General', 'Endurance Boost', 'Melee General', 'Toughness Boost', 'Opportune Chance', 'Ranged General'];
+    beltSlot.stats = beltSlot.stats.filter(s => CORE_STATS.includes(s.modifier));
+  }
+  onBuildChanged();
+}
+
+/**
+ * Handle implant changes
+ */
+function handleImplantUpdate(implants) {
+  currentBuild.implants = implants;
   onBuildChanged();
 }
 

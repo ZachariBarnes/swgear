@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SWGear | SWG Restoration Build Planner</title>
   <meta name="description" content="SWGear - Plan your armor, SEAs, buffs, and stats for Star Wars Galaxies Restoration.">
-  <link rel="icon" type="image/webp" href="/swgr-logo.webp">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚙️</text></svg>">
   <link rel="stylesheet" href="/src/styles/index.css">
 </head>
 <body>
@@ -13,7 +13,6 @@
     <!-- Header inspired by swgr.org tools -->
     <header class="app-header">
       <div class="header-brand">
-        <img src="/swgr-logo.webp" alt="SWG Restoration" class="header-logo">
         <div class="header-title-group">
           <h1 class="header-title">SWGear</h1>
           <p class="header-subtitle">SWG Restoration Build Planner</p>
@@ -130,6 +129,8 @@
               <button class="toggle-btn" data-view="list">List</button>
             </div>
           </div>
+          <!-- Belt Type Toggle -->
+          <div id="belt-toggle-container"></div>
           <div id="slot-container" class="slot-container">
             <!-- Armor slots rendered here -->
           </div>
@@ -156,9 +157,24 @@
             <!-- Backpack section rendered here -->
           </div>
           
+          <!-- Bake-In Stats Section -->
+          <div id="bakein-container" class="bakein-container">
+            <!-- Bake-in editor rendered here -->
+          </div>
+          
           <!-- Heroic Jewelry Section -->
           <div id="jewelry-container" class="jewelry-container">
             <!-- Jewelry section rendered here -->
+          </div>
+          
+          <!-- Familiar Section -->
+          <div id="familiar-container" class="familiar-container">
+            <!-- Familiar picker rendered here -->
+          </div>
+          
+          <!-- Implant Section -->
+          <div id="implant-container" class="implant-container">
+            <!-- Implant editor rendered here -->
           </div>
           
           <div id="external-buffs-container" class="external-buffs-container">

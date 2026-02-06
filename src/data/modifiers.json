@@ -90,22 +90,220 @@
     "combinationCount": 20
   },
   {
-    "id": "advanced_assembly",
-    "name": "Advanced Assembly",
+    "id": "expertise_speed_1h",
+    "name": "1-H Speed",
+    "ratio": 2,
+    "category": "combat_weapon_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 10
+  },
+  {
+    "id": "expertise_accuracy_1h",
+    "name": "1-Handed Weapon Accuracy",
+    "ratio": 2,
+    "category": "combat_weapon_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 20
+  },
+  {
+    "id": "expertise_speed_2h",
+    "name": "2-H Speed",
+    "ratio": 2,
+    "category": "combat_weapon_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 10
+  },
+  {
+    "id": "expertise_accuracy_2h",
+    "name": "2-Handed Melee Accuracy",
+    "ratio": 2,
+    "category": "combat_weapon_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 20
+  },
+  {
+    "id": "expertise_accuracy_carbine",
+    "name": "Carbine Accuracy",
+    "ratio": 2,
+    "category": "combat_weapon_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 20
+  },
+  {
+    "id": "expertise_speed_carbine",
+    "name": "Carbine Speed",
+    "ratio": 2,
+    "category": "combat_weapon_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 10
+  },
+  {
+    "id": "expertise_accuracy_heavy",
+    "name": "Heavy Weapon Accuracy",
+    "ratio": 2,
+    "category": "combat_weapon_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 20
+  },
+  {
+    "id": "expertise_speed_heavy",
+    "name": "Heavy Weapon Speed",
+    "ratio": 2,
+    "category": "combat_weapon_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 10
+  },
+  {
+    "id": "expertise_accuracy_polearm",
+    "name": "Polearm Accuracy",
+    "ratio": 2,
+    "category": "combat_weapon_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 20
+  },
+  {
+    "id": "expertise_speed_polearm",
+    "name": "Polearm Speed",
+    "ratio": 2,
+    "category": "combat_weapon_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 10
+  },
+  {
+    "id": "expertise_accuracy_rifle",
+    "name": "Rifle Accuracy",
+    "ratio": 2,
+    "category": "combat_weapon_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 20
+  },
+  {
+    "id": "expertise_speed_rifle",
+    "name": "Rifle Speed",
+    "ratio": 2,
+    "category": "combat_weapon_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 10
+  },
+  {
+    "id": "expertise_accuracy_thrown",
+    "name": "Thrown Weapon Accuracy",
+    "ratio": 2,
+    "category": "combat_weapon_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 20
+  },
+  {
+    "id": "expertise_speed_thrown",
+    "name": "Thrown Weapon Speed",
+    "ratio": 2,
+    "category": "combat_weapon_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 10
+  },
+  {
+    "id": "expertise_accuracy_unarmed",
+    "name": "Unarmed Accuracy",
+    "ratio": 2,
+    "category": "combat_weapon_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 20
+  },
+  {
+    "id": "expertise_speed_unarmed",
+    "name": "Unarmed Speed",
+    "ratio": 2,
+    "category": "combat_weapon_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 10
+  },
+  {
+    "id": "expertise_accuracy_1h_lightsaber",
+    "name": "One Handed Lightsaber Accuracy",
+    "ratio": 2,
+    "category": "combat_weapon_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 20
+  },
+  {
+    "id": "expertise_speed_1h_lightsaber",
+    "name": "One Handed Lightsaber Speed",
+    "ratio": 2,
+    "category": "combat_weapon_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 10
+  },
+  {
+    "id": "expertise_accuracy_2h_lightsaber",
+    "name": "Two Handed Lightsaber Accuracy",
+    "ratio": 2,
+    "category": "combat_weapon_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 20
+  },
+  {
+    "id": "expertise_speed_2h_lightsaber",
+    "name": "Two Handed Lightsaber Speed",
+    "ratio": 2,
+    "category": "combat_weapon_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 10
+  },
+  {
+    "id": "expertise_accuracy_polearm_lightsaber",
+    "name": "Double Bladed Lightsaber Accuracy",
+    "ratio": 2,
+    "category": "combat_weapon_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 20
+  },
+  {
+    "id": "expertise_speed_polearm_lightsaber",
+    "name": "Double Bladed Lightsaber Speed",
+    "ratio": 2,
+    "category": "combat_weapon_specific",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 10
+  },
+  {
+    "id": "shipwright_assembly",
+    "name": "Shipwright Assembly",
     "ratio": 3,
     "category": "profession_shipwright",
     "isCore": false,
     "hasPowerup": true,
-    "combinationCount": 13
+    "combinationCount": 50
   },
   {
-    "id": "advanced_ship_experimentation",
-    "name": "Advanced Component Experimentation",
+    "id": "shipwright_experimentation",
+    "name": "Shipwright Experimentation",
     "ratio": 4,
     "category": "profession_shipwright",
     "isCore": false,
     "hasPowerup": false,
-    "combinationCount": 10
+    "combinationCount": 50
   },
   {
     "id": "agility_modified",
@@ -204,7 +402,25 @@
     "category": "combat_profession_specific",
     "isCore": false,
     "hasPowerup": true,
-    "combinationCount": 22
+    "combinationCount": 26
+  },
+  {
+    "id": "command_speed_medical",
+    "name": "Medical Combat Speed",
+    "ratio": 1,
+    "category": "combat_support",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 10
+  },
+  {
+    "id": "command_speed_medical_heal",
+    "name": "Medical Heal Speed",
+    "ratio": 1,
+    "category": "combat_support",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 10
   },
   {
     "id": "expertise_damage_line_dm",
@@ -269,24 +485,8 @@
     "hasPowerup": true,
     "combinationCount": 37
   },
-  {
-    "id": "booster_assembly",
-    "name": "Booster Assembly",
-    "ratio": 3,
-    "category": "profession_shipwright",
-    "isCore": false,
-    "hasPowerup": true,
-    "combinationCount": 33
-  },
-  {
-    "id": "booster_experimentation",
-    "name": "Booster Experimentation",
-    "ratio": 4,
-    "category": "profession_shipwright",
-    "isCore": false,
-    "hasPowerup": false,
-    "combinationCount": 22
-  },
+
+
   {
     "id": "camouflage",
     "name": "Camouflage",
@@ -323,24 +523,8 @@
     "hasPowerup": true,
     "combinationCount": 103
   },
-  {
-    "id": "chassis_assembly",
-    "name": "Chassis Assembly",
-    "ratio": 3,
-    "category": "profession_shipwright",
-    "isCore": false,
-    "hasPowerup": true,
-    "combinationCount": 18
-  },
-  {
-    "id": "chassis_experimentation",
-    "name": "Chassis Experimentation",
-    "ratio": 4,
-    "category": "profession_shipwright",
-    "isCore": false,
-    "hasPowerup": false,
-    "combinationCount": 24
-  },
+
+
   {
     "id": "clothing_assembly",
     "name": "Clothing Assembly",
@@ -575,24 +759,8 @@
     "hasPowerup": false,
     "combinationCount": 1
   },
-  {
-    "id": "engine_assembly",
-    "name": "Engine Assembly",
-    "ratio": 3,
-    "category": "profession_shipwright",
-    "isCore": false,
-    "hasPowerup": true,
-    "combinationCount": 27
-  },
-  {
-    "id": "engine_experimentation",
-    "name": "Engine Experimentation",
-    "ratio": 4,
-    "category": "profession_shipwright",
-    "isCore": false,
-    "hasPowerup": false,
-    "combinationCount": 18
-  },
+
+
   {
     "id": "combat_evasion_chance",
     "name": "Evasion Chance",
@@ -1061,24 +1229,8 @@
     "hasPowerup": true,
     "combinationCount": 31
   },
-  {
-    "id": "power_systems",
-    "name": "Power Systems Assembly",
-    "ratio": 3,
-    "category": "profession_shipwright",
-    "isCore": false,
-    "hasPowerup": true,
-    "combinationCount": 43
-  },
-  {
-    "id": "power_systems_experimentation",
-    "name": "Power Systems Experimentation",
-    "ratio": 4,
-    "category": "profession_shipwright",
-    "isCore": false,
-    "hasPowerup": false,
-    "combinationCount": 23
-  },
+
+
   {
     "id": "precision_modified",
     "name": "Precision",
@@ -1133,24 +1285,8 @@
     "hasPowerup": true,
     "combinationCount": 33
   },
-  {
-    "id": "shields_experimentation",
-    "name": "Shield Experimentation",
-    "ratio": 4,
-    "category": "profession_shipwright",
-    "isCore": false,
-    "hasPowerup": false,
-    "combinationCount": 8
-  },
-  {
-    "id": "shields_assembly",
-    "name": "Shields Assembly",
-    "ratio": 3,
-    "category": "profession_shipwright",
-    "isCore": false,
-    "hasPowerup": true,
-    "combinationCount": 19
-  },
+
+
   {
     "id": "stamina_modified",
     "name": "Stamina",
@@ -1393,5 +1529,167 @@
     "isCore": false,
     "hasPowerup": false,
     "combinationCount": 14
+  },
+  {
+    "id": "defense_vs_blind",
+    "name": "Defense Vs. Blind",
+    "ratio": 2,
+    "category": "combat_defense",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 50
+  },
+  {
+    "id": "defense_vs_dizzy",
+    "name": "Defense Vs. Dizzy",
+    "ratio": 2,
+    "category": "combat_defense",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 50
+  },
+  {
+    "id": "defense_vs_intimidate",
+    "name": "Defense Vs. Intimidate",
+    "ratio": 2,
+    "category": "combat_defense",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 50
+  },
+  {
+    "id": "defense_vs_knockdown",
+    "name": "Defense Vs. Knockdown",
+    "ratio": 2,
+    "category": "combat_defense",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 50
+  },
+  {
+    "id": "defense_vs_stun",
+    "name": "Defense Vs. Stun",
+    "ratio": 2,
+    "category": "combat_defense",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 50
+  },
+  {
+    "id": "lightsaber_assembly",
+    "name": "Lightsaber Assembly",
+    "ratio": 3,
+    "category": "profession_jedi",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 30
+  },
+  {
+    "id": "lightsaber_experimentation",
+    "name": "Lightsaber Experimentation",
+    "ratio": 5,
+    "category": "profession_jedi",
+    "isCore": false,
+    "hasPowerup": false,
+    "combinationCount": 30
+  },
+  {
+    "id": "force_accuracy",
+    "name": "Force Accuracy",
+    "ratio": 2,
+    "category": "profession_jedi",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 20
+  },
+  {
+    "id": "force_power_max",
+    "name": "Force Power Max",
+    "ratio": 1,
+    "category": "profession_jedi",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 20
+  },
+  {
+    "id": "force_power_regen",
+    "name": "Force Power Regeneration",
+    "ratio": 2,
+    "category": "profession_jedi",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 20
+  },
+  {
+    "id": "absorption_poison",
+    "name": "Poison Absorption",
+    "ratio": 4,
+    "category": "combat_defense",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 20
+  },
+  {
+    "id": "absorption_fire",
+    "name": "Fire Absorption",
+    "ratio": 4,
+    "category": "combat_defense",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 20
+  },
+  {
+    "id": "absorption_disease",
+    "name": "Disease Absorption",
+    "ratio": 4,
+    "category": "combat_defense",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 20
+  },
+  {
+    "id": "absorption_bleeding",
+    "name": "Bleeding Absorption",
+    "ratio": 4,
+    "category": "combat_defense",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 20
+  },
+  {
+    "id": "resistance_poison",
+    "name": "Poison Resistance",
+    "ratio": 4,
+    "category": "combat_defense",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 20
+  },
+  {
+    "id": "resistance_fire",
+    "name": "Fire Resistance",
+    "ratio": 4,
+    "category": "combat_defense",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 20
+  },
+  {
+    "id": "resistance_disease",
+    "name": "Disease Resistance",
+    "ratio": 4,
+    "category": "combat_defense",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 20
+  },
+  {
+    "id": "resistance_bleeding",
+    "name": "Bleeding Resistance",
+    "ratio": 4,
+    "category": "combat_defense",
+    "isCore": false,
+    "hasPowerup": true,
+    "combinationCount": 20
   }
 ]

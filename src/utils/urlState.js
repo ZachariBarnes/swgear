@@ -53,41 +53,96 @@ const MODIFIER_CODES = {
   'Artisan Experimentation': 'ARX',
   
   // Shipwright
-  'Chassis Assembly': 'HAS',
-  'Chassis Experimentation': 'HEX',
-  'Engine Assembly': 'NAS',
-  'Engine Experimentation': 'NEX',
-  'Booster Assembly': 'BAS',
-  'Booster Experimentation': 'BEX',
-  'Advanced Assembly': 'VAS',
-  'Advanced Component Experimentation': 'VEX',
+  'Shipwright Assembly': 'SHS',
+  'Shipwright Experimentation': 'SHX',
   
   // Weapon specific
   'Carbine Damage': 'CBD',
   'Carbine Critical Chance': 'CBC',
   'Carbine Action Cost': 'CBA',
+  'Carbine Accuracy': 'CAC',
+  'Carbine Speed': 'CSP',
+  
   'Rifle Damage': 'RFD',
   'Rifle Critical Chance': 'RFC',
   'Rifle Action Cost': 'RFA',
+  'Rifle Accuracy': 'RAC',
+  'Rifle Speed': 'RSP',
+  
   'Pistol Damage': 'PTD',
   'Pistol Critical Chance': 'PTC',
   'Pistol Action Cost': 'PTA',
+  'Pistol Accuracy': 'PAC',
+  'Pistol Speed': 'PSP',
+  
   'Heavy Weapon Damage': 'HWD',
   'Heavy Weapon Critical Chance': 'HWC',
   'Heavy Weapon Action Cost': 'HWA',
-  'Pistol Accuracy': 'PAC',
-  'Pistol Speed': 'PSP',
+  'Heavy Weapon Accuracy': 'HAC',
+  'Heavy Weapon Speed': 'HSP',
+  
   '1-Handed Melee Damage': 'M1D',
   '1-H Critical Chance': 'M1C',
+  '1-Handed Weapon Accuracy': 'M1A',
+  '1-H Speed': 'M1S',
+  
   '2-Handed Melee Damage': 'M2D',
   '2-H Critical Chance': 'M2C',
+  '2-Handed Melee Accuracy': 'M2A',
+  '2-H Speed': 'M2S',
+  
   'Polearm Damage': 'POD',
   'Polearm Critical Chance': 'POC',
+  'Polearm Accuracy': 'POA',
+  'Polearm Speed': 'POS',
+
+  'Unarmed Accuracy': 'UNA',
+  'Unarmed Speed': 'UNS',
+
+  'Thrown Weapon Accuracy': 'TWA',
+  'Thrown Weapon Speed': 'TWS',
+
+  'One Handed Lightsaber Accuracy': 'L1A',
+  'One Handed Lightsaber Speed': 'L1S',
+  
+  'Two Handed Lightsaber Accuracy': 'L2A',
+  'Two Handed Lightsaber Speed': 'L2S',
+  
+  'Double Bladed Lightsaber Accuracy': 'DLA',
+  'Double Bladed Lightsaber Speed': 'DLS',
+
+  // Medical
+  'Medical Heal Speed': 'MHS',
+  'Medical Combat Speed': 'MCS',
   
   // Other common
   'Surveying': 'SRV',
   'Foraging': 'FRG',
   'Camouflage': 'CAM',
+  
+  // State Resists
+  'Defense Vs. Blind': 'DVB',
+  'Defense Vs. Dizzy': 'DVD',
+  'Defense Vs. Intimidate': 'DVI',
+  'Defense Vs. Knockdown': 'DVK',
+  'Defense Vs. Stun': 'DVS',
+  
+  // Jedi
+  'Lightsaber Assembly': 'LSA',
+  'Lightsaber Experimentation': 'LSX',
+  'Force Accuracy': 'FAC',
+  'Force Power Max': 'FPM',
+  'Force Power Regeneration': 'FPR',
+  
+  // Absorption/Resistance
+  'Poison Absorption': 'PAB',
+  'Fire Absorption': 'FAB',
+  'Disease Absorption': 'DAB',
+  'Bleeding Absorption': 'BAB',
+  'Poison Resistance': 'PRS',
+  'Fire Resistance': 'FRS',
+  'Disease Resistance': 'DRS',
+  'Bleeding Resistance': 'BRS',
   
   // Legacy/mislabeled items (game uses Toughness/Endurance instead)
   // Kept for compatibility with any old data that might reference these
@@ -156,6 +211,29 @@ export function encodeBuild(build) {
     }
   }
   
+  // Add bake-in stats (format: B.modifier=value or B.slot.modifier=value)
+  if (build.bakeInStats && build.bakeInStats.enabled) {
+    const bakeInParts = [];
+    if (build.bakeInStats.global) {
+      const code = MODIFIER_CODES[build.bakeInStats.global.modifier] || 
+                   build.bakeInStats.global.modifier.substring(0, 3).toUpperCase();
+      bakeInParts.push(`G${code}=${build.bakeInStats.global.value}`);
+    }
+    if (build.bakeInStats.perSlot) {
+      for (const [slotId, slotBake] of Object.entries(build.bakeInStats.perSlot)) {
+        if (slotBake && slotBake.modifier) {
+          const slotCode = SLOT_CODES[slotId] || slotId;
+          const modCode = MODIFIER_CODES[slotBake.modifier] || 
+                          slotBake.modifier.substring(0, 3).toUpperCase();
+          bakeInParts.push(`${slotCode}${modCode}=${slotBake.value}`);
+        }
+      }
+    }
+    if (bakeInParts.length > 0) {
+      parts.push(`B.${bakeInParts.join('.')}`);
+    }
+  }
+  
   // Add external buffs (format: X.modifier=value)
   if (build.externalBuffs && build.externalBuffs.length > 0) {
     const buffsStr = build.externalBuffs
@@ -167,8 +245,52 @@ export function encodeBuild(build) {
     parts.push(`X.${buffsStr}`);
   }
   
+  // Add familiar (format: F.familiarId)
+  if (build.familiar && build.familiar !== 'none') {
+    parts.push(`F.${build.familiar}`);
+  }
+  
+  // Add belt type (format: T.type)
+  if (build.beltType && build.beltType !== 'clothing') {
+    parts.push(`T.${build.beltType}`);
+  }
+  
+  // Add implants (format: I.stat1:value1,stat2:value2)
+  if (build.implants && Object.keys(build.implants).length > 0) {
+    const implantParts = Object.entries(build.implants)
+      .filter(([_, v]) => v > 0)
+      .map(([stat, value]) => {
+        // Abbreviate stat names for URL
+        const abbr = IMPLANT_STAT_CODES[stat] || stat.substring(0, 3).toUpperCase();
+        return `${abbr}${value}`;
+      })
+      .join('');
+    if (implantParts) {
+      parts.push(`I.${implantParts}`);
+    }
+  }
+  
   return parts.join('|');
 }
+
+// Implant stat abbreviation codes
+const IMPLANT_STAT_CODES = {
+  'Defense General': 'DEF',
+  'Ranged General': 'RNG',
+  'Melee General': 'MEL',
+  'Toughness Boost': 'TGH',
+  'Endurance Boost': 'END',
+  'Opportune Chance': 'OPP'
+};
+
+const IMPLANT_CODE_TO_STAT = {
+  'DEF': 'Defense General',
+  'RNG': 'Ranged General',
+  'MEL': 'Melee General',
+  'TGH': 'Toughness Boost',
+  'END': 'Endurance Boost',
+  'OPP': 'Opportune Chance'
+};
 
 /**
  * Decode a URL string back to a build object
@@ -217,6 +339,76 @@ export function decodeBuild(encoded) {
           value: parseInt(val, 10) || 0,
           source: 'imported'
         });
+      }
+      continue;
+    }
+    
+    // Check for bake-in stats (starts with B)
+    if (firstSegment === 'B') {
+      build.bakeInStats = { enabled: true, global: null, perSlot: {} };
+      for (let i = 1; i < segments.length; i++) {
+        const segment = segments[i];
+        const [keyPart, val] = segment.split('=');
+        const value = parseInt(val, 10) || 0;
+        
+        if (keyPart.startsWith('G')) {
+          // Global bake-in: GDEF=35
+          const modCode = keyPart.substring(1);
+          const modifier = CODE_TO_MODIFIER[modCode] || modCode;
+          build.bakeInStats.global = { modifier, value };
+        } else {
+          // Per-slot bake-in: HDEF=35 or LBDEF=35
+          // First character(s) are slot code, rest is modifier code
+          let slotCode = '';
+          let modCode = '';
+          
+          // Check for 2-char slot codes first
+          const twoChar = keyPart.substring(0, 2);
+          if (CODE_TO_SLOT[twoChar]) {
+            slotCode = twoChar;
+            modCode = keyPart.substring(2);
+          } else {
+            slotCode = keyPart[0];
+            modCode = keyPart.substring(1);
+          }
+          
+          const slotId = CODE_TO_SLOT[slotCode] || slotCode;
+          const modifier = CODE_TO_MODIFIER[modCode] || modCode;
+          
+          if (slotId) {
+            build.bakeInStats.perSlot[slotId] = { modifier, value };
+          }
+        }
+      }
+      continue;
+    }
+    
+    // Parse familiar (F.familiarId)
+    if (firstSegment === 'F' && segments.length > 1) {
+      build.familiar = segments[1];
+      continue;
+    }
+    
+    // Parse belt type (T.type)
+    if (firstSegment === 'T' && segments.length > 1) {
+      build.beltType = segments[1];
+      continue;
+    }
+    
+    // Parse implants (I.DEF10RNG20...)
+    if (firstSegment === 'I' && segments.length > 1) {
+      build.implants = {};
+      const implantStr = segments[1];
+      // Parse format: DEF10RNG20TGH10 (3-letter code followed by number)
+      const implantRegex = /([A-Z]{3})(\d+)/g;
+      let match;
+      while ((match = implantRegex.exec(implantStr)) !== null) {
+        const code = match[1];
+        const value = parseInt(match[2], 10);
+        const statName = IMPLANT_CODE_TO_STAT[code];
+        if (statName && value > 0) {
+          build.implants[statName] = value;
+        }
       }
       continue;
     }

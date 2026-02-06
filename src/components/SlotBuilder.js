@@ -25,7 +25,7 @@ export const SLOT_CONFIG = [
   
   // Hands and waist
   { id: 'gloves', name: 'Gloves', isExotic: false, maxStats: 3 },
-  { id: 'belt', name: 'Belt', isExotic: false, maxStats: 3 },
+  { id: 'belt', name: 'Belt', isExotic: false, maxStats: 3, canToggleExotic: true }, // Can be clothing (exotic) or PSG (armor)
   
   // Lower body
   { id: 'pants', name: 'Leggings', isExotic: false, maxStats: 3 },
@@ -45,7 +45,13 @@ export function createEmptyBuild() {
     slots: {},
     externalBuffs: [],
     armorBonusHP: 0,  // Bonus HP from crafted armor (up to ~800-900 from capped resources)
-    jewelry: {}       // Jewelry slots with stats
+    jewelry: {},       // Jewelry slots with stats
+    beltType: 'clothing', // 'clothing' (exotic allowed) or 'armor' (PSG - core only)
+    bakeInStats: {     // Stats baked into armor during manufacture
+      enabled: false,
+      global: null,    // { modifier, value } applied to all slots
+      perSlot: {}      // { slotId: { modifier, value } } for per-slot customization
+    }
   };
   
   for (const slot of SLOT_CONFIG) {
