@@ -468,10 +468,9 @@ function onBuildChanged() {
  * Render all components
  */
 function render() {
-  // Render belt type toggle (clothing vs PSG)
-  if (beltToggleContainer) {
-    renderBeltTypeToggle(beltToggleContainer, currentBuild.beltType || 'clothing', handleBeltTypeChange);
-  }
+  // Note: Belt toggle is now inline on the belt slot card (see SlotBuilder.js)
+  // Jedi toggle is rendered later in this function
+  
   
   renderSlots();
   
