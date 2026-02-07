@@ -14,6 +14,7 @@ import { renderBraceletPicker, getBraceletStats } from './components/BraceletPic
 import { renderBakeInEditor, calculateBakeInTotals } from './components/BakeInEditor.js';
 import { renderFamiliarPicker, getFamiliarStats } from './components/FamiliarPicker.js';
 import { renderBeltTypeToggle, isBeltExotic } from './components/BeltTypeToggle.js';
+import { renderJediToggle, isJediMode } from './components/JediToggle.js';
 import { renderImplantEditor, getImplantStats } from './components/ImplantEditor.js';
 import { loadFromURL, updateURL, getShareableURL } from './utils/urlState.js';
 import { findCombinations, copyToClipboard } from './utils/export.js';
@@ -41,7 +42,7 @@ let jewelryContainer = null;
 let braceletContainer = null;
 let bakeInContainer = null;
 let familiarContainer = null;
-let beltToggleContainer = null;
+let jediToggleContainer = null;
 let implantContainer = null;
 let shareBtn = null;
 let viewToggleBtns = null;
@@ -63,7 +64,7 @@ function init() {
   braceletContainer = document.getElementById('bracelet-content');
   bakeInContainer = document.getElementById('bakein-container');
   familiarContainer = document.getElementById('familiar-container');
-  beltToggleContainer = document.getElementById('belt-toggle-container');
+  jediToggleContainer = document.getElementById('jedi-toggle-container');
   implantContainer = document.getElementById('implant-container');
   shareBtn = document.getElementById('share-btn');
   viewToggleBtns = document.querySelectorAll('.view-toggle .toggle-btn');
@@ -523,6 +524,20 @@ function render() {
     renderImplantEditor(implantContainer, currentBuild.implants || {}, handleImplantUpdate);
   }
   
+  // Render Jedi toggle
+  if (jediToggleContainer) {
+    renderJediToggle(jediToggleContainer, currentBuild.jediMode || false, handleJediModeUpdate);
+  }
+  
+  // Add inline belt toggle click handler (delegated from slot container)
+  slotContainer?.querySelectorAll('.belt-toggle-inline').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation(); // Don't trigger slot click
+      const newType = currentBuild.beltType === 'clothing' ? 'armor' : 'clothing';
+      handleBeltTypeChange(newType);
+    });
+  });
+  
   // Note: Crafter view is now rendered on-demand when the Crafter tab is clicked
 }
 
@@ -594,6 +609,14 @@ function handleBeltTypeChange(beltType) {
  */
 function handleImplantUpdate(implants) {
   currentBuild.implants = implants;
+  onBuildChanged();
+}
+
+/**
+ * Handle Jedi mode toggle
+ */
+function handleJediModeUpdate(isJedi) {
+  currentBuild.jediMode = isJedi;
   onBuildChanged();
 }
 

@@ -214,11 +214,19 @@ function renderSlotCard(slot, slotData) {
   // Only render sidebar if there are stats
   const sidebarHtml = hasStats ? `<div class="slot-tags-sidebar">${statTagsHtml}</div>` : '';
   
+  // Belt toggle inline button (only for belt slot)
+  const beltToggleHtml = slot.canToggleExotic ? `
+    <button class="belt-toggle-inline" data-slot-id="${slot.id}" title="Toggle Belt/PSG mode">
+      <span class="toggle-icon">⚡</span>
+    </button>
+  ` : '';
+  
   return `
     <div class="${wrapperClass}" data-slot-id="${slot.id}">
       ${sidebarHtml}
       <div class="${classes}">
         <span class="slot-name">${slot.name}</span>
+        ${beltToggleHtml}
         ${slot.isExotic ? '<span class="exotic-label">EXOTIC</span>' : ''}
       </div>
     </div>

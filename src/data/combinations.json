@@ -69394,5 +69394,57 @@
       "name": "Defense General",
       "ratio": 1
     }
+  },
+  "a Damaged Droid Actuator": {
+    "Droid Control Unit": {
+      "name": "Carbine Accuracy",
+      "ratio": 2
+    },
+    "Power Relay": {
+      "name": "Carbine Accuracy",
+      "ratio": 2
+    }
+  },
+  "an Empty Spice Vial": {
+    "Comlink Assembly": {
+      "name": "Carbine Accuracy",
+      "ratio": 2
+    }
+  },
+  "Bone Fragments": {
+    "Electrical Wiring": {
+      "name": "Rifle Accuracy",
+      "ratio": 2
+    }
+  },
+  "Broken Sensor Array": {
+    "Data Storage Unit": {
+      "name": "Pistol Accuracy",
+      "ratio": 2
+    }
+  },
+  "Corroded Relay": {
+    "Microprocessor": {
+      "name": "Heavy Weapon Accuracy",
+      "ratio": 2
+    }
+  },
+  "Droid Memory Core": {
+    "Servo Motor": {
+      "name": "Unarmed Accuracy",
+      "ratio": 2
+    }
+  },
+  "Cracked Power Crystal": {
+    "Motivator Core": {
+      "name": "1-Handed Weapon Accuracy",
+      "ratio": 2
+    }
+  },
+  "a Defunct Power Pack": {
+    "Circuit Board": {
+      "name": "Two-handed Melee Accuracy",
+      "ratio": 2
+    }
   }
 }

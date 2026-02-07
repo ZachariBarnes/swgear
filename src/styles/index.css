@@ -3654,3 +3654,76 @@ body {
   color: var(--color-success);
   font-weight: 600;
 }
+
+/* Belt Toggle Inline Button */
+.belt-toggle-inline {
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  width: 20px;
+  height: 20px;
+  border: none;
+  border-radius: 4px;
+  background: var(--color-bg-tertiary);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  transition: all 0.2s ease;
+  z-index: 5;
+}
+
+.belt-toggle-inline:hover {
+  background: var(--color-accent);
+  color: white;
+}
+
+.belt-toggle-inline .toggle-icon {
+  font-size: 12px;
+}
+
+/* Slot card needs position relative for inline toggle */
+.slot-card {
+  position: relative;
+}
+
+/* Jedi Toggle */
+.jedi-toggle {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: var(--color-bg-elevated);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+.jedi-toggle label {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  cursor: pointer;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.jedi-toggle input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #a78bfa;
+}
+
+.jedi-toggle .jedi-icon {
+  font-size: 16px;
+}
+
+.jedi-toggle.active {
+  background: linear-gradient(135deg, rgba(167, 139, 250, 0.2) 0%, rgba(139, 92, 246, 0.2) 100%);
+  border: 1px solid rgba(167, 139, 250, 0.3);
+}
+
+.jedi-toggle.active label {
+  color: #a78bfa;
+}
