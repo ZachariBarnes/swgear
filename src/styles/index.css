@@ -3577,3 +3577,80 @@ body {
   border-color: var(--color-accent);
   color: white;
 }
+
+/* Bracelet Picker */
+.bracelet-picker {
+  margin-top: var(--spacing-lg);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--color-border);
+}
+
+.bracelet-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-sm);
+}
+
+.bracelet-header h4 {
+  margin: 0;
+  font-size: var(--font-size-md);
+  color: var(--color-text-primary);
+}
+
+.bracelet-hint {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.bracelet-slots {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-md);
+}
+
+.bracelet-slot label {
+  display: block;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.bracelet-select {
+  width: 100%;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-elevated);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-sm);
+}
+
+.bracelet-select:focus {
+  border-color: var(--color-accent);
+  outline: none;
+}
+
+.bracelet-stats {
+  margin-top: var(--spacing-sm);
+  padding: var(--spacing-sm);
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-sm);
+}
+
+.bracelet-stat-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--font-size-sm);
+  padding: 2px 0;
+}
+
+.bracelet-stat-row .stat-name {
+  color: var(--color-text-secondary);
+}
+
+.bracelet-stat-row .stat-value {
+  color: var(--color-success);
+  font-weight: 600;
+}

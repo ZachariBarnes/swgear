@@ -10,6 +10,7 @@ import { renderCrafterView, formatShoppingListText, resetSelectedCombos } from '
 import { renderExternalBuffs } from './components/ExternalBuffs.js';
 import { renderBackpackSection, getBackpackStats } from './components/BackpackSection.js';
 import { renderJewelrySection, getJewelryStats } from './components/JewelrySection.js';
+import { renderBraceletPicker, getBraceletStats } from './components/BraceletPicker.js';
 import { renderBakeInEditor, calculateBakeInTotals } from './components/BakeInEditor.js';
 import { renderFamiliarPicker, getFamiliarStats } from './components/FamiliarPicker.js';
 import { renderBeltTypeToggle, isBeltExotic } from './components/BeltTypeToggle.js';
@@ -37,6 +38,7 @@ let statSummary = null;
 let externalBuffsContainer = null;
 let backpackContainer = null;
 let jewelryContainer = null;
+let braceletContainer = null;
 let bakeInContainer = null;
 let familiarContainer = null;
 let beltToggleContainer = null;
@@ -58,6 +60,7 @@ function init() {
   externalBuffsContainer = document.getElementById('external-buffs-container');
   backpackContainer = document.getElementById('backpack-container');
   jewelryContainer = document.getElementById('jewelry-container');
+  braceletContainer = document.getElementById('bracelet-content');
   bakeInContainer = document.getElementById('bakein-container');
   familiarContainer = document.getElementById('familiar-container');
   beltToggleContainer = document.getElementById('belt-toggle-container');
@@ -120,6 +123,11 @@ function setupEventListeners() {
       if (currentTab === 'jewelry') {
         const { renderJewelryEditor } = await import('./components/JewelryEditor.js');
         renderJewelryEditor(jewelryContent, currentBuild.jewelry || {}, handleJewelryUpdate);
+        
+        // Render bracelet picker
+        if (braceletContainer) {
+          renderBraceletPicker(braceletContainer, currentBuild.bracelets || {}, handleBraceletUpdate);
+        }
       }
       
       // Render crafter view when switching to it
@@ -586,6 +594,14 @@ function handleBeltTypeChange(beltType) {
  */
 function handleImplantUpdate(implants) {
   currentBuild.implants = implants;
+  onBuildChanged();
+}
+
+/**
+ * Handle bracelet changes
+ */
+function handleBraceletUpdate(bracelets) {
+  currentBuild.bracelets = bracelets;
   onBuildChanged();
 }
 
