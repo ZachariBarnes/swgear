@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SWGear | SWG Restoration Build Planner</title>
+  <meta name="description" content="SWGear - Plan your armor, SEAs, buffs, and stats for Star Wars Galaxies Restoration.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚙️</text></svg>">
+  <script type="module" crossorigin src="/swgear/assets/index-B_IMS5Yv.js"></script>
+  <link rel="stylesheet" crossorigin href="/swgear/assets/index-CwBuGKuR.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Header inspired by swgr.org tools -->
+    <header class="app-header">
+      <div class="header-brand">
+        <div class="header-title-group">
+          <h1 class="header-title">SWGear</h1>
+          <p class="header-subtitle">SWG Restoration Build Planner</p>
+        </div>
+      </div>
+      
+      <!-- Tab Navigation -->
+      <nav class="tab-nav">
+        <button class="tab-btn active" data-tab="builder">Build</button>
+        <button class="tab-btn" data-tab="jewelry">Jewelry</button>
+        <button class="tab-btn" data-tab="crafter">Crafter</button>
+      </nav>
+      
+      <div class="header-actions">
+        <div class="preset-dropdown">
+          <button id="preset-btn" class="btn btn-secondary">Load Preset ▾</button>
+          <div class="preset-menu" id="preset-menu" hidden>
+            <!-- Populated by JS -->
+          </div>
+        </div>
+        <button id="import-calc-btn" class="btn btn-secondary" title="Import build from SWGR Skill Calculator">Import Build</button>
+        <button id="share-btn" class="btn btn-primary">Copy Share Link</button>
+        <button id="reset-btn" class="btn btn-danger">Reset All</button>
+      </div>
+    </header>
+
+    <!-- Builder View -->
+    <div id="builder-view" class="view-container active">
+      <!-- Collapsible Help Panel for New Players -->
+      <details class="help-panel">
+        <summary class="help-panel-toggle">
+          <svg class="help-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/></svg>
+          New Player Guide: Why You Need SEAs & Armor
+          <svg class="expand-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
+        </summary>
+        <div class="help-panel-content">
+          <h4>What is SWGear?</h4>
+          <p>SWGear is a build planner for <strong>Star Wars Galaxies Restoration</strong> that helps you plan your armor SEA (Skill Enhancing Attachment) loadout. SEAs are crafted items that attach to armor pieces to give you stat bonuses.</p>
+          
+          <h4>Why do I need both SEAs AND armor?</h4>
+          <p>In SWG Restoration, your character's effectiveness in combat depends heavily on <strong>stacking stats</strong> from multiple sources:</p>
+          <ul>
+            <li><strong>Armor SEAs</strong> - Provide the bulk of your stats (+35 per piece × 3 stats × 12 pieces = massive bonuses)</li>
+            <li><strong>Crafted Armor</strong> - Provides bonus HP (up to ~800-900 from capped resources)</li>
+            <li><strong>Jewelry</strong> - Looted items with additional stat bonuses</li>
+            <li><strong>Backpacks</strong> - Special items like the Kashykian Bandolier that give +15 to all stats</li>
+            <li><strong>Food/Buffs</strong> - Temporary boosts from crafted foods and player buffs</li>
+          </ul>
+          
+          <h4>Understanding Core Stats</h4>
+          <p>The six core stats affect different aspects of gameplay:</p>
+          <ul>
+            <li><strong>Ranged/Melee General</strong> - Speed, Defense, and Accuracy for your combat type</li>
+            <li><strong>Defense General</strong> - Defense value and Heal Efficiency</li>
+            <li><strong>Toughness Boost</strong> - Health pool (+2 HP per point)</li>
+            <li><strong>Endurance Boost</strong> - Action, Mind pools, and HAM regeneration</li>
+            <li><strong>Opportune Chance</strong> - Accuracy, Medical Speed, and Critical Chance</li>
+          </ul>
+          
+          <h4>Stat Thresholds</h4>
+          <p>Stats have diminishing returns after certain thresholds (general guidelines - optimal targets vary by stat):</p>
+          <ul>
+            <li><span class="threshold-ideal">250-300</span> - Ideal range for most stats</li>
+            <li><span class="threshold-diminishing">300-350</span> - Diminishing returns zone</li>
+            <li><span class="threshold-overcapped">350+</span> - Overcapped (wasted points)</li>
+          </ul>
+          
+          <h4>How to Use This Tool</h4>
+          <ol>
+            <li>Click on armor slots to add stats (or use Quick Presets)</li>
+            <li>Add backpack bonuses and external buffs</li>
+            <li>Watch the Stat Totals panel to stay within optimal thresholds</li>
+            <li>Switch to the Crafter tab to get a junk loot shopping list</li>
+            <li>Share your build using the "Copy Share Link" button</li>
+          </ol>
+        </div>
+      </details>
+
+      <!-- Tool Description -->
+      <section class="tool-description">
+        <p>Plan your armor and weapon SEA loadout. Select armor slots to add stat modifiers, then switch to the Crafter tab for the junk loot shopping list.</p>
+        <p class="tool-hint"><strong>Exotic slots</strong> (Chest, Shirt, Weapon) can accept any modifier type.</p>
+      </section>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <!-- Left: Armor Slots -->
+        <section class="armor-section">
+          <div class="section-header">
+            <h2>Armor Slots</h2>
+            <div class="quick-presets" id="quick-presets">
+              <button class="quick-preset-btn" data-preset="ranged-dps" title="Ranged DPS: RNG/DEF/OPP">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="12" cy="12" r="6" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg>
+              </button>
+              <button class="quick-preset-btn" data-preset="melee-dps" title="Melee DPS: MLE/DEF/OPP">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.92 5L5 6.92 10.08 12 5 17.08 6.92 19 13.92 12 6.92 5M10.08 5L19 5 19 7 10.08 7 10.08 5M10.08 17L19 17 19 19 10.08 19 10.08 17"/></svg>
+              </button>
+              <button class="quick-preset-btn" data-preset="healer" title="Healer: END/TGH/DEF">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3M11 17H9V13H5V11H9V7H11V11H15V13H11V17M17 14H15V10H17V14"/></svg>
+              </button>
+              <button class="quick-preset-btn" data-preset="tank" title="Tank: TGH/DEF/MLE">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1M12 5A3 3 0 0 1 15 8A3 3 0 0 1 12 11A3 3 0 0 1 9 8A3 3 0 0 1 12 5M17.13 17C15.92 18.85 14.11 20.24 12 20.92C9.89 20.24 8.08 18.85 6.87 17C6.53 16.5 6.24 16 6 15.47C6 13.82 9.13 12.5 12 12.5C14.87 12.5 18 13.82 18 15.47C17.76 16 17.47 16.5 17.13 17Z"/></svg>
+              </button>
+              <button class="quick-preset-btn" data-preset="hybrid" title="Hybrid: RNG/MLE/OPP">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L4 5V6.09C4 11.54 7.38 16.66 12 18C16.62 16.66 20 11.54 20 6.09V5L12 2M18 6.09C18 10.58 15.45 14.76 12 16C8.55 14.76 6 10.58 6 6.09V5.95L12 3.68L18 5.95V6.09M8 11L10.5 13.5L16 8L14.59 6.59L10.5 10.67L9.41 9.59L8 11"/></svg>
+              </button>
+              <span class="quick-preset-divider"></span>
+              <button class="quick-preset-btn clear-btn" id="clear-all-btn" title="Clear All Slots">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z"/></svg>
+              </button>
+            </div>
+            <div class="view-toggle">
+              <button class="toggle-btn active" data-view="visual">Visual</button>
+              <button class="toggle-btn" data-view="list">List</button>
+            </div>
+          </div>
+          <!-- Belt Type Toggle -->
+          <div id="belt-toggle-container"></div>
+          <div id="slot-container" class="slot-container">
+            <!-- Armor slots rendered here -->
+          </div>
+        </section>
+
+        <!-- Center: Slot Editor -->
+        <section class="editor-section" id="editor-section">
+          <div class="editor-placeholder">
+            <p>Select an armor slot to add stats</p>
+          </div>
+        </section>
+
+        <!-- Right: Stat Totals -->
+        <section class="stats-section">
+          <div class="section-header">
+            <h2>Stat Totals</h2>
+          </div>
+          <div id="stat-summary" class="stat-summary">
+            <p class="empty-state">No stats selected yet</p>
+          </div>
+          
+          <!-- Backpack Section -->
+          <div id="backpack-container" class="backpack-container">
+            <!-- Backpack section rendered here -->
+          </div>
+          
+          <!-- Bake-In Stats Section -->
+          <div id="bakein-container" class="bakein-container">
+            <!-- Bake-in editor rendered here -->
+          </div>
+          
+          <!-- Heroic Jewelry Section -->
+          <div id="jewelry-container" class="jewelry-container">
+            <!-- Jewelry section rendered here -->
+          </div>
+          
+          <!-- Familiar Section -->
+          <div id="familiar-container" class="familiar-container">
+            <!-- Familiar picker rendered here -->
+          </div>
+          
+          <!-- Implant Section -->
+          <div id="implant-container" class="implant-container">
+            <!-- Implant editor rendered here -->
+          </div>
+          
+          <div id="external-buffs-container" class="external-buffs-container">
+            <!-- External buffs rendered here -->
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Jewelry View -->
+    <div id="jewelry-view" class="view-container">
+      <section class="jewelry-tab-content">
+        <div class="jewelry-header">
+          <h2>Jewelry & Gear Stats</h2>
+          <p class="jewelry-description">Track your jewelry stats (Necklace, Rings, Bracelets). These are loot-based items with fixed stats that add to your build totals.</p>
+        </div>
+        
+        <div id="jewelry-content" class="jewelry-content">
+          <!-- Jewelry editor rendered here -->
+        </div>
+        
+        <div id="bracelet-content" class="bracelet-content">
+          <!-- Bracelet picker rendered here -->
+        </div>
+      </section>
+    </div>
+
+    <!-- Crafter View -->
+    <div id="crafter-view" class="view-container">
+      <section class="crafter-tab-content">
+        <div class="crafter-header">
+          <h2>Crafter Combination Explorer</h2>
+          <p class="crafter-description">Select junk loot combinations for each stat in your build. Use the dropdowns to explore alternative recipes.</p>
+        </div>
+        
+        <div id="crafter-content" class="crafter-content">
+          <p class="empty-state">Add stats to your build to see combination options.</p>
+        </div>
+        
+        <div class="crafter-shopping">
+          <div class="shopping-header">
+            <h3>Shopping List</h3>
+            <button id="copy-shopping-btn" class="btn btn-primary">Copy to Clipboard</button>
+          </div>
+          <div id="shopping-list" class="shopping-list-table">
+            <p class="empty-state">Select combinations above to build your shopping list.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Modifier Picker Modal -->
+    <div id="modifier-modal" class="modal" hidden>
+      <div class="modal-backdrop"></div>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Select Modifier</h3>
+          <button class="modal-close" aria-label="Close">X</button>
+        </div>
+        <div class="modal-body">
+          <input type="search" id="modifier-search" class="search-input" placeholder="Search modifiers..." autocomplete="off">
+          <div class="category-filter">
+            <button class="filter-btn active" data-category="all">All</button>
+            <button class="filter-btn" data-category="core">Core</button>
+            <button class="filter-btn" data-category="popular">Popular</button>
+            <button class="filter-btn" data-category="combat">Combat</button>
+            <button class="filter-btn" data-category="crafting">Crafting</button>
+          </div>
+          <div id="modifier-list" class="modifier-list">
+            <!-- Modifiers rendered here -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Skill Calculator Import Modal -->
+  <div id="import-modal" class="modal-overlay" hidden>
+    <div class="modal skill-import-modal">
+      <div class="modal-header">
+        <h3>Import from Skill Calculator</h3>
+        <button class="modal-close" aria-label="Close">X</button>
+      </div>
+      <div class="modal-body">
+        <p>Paste your SWGR Skill Calculator URL to get SEA recommendations based on your build.</p>
+        <input type="url" id="skill-calc-url" class="search-input" placeholder="https://swgr.org/skill-calculator/?skills=..." autocomplete="off">
+        <div id="import-result" class="import-result" hidden>
+          <!-- Recommendations will appear here -->
+        </div>
+        <div class="modal-actions">
+          <button id="analyze-build-btn" class="btn btn-primary">Analyze Build</button>
+          <button id="apply-suggestions-btn" class="btn btn-secondary" disabled>Apply Suggestions</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
