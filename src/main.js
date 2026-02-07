@@ -42,6 +42,7 @@ let jewelryContainer = null;
 let braceletContainer = null;
 let bakeInContainer = null;
 let familiarContainer = null;
+let braceletBuildContainer = null;
 let jediToggleContainer = null;
 let implantContainer = null;
 let shareBtn = null;
@@ -64,6 +65,7 @@ function init() {
   braceletContainer = document.getElementById('bracelet-content');
   bakeInContainer = document.getElementById('bakein-container');
   familiarContainer = document.getElementById('familiar-container');
+  braceletBuildContainer = document.getElementById('bracelet-build-container');
   jediToggleContainer = document.getElementById('jedi-toggle-container');
   implantContainer = document.getElementById('implant-container');
   shareBtn = document.getElementById('share-btn');
@@ -480,15 +482,17 @@ function render() {
   const bakeInTotals = calculateBakeInTotals(currentBuild.bakeInStats);
   const familiarStats = getFamiliarStats(currentBuild.familiar || 'none');
   const implantStats = getImplantStats(currentBuild.implants || {});
+  const braceletStats = getBraceletStats(currentBuild.bracelets || {});
   
-  // Combine external buffs with backpack, jewelry, familiar, implant, and bake-in stats for the summary
+  // Combine external buffs with backpack, jewelry, familiar, implant, bracelet and bake-in stats for the summary
   const allExternalStats = [
     ...(currentBuild.externalBuffs || []),
     ...backpackStats.map(s => ({ modifier: s.modifier, value: s.value, source: 'backpack' })),
     ...jewelryStats.map(s => ({ modifier: s.modifier, value: s.value, source: 'jewelry' })),
     ...bakeInTotals.map(s => ({ modifier: s.modifier, value: s.value, source: 'armor' })),
     ...familiarStats,
-    ...implantStats
+    ...implantStats,
+    ...braceletStats.map(s => ({ modifier: s.modifier, value: s.value, source: 'bracelet' }))
   ];
   
   renderStatSummary(statSummary, currentBuild, modifiersData, allExternalStats, currentBuild.armorBonusHP || 0);
@@ -526,6 +530,11 @@ function render() {
   // Render Jedi toggle
   if (jediToggleContainer) {
     renderJediToggle(jediToggleContainer, currentBuild.jediMode || false, handleJediModeUpdate);
+  }
+  
+  // Render bracelet picker in Build tab (always visible)
+  if (braceletBuildContainer) {
+    renderBraceletPicker(braceletBuildContainer, currentBuild.bracelets || {}, handleBraceletUpdate);
   }
   
   // Note: Crafter view is now rendered on-demand when the Crafter tab is clicked

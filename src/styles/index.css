@@ -3735,3 +3735,126 @@ body {
   background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(37, 99, 235, 0.2) 100%);
   border: 1px solid rgba(59, 130, 246, 0.4);
 }
+
+/* ===== COMPACT LAYOUT - FIT FULLSCREEN ===== */
+
+/* Reduce header padding */
+.app-header {
+  padding: var(--spacing-xs) var(--spacing-md);
+}
+
+/* Reduce main content padding */
+main.content {
+  padding: var(--spacing-sm);
+  gap: var(--spacing-sm);
+}
+
+/* Compact side panel sections */
+.stats-section {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+}
+
+.stats-section .section-header {
+  padding: var(--spacing-xs) 0;
+  margin-bottom: var(--spacing-xs);
+}
+
+.stats-section .section-header h2 {
+  font-size: var(--font-size-sm);
+}
+
+/* Compact all side panel containers */
+.backpack-container,
+.bakein-container,
+.jewelry-container,
+.familiar-container,
+.implant-container,
+.external-buffs-container {
+  padding: var(--spacing-xs) 0;
+  margin-bottom: var(--spacing-xs);
+}
+
+/* Reduce section header sizes */
+.backpack-header,
+.jewelry-header,
+.familiar-header,
+.implant-header,
+.buff-header,
+.bakein-header {
+  padding: var(--spacing-xs) 0;
+  margin-bottom: var(--spacing-xs);
+}
+
+.backpack-header h3,
+.jewelry-header h3,
+.familiar-header h3,
+.implant-header h3,
+.buff-header h3,
+.bakein-header h3 {
+  font-size: var(--font-size-xs);
+}
+
+/* Compact implant grid */
+.implant-grid {
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs);
+}
+
+.implant-row {
+  gap: var(--spacing-xs);
+}
+
+/* ===== BRACELET BUILD SECTION ===== */
+.bracelet-build-section {
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-sm);
+  background: var(--color-bg-elevated);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+
+.bracelet-build-section .bracelet-header {
+  margin-bottom: var(--spacing-sm);
+}
+
+.bracelet-build-section .bracelet-header h3 {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.bracelet-build-section .bracelet-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-sm);
+}
+
+.bracelet-build-section .bracelet-slot {
+  padding: var(--spacing-xs);
+}
+
+/* Reduce stat summary padding */
+.stat-summary {
+  padding: var(--spacing-xs);
+}
+
+.stat-summary .stat-row {
+  padding: var(--spacing-xs) 0;
+}
+
+/* Compact dropdown styling */
+.backpack-select,
+.jewelry-select,
+.familiar-select {
+  padding: var(--spacing-xs);
+  font-size: var(--font-size-xs);
+}
+
+/* Hide editor placeholder when bracelet picker is visible */
+.editor-section .editor-placeholder + .bracelet-build-section {
+  margin-top: var(--spacing-sm);
+}
