@@ -528,16 +528,8 @@ function render() {
     renderJediToggle(jediToggleContainer, currentBuild.jediMode || false, handleJediModeUpdate);
   }
   
-  // Add inline belt toggle click handler (delegated from slot container)
-  slotContainer?.querySelectorAll('.belt-toggle-inline').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.stopPropagation(); // Don't trigger slot click
-      const newType = currentBuild.beltType === 'clothing' ? 'armor' : 'clothing';
-      handleBeltTypeChange(newType);
-    });
-  });
-  
   // Note: Crafter view is now rendered on-demand when the Crafter tab is clicked
+  // Note: Belt toggle is now handled in renderVisualView via callback
 }
 
 /**
@@ -648,7 +640,7 @@ function handlePowerBitChange(slotId, newPowerBit, modifier) {
  */
 function renderSlots() {
   if (currentView === 'visual') {
-    renderVisualView(slotContainer, currentBuild, handleSlotClick);
+    renderVisualView(slotContainer, currentBuild, handleSlotClick, handleBeltTypeChange);
     slotContainer.classList.add('visual-view');
     slotContainer.classList.remove('list-view');
   } else {

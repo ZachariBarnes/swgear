@@ -72,17 +72,21 @@ export function createEmptyBuild() {
  * @param {HTMLElement} container - Container element
  * @param {Object} build - Current build state
  * @param {Function} onSlotClick - Callback when slot is clicked
+ * @param {Function} onBeltToggle - Callback when belt toggle is clicked (optional)
  */
-export function renderVisualView(container, build, onSlotClick) {
+export function renderVisualView(container, build, onSlotClick, onBeltToggle) {
   container.innerHTML = `
     <div class="armor-visual">
-      ${SLOT_CONFIG.map(slot => renderSlotCard(slot, build.slots[slot.id])).join('')}
+      ${SLOT_CONFIG.map(slot => renderSlotCard(slot, build.slots[slot.id], build.beltType)).join('')}
     </div>
   `;
   
   // Add click handlers for slot wrappers
   container.querySelectorAll('.slot-wrapper').forEach(wrapper => {
-    wrapper.addEventListener('click', () => {
+    wrapper.addEventListener('click', (e) => {
+      // Don't trigger slot click if clicking belt toggle
+      if (e.target.closest('.belt-toggle-inline')) return;
+      
       container.querySelectorAll('.slot-card').forEach(c => c.classList.remove('active'));
       const card = wrapper.querySelector('.slot-card');
       if (card) card.classList.add('active');
@@ -90,6 +94,18 @@ export function renderVisualView(container, build, onSlotClick) {
       onSlotClick(slotId);
     });
   });
+  
+  // Add click handler for belt toggle button
+  if (onBeltToggle) {
+    container.querySelectorAll('.belt-toggle-inline').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const currentType = build.beltType || 'clothing';
+        const newType = currentType === 'clothing' ? 'armor' : 'clothing';
+        onBeltToggle(newType);
+      });
+    });
+  }
 }
 
 /**
@@ -181,8 +197,11 @@ function isCoreArmorStat(statName) {
 /**
  * Render a single slot card for visual view
  * Uses wrapper structure with stat tags in sidebar
+ * @param {Object} slot - Slot config
+ * @param {Object} slotData - Slot build data
+ * @param {string} beltType - Current belt type ('clothing' or 'armor')
  */
-function renderSlotCard(slot, slotData) {
+function renderSlotCard(slot, slotData, beltType = 'clothing') {
   const hasStats = slotData?.stats?.length > 0 && slotData.stats.some(s => s.modifier);
   const statList = slotData?.stats?.filter(s => s.modifier) || [];
   
@@ -214,10 +233,13 @@ function renderSlotCard(slot, slotData) {
   // Only render sidebar if there are stats
   const sidebarHtml = hasStats ? `<div class="slot-tags-sidebar">${statTagsHtml}</div>` : '';
   
-  // Belt toggle inline button (only for belt slot)
+  // Belt toggle inline button (only for belt slot) - shows current state
+  const isClothing = beltType === 'clothing';
   const beltToggleHtml = slot.canToggleExotic ? `
-    <button class="belt-toggle-inline" data-slot-id="${slot.id}" title="Toggle Belt/PSG mode">
-      <span class="toggle-icon">⚡</span>
+    <button class="belt-toggle-inline ${isClothing ? 'clothing' : 'armor'}" 
+            data-slot-id="${slot.id}" 
+            title="${isClothing ? 'Belt (Clothing) - Click for PSG' : 'PSG (Armor) - Click for Belt'}">
+      <span class="toggle-icon">${isClothing ? '👔' : '🛡️'}</span>
     </button>
   ` : '';
   

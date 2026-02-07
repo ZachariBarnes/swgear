@@ -3689,41 +3689,49 @@ body {
   position: relative;
 }
 
-/* Jedi Toggle */
-.jedi-toggle {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-sm);
-  padding: var(--spacing-xs) var(--spacing-sm);
-  background: var(--color-bg-elevated);
-  border-radius: var(--radius-sm);
-  margin-bottom: var(--spacing-sm);
-}
-
-.jedi-toggle label {
-  display: flex;
+/* Jedi Toggle Button */
+.jedi-toggle-btn {
+  display: inline-flex;
   align-items: center;
   gap: var(--spacing-xs);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-secondary);
   cursor: pointer;
   font-size: var(--font-size-sm);
-  color: var(--color-text-secondary);
+  font-weight: 500;
+  transition: all 0.2s ease;
 }
 
-.jedi-toggle input[type="checkbox"] {
-  width: 16px;
-  height: 16px;
-  accent-color: #a78bfa;
+.jedi-toggle-btn:hover {
+  background: var(--color-bg-elevated);
+  border-color: var(--color-accent);
 }
 
-.jedi-toggle .jedi-icon {
-  font-size: 16px;
+.jedi-toggle-btn.active {
+  background: linear-gradient(135deg, rgba(167, 139, 250, 0.25) 0%, rgba(139, 92, 246, 0.2) 100%);
+  border-color: #a78bfa;
+  color: #c4b5fd;
+  box-shadow: 0 0 12px rgba(167, 139, 250, 0.3);
 }
 
-.jedi-toggle.active {
-  background: linear-gradient(135deg, rgba(167, 139, 250, 0.2) 0%, rgba(139, 92, 246, 0.2) 100%);
-  border: 1px solid rgba(167, 139, 250, 0.3);
+.jedi-toggle-btn .jedi-icon {
+  font-size: 14px;
 }
 
-.jedi-toggle.active label {
-  color: #a78bfa;
+.jedi-toggle-btn .jedi-text {
+  font-weight: 500;
+}
+
+/* Belt Toggle Inline - improved state styling */
+.belt-toggle-inline.clothing {
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+}
+
+.belt-toggle-inline.armor {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(37, 99, 235, 0.2) 100%);
+  border: 1px solid rgba(59, 130, 246, 0.4);
 }
