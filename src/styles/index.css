@@ -4178,6 +4178,44 @@ body {
   white-space: nowrap;
 }
 
+/* Jedi equipment toggles */
+.jedi-equip-toggles {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.jedi-equip-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.6875rem;
+  cursor: pointer;
+  background: rgba(100, 100, 100, 0.15);
+  color: var(--color-text-secondary);
+  border: 1px solid transparent;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.jedi-equip-toggle input[type="checkbox"] {
+  display: none;
+}
+
+.jedi-equip-toggle.equipped {
+  background: rgba(167, 139, 250, 0.15);
+  color: #c4b5fd;
+  border-color: rgba(167, 139, 250, 0.3);
+}
+
+.jedi-equip-toggle:hover {
+  background: rgba(167, 139, 250, 0.2);
+  border-color: rgba(167, 139, 250, 0.4);
+}
+
 /* Locked slot cards */
 .slot-wrapper.jedi-locked {
   cursor: default;

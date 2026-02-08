@@ -7,7 +7,7 @@
  * - Jedi mode: Locks biceps/bracers (robe), belt (Bodo Baas), renames weapon to Lightsaber
  */
 
-import { JEDI_LOCKED_SLOTS } from './JediToggle.js';
+import { JEDI_LOCKED_SLOTS, getJediLockedSlots } from './JediToggle.js';
 
 // Slot configuration - accurate to SWG Restoration
 export const SLOT_CONFIG = [
@@ -76,12 +76,15 @@ export function createEmptyBuild() {
  * @param {Object} build - Current build state
  * @param {Function} onSlotClick - Callback when slot is clicked
  * @param {Function} onBeltToggle - Callback when belt toggle is clicked (optional)
- * @param {boolean} jediMode - Whether Jedi mode is active
+ * @param {Object|boolean} jediState - Jedi mode state object { enabled, robeEquipped, beltEquipped } or false
  */
-export function renderVisualView(container, build, onSlotClick, onBeltToggle, jediMode = false) {
+export function renderVisualView(container, build, onSlotClick, onBeltToggle, jediState = false) {
+  const jediMode = jediState?.enabled || jediState === true;
+  const lockedSlots = jediState && typeof jediState === 'object' ? getJediLockedSlots(jediState) : (jediMode ? [...JEDI_LOCKED_SLOTS, 'belt'] : []);
+  
   container.innerHTML = `
     <div class="armor-visual">
-      ${SLOT_CONFIG.map(slot => renderSlotCard(slot, build.slots[slot.id], build.beltType, jediMode)).join('')}
+      ${SLOT_CONFIG.map(slot => renderSlotCard(slot, build.slots[slot.id], build.beltType, jediMode, lockedSlots)).join('')}
     </div>
   `;
   
@@ -93,7 +96,7 @@ export function renderVisualView(container, build, onSlotClick, onBeltToggle, je
       
       // Don't allow clicking locked Jedi slots
       const slotId = wrapper.dataset.slotId;
-      if (jediMode && isSlotLockedByJedi(slotId)) return;
+      if (jediMode && lockedSlots.includes(slotId)) return;
       
       container.querySelectorAll('.slot-card').forEach(c => c.classList.remove('active'));
       const card = wrapper.querySelector('.slot-card');
@@ -202,20 +205,10 @@ function isCoreArmorStat(statName) {
 }
 
 /**
- * Check if a slot is locked in Jedi mode
- * Locked slots: biceps, bracers (robe) + belt (Bodo Baas)
- */
-function isSlotLockedByJedi(slotId) {
-  return JEDI_LOCKED_SLOTS.includes(slotId) || slotId === 'belt';
-}
-
-/**
  * Get display name for a slot, accounting for Jedi mode
  */
-function getSlotDisplayName(slot, jediMode) {
+function getSlotDisplayName(slot, jediMode, lockedSlots = []) {
   if (!jediMode) return slot.name;
-  if (JEDI_LOCKED_SLOTS.includes(slot.id)) return slot.name; // Keep normal name, show "Jedi Robe" label
-  if (slot.id === 'belt') return 'Belt'; // Will show "Bodo Baas" label
   if (slot.id === 'weapon') return 'Lightsaber';
   return slot.name;
 }
@@ -227,12 +220,13 @@ function getSlotDisplayName(slot, jediMode) {
  * @param {Object} slotData - Slot build data
  * @param {string} beltType - Current belt type ('clothing' or 'armor')
  * @param {boolean} jediMode - Whether Jedi mode is active
+ * @param {Array} lockedSlots - Array of slot IDs locked by Jedi equipment
  */
-function renderSlotCard(slot, slotData, beltType = 'clothing', jediMode = false) {
-  const isLocked = jediMode && isSlotLockedByJedi(slot.id);
-  const isBeltLocked = jediMode && slot.id === 'belt';
-  const isRobeLocked = jediMode && JEDI_LOCKED_SLOTS.includes(slot.id);
-  const displayName = getSlotDisplayName(slot, jediMode);
+function renderSlotCard(slot, slotData, beltType = 'clothing', jediMode = false, lockedSlots = []) {
+  const isLocked = jediMode && lockedSlots.includes(slot.id);
+  const isBeltLocked = isLocked && slot.id === 'belt';
+  const isRobeLocked = isLocked && JEDI_LOCKED_SLOTS.includes(slot.id);
+  const displayName = getSlotDisplayName(slot, jediMode, lockedSlots);
   
   // If slot is locked by Jedi mode, render a locked version
   if (isLocked) {

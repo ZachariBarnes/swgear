@@ -270,10 +270,12 @@ export function encodeBuild(build) {
     }
   }
   
-  // Add Jedi mode (format: J.cloakId)
+  // Add Jedi mode (format: J.cloakId.flags)
   if (build.jediMode && build.jediMode.enabled) {
     const cloakId = build.jediMode.cloakId || 'none';
-    parts.push(`J.${cloakId}`);
+    const robeFlag = build.jediMode.robeEquipped !== false ? '1' : '0';
+    const beltFlag = build.jediMode.beltEquipped !== false ? '1' : '0';
+    parts.push(`J.${cloakId}.${robeFlag}${beltFlag}`);
   }
   
   return parts.join('|');
@@ -419,9 +421,15 @@ export function decodeBuild(encoded) {
       continue;
     }
     
-    // Parse Jedi mode (J.cloakId)
+    // Parse Jedi mode (J.cloakId.flags)
     if (firstSegment === 'J' && segments.length > 1) {
-      build.jediMode = { enabled: true, cloakId: segments[1] || 'none' };
+      const flags = segments[2] || '11';
+      build.jediMode = {
+        enabled: true,
+        cloakId: segments[1] || 'none',
+        robeEquipped: flags[0] !== '0',
+        beltEquipped: flags[1] !== '0'
+      };
       continue;
     }
     

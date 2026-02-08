@@ -8,8 +8,6 @@
  * - In Jedi mode, locked slots (biceps, bracers, belt) are excluded
  */
 
-import { JEDI_LOCKED_SLOTS } from './JediToggle.js';
-
 // Armor slots that can have bake-in stats (excludes weapon)
 const BAKEABLE_SLOTS = [
   'helmet', 'chest', 'shirt', 'lbicep', 'rbicep', 
@@ -42,17 +40,15 @@ const SLOT_NAMES = {
  * @param {HTMLElement} container - Container element
  * @param {Object} bakeInStats - Current bake-in config {enabled, global, perSlot}
  * @param {Function} onUpdate - Callback when bake-in changes
- * @param {boolean} jediMode - Whether Jedi mode is active (locks some slots)
+ * @param {Array} jediLockedSlots - Array of slot IDs locked by Jedi equipment
  */
-export function renderBakeInEditor(container, bakeInStats, onUpdate, jediMode = false) {
+export function renderBakeInEditor(container, bakeInStats, onUpdate, jediLockedSlots = []) {
   if (!bakeInStats) {
     bakeInStats = { enabled: false, global: null, perSlot: {} };
   }
   
   // Filter out Jedi-locked slots
-  const JEDI_BELT = ['belt'];
-  const lockedSlots = jediMode ? [...JEDI_LOCKED_SLOTS, ...JEDI_BELT] : [];
-  const availableSlots = BAKEABLE_SLOTS.filter(s => !lockedSlots.includes(s));
+  const availableSlots = BAKEABLE_SLOTS.filter(s => !jediLockedSlots.includes(s));
   
   const { enabled, global, perSlot } = bakeInStats;
   const showPerSlot = enabled && Object.keys(perSlot).length > 0;
@@ -247,15 +243,13 @@ function setupBakeInListeners(container, bakeInStats, onUpdate) {
 /**
  * Calculate total bake-in stat bonuses
  * @param {Object} bakeInStats - Bake-in configuration
- * @param {boolean} jediMode - Whether Jedi mode is active
+ * @param {Array} jediLockedSlots - Array of slot IDs locked by Jedi equipment
  * @returns {Array} - Array of { modifier, value } totals
  */
-export function calculateBakeInTotals(bakeInStats, jediMode = false) {
+export function calculateBakeInTotals(bakeInStats, jediLockedSlots = []) {
   if (!bakeInStats || !bakeInStats.enabled) return [];
   
-  const JEDI_BELT = ['belt'];
-  const lockedSlots = jediMode ? [...JEDI_LOCKED_SLOTS, ...JEDI_BELT] : [];
-  const availableSlots = BAKEABLE_SLOTS.filter(s => !lockedSlots.includes(s));
+  const availableSlots = BAKEABLE_SLOTS.filter(s => !jediLockedSlots.includes(s));
   
   const totals = {};
   

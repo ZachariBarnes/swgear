@@ -42,22 +42,51 @@ export function getJediCloakStats(cloakId) {
 }
 
 /**
- * Get Belt of Bodo Baas stats when Jedi mode is active
+ * Get Belt of Bodo Baas stats when Jedi mode is active and belt is equipped
+ * @param {Object} jediState - Jedi mode state
  * @returns {Array} - Array of { modifier, value, source }
  */
-export function getBodoBasStats() {
+export function getBodoBasStats(jediState) {
+  if (!jediState?.beltEquipped) return [];
   return BODO_BAAS_STATS.map(s => ({ modifier: s.modifier, value: s.value, source: 'bodo-baas' }));
+}
+
+/**
+ * Check if the Jedi robe is currently locking slots
+ */
+export function isRobeEquipped(build) {
+  return build?.jediMode?.enabled === true && build?.jediMode?.robeEquipped !== false;
+}
+
+/**
+ * Check if the Bodo Baas belt is currently equipped
+ */
+export function isBeltEquipped(build) {
+  return build?.jediMode?.enabled === true && build?.jediMode?.beltEquipped !== false;
+}
+
+/**
+ * Get the list of currently locked slots based on Jedi state
+ */
+export function getJediLockedSlots(jediState) {
+  if (!jediState?.enabled) return [];
+  const locked = [];
+  if (jediState.robeEquipped !== false) locked.push(...JEDI_LOCKED_SLOTS);
+  if (jediState.beltEquipped !== false) locked.push('belt');
+  return locked;
 }
 
 /**
  * Render the Jedi toggle + cloak selector
  * @param {HTMLElement} container - Container element
- * @param {Object} jediState - { enabled, cloakId }
+ * @param {Object} jediState - { enabled, cloakId, robeEquipped, beltEquipped }
  * @param {Function} onChange - Callback with updated jediState
  */
 export function renderJediToggle(container, jediState, onChange) {
   const enabled = jediState?.enabled || false;
   const cloakId = jediState?.cloakId || 'none';
+  const robeEquipped = jediState?.robeEquipped !== false; // default true
+  const beltEquipped = jediState?.beltEquipped !== false; // default true
   const activeClass = enabled ? 'active' : '';
   
   const cloakOptions = jediCloaks.map(c => {
@@ -90,9 +119,15 @@ export function renderJediToggle(container, jediState, onChange) {
           </select>
         </div>
         ${cloakStatsHtml}
-        <div class="jedi-info">
-          <span class="jedi-info-item" title="Belt of Bodo Baas: +50 TGH/OPP/RNG/MLE">🗡️ Bodo Baas Belt</span>
-          <span class="jedi-info-item" title="Biceps & Bracers locked (Jedi Robe)">🥋 Robe (Biceps/Bracers)</span>
+        <div class="jedi-equip-toggles">
+          <label class="jedi-equip-toggle ${robeEquipped ? 'equipped' : ''}" title="Toggle Jedi Robe (locks Biceps & Bracers)">
+            <input type="checkbox" id="jedi-robe-toggle" ${robeEquipped ? 'checked' : ''}>
+            <span>🥋 Jedi Robe</span>
+          </label>
+          <label class="jedi-equip-toggle ${beltEquipped ? 'equipped' : ''}" title="Toggle Belt of Bodo Baas (+50 TGH/OPP/RNG/MLE)">
+            <input type="checkbox" id="jedi-belt-toggle" ${beltEquipped ? 'checked' : ''}>
+            <span>🗡️ Bodo Baas Belt</span>
+          </label>
         </div>
       ` : ''}
     </div>
@@ -102,7 +137,7 @@ export function renderJediToggle(container, jediState, onChange) {
   const btn = container.querySelector('#jedi-mode-btn');
   if (btn) {
     btn.addEventListener('click', () => {
-      onChange({ enabled: !enabled, cloakId: enabled ? 'none' : cloakId });
+      onChange({ enabled: !enabled, cloakId: enabled ? 'none' : cloakId, robeEquipped, beltEquipped });
     });
   }
   
@@ -110,7 +145,23 @@ export function renderJediToggle(container, jediState, onChange) {
   const cloakSelect = container.querySelector('#jedi-cloak-select');
   if (cloakSelect) {
     cloakSelect.addEventListener('change', (e) => {
-      onChange({ enabled, cloakId: e.target.value });
+      onChange({ enabled, cloakId: e.target.value, robeEquipped, beltEquipped });
+    });
+  }
+  
+  // Robe toggle
+  const robeToggle = container.querySelector('#jedi-robe-toggle');
+  if (robeToggle) {
+    robeToggle.addEventListener('change', (e) => {
+      onChange({ enabled, cloakId, robeEquipped: e.target.checked, beltEquipped });
+    });
+  }
+  
+  // Belt toggle
+  const beltToggle = container.querySelector('#jedi-belt-toggle');
+  if (beltToggle) {
+    beltToggle.addEventListener('change', (e) => {
+      onChange({ enabled, cloakId, robeEquipped, beltEquipped: e.target.checked });
     });
   }
 }
