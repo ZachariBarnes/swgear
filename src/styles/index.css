@@ -3940,14 +3940,123 @@ select option {
   color: var(--color-text-primary);
 }
 
-/* Shorter center editor section */
+/* ===== NO SCROLL FULLSCREEN LAYOUT ===== */
+
+/* Prevent page scroll */
+html, body {
+  overflow: hidden;
+  height: 100vh;
+}
+
+#app {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.view-container.active {
+  height: calc(100vh - 50px);
+  overflow: hidden;
+}
+
+main.content {
+  height: calc(100vh - 130px);
+  overflow: hidden;
+}
+
+/* Editor section - no scroll, compact */
 .editor-section {
-  max-height: calc(100vh - 200px);
-  overflow-y: auto;
+  max-height: none;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
 }
 
 .editor-placeholder {
-  padding: var(--spacing-sm);
-  min-height: 60px;
+  padding: var(--spacing-xs);
+  min-height: 40px;
 }
 
+/* Slot editor - compact when visible */
+.slot-editor {
+  padding: var(--spacing-sm);
+  max-height: 180px;
+}
+
+.slot-editor .slot-header {
+  padding: var(--spacing-xs) 0;
+}
+
+.slot-editor .stat-rows {
+  gap: var(--spacing-xs);
+}
+
+.slot-editor .stat-row {
+  padding: var(--spacing-xs);
+  min-height: 36px;
+}
+
+/* ===== INLINE BRACELET PICKER ===== */
+.bracelet-picker-inline {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-xs);
+  background: var(--color-bg-elevated);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+}
+
+.bracelet-label {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+.bracelet-select-inline {
+  flex: 1;
+  min-width: 120px;
+  max-width: 180px;
+  padding: var(--spacing-xs);
+  background: var(--color-bg-tertiary);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+}
+
+.bracelet-select-inline option {
+  background: var(--color-bg-tertiary);
+  color: var(--color-text-primary);
+}
+
+/* Bracelet section - minimal height */
+.bracelet-build-section {
+  margin-top: var(--spacing-xs);
+  padding: var(--spacing-xs);
+}
+
+/* Quick selectors - very compact */
+.quick-selectors-row {
+  margin-top: var(--spacing-xs);
+  padding: var(--spacing-xs);
+  gap: var(--spacing-xs);
+}
+
+.inline-selector {
+  padding: 0;
+}
+
+/* Stats section - compact */
+.stats-section {
+  max-height: calc(100vh - 130px);
+  overflow-y: auto;
+  padding: var(--spacing-xs);
+}
+
+/* Hide sidebar containers on desktop - use inline versions */
+.stats-section .backpack-container,
+.stats-section .jewelry-container,
+.stats-section .familiar-container {
+  display: none;
+}
