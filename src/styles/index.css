@@ -3940,123 +3940,259 @@ select option {
   color: var(--color-text-primary);
 }
 
-/* ===== NO SCROLL FULLSCREEN LAYOUT ===== */
+/* ===== SINGLE PAGE NO-SCROLL LAYOUT ===== */
 
-/* Prevent page scroll */
+/* Lock viewport - NO SCROLLING */
 html, body {
-  overflow: hidden;
+  overflow: hidden !important;
   height: 100vh;
+  max-height: 100vh;
 }
 
 #app {
   height: 100vh;
-  overflow: hidden;
-}
-
-.view-container.active {
-  height: calc(100vh - 50px);
-  overflow: hidden;
-}
-
-main.content {
-  height: calc(100vh - 130px);
-  overflow: hidden;
-}
-
-/* Editor section - no scroll, compact */
-.editor-section {
-  max-height: none;
-  overflow: visible;
+  max-height: 100vh;
+  overflow: hidden !important;
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-xs);
+}
+
+/* Header - minimal */
+.app-header {
+  flex-shrink: 0;
+  padding: 4px 12px;
+}
+
+/* View container fills remaining space */
+.view-container.active {
+  flex: 1;
+  overflow: hidden !important;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  max-height: calc(100vh - 45px);
+}
+
+/* Tool description - very compact */
+.tool-description {
+  padding: 2px 12px;
+  font-size: 11px;
+}
+
+.tool-hint {
+  display: none; /* Hide on main page to save space */
+}
+
+/* Main content grid - fills available space */
+.main-content {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 260px 1fr 200px;
+  gap: 8px;
+  padding: 4px 8px;
+  overflow: hidden !important;
+  max-height: calc(100vh - 100px);
+}
+
+/* Left column: Armor slots */
+.armor-section {
+  overflow: hidden !important;
+  display: flex;
+  flex-direction: column;
+}
+
+.section-header.compact {
+  padding: 2px 0;
+  gap: 4px;
+}
+
+.section-header.compact h2 {
+  font-size: 12px;
+}
+
+.quick-presets {
+  gap: 2px;
+}
+
+.quick-preset-btn {
+  padding: 2px 4px;
+  font-size: 12px;
+}
+
+.slot-container {
+  flex: 1;
+  overflow: hidden !important;
+}
+
+/* Center column: Editor + selectors */
+.editor-section {
+  overflow: hidden !important;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .editor-placeholder {
-  padding: var(--spacing-xs);
-  min-height: 40px;
+  padding: 8px;
+  text-align: center;
+  font-size: 12px;
 }
 
-/* Slot editor - compact when visible */
+/* Slot editor - ultra compact */
+.slot-editor-area,
 .slot-editor {
-  padding: var(--spacing-sm);
-  max-height: 180px;
+  padding: 4px;
+  overflow: hidden !important;
 }
 
-.slot-editor .slot-header {
-  padding: var(--spacing-xs) 0;
+.slot-editor .editor-header {
+  padding: 2px 0;
 }
 
-.slot-editor .stat-rows {
-  gap: var(--spacing-xs);
+.slot-editor .editor-body {
+  padding: 4px 0;
 }
 
-.slot-editor .stat-row {
-  padding: var(--spacing-xs);
-  min-height: 36px;
+.stat-slots {
+  gap: 4px;
 }
 
-/* ===== INLINE BRACELET PICKER ===== */
-.bracelet-picker-inline {
+.stat-slot {
+  padding: 4px 8px;
+  min-height: 28px;
+}
+
+/* Compact selectors row */
+.compact-selectors {
   display: flex;
-  align-items: center;
-  gap: var(--spacing-sm);
-  padding: var(--spacing-xs);
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 4px;
   background: var(--color-bg-elevated);
-  border-radius: var(--radius-sm);
+  border-radius: 4px;
   border: 1px solid var(--color-border);
 }
 
+.compact-selector {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Inline bracelet picker - single line */
+.bracelet-picker-inline {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px;
+}
+
 .bracelet-label {
-  font-size: var(--font-size-xs);
-  color: var(--color-text-secondary);
+  font-size: 10px;
   white-space: nowrap;
 }
 
 .bracelet-select-inline {
   flex: 1;
-  min-width: 120px;
-  max-width: 180px;
-  padding: var(--spacing-xs);
+  min-width: 80px;
+  max-width: 140px;
+  padding: 2px 4px;
+  font-size: 10px;
   background: var(--color-bg-tertiary);
   color: var(--color-text-primary);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  font-size: var(--font-size-xs);
+  border-radius: 3px;
 }
 
-.bracelet-select-inline option {
-  background: var(--color-bg-tertiary);
-  color: var(--color-text-primary);
-}
-
-/* Bracelet section - minimal height */
-.bracelet-build-section {
-  margin-top: var(--spacing-xs);
-  padding: var(--spacing-xs);
-}
-
-/* Quick selectors - very compact */
-.quick-selectors-row {
-  margin-top: var(--spacing-xs);
-  padding: var(--spacing-xs);
-  gap: var(--spacing-xs);
-}
-
-.inline-selector {
-  padding: 0;
-}
-
-/* Stats section - compact */
+/* Right column: Stats */
 .stats-section {
-  max-height: calc(100vh - 130px);
-  overflow-y: auto;
-  padding: var(--spacing-xs);
+  overflow: hidden !important;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 4px;
 }
 
-/* Hide sidebar containers on desktop - use inline versions */
-.stats-section .backpack-container,
-.stats-section .jewelry-container,
-.stats-section .familiar-container {
+.compact-header {
+  font-size: 11px;
+  padding: 2px 0;
+  margin: 0;
+}
+
+.stat-summary.compact {
+  overflow: hidden !important;
+  font-size: 10px;
+  padding: 2px;
+}
+
+.stat-summary .stat-row {
+  padding: 1px 0;
+  font-size: 10px;
+}
+
+/* Implant container - ultra compact */
+.implant-container.compact {
+  padding: 2px;
+}
+
+.implant-container.compact .implant-header {
+  padding: 2px 0;
+  font-size: 10px;
+}
+
+.implant-container.compact .implant-grid {
+  gap: 2px;
+}
+
+.implant-row {
+  gap: 2px;
+}
+
+.implant-row label {
+  font-size: 9px;
+  min-width: 24px;
+}
+
+.implant-row input,
+.implant-row button {
+  padding: 1px 3px;
+  font-size: 9px;
+  min-width: 16px;
+}
+
+/* Bake-in compact */
+.bakein-container.compact {
+  padding: 2px;
+}
+
+.bakein-container.compact .bakein-header {
+  padding: 1px 0;
+  font-size: 10px;
+}
+
+/* Buffs - minimal */
+.buffs-compact {
+  display: none; /* Hide by default to save space */
+}
+
+/* Hide all overflow everywhere */
+* {
+  scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
   display: none;
 }
+
+/* Inline selector compact */
+.inline-selector .backpack-header,
+.inline-selector .jewelry-header,
+.inline-selector .familiar-header {
+  display: none;
+}
+
+.inline-selector select {
+  width: 100%;
+  padding: 2px 4px;
+  font-size: 10px;
+}
+
