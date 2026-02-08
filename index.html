@@ -6,8 +6,8 @@
   <title>SWGear | SWG Restoration Build Planner</title>
   <meta name="description" content="SWGear - Plan your armor, SEAs, buffs, and stats for Star Wars Galaxies Restoration.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚙️</text></svg>">
-  <script type="module" crossorigin src="/swgear/assets/index-yEQMOyHH.js"></script>
-  <link rel="stylesheet" crossorigin href="/swgear/assets/index-dZFiOZdT.css">
+  <script type="module" crossorigin src="/swgear/assets/index-BeEVdI0a.js"></script>
+  <link rel="stylesheet" crossorigin href="/swgear/assets/index-Dd8I-2Gh.css">
 </head>
 <body>
   <div id="app">
@@ -141,60 +141,59 @@
           </div>
         </section>
 
-        <!-- Center: Slot Editor + Bracelet Picker -->
+        <!-- Center: Slot Editor -->
         <section class="editor-section" id="editor-section">
           <div class="editor-placeholder">
             <p>Select an armor slot to add stats</p>
           </div>
-          
-          <!-- Bracelet Quick Select - always visible in Build tab -->
-          <div id="bracelet-build-container" class="bracelet-build-section">
-            <!-- Bracelet picker rendered here -->
-          </div>
         </section>
 
-        <!-- Right: Stat Totals -->
+        <!-- Right: Stat Totals (compact, no scroll) -->
         <section class="stats-section">
           <div class="section-header">
             <h2>Stat Totals</h2>
+            <button id="open-buffs-btn" class="btn btn-sm btn-secondary" title="Add external stat sources (food, abilities, armor HP)">+ Buffs</button>
           </div>
           <div id="stat-summary" class="stat-summary">
             <p class="empty-state">No stats selected yet</p>
           </div>
-          
-          <!-- Backpack Section -->
-          <div id="backpack-container" class="backpack-container">
-            <!-- Backpack section rendered here -->
-          </div>
-          
-          <!-- Heroic Jewelry Section -->
-          <div id="jewelry-container" class="jewelry-container">
-            <!-- Jewelry section rendered here -->
-          </div>
-          
-          <!-- Familiar Section -->
-          <div id="familiar-container" class="familiar-container">
-            <!-- Familiar picker rendered here -->
-          </div>
-          
-          <!-- Implant Section -->
-          <div id="implant-container" class="implant-container">
-            <!-- Implant editor rendered here -->
-          </div>
-          
-          <div id="external-buffs-container" class="external-buffs-container">
-            <!-- External buffs rendered here -->
-          </div>
         </section>
       </main>
+
+      <!-- External Buffs Modal -->
+      <div id="buffs-modal" class="modal" hidden>
+        <div class="modal-backdrop"></div>
+        <div class="modal-content buffs-modal-content">
+          <div class="modal-header">
+            <h3>External Stat Sources</h3>
+            <button class="modal-close" aria-label="Close">X</button>
+          </div>
+          <div class="modal-body">
+            <div id="external-buffs-container" class="external-buffs-container"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar: Bracelets + Gear Sources (always visible) -->
+      <div class="builder-bottom-bar">
+        <div id="bracelet-build-container" class="bracelet-build-section">
+          <!-- Bracelet picker rendered here -->
+        </div>
+        <div class="gear-sources-bar">
+          <div id="backpack-container" class="backpack-container"></div>
+          <div id="jewelry-container" class="jewelry-container"></div>
+          <div id="familiar-container" class="familiar-container"></div>
+          <div id="implant-container" class="implant-container"></div>
+        </div>
+      </div>
     </div>
 
     <!-- Jewelry View -->
     <div id="jewelry-view" class="view-container">
       <section class="jewelry-tab-content">
         <div class="jewelry-header">
-          <h2>Jewelry & Gear Stats</h2>
-          <p class="jewelry-description">Track your jewelry stats (Necklace, Rings, Bracelets). These are loot-based items with fixed stats that add to your build totals.</p>
+          <h2>Jewelry, Accessories & Gear</h2>
+          <p class="jewelry-description">Configure jewelry stats (Necklace, Rings, Bracelets), backpack, familiars, implants, and external buffs in detail. Quick selections are also available on the Build tab's bottom bar.</p>
         </div>
         
         <div id="jewelry-content" class="jewelry-content">
