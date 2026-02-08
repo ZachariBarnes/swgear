@@ -1,0 +1,95 @@
+[
+  {
+    "id": "none",
+    "name": "No Cloak",
+    "stats": [],
+    "attributes": {},
+    "effect": "",
+    "acquisition": ""
+  },
+  {
+    "id": "cloak_kursk",
+    "name": "Cloak of the Kursk",
+    "stats": [
+      { "modifier": "Force Storm Damage", "value": 8 },
+      { "modifier": "Innate Armor Break Resistance", "value": 50 },
+      { "modifier": "Force Power Regeneration Bonus", "value": 5 }
+    ],
+    "attributes": { "health": 650 },
+    "effect": "Increases max Force by 250",
+    "acquisition": "Looted from San'sii the Kursk"
+  },
+  {
+    "id": "cloak_storm_caller",
+    "name": "Cloak of the Storm Caller",
+    "stats": [
+      { "modifier": "Force Lightning Fast Attack Chance", "value": 10 },
+      { "modifier": "Innate Armor Break Resistance", "value": 50 },
+      { "modifier": "Force Power Regeneration Bonus", "value": 5 }
+    ],
+    "attributes": { "health": 650 },
+    "effect": "Increases max Force by 250",
+    "acquisition": "Looted from the Storm Lord"
+  },
+  {
+    "id": "cloak_or_knight",
+    "name": "Old Republic Jedi Knight Cloak",
+    "stats": [
+      { "modifier": "Saber Armor Break Effectiveness", "value": 15 },
+      { "modifier": "Innate Armor Break Resistance", "value": 50 },
+      { "modifier": "Force Power Regeneration Bonus", "value": 5 }
+    ],
+    "attributes": { "health": 750 },
+    "effect": "Increases max Force by 250",
+    "acquisition": "Created with Chu-Gon Dar Cube"
+  },
+  {
+    "id": "cloak_or_master",
+    "name": "Old Republic Jedi Master Cloak",
+    "stats": [
+      { "modifier": "Force Armor Cost Reduction", "value": 8 },
+      { "modifier": "Innate Armor Break Resistance", "value": 50 },
+      { "modifier": "Force Power Regeneration Bonus", "value": 5 }
+    ],
+    "attributes": { "health": 750 },
+    "effect": "Increases max Force by 250",
+    "acquisition": "Looted from CY-M Prototype"
+  },
+  {
+    "id": "cloak_or_empress",
+    "name": "Old Republic Empress Cloak",
+    "stats": [
+      { "modifier": "Force Armor Cost Reduction", "value": 8 },
+      { "modifier": "Innate Armor Break Resistance", "value": 50 },
+      { "modifier": "Force Power Regeneration Bonus", "value": 5 }
+    ],
+    "attributes": { "health": 750 },
+    "effect": "Increases max Force by 250",
+    "acquisition": "CY-M Prototype (Krayt Dragon Nightmare)"
+  },
+  {
+    "id": "cloak_or_frostfall",
+    "name": "Old Republic Frostfall Cloak",
+    "stats": [
+      { "modifier": "Force Armor Cost Reduction", "value": 8 },
+      { "modifier": "Innate Armor Break Resistance", "value": 50 },
+      { "modifier": "Force Power Regeneration Bonus", "value": 5 }
+    ],
+    "attributes": { "health": 750 },
+    "effect": "Increases max Force by 250",
+    "acquisition": "CY-M Prototype (Krayt Dragon Nightmare)"
+  },
+  {
+    "id": "cloak_outcast",
+    "name": "Cloak of the Outcast",
+    "stats": [
+      { "modifier": "Force Breach Cost Reduction", "value": 60 },
+      { "modifier": "Breach Guard Cost Reduction", "value": 60 },
+      { "modifier": "Innate Armor Break Resistance", "value": 50 },
+      { "modifier": "Force Power Regeneration Bonus", "value": 5 }
+    ],
+    "attributes": { "health": 1000 },
+    "effect": "Increases max Force by 250",
+    "acquisition": "Tusken King"
+  }
+]

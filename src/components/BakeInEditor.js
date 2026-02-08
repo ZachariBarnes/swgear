@@ -5,7 +5,10 @@
  * BAKE-IN RULES (per SWGR wiki):
  * - Core stats only (Defense General, Ranged/Melee General, Toughness, Endurance, Opportune)
  * - Max +14 per slot at 35 powerbit
+ * - In Jedi mode, locked slots (biceps, bracers, belt) are excluded
  */
+
+import { JEDI_LOCKED_SLOTS } from './JediToggle.js';
 
 // Armor slots that can have bake-in stats (excludes weapon)
 const BAKEABLE_SLOTS = [
@@ -39,11 +42,17 @@ const SLOT_NAMES = {
  * @param {HTMLElement} container - Container element
  * @param {Object} bakeInStats - Current bake-in config {enabled, global, perSlot}
  * @param {Function} onUpdate - Callback when bake-in changes
+ * @param {boolean} jediMode - Whether Jedi mode is active (locks some slots)
  */
-export function renderBakeInEditor(container, bakeInStats, onUpdate) {
+export function renderBakeInEditor(container, bakeInStats, onUpdate, jediMode = false) {
   if (!bakeInStats) {
     bakeInStats = { enabled: false, global: null, perSlot: {} };
   }
+  
+  // Filter out Jedi-locked slots
+  const JEDI_BELT = ['belt'];
+  const lockedSlots = jediMode ? [...JEDI_LOCKED_SLOTS, ...JEDI_BELT] : [];
+  const availableSlots = BAKEABLE_SLOTS.filter(s => !lockedSlots.includes(s));
   
   const { enabled, global, perSlot } = bakeInStats;
   const showPerSlot = enabled && Object.keys(perSlot).length > 0;
@@ -90,7 +99,7 @@ export function renderBakeInEditor(container, bakeInStats, onUpdate) {
         
         ${showPerSlot ? `
           <div class="bakein-perslot">
-            ${BAKEABLE_SLOTS.map(slotId => {
+            ${availableSlots.map(slotId => {
               const slotBake = perSlot[slotId];
               const effectiveStat = slotBake?.modifier || global?.modifier || '';
               const effectiveValue = slotBake?.value ?? global?.value ?? DEFAULT_BAKEIN_VALUE;
@@ -238,14 +247,19 @@ function setupBakeInListeners(container, bakeInStats, onUpdate) {
 /**
  * Calculate total bake-in stat bonuses
  * @param {Object} bakeInStats - Bake-in configuration
+ * @param {boolean} jediMode - Whether Jedi mode is active
  * @returns {Array} - Array of { modifier, value } totals
  */
-export function calculateBakeInTotals(bakeInStats) {
+export function calculateBakeInTotals(bakeInStats, jediMode = false) {
   if (!bakeInStats || !bakeInStats.enabled) return [];
+  
+  const JEDI_BELT = ['belt'];
+  const lockedSlots = jediMode ? [...JEDI_LOCKED_SLOTS, ...JEDI_BELT] : [];
+  const availableSlots = BAKEABLE_SLOTS.filter(s => !lockedSlots.includes(s));
   
   const totals = {};
   
-  for (const slotId of BAKEABLE_SLOTS) {
+  for (const slotId of availableSlots) {
     // Per-slot overrides global
     const slotBake = bakeInStats.perSlot?.[slotId] || bakeInStats.global;
     

@@ -109,9 +109,22 @@ export function renderFamiliarPicker(container, selectedFamiliar = 'none', onSel
   const toggle = container.querySelector('#familiar-dropdown-toggle');
   const dropdown = container.querySelector('#familiar-dropdown');
   
+  const positionDropdown = () => {
+    const rect = toggle.getBoundingClientRect();
+    dropdown.style.position = 'fixed';
+    dropdown.style.left = `${rect.left}px`;
+    dropdown.style.width = `${rect.width}px`;
+    dropdown.style.bottom = `${window.innerHeight - rect.top + 4}px`;
+    dropdown.style.top = 'auto';
+  };
+  
   toggle.addEventListener('click', (e) => {
     e.stopPropagation();
-    dropdown.hidden = !dropdown.hidden;
+    const wasHidden = dropdown.hidden;
+    dropdown.hidden = !wasHidden;
+    if (wasHidden) {
+      positionDropdown();
+    }
   });
   
   // Close dropdown when clicking outside

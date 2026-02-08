@@ -50,6 +50,17 @@
   /* Transitions */
   --transition-fast: 100ms ease;
   --transition-normal: 200ms ease;
+
+  /* Additional tokens used by components */
+  --color-bg-elevated: #1c2128;
+  --color-accent: #58a6ff;
+  --color-success: #3fb950;
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.8125rem;
+  --font-size-md: 0.9375rem;
+  --font-size-lg: 1.125rem;
+  --color-accent-cyan: #56d4dd;
 }
 
 /* Reset & Base - Larger base font */
@@ -161,6 +172,7 @@ body {
   display: none;
   flex: 1;
   overflow: hidden;
+  position: relative;
 }
 
 .view-container.active {
@@ -355,7 +367,8 @@ body {
 .armor-section {
   flex-shrink: 0;
   min-height: 0;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .slot-container {
@@ -585,6 +598,7 @@ body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  /* Children scroll internally via editor-body */
 }
 
 .editor-placeholder {
@@ -665,7 +679,8 @@ body {
 .editor-body {
   padding: var(--spacing-md);
   flex: 1;
-  overflow: hidden;
+  overflow-y: auto;
+  min-height: 0;
 }
 
 .exotic-note {
@@ -798,7 +813,7 @@ body {
 .stat-summary {
   padding: var(--spacing-sm);
   flex: 1;
-  overflow: hidden;
+  overflow-y: auto;
   min-height: 0;
 }
 
@@ -3019,8 +3034,8 @@ body {
 .bakein-editor {
   background: var(--color-bg-tertiary);
   border-radius: var(--radius-md);
-  padding: var(--spacing-md);
-  margin-top: var(--spacing-md);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  margin-top: var(--spacing-sm);
   border: 1px solid var(--color-border);
 }
 
@@ -3028,52 +3043,52 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-xs);
 }
 
 .bakein-header h4 {
-  font-size: 0.95rem;
+  font-size: 0.8rem;
   color: var(--color-text-header);
   margin: 0;
 }
 
 .bakein-hint {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   color: var(--color-text-muted);
-  margin-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-xs);
 }
 
 .bakein-hint-disabled {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   color: var(--color-text-muted);
   font-style: italic;
 }
 
 .bakein-global {
-  margin-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-xs);
 }
 
 .bakein-global-row {
   display: flex;
   align-items: center;
-  gap: var(--spacing-sm);
-  margin-bottom: var(--spacing-sm);
+  gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-xs);
 }
 
 .bakein-label {
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   color: var(--color-text-secondary);
 }
 
 .bakein-actions {
-  margin-top: var(--spacing-sm);
+  margin-top: var(--spacing-xs);
 }
 
 .bakein-perslot {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: var(--spacing-xs);
-  padding-top: var(--spacing-sm);
+  padding-top: var(--spacing-xs);
   border-top: 1px solid var(--color-border);
 }
 
@@ -3087,9 +3102,9 @@ body {
 }
 
 .bakein-slot-name {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   color: var(--color-text-muted);
-  min-width: 60px;
+  min-width: 50px;
 }
 
 .bakein-select, .bakein-slot-select {
@@ -3097,11 +3112,11 @@ body {
   background: var(--color-bg-secondary);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
-  padding: 4px 8px;
-  font-size: 0.8rem;
+  padding: 2px 6px;
+  font-size: 0.75rem;
   color: var(--color-text-primary);
   cursor: pointer;
-  min-width: 130px;
+  min-width: 80px;
 }
 
 .bakein-select:hover, .bakein-slot-select:hover {
@@ -3307,16 +3322,12 @@ body {
 }
 
 .familiar-dropdown {
-  position: absolute;
-  bottom: 100%;
-  left: 0;
-  right: 0;
-  z-index: 100;
+  position: fixed;
+  z-index: 10000;
   background: var(--color-bg-secondary);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-  margin-bottom: 4px;
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.5);
   overflow: hidden;
 }
 
@@ -3659,7 +3670,7 @@ body {
   padding: var(--spacing-xs) var(--spacing-sm);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
-  background: var(--color-bg-elevated);
+  background: var(--color-bg-secondary);
   color: var(--color-text-primary);
   font-size: var(--font-size-sm);
 }
@@ -3789,8 +3800,9 @@ body {
   background: var(--color-bg-secondary);
   border-top: 1px solid var(--color-border);
   flex-shrink: 0;
-  max-height: 160px;
+  max-height: 220px;
   overflow: hidden;
+  position: relative;
 }
 
 .builder-bottom-bar .bracelet-build-section {
@@ -3801,8 +3813,8 @@ body {
   border-radius: var(--radius-md);
   border: 1px solid var(--color-border);
   min-width: 260px;
-  max-width: 280px;
-  overflow: hidden;
+  max-width: 300px;
+  overflow-y: auto;
 }
 
 .builder-bottom-bar .bracelet-build-section .bracelet-picker {
@@ -3838,20 +3850,33 @@ body {
   font-size: 0.75rem;
 }
 
+.builder-bottom-bar .bracelet-stats {
+  margin-top: var(--spacing-xs);
+  padding: var(--spacing-xs);
+  font-size: 0.65rem;
+}
+
+.builder-bottom-bar .bracelet-stat-row {
+  padding: 1px 0;
+  font-size: 0.65rem;
+}
+
 .gear-sources-bar {
   display: flex;
   align-items: stretch;
   gap: var(--spacing-sm);
   flex: 1;
-  overflow: hidden;
+  overflow: visible;
   min-width: 0;
 }
 
 .gear-sources-bar > div {
   flex: 1;
   min-width: 0;
-  max-width: 280px;
-  overflow: hidden;
+  max-width: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
 }
 
 /* Compact gear source sections in bottom bar */
@@ -3862,8 +3887,8 @@ body {
   padding: var(--spacing-xs) var(--spacing-sm);
   margin: 0;
   font-size: 0.75rem;
-  height: 100%;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   background: var(--color-bg-panel);
@@ -3910,12 +3935,19 @@ body {
 
 .gear-sources-bar .backpack-description,
 .gear-sources-bar .jewelry-description {
-  display: none;
+  font-size: 0.6rem;
+  color: var(--color-text-muted);
+  margin-bottom: 2px;
 }
 
 .gear-sources-bar .familiar-current {
   padding: var(--spacing-xs);
   gap: var(--spacing-xs);
+  font-size: 0.75rem;
+}
+
+.gear-sources-bar .familiar-current .familiar-icon {
+  font-size: 1rem;
 }
 
 .gear-sources-bar .familiar-name {
@@ -3923,6 +3955,10 @@ body {
 }
 
 .gear-sources-bar .familiar-stats {
+  font-size: 0.7rem;
+}
+
+.gear-sources-bar .familiar-hint {
   display: none;
 }
 
@@ -4054,60 +4090,132 @@ body {
   margin-top: var(--spacing-sm);
 }
 
-/* ===== FIX: Remove ALL scrollbars ===== */
+/* ===== JEDI MODE STYLES ===== */
 
-/* Stats section - NO scrollbar */
-.stats-section {
-  overflow: hidden !important;
-  max-height: none !important;
+/* Jedi controls row */
+.jedi-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+  padding: var(--spacing-xs) 0;
 }
 
-/* Stat summary - NO scrollbar */
-.stat-summary {
-  overflow: hidden !important;
-  max-height: none !important;
+/* Jedi cloak picker */
+.jedi-cloak-picker {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
 }
 
-/* View container - NO scrollbar */
-.view-container {
-  overflow: hidden !important;
+.jedi-cloak-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  font-weight: 500;
 }
 
-.view-container.active {
-  overflow: hidden !important;
+.jedi-cloak-select {
+  background: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 2px 6px;
+  font-size: var(--font-size-xs);
+  cursor: pointer;
+  max-width: 200px;
 }
 
-/* Main content area - NO scrollbar */
-.main-content {
-  overflow: hidden !important;
+.jedi-cloak-select:focus {
+  border-color: #a78bfa;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(167, 139, 250, 0.2);
 }
 
-/* Build view - NO nested scrollbars */
-#build-view {
-  overflow: hidden !important;
+/* Jedi cloak stats row */
+.jedi-cloak-stats {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 2px 0;
 }
 
-/* Hide all scrollbars universally */
+.jedi-stat {
+  font-size: 0.6875rem;
+  padding: 1px 5px;
+  border-radius: 3px;
+  background: rgba(167, 139, 250, 0.12);
+  color: #c4b5fd;
+  border: 1px solid rgba(167, 139, 250, 0.2);
+  white-space: nowrap;
+}
+
+.jedi-stat.health {
+  background: rgba(239, 68, 68, 0.12);
+  color: #fca5a5;
+  border-color: rgba(239, 68, 68, 0.2);
+}
+
+.jedi-stat.force {
+  background: rgba(59, 130, 246, 0.12);
+  color: #93c5fd;
+  border-color: rgba(59, 130, 246, 0.2);
+}
+
+/* Jedi info badges */
+.jedi-info {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.jedi-info-item {
+  font-size: 0.6875rem;
+  padding: 1px 5px;
+  border-radius: 3px;
+  background: rgba(167, 139, 250, 0.08);
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+/* Locked slot cards */
+.slot-wrapper.jedi-locked {
+  cursor: default;
+}
+
+.slot-card.jedi-locked-card {
+  background: linear-gradient(135deg, rgba(167, 139, 250, 0.1) 0%, rgba(139, 92, 246, 0.08) 100%);
+  border: 1px solid rgba(167, 139, 250, 0.3);
+  opacity: 0.85;
+  cursor: default;
+  position: relative;
+}
+
+.slot-card.jedi-locked-card:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.jedi-locked-label {
+  font-size: 0.6rem;
+  color: #c4b5fd;
+  font-weight: 500;
+  white-space: nowrap;
+  display: block;
+  margin-top: 1px;
+}
+
+/* Jedi weapon card styling */
+.slot-card.jedi-weapon {
+  border-color: rgba(167, 139, 250, 0.3);
+}
+
+/* ===== SCROLLBAR HIDING (visual only — still scrollable) ===== */
 * {
-  scrollbar-width: none !important;
+  scrollbar-width: none;
 }
-
 *::-webkit-scrollbar {
-  display: none !important;
-  width: 0 !important;
-  height: 0 !important;
-}
-
-/* ===== FIX: Editor section sizing ===== */
-
-/* Editor should not grow too tall and overlap bake-in */
-.editor-section {
-  max-height: 450px !important;
-  overflow: hidden !important;
-}
-
-/* Slot editor panel - compact */
-.slot-editor {
-  max-height: 350px !important;
-  overflow: hidden !important;
+  display: none;
+  width: 0;
+  height: 0;
 }

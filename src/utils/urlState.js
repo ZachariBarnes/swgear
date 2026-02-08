@@ -270,6 +270,12 @@ export function encodeBuild(build) {
     }
   }
   
+  // Add Jedi mode (format: J.cloakId)
+  if (build.jediMode && build.jediMode.enabled) {
+    const cloakId = build.jediMode.cloakId || 'none';
+    parts.push(`J.${cloakId}`);
+  }
+  
   return parts.join('|');
 }
 
@@ -410,6 +416,12 @@ export function decodeBuild(encoded) {
           build.implants[statName] = value;
         }
       }
+      continue;
+    }
+    
+    // Parse Jedi mode (J.cloakId)
+    if (firstSegment === 'J' && segments.length > 1) {
+      build.jediMode = { enabled: true, cloakId: segments[1] || 'none' };
       continue;
     }
     

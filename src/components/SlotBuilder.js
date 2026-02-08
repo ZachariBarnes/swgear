@@ -4,7 +4,10 @@
  * Based on SWG Restoration armor/SEA system:
  * - Exotic slots: Shirt, Chest, Weapon (can accept any modifier)
  * - Regular slots: Head, Biceps, Bracers, Gloves, Belt, Leggings, Boots
+ * - Jedi mode: Locks biceps/bracers (robe), belt (Bodo Baas), renames weapon to Lightsaber
  */
+
+import { JEDI_LOCKED_SLOTS } from './JediToggle.js';
 
 // Slot configuration - accurate to SWG Restoration
 export const SLOT_CONFIG = [
@@ -73,11 +76,12 @@ export function createEmptyBuild() {
  * @param {Object} build - Current build state
  * @param {Function} onSlotClick - Callback when slot is clicked
  * @param {Function} onBeltToggle - Callback when belt toggle is clicked (optional)
+ * @param {boolean} jediMode - Whether Jedi mode is active
  */
-export function renderVisualView(container, build, onSlotClick, onBeltToggle) {
+export function renderVisualView(container, build, onSlotClick, onBeltToggle, jediMode = false) {
   container.innerHTML = `
     <div class="armor-visual">
-      ${SLOT_CONFIG.map(slot => renderSlotCard(slot, build.slots[slot.id], build.beltType)).join('')}
+      ${SLOT_CONFIG.map(slot => renderSlotCard(slot, build.slots[slot.id], build.beltType, jediMode)).join('')}
     </div>
   `;
   
@@ -87,10 +91,13 @@ export function renderVisualView(container, build, onSlotClick, onBeltToggle) {
       // Don't trigger slot click if clicking belt toggle
       if (e.target.closest('.belt-toggle-inline')) return;
       
+      // Don't allow clicking locked Jedi slots
+      const slotId = wrapper.dataset.slotId;
+      if (jediMode && isSlotLockedByJedi(slotId)) return;
+      
       container.querySelectorAll('.slot-card').forEach(c => c.classList.remove('active'));
       const card = wrapper.querySelector('.slot-card');
       if (card) card.classList.add('active');
-      const slotId = wrapper.dataset.slotId;
       onSlotClick(slotId);
     });
   });
@@ -195,20 +202,81 @@ function isCoreArmorStat(statName) {
 }
 
 /**
+ * Check if a slot is locked in Jedi mode
+ * Locked slots: biceps, bracers (robe) + belt (Bodo Baas)
+ */
+function isSlotLockedByJedi(slotId) {
+  return JEDI_LOCKED_SLOTS.includes(slotId) || slotId === 'belt';
+}
+
+/**
+ * Get display name for a slot, accounting for Jedi mode
+ */
+function getSlotDisplayName(slot, jediMode) {
+  if (!jediMode) return slot.name;
+  if (JEDI_LOCKED_SLOTS.includes(slot.id)) return slot.name; // Keep normal name, show "Jedi Robe" label
+  if (slot.id === 'belt') return 'Belt'; // Will show "Bodo Baas" label
+  if (slot.id === 'weapon') return 'Lightsaber';
+  return slot.name;
+}
+
+/**
  * Render a single slot card for visual view
  * Uses wrapper structure with stat tags in sidebar
  * @param {Object} slot - Slot config
  * @param {Object} slotData - Slot build data
  * @param {string} beltType - Current belt type ('clothing' or 'armor')
+ * @param {boolean} jediMode - Whether Jedi mode is active
  */
-function renderSlotCard(slot, slotData, beltType = 'clothing') {
+function renderSlotCard(slot, slotData, beltType = 'clothing', jediMode = false) {
+  const isLocked = jediMode && isSlotLockedByJedi(slot.id);
+  const isBeltLocked = jediMode && slot.id === 'belt';
+  const isRobeLocked = jediMode && JEDI_LOCKED_SLOTS.includes(slot.id);
+  const displayName = getSlotDisplayName(slot, jediMode);
+  
+  // If slot is locked by Jedi mode, render a locked version
+  if (isLocked) {
+    const lockedLabel = isBeltLocked ? 'Bodo Baas' : 'Jedi Robe';
+    const lockedIcon = isBeltLocked ? '🗡️' : '🥋';
+    
+    // Show Bodo Baas stats for belt
+    const lockedStatsHtml = isBeltLocked ? `
+      <div class="slot-tags-sidebar">
+        <span class="stat-tag core" title="Toughness Boost +50">TGH</span>
+        <span class="stat-tag core" title="Opportune Chance +50">OPP</span>
+        <span class="stat-tag core" title="Ranged General +50">RNG</span>
+        <span class="stat-tag core" title="Melee General +50">MLE</span>
+      </div>
+    ` : '';
+    
+    // Determine column for wrapper class
+    const leftColumn = ['lbicep', 'lbracer', 'gloves'];
+    const rightColumn = ['rbicep', 'rbracer', 'weapon'];
+    const isLeft = leftColumn.includes(slot.id);
+    const isRight = rightColumn.includes(slot.id);
+    let wrapperClass = 'slot-wrapper jedi-locked';
+    if (isRight) wrapperClass += ' slot-right';
+    else if (!isLeft) wrapperClass += ' slot-center';
+    
+    return `
+      <div class="${wrapperClass}" data-slot-id="${slot.id}">
+        ${lockedStatsHtml}
+        <div class="slot-card jedi-locked-card" title="${lockedLabel}">
+          <span class="slot-name">${displayName}</span>
+          <span class="jedi-locked-label">${lockedIcon} ${lockedLabel}</span>
+        </div>
+      </div>
+    `;
+  }
+
   const hasStats = slotData?.stats?.length > 0 && slotData.stats.some(s => s.modifier);
   const statList = slotData?.stats?.filter(s => s.modifier) || [];
   
   const classes = [
     'slot-card',
     slot.isExotic ? 'exotic' : '',
-    hasStats ? 'has-stats' : ''
+    hasStats ? 'has-stats' : '',
+    jediMode && slot.id === 'weapon' ? 'jedi-weapon' : ''
   ].filter(Boolean).join(' ');
   
   // Build stat tags for sidebar display
@@ -233,9 +301,9 @@ function renderSlotCard(slot, slotData, beltType = 'clothing') {
   // Only render sidebar if there are stats
   const sidebarHtml = hasStats ? `<div class="slot-tags-sidebar">${statTagsHtml}</div>` : '';
   
-  // Belt toggle inline button (only for belt slot) - shows current state
+  // Belt toggle inline button (only for belt slot when NOT in Jedi mode) - shows current state
   const isClothing = beltType === 'clothing';
-  const beltToggleHtml = slot.canToggleExotic ? `
+  const beltToggleHtml = (slot.canToggleExotic && !jediMode) ? `
     <button class="belt-toggle-inline ${isClothing ? 'clothing' : 'armor'}" 
             data-slot-id="${slot.id}" 
             title="${isClothing ? 'Belt (Clothing) - Click for PSG' : 'PSG (Armor) - Click for Belt'}">
@@ -247,7 +315,7 @@ function renderSlotCard(slot, slotData, beltType = 'clothing') {
     <div class="${wrapperClass}" data-slot-id="${slot.id}">
       ${sidebarHtml}
       <div class="${classes}">
-        <span class="slot-name">${slot.name}</span>
+        <span class="slot-name">${displayName}</span>
         ${beltToggleHtml}
         ${slot.isExotic ? '<span class="exotic-label">EXOTIC</span>' : ''}
       </div>

@@ -14,7 +14,7 @@ import { renderBraceletPicker, getBraceletStats } from './components/BraceletPic
 import { renderBakeInEditor, calculateBakeInTotals } from './components/BakeInEditor.js';
 import { renderFamiliarPicker, getFamiliarStats } from './components/FamiliarPicker.js';
 import { renderBeltTypeToggle, isBeltExotic } from './components/BeltTypeToggle.js';
-import { renderJediToggle, isJediMode } from './components/JediToggle.js';
+import { renderJediToggle, isJediMode, getBodoBasStats, getJediCloakStats, JEDI_LOCKED_SLOTS } from './components/JediToggle.js';
 import { renderImplantEditor, getImplantStats } from './components/ImplantEditor.js';
 import { loadFromURL, updateURL, getShareableURL } from './utils/urlState.js';
 import { findCombinations, copyToClipboard } from './utils/export.js';
@@ -256,8 +256,10 @@ function setupQuickPresets() {
       const preset = QUICK_PRESETS[presetId];
       if (!preset) return;
       
-      // Apply stats to all core slots
+      // Apply stats to all core slots (skip Jedi-locked slots)
+      const jediActive = isJediMode(currentBuild);
       CORE_SLOTS.forEach(slotId => {
+        if (jediActive && (JEDI_LOCKED_SLOTS.includes(slotId) || slotId === 'belt')) return;
         if (currentBuild.slots[slotId]) {
           currentBuild.slots[slotId].stats = preset.stats.map(name => ({
             modifier: name,
@@ -314,6 +316,17 @@ function showSlotEditor(slotId) {
   const slot = currentBuild.slots[slotId];
   const slotConfig = SLOT_CONFIG.find(s => s.id === slotId);
   const editorSection = document.getElementById('editor-section');
+  const jediActive = isJediMode(currentBuild);
+  
+  // Don't open editor for Jedi-locked slots
+  if (jediActive && (JEDI_LOCKED_SLOTS.includes(slotId) || slotId === 'belt')) {
+    const lockLabel = slotId === 'belt' ? 'Belt of Bodo Baas (+50 TGH/OPP/RNG/MLE)' : 'Jedi Robe (locked)';
+    editorSection.innerHTML = `<div class="editor-placeholder"><p>🔒 ${lockLabel}</p></div>`;
+    return;
+  }
+  
+  // Rename weapon to Lightsaber in Jedi mode
+  const displayName = jediActive && slotId === 'weapon' ? 'Lightsaber' : slot.name;
   
   // Only show copy button when slot has 3 stats
   const hasFullStats = slot.stats.filter(s => s.modifier).length === 3;
@@ -326,7 +339,7 @@ function showSlotEditor(slotId) {
   editorSection.innerHTML = `
     <div class="slot-editor">
       <div class="editor-header">
-        <h3>${slot.name}${slotConfig.isExotic ? ' <span class="exotic-badge">EXOTIC</span>' : ''}</h3>
+        <h3>${displayName}${slotConfig.isExotic ? ' <span class="exotic-badge">EXOTIC</span>' : ''}</h3>
         <div class="editor-header-actions">
           ${hasFullStats ? '<button class="btn-icon" id="copy-slot-btn" title="Copy Stats"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button>' : ''}
           ${copiedSlotConfig ? '<button class="btn-icon" id="paste-slot-btn" title="Paste Stats"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg></button>' : ''}
@@ -480,14 +493,19 @@ function render() {
   renderSlots();
   
   // Get backpack, jewelry, familiar, and implant stats for totals calculation
+  const jediActive = isJediMode(currentBuild);
   const backpackStats = getBackpackStats(currentBuild.backpack);
   const jewelryStats = getJewelryStats(currentBuild.jewelrySet);
-  const bakeInTotals = calculateBakeInTotals(currentBuild.bakeInStats);
+  const bakeInTotals = calculateBakeInTotals(currentBuild.bakeInStats, jediActive);
   const familiarStats = getFamiliarStats(currentBuild.familiar || 'none');
   const implantStats = getImplantStats(currentBuild.implants || {});
   const braceletStats = getBraceletStats(currentBuild.bracelets || {});
   
-  // Combine external buffs with backpack, jewelry, familiar, implant, bracelet and bake-in stats for the summary
+  // Jedi mode stats (Belt of Bodo Baas + Cloak)
+  const bodoBasStats = jediActive ? getBodoBasStats() : [];
+  const cloakStats = jediActive ? getJediCloakStats(currentBuild.jediMode?.cloakId) : [];
+  
+  // Combine external buffs with backpack, jewelry, familiar, implant, bracelet, bake-in, and Jedi stats
   const allExternalStats = [
     ...(currentBuild.externalBuffs || []),
     ...backpackStats.map(s => ({ modifier: s.modifier, value: s.value, source: 'backpack' })),
@@ -495,7 +513,9 @@ function render() {
     ...bakeInTotals.map(s => ({ modifier: s.modifier, value: s.value, source: 'armor' })),
     ...familiarStats,
     ...implantStats,
-    ...braceletStats.map(s => ({ modifier: s.modifier, value: s.value, source: 'bracelet' }))
+    ...braceletStats.map(s => ({ modifier: s.modifier, value: s.value, source: 'bracelet' })),
+    ...bodoBasStats,
+    ...cloakStats
   ];
   
   renderStatSummary(statSummary, currentBuild, modifiersData, allExternalStats, currentBuild.armorBonusHP || 0);
@@ -512,7 +532,7 @@ function render() {
     if (!currentBuild.bakeInStats) {
       currentBuild.bakeInStats = { enabled: false, global: null, perSlot: {} };
     }
-    renderBakeInEditor(bakeInContainer, currentBuild.bakeInStats, handleBakeInUpdate);
+    renderBakeInEditor(bakeInContainer, currentBuild.bakeInStats, handleBakeInUpdate, jediActive);
   }
   
   // Render jewelry section
@@ -532,7 +552,7 @@ function render() {
   
   // Render Jedi toggle
   if (jediToggleContainer) {
-    renderJediToggle(jediToggleContainer, currentBuild.jediMode || false, handleJediModeUpdate);
+    renderJediToggle(jediToggleContainer, currentBuild.jediMode || { enabled: false, cloakId: 'none' }, handleJediModeUpdate);
   }
   
   // Render bracelet picker in Build tab (always visible)
@@ -618,8 +638,22 @@ function handleImplantUpdate(implants) {
 /**
  * Handle Jedi mode toggle
  */
-function handleJediModeUpdate(isJedi) {
-  currentBuild.jediMode = isJedi;
+function handleJediModeUpdate(jediState) {
+  currentBuild.jediMode = jediState;
+  
+  if (jediState.enabled) {
+    // Clear stats from locked slots (biceps, bracers)
+    for (const slotId of JEDI_LOCKED_SLOTS) {
+      if (currentBuild.slots[slotId]) {
+        currentBuild.slots[slotId].stats = [];
+      }
+    }
+    // Clear belt stats (Bodo Baas replaces it)
+    if (currentBuild.slots.belt) {
+      currentBuild.slots.belt.stats = [];
+    }
+  }
+  
   onBuildChanged();
 }
 
@@ -651,8 +685,9 @@ function handlePowerBitChange(slotId, newPowerBit, modifier) {
  * Render just the slots
  */
 function renderSlots() {
+  const jediActive = isJediMode(currentBuild);
   if (currentView === 'visual') {
-    renderVisualView(slotContainer, currentBuild, handleSlotClick, handleBeltTypeChange);
+    renderVisualView(slotContainer, currentBuild, handleSlotClick, handleBeltTypeChange, jediActive);
     slotContainer.classList.add('visual-view');
     slotContainer.classList.remove('list-view');
   } else {
