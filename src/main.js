@@ -42,6 +42,9 @@ let jewelryContainer = null;
 let braceletContainer = null;
 let bakeInContainer = null;
 let familiarContainer = null;
+let backpackInline = null;
+let jewelryInline = null;
+let familiarInline = null;
 let braceletBuildContainer = null;
 let jediToggleContainer = null;
 let implantContainer = null;
@@ -65,6 +68,9 @@ function init() {
   braceletContainer = document.getElementById('bracelet-content');
   bakeInContainer = document.getElementById('bakein-container');
   familiarContainer = document.getElementById('familiar-container');
+  backpackInline = document.getElementById('backpack-inline');
+  jewelryInline = document.getElementById('jewelry-inline');
+  familiarInline = document.getElementById('familiar-inline');
   braceletBuildContainer = document.getElementById('bracelet-build-container');
   jediToggleContainer = document.getElementById('jedi-toggle-container');
   implantContainer = document.getElementById('implant-container');
@@ -520,6 +526,17 @@ function render() {
   // Render familiar section
   if (familiarContainer) {
     renderFamiliarPicker(familiarContainer, currentBuild.familiar || 'none', handleFamiliarUpdate);
+  }
+  
+  // Render inline selectors (center section - below editor)
+  if (backpackInline) {
+    renderBackpackSection(backpackInline, currentBuild.backpack, handleBackpackUpdate);
+  }
+  if (jewelryInline) {
+    renderJewelrySection(jewelryInline, currentBuild.jewelrySet, handleJewelrySetUpdate);
+  }
+  if (familiarInline) {
+    renderFamiliarPicker(familiarInline, currentBuild.familiar || 'none', handleFamiliarUpdate);
   }
   
   // Render implant section

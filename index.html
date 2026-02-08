@@ -146,9 +146,22 @@
           <div id="bracelet-build-container" class="bracelet-build-section">
             <!-- Bracelet picker rendered here -->
           </div>
+          
+          <!-- Quick selectors row - moved from sidebar -->
+          <div class="quick-selectors-row">
+            <div id="backpack-inline" class="inline-selector">
+              <!-- Backpack rendered here -->
+            </div>
+            <div id="jewelry-inline" class="inline-selector">
+              <!-- Heroic jewelry rendered here -->
+            </div>
+            <div id="familiar-inline" class="inline-selector">
+              <!-- Familiar rendered here -->
+            </div>
+          </div>
         </section>
 
-        <!-- Right: Stat Totals -->
+        <!-- Right: Stat Totals (compact) -->
         <section class="stats-section">
           <div class="section-header">
             <h2>Stat Totals</h2>
@@ -157,24 +170,9 @@
             <p class="empty-state">No stats selected yet</p>
           </div>
           
-          <!-- Backpack Section -->
-          <div id="backpack-container" class="backpack-container">
-            <!-- Backpack section rendered here -->
-          </div>
-          
           <!-- Bake-In Stats Section -->
           <div id="bakein-container" class="bakein-container">
             <!-- Bake-in editor rendered here -->
-          </div>
-          
-          <!-- Heroic Jewelry Section -->
-          <div id="jewelry-container" class="jewelry-container">
-            <!-- Jewelry section rendered here -->
-          </div>
-          
-          <!-- Familiar Section -->
-          <div id="familiar-container" class="familiar-container">
-            <!-- Familiar picker rendered here -->
           </div>
           
           <!-- Implant Section -->
@@ -187,6 +185,19 @@
           </div>
         </section>
       </main>
+      
+      <!-- Row below main: additional selectors under slot visual -->
+      <div class="bottom-selectors-row">
+        <div id="backpack-container" class="backpack-container">
+          <!-- Backpack section rendered here (for mobile/fallback) -->
+        </div>
+        <div id="jewelry-container" class="jewelry-container">
+          <!-- Jewelry section rendered here (for mobile/fallback) -->
+        </div>
+        <div id="familiar-container" class="familiar-container">
+          <!-- Familiar picker rendered here (for mobile/fallback) -->
+        </div>
+      </div>
     </div>
 
     <!-- Jewelry View -->
