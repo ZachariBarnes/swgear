@@ -47,14 +47,26 @@ export function renderBraceletPicker(container, bracelets = {}, onUpdate) {
   };
   
   container.innerHTML = `
-    <div class="bracelet-picker-inline">
-      <span class="bracelet-label">🔗 Bracelets:</span>
-      <select id="bracelet-left" class="bracelet-select-inline" title="Left Wrist">
-        ${renderOptions(bracelets.left)}
-      </select>
-      <select id="bracelet-right" class="bracelet-select-inline" title="Right Wrist">
-        ${renderOptions(bracelets.right)}
-      </select>
+    <div class="bracelet-picker">
+      <div class="bracelet-header">
+        <h4>🔗 Treasure Map Bracelets</h4>
+        <span class="bracelet-hint">Heroic sets don't include bracelets</span>
+      </div>
+      <div class="bracelet-slots">
+        <div class="bracelet-slot">
+          <label>Left Wrist</label>
+          <select id="bracelet-left" class="bracelet-select">
+            ${renderOptions(bracelets.left)}
+          </select>
+        </div>
+        <div class="bracelet-slot">
+          <label>Right Wrist</label>
+          <select id="bracelet-right" class="bracelet-select">
+            ${renderOptions(bracelets.right)}
+          </select>
+        </div>
+      </div>
+      ${renderBraceletStats(bracelets)}
     </div>
   `;
   

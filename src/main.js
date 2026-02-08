@@ -42,9 +42,6 @@ let jewelryContainer = null;
 let braceletContainer = null;
 let bakeInContainer = null;
 let familiarContainer = null;
-let backpackInline = null;
-let jewelryInline = null;
-let familiarInline = null;
 let braceletBuildContainer = null;
 let jediToggleContainer = null;
 let implantContainer = null;
@@ -68,9 +65,6 @@ function init() {
   braceletContainer = document.getElementById('bracelet-content');
   bakeInContainer = document.getElementById('bakein-container');
   familiarContainer = document.getElementById('familiar-container');
-  backpackInline = document.getElementById('backpack-inline');
-  jewelryInline = document.getElementById('jewelry-inline');
-  familiarInline = document.getElementById('familiar-inline');
   braceletBuildContainer = document.getElementById('bracelet-build-container');
   jediToggleContainer = document.getElementById('jedi-toggle-container');
   implantContainer = document.getElementById('implant-container');
@@ -318,19 +312,6 @@ function showSlotEditor(slotId) {
   const slotConfig = SLOT_CONFIG.find(s => s.id === slotId);
   const editorSection = document.getElementById('editor-section');
   
-  // Get or create the slot editor area (only replace this part, not bracelet/selectors)
-  let editorArea = editorSection.querySelector('.slot-editor-area');
-  if (!editorArea) {
-    // First time - need to restructure the section
-    const placeholder = editorSection.querySelector('.editor-placeholder');
-    if (placeholder) {
-      placeholder.outerHTML = '<div class="slot-editor-area"></div>';
-      editorArea = editorSection.querySelector('.slot-editor-area');
-    }
-  }
-  
-  if (!editorArea) return;
-  
   // Only show copy button when slot has 3 stats
   const hasFullStats = slot.stats.filter(s => s.modifier).length === 3;
   
@@ -339,7 +320,7 @@ function showSlotEditor(slotId) {
     ? '<p class="exotic-note">Exotic slot - can use any modifier type</p>' 
     : '';
   
-  editorArea.innerHTML = `
+  editorSection.innerHTML = `
     <div class="slot-editor">
       <div class="editor-header">
         <h3>${slot.name}${slotConfig.isExotic ? ' <span class="exotic-badge">EXOTIC</span>' : ''}</h3>
@@ -380,22 +361,21 @@ function showSlotEditor(slotId) {
     </div>
   `;
   
-  // Close button - restore placeholder
-  editorArea.querySelector('.editor-close').addEventListener('click', () => {
-    editorArea.innerHTML = '<div class="editor-placeholder"><p>Select an armor slot to add stats</p></div>';
-    editorArea.outerHTML = '<div class="editor-placeholder"><p>Select an armor slot to add stats</p></div>';
+  // Close button
+  editorSection.querySelector('.editor-close').addEventListener('click', () => {
+    editorSection.innerHTML = '<div class="editor-placeholder"><p>Select an armor slot to add stats</p></div>';
     activeSlotId = null;
     document.querySelectorAll('.slot-card, .slot-list-item').forEach(el => el.classList.remove('active'));
   });
   
   // Power selector
-  editorArea.querySelector('#power-select').addEventListener('change', (e) => {
+  editorSection.querySelector('#power-select').addEventListener('change', (e) => {
     slot.powerBit = parseInt(e.target.value, 10);
     onBuildChanged();
   });
   
   // Stat slots - click to add/edit
-  editorArea.querySelectorAll('.stat-slot').forEach(el => {
+  editorSection.querySelectorAll('.stat-slot').forEach(el => {
     el.addEventListener('click', (e) => {
       if (e.target.classList.contains('stat-remove')) return;
       
@@ -409,7 +389,7 @@ function showSlotEditor(slotId) {
   });
   
   // Remove stat buttons
-  editorArea.querySelectorAll('.stat-remove').forEach(btn => {
+  editorSection.querySelectorAll('.stat-remove').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
       const index = parseInt(btn.dataset.index, 10);
@@ -420,7 +400,7 @@ function showSlotEditor(slotId) {
   });
   
   // Copy stats button
-  const copyBtn = editorArea.querySelector('#copy-slot-btn');
+  const copyBtn = editorSection.querySelector('#copy-slot-btn');
   if (copyBtn) {
     copyBtn.addEventListener('click', () => {
       copiedSlotConfig = {
@@ -438,7 +418,7 @@ function showSlotEditor(slotId) {
   }
   
   // Paste stats button
-  const pasteBtn = editorArea.querySelector('#paste-slot-btn');
+  const pasteBtn = editorSection.querySelector('#paste-slot-btn');
   if (pasteBtn) {
     pasteBtn.addEventListener('click', () => {
       if (!copiedSlotConfig) return;
@@ -540,17 +520,6 @@ function render() {
   // Render familiar section
   if (familiarContainer) {
     renderFamiliarPicker(familiarContainer, currentBuild.familiar || 'none', handleFamiliarUpdate);
-  }
-  
-  // Render inline selectors (center section - below editor)
-  if (backpackInline) {
-    renderBackpackSection(backpackInline, currentBuild.backpack, handleBackpackUpdate);
-  }
-  if (jewelryInline) {
-    renderJewelrySection(jewelryInline, currentBuild.jewelrySet, handleJewelrySetUpdate);
-  }
-  if (familiarInline) {
-    renderFamiliarPicker(familiarInline, currentBuild.familiar || 'none', handleFamiliarUpdate);
   }
   
   // Render implant section
