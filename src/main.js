@@ -207,6 +207,9 @@ function setupEventListeners() {
   
   // Skill calculator import
   setupImportModal();
+  
+  // Buffs modal
+  setupBuffsModal();
 }
 
 // Quick preset configurations (for core armor slots only)
@@ -728,6 +731,28 @@ function setupPresetDropdown() {
       }
     });
   });
+}
+
+/**
+ * Set up the external buffs modal
+ */
+function setupBuffsModal() {
+  const openBtn = document.getElementById('open-buffs-btn');
+  const modal = document.getElementById('buffs-modal');
+  if (!openBtn || !modal) return;
+  
+  const backdrop = modal.querySelector('.modal-backdrop');
+  const closeBtn = modal.querySelector('.modal-close');
+  
+  openBtn.addEventListener('click', () => {
+    modal.hidden = false;
+    // Re-render buffs inside modal
+    renderExternalBuffs(externalBuffsContainer, currentBuild.externalBuffs, handleBuffsUpdate, currentBuild.armorBonusHP || 0, handleArmorHPUpdate);
+  });
+  
+  const closeModal = () => { modal.hidden = true; };
+  closeBtn?.addEventListener('click', closeModal);
+  backdrop?.addEventListener('click', closeModal);
 }
 
 /**

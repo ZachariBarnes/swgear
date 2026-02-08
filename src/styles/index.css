@@ -68,14 +68,16 @@ body {
   background: var(--color-bg-primary);
   color: var(--color-text-primary);
   line-height: 1.5;
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
 }
 
 /* App Layout */
 #app {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
 }
 
 /* Header - SWGR Style */
@@ -158,23 +160,30 @@ body {
 .view-container {
   display: none;
   flex: 1;
+  overflow: hidden;
 }
 
 .view-container.active {
-  display: block;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Tool Description */
 .tool-description {
-  padding: var(--spacing-lg) var(--spacing-xl);
+  padding: 2px var(--spacing-xl);
   background: var(--color-bg-tertiary);
   border-bottom: 1px solid var(--color-border);
+  flex-shrink: 0;
+  display: flex;
+  gap: var(--spacing-md);
+  align-items: center;
 }
 
 .tool-description p {
-  font-size: 0.9375rem;
+  font-size: 0.8rem;
   color: var(--color-text-secondary);
-  max-width: 800px;
+  max-width: none;
+  margin: 0;
 }
 
 .tool-description p + p {
@@ -231,10 +240,12 @@ body {
 /* Main Content - Three Column Layout */
 .main-content {
   display: grid;
-  grid-template-columns: auto 1fr 320px;
-  gap: var(--spacing-xl);
-  padding: var(--spacing-xl);
+  grid-template-columns: auto 1fr 280px;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
   flex: 1;
+  min-height: 0;
+  overflow: hidden;
 }
 
 @media (max-width: 1200px) {
@@ -343,6 +354,8 @@ body {
 /* Armor Section */
 .armor-section {
   flex-shrink: 0;
+  min-height: 0;
+  overflow: hidden;
 }
 
 .slot-container {
@@ -353,8 +366,8 @@ body {
 /* A-Pose Humanoid Silhouette Layout */
 .armor-visual {
   position: relative;
-  width: 580px;
-  height: 580px;
+  width: 400px;
+  height: 400px;
   background: var(--color-bg-secondary);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
@@ -367,8 +380,8 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -48%);
-  width: 360px;
-  height: 500px;
+  width: 250px;
+  height: 350px;
   background: rgba(40, 50, 60, 0.9);
   clip-path: polygon(
     /* Head */
@@ -407,8 +420,8 @@ body {
 
 /* Slot Cards - inside wrapper, no absolute positioning */
 .slot-card {
-  width: 88px;
-  height: 60px;
+  width: 72px;
+  height: 44px;
   background: var(--color-bg-slot);
   border: 2px solid var(--color-border);
   border-radius: var(--radius-sm);
@@ -418,8 +431,8 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: var(--spacing-xs) var(--spacing-sm);
-  gap: 2px;
+  padding: 1px var(--spacing-xs);
+  gap: 0;
 }
 
 .slot-card:hover {
@@ -442,12 +455,12 @@ body {
 }
 
 .slot-name {
-  font-size: 0.8125rem;
+  font-size: 0.625rem;
   font-weight: 600;
   text-align: center;
   color: var(--color-text-primary);
   text-transform: uppercase;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
 }
 
 .slot-stats {
@@ -459,12 +472,12 @@ body {
 
 /* Exotic label inside slot */
 .exotic-label {
-  font-size: 0.5625rem;
+  font-size: 0.5rem;
   font-weight: 700;
   color: var(--color-accent-gold);
   text-transform: uppercase;
-  letter-spacing: 0.03em;
-  margin-top: 2px;
+  letter-spacing: 0.02em;
+  margin-top: 0;
 }
 
 /* Exotic slot styling */
@@ -486,7 +499,7 @@ body {
   position: absolute;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 3px;
   z-index: 1;
   cursor: pointer;
 }
@@ -505,8 +518,8 @@ body {
 .slot-tags-sidebar {
   display: flex;
   flex-direction: column;
-  gap: 2px;
-  min-width: 36px;
+  gap: 1px;
+  min-width: 28px;
 }
 
 /* For center slots, position sidebar absolutely to the left so it doesn't shift the card */
@@ -525,11 +538,11 @@ body {
 
 /* Individual stat tags */
 .stat-tag {
-  font-size: 0.625rem;
+  font-size: 0.5625rem;
   font-weight: 700;
-  padding: 2px 5px;
-  border-radius: 3px;
-  letter-spacing: 0.03em;
+  padding: 1px 3px;
+  border-radius: 2px;
+  letter-spacing: 0.02em;
   line-height: 1;
   white-space: nowrap;
 }
@@ -546,31 +559,32 @@ body {
 
 /* Slot Positions - A-Pose Layout (wrapper positioning) */
 /* Center column slots - centered on silhouette */
-.slot-wrapper[data-slot-id="helmet"] { top: 20px; left: 50%; transform: translateX(-50%); }
-.slot-wrapper[data-slot-id="chest"] { top: 115px; left: 50%; transform: translateX(-50%); }
-.slot-wrapper[data-slot-id="shirt"] { top: 195px; left: 50%; transform: translateX(-50%); }
-.slot-wrapper[data-slot-id="belt"] { top: 275px; left: 50%; transform: translateX(-50%); }
-.slot-wrapper[data-slot-id="pants"] { top: 390px; left: 50%; transform: translateX(-50%); }
-.slot-wrapper[data-slot-id="boots"] { top: 495px; left: 50%; transform: translateX(-50%); }
+.slot-wrapper[data-slot-id="helmet"] { top: 6px; left: 50%; transform: translateX(-50%); }
+.slot-wrapper[data-slot-id="chest"] { top: 68px; left: 50%; transform: translateX(-50%); }
+.slot-wrapper[data-slot-id="shirt"] { top: 126px; left: 50%; transform: translateX(-50%); }
+.slot-wrapper[data-slot-id="belt"] { top: 184px; left: 50%; transform: translateX(-50%); }
+.slot-wrapper[data-slot-id="pants"] { top: 262px; left: 50%; transform: translateX(-50%); }
+.slot-wrapper[data-slot-id="boots"] { top: 340px; left: 50%; transform: translateX(-50%); }
 
 /* Left column slots */
-.slot-wrapper[data-slot-id="lbicep"] { top: 135px; left: 12px; }
-.slot-wrapper[data-slot-id="lbracer"] { top: 220px; left: 12px; }
-.slot-wrapper[data-slot-id="gloves"] { top: 305px; left: 12px; }
+.slot-wrapper[data-slot-id="lbicep"] { top: 84px; left: 6px; }
+.slot-wrapper[data-slot-id="lbracer"] { top: 145px; left: 6px; }
+.slot-wrapper[data-slot-id="gloves"] { top: 206px; left: 6px; }
 
 /* Right column slots */
-.slot-wrapper[data-slot-id="rbicep"] { top: 135px; right: 12px; }
-.slot-wrapper[data-slot-id="rbracer"] { top: 220px; right: 12px; }
-.slot-wrapper[data-slot-id="weapon"] { top: 305px; right: 55px; }
+.slot-wrapper[data-slot-id="rbicep"] { top: 84px; right: 6px; }
+.slot-wrapper[data-slot-id="rbracer"] { top: 145px; right: 6px; }
+.slot-wrapper[data-slot-id="weapon"] { top: 206px; right: 40px; }
 
 /* Editor Section */
 .editor-section {
   background: var(--color-bg-secondary);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-  min-height: 400px;
+  min-height: 0;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .editor-placeholder {
@@ -649,9 +663,9 @@ body {
 }
 
 .editor-body {
-  padding: var(--spacing-lg);
+  padding: var(--spacing-md);
   flex: 1;
-  overflow-y: auto;
+  overflow: hidden;
 }
 
 .exotic-note {
@@ -756,19 +770,36 @@ body {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
 }
 
 .stats-section .section-header {
-  padding: var(--spacing-lg);
+  padding: var(--spacing-xs) var(--spacing-sm);
   background: var(--color-bg-tertiary);
   border-bottom: 1px solid var(--color-border);
   margin-bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stats-section .section-header h2 {
+  font-size: 0.85rem;
+}
+
+.stats-section .section-header .btn {
+  padding: 2px var(--spacing-sm);
+  font-size: 0.7rem;
+  flex-shrink: 0;
 }
 
 .stat-summary {
-  padding: var(--spacing-lg);
-  max-height: 500px;
-  overflow-y: auto;
+  padding: var(--spacing-sm);
+  flex: 1;
+  overflow: hidden;
+  min-height: 0;
 }
 
 .stat-group {
@@ -1287,6 +1318,8 @@ body {
   padding: var(--spacing-xl);
   max-width: 1200px;
   margin: 0 auto;
+  overflow-y: auto;
+  flex: 1;
 }
 
 .crafter-header {
@@ -2216,6 +2249,8 @@ body {
   max-width: 1000px;
   margin: 0 auto;
   padding: var(--spacing-xl);
+  overflow-y: auto;
+  flex: 1;
 }
 
 .jewelry-header {
@@ -2388,21 +2423,22 @@ body {
 .help-panel {
   background: var(--color-bg-secondary);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  margin: var(--spacing-lg) var(--spacing-xl);
+  border-radius: var(--radius-sm);
+  margin: 2px var(--spacing-md);
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .help-panel-toggle {
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
-  padding: var(--spacing-md) var(--spacing-lg);
+  padding: var(--spacing-xs) var(--spacing-md);
   cursor: pointer;
   background: var(--color-bg-tertiary);
   color: var(--color-text-primary);
   font-weight: 600;
-  font-size: 0.9375rem;
+  font-size: 0.8rem;
   list-style: none;
   transition: var(--transition-fast);
 }
@@ -3272,14 +3308,14 @@ body {
 
 .familiar-dropdown {
   position: absolute;
-  top: 100%;
+  bottom: 100%;
   left: 0;
   right: 0;
   z-index: 100;
   background: var(--color-bg-secondary);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-  margin-top: 4px;
+  margin-bottom: 4px;
   box-shadow: var(--shadow-lg);
   overflow: hidden;
 }
@@ -3287,14 +3323,15 @@ body {
 .familiar-option {
   display: flex;
   align-items: center;
-  gap: var(--spacing-sm);
+  gap: var(--spacing-xs);
   width: 100%;
-  padding: var(--spacing-sm) var(--spacing-md);
+  padding: var(--spacing-xs) var(--spacing-sm);
   background: transparent;
   border: none;
   cursor: pointer;
   transition: var(--transition-fast);
   text-align: left;
+  font-size: 0.8rem;
 }
 
 .familiar-option:hover {
@@ -3743,72 +3780,247 @@ body {
   padding: var(--spacing-xs) var(--spacing-md);
 }
 
-/* Reduce main content padding */
-main.content {
-  padding: var(--spacing-sm);
+/* ===== BUILDER BOTTOM BAR ===== */
+.builder-bottom-bar {
+  display: flex;
+  align-items: stretch;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-xs) var(--spacing-md);
+  background: var(--color-bg-secondary);
+  border-top: 1px solid var(--color-border);
+  flex-shrink: 0;
+  max-height: 160px;
+  overflow: hidden;
+}
+
+.builder-bottom-bar .bracelet-build-section {
+  flex-shrink: 0;
+  margin: 0;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: var(--color-bg-tertiary);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  min-width: 260px;
+  max-width: 280px;
+  overflow: hidden;
+}
+
+.builder-bottom-bar .bracelet-build-section .bracelet-picker {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.builder-bottom-bar .bracelet-header {
+  margin-bottom: var(--spacing-xs);
+}
+
+.builder-bottom-bar .bracelet-header h4 {
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.builder-bottom-bar .bracelet-hint {
+  font-size: 0.65rem;
+}
+
+.builder-bottom-bar .bracelet-slots {
   gap: var(--spacing-sm);
 }
 
-/* Compact side panel sections */
-.stats-section {
+.builder-bottom-bar .bracelet-slot label {
+  font-size: 0.7rem;
+  margin-bottom: 2px;
+}
+
+.builder-bottom-bar .bracelet-select {
+  padding: 2px 4px;
+  font-size: 0.75rem;
+}
+
+.gear-sources-bar {
+  display: flex;
+  align-items: stretch;
+  gap: var(--spacing-sm);
+  flex: 1;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.gear-sources-bar > div {
+  flex: 1;
+  min-width: 0;
+  max-width: 280px;
+  overflow: hidden;
+}
+
+/* Compact gear source sections in bottom bar */
+.gear-sources-bar .backpack-section,
+.gear-sources-bar .jewelry-section,
+.gear-sources-bar .familiar-section,
+.gear-sources-bar .implant-editor {
   padding: var(--spacing-xs) var(--spacing-sm);
-  max-height: calc(100vh - 120px);
-  overflow-y: auto;
+  margin: 0;
+  font-size: 0.75rem;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-panel);
 }
 
-.stats-section .section-header {
-  padding: var(--spacing-xs) 0;
+.gear-sources-bar .backpack-header,
+.gear-sources-bar .jewelry-header,
+.gear-sources-bar .familiar-header,
+.gear-sources-bar .implant-header {
   margin-bottom: var(--spacing-xs);
+  padding-bottom: var(--spacing-xs);
 }
 
-.stats-section .section-header h2 {
-  font-size: var(--font-size-sm);
+.gear-sources-bar .backpack-header h3,
+.gear-sources-bar .jewelry-header h3,
+.gear-sources-bar .familiar-header h4,
+.gear-sources-bar .implant-header h4 {
+  font-size: 0.75rem;
 }
 
-/* Compact all side panel containers */
-.backpack-container,
-.bakein-container,
-.jewelry-container,
-.familiar-container,
-.implant-container,
-.external-buffs-container {
-  padding: var(--spacing-xs) 0;
-  margin-bottom: var(--spacing-xs);
+.gear-sources-bar .backpack-select,
+.gear-sources-bar .jewelry-select {
+  font-size: 0.7rem;
+  padding: 2px 4px;
+  min-width: auto;
 }
 
-/* Reduce section header sizes */
-.backpack-header,
-.jewelry-header,
-.familiar-header,
-.implant-header,
-.buff-header,
-.bakein-header {
-  padding: var(--spacing-xs) 0;
-  margin-bottom: var(--spacing-xs);
+.gear-sources-bar .backpack-stat-row,
+.gear-sources-bar .jewelry-stat-row {
+  padding: 0 var(--spacing-xs);
+  font-size: 0.65rem;
+  line-height: 1.3;
 }
 
-.backpack-header h3,
-.jewelry-header h3,
-.familiar-header h3,
-.implant-header h3,
-.buff-header h3,
-.bakein-header h3 {
-  font-size: var(--font-size-xs);
+.gear-sources-bar .backpack-stat-name,
+.gear-sources-bar .jewelry-stat-name {
+  font-size: 0.65rem;
 }
 
-/* Compact implant grid */
-.implant-grid {
-  gap: var(--spacing-xs);
+.gear-sources-bar .backpack-stat-value,
+.gear-sources-bar .jewelry-stat-value {
+  font-size: 0.65rem;
+}
+
+.gear-sources-bar .backpack-description,
+.gear-sources-bar .jewelry-description {
+  display: none;
+}
+
+.gear-sources-bar .familiar-current {
   padding: var(--spacing-xs);
+  gap: var(--spacing-xs);
 }
 
-.implant-row {
-  gap: var(--spacing-xs);
+.gear-sources-bar .familiar-name {
+  font-size: 0.75rem;
+}
+
+.gear-sources-bar .familiar-stats {
+  display: none;
+}
+
+.gear-sources-bar .implant-stats {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+}
+
+.gear-sources-bar .implant-stat-row {
+  padding: 1px 3px;
+  border: none;
+  background: var(--color-bg-secondary);
+}
+
+.gear-sources-bar .implant-stat-name {
+  font-size: 0.7rem;
+}
+
+.gear-sources-bar .implant-btn {
+  width: 16px;
+  height: 16px;
+  font-size: 0.7rem;
+}
+
+.gear-sources-bar .implant-value {
+  font-size: 0.7rem;
+  min-width: 14px;
+}
+
+.gear-sources-bar .implant-hint {
+  display: none;
+}
+
+.gear-sources-bar .implant-header h4 {
+  font-size: 0.75rem;
+}
+
+.gear-sources-bar .implant-points {
+  font-size: 0.7rem;
+}
+
+/* Compact stat summary */
+.stat-summary .stat-row {
+  padding: 2px 0;
+  font-size: 0.8125rem;
+}
+
+.stat-summary .stat-group {
+  margin-bottom: var(--spacing-sm);
+}
+
+.stat-summary .stat-group-title {
+  font-size: 0.6875rem;
+  margin-bottom: var(--spacing-xs);
+}
+
+.stat-summary .stat-legend {
+  font-size: 0.625rem;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-xs);
+}
+
+.stat-summary .ham-bar {
+  padding: 1px var(--spacing-xs);
+  font-size: 0.75rem;
+}
+
+.stat-summary .sec-stat {
+  font-size: 0.625rem;
+  padding: 1px var(--spacing-xs);
+}
+
+/* Compact stat bar */
+.stat-bar-container {
+  margin: 0 var(--spacing-xs);
+}
+
+/* ===== BUFFS MODAL ===== */
+.buffs-modal-content {
+  max-width: 520px;
+  max-height: 80vh;
+}
+
+.buffs-modal-content .modal-body {
+  padding: var(--spacing-md);
+  overflow-y: auto;
+  max-height: calc(80vh - 60px);
+}
+
+.buffs-modal-content .external-buffs-container {
+  border: none;
+  background: none;
+  padding: 0;
 }
 
 /* ===== BRACELET BUILD SECTION ===== */
 .bracelet-build-section {
-  margin-top: var(--spacing-md);
+  margin-top: 0;
   padding: var(--spacing-sm);
   background: var(--color-bg-elevated);
   border-radius: var(--radius-md);
@@ -3837,24 +4049,65 @@ main.content {
   padding: var(--spacing-xs);
 }
 
-/* Reduce stat summary padding */
-.stat-summary {
-  padding: var(--spacing-xs);
-}
-
-.stat-summary .stat-row {
-  padding: var(--spacing-xs) 0;
-}
-
-/* Compact dropdown styling */
-.backpack-select,
-.jewelry-select,
-.familiar-select {
-  padding: var(--spacing-xs);
-  font-size: var(--font-size-xs);
-}
-
 /* Hide editor placeholder when bracelet picker is visible */
 .editor-section .editor-placeholder + .bracelet-build-section {
   margin-top: var(--spacing-sm);
+}
+
+/* ===== FIX: Remove ALL scrollbars ===== */
+
+/* Stats section - NO scrollbar */
+.stats-section {
+  overflow: hidden !important;
+  max-height: none !important;
+}
+
+/* Stat summary - NO scrollbar */
+.stat-summary {
+  overflow: hidden !important;
+  max-height: none !important;
+}
+
+/* View container - NO scrollbar */
+.view-container {
+  overflow: hidden !important;
+}
+
+.view-container.active {
+  overflow: hidden !important;
+}
+
+/* Main content area - NO scrollbar */
+.main-content {
+  overflow: hidden !important;
+}
+
+/* Build view - NO nested scrollbars */
+#build-view {
+  overflow: hidden !important;
+}
+
+/* Hide all scrollbars universally */
+* {
+  scrollbar-width: none !important;
+}
+
+*::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* ===== FIX: Editor section sizing ===== */
+
+/* Editor should not grow too tall and overlap bake-in */
+.editor-section {
+  max-height: 450px !important;
+  overflow: hidden !important;
+}
+
+/* Slot editor panel - compact */
+.slot-editor {
+  max-height: 350px !important;
+  overflow: hidden !important;
 }
