@@ -260,12 +260,6 @@ body {
   overflow: hidden;
 }
 
-@media (max-width: 1200px) {
-  .main-content {
-    grid-template-columns: 1fr;
-  }
-}
-
 /* Section Headers */
 .section-header {
   display: flex;
@@ -2198,7 +2192,7 @@ body {
 
 /* Skill Calculator Import Modal */
 .skill-import-modal {
-  max-width: 500px;
+  max-width: 560px;
 }
 
 .skill-import-modal .modal-body p {
@@ -2211,6 +2205,70 @@ body {
   display: flex;
   gap: var(--spacing-sm);
   margin-top: var(--spacing-md);
+}
+
+/* Profession Picker */
+.profession-picker {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.prof-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.prof-group-label {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+}
+
+.prof-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.prof-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-secondary);
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: var(--font-body);
+}
+
+.prof-chip:hover {
+  background: var(--color-bg-slot-hover);
+  border-color: var(--color-accent-primary);
+  color: var(--color-text-primary);
+}
+
+.prof-chip.selected {
+  background: rgba(88, 166, 255, 0.15);
+  border-color: var(--color-accent-primary);
+  color: var(--color-accent-primary);
+  font-weight: 600;
+}
+
+.prof-icon {
+  font-size: 0.875rem;
+  line-height: 1;
+}
+
+.prof-name {
+  white-space: nowrap;
 }
 
 .import-result {
@@ -2227,15 +2285,17 @@ body {
   color: var(--color-text-primary);
 }
 
-.import-result ul {
-  margin: 0;
-  padding-left: var(--spacing-md);
+.import-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: var(--spacing-sm);
 }
 
-.import-result li {
-  font-size: 0.8125rem;
-  color: var(--color-text-secondary);
-  margin-bottom: 4px;
+.import-note {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  margin-top: var(--spacing-xs);
 }
 
 .import-result .stat-suggestion {
@@ -4246,6 +4306,330 @@ body {
 /* Jedi weapon card styling */
 .slot-card.jedi-weapon {
   border-color: rgba(167, 139, 250, 0.3);
+}
+
+/* ===== RESPONSIVE / MOBILE LAYOUT ===== */
+
+/* Tablet — stack main grid, keep header horizontal */
+@media (max-width: 1024px) {
+  /* Allow page to scroll on smaller screens */
+  body {
+    height: auto;
+    overflow: auto;
+  }
+  
+  #app {
+    height: auto;
+    overflow: visible;
+    min-height: 100vh;
+  }
+  
+  .view-container.active {
+    overflow: visible;
+  }
+  
+  /* Stack the 3-column grid */
+  .main-content {
+    grid-template-columns: 1fr;
+    overflow: visible;
+    padding: var(--spacing-sm);
+  }
+  
+  /* Center the armor visual */
+  .armor-section {
+    overflow: visible;
+  }
+  
+  .armor-visual {
+    margin: 0 auto;
+  }
+  
+  /* Editor section: full width */
+  .editor-section {
+    min-height: 200px;
+  }
+  
+  /* Stats section: full width */
+  .stats-section {
+    max-height: none;
+  }
+  
+  .stat-summary {
+    max-height: none;
+    overflow: visible;
+  }
+  
+  /* Bottom bar: wrap into rows */
+  .builder-bottom-bar {
+    flex-wrap: wrap;
+    max-height: none;
+    overflow: visible;
+  }
+  
+  .bracelet-build-section {
+    width: 100%;
+  }
+  
+  .gear-sources-bar {
+    flex-wrap: wrap;
+  }
+  
+  .gear-sources-bar > div {
+    min-width: 140px;
+    flex: 1 1 140px;
+  }
+  
+  /* Help panel: full width */
+  .help-panel {
+    margin: var(--spacing-xs);
+  }
+  
+  .tool-description {
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-xs) var(--spacing-md);
+  }
+}
+
+/* Mobile — stack everything, compact header */
+@media (max-width: 640px) {
+  /* Header: stack vertically */
+  .app-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm);
+  }
+  
+  .header-brand {
+    justify-content: center;
+  }
+  
+  .header-title {
+    font-size: 1.25rem;
+  }
+  
+  .header-subtitle {
+    display: none;
+  }
+  
+  .tab-nav {
+    justify-content: center;
+  }
+  
+  .tab-btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 0.8125rem;
+  }
+  
+  .header-actions {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-xs);
+  }
+  
+  .header-actions .btn {
+    font-size: 0.75rem;
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+  
+  /* Preset dropdown: full width on mobile */
+  .preset-dropdown {
+    position: relative;
+  }
+  
+  .preset-menu {
+    right: auto;
+    left: 0;
+    min-width: 260px;
+  }
+  
+  /* Armor section: scale visual down */
+  .armor-visual {
+    width: 320px;
+    height: 320px;
+    margin: 0 auto;
+  }
+  
+  .armor-visual::before {
+    width: 200px;
+    height: 280px;
+  }
+  
+  /* Scale slot card positions for smaller visual */
+  .slot-card {
+    width: 58px;
+    height: 36px;
+  }
+  
+  .slot-name {
+    font-size: 0.5rem;
+  }
+  
+  .exotic-label {
+    font-size: 0.4375rem;
+  }
+  
+  .stat-tag {
+    font-size: 0.4375rem;
+    padding: 0 2px;
+  }
+  
+  /* Repositioned slots for 320×320 visual */
+  .slot-wrapper[data-slot-id="helmet"] { top: 4px; }
+  .slot-wrapper[data-slot-id="chest"] { top: 54px; }
+  .slot-wrapper[data-slot-id="shirt"] { top: 100px; }
+  .slot-wrapper[data-slot-id="belt"] { top: 146px; }
+  .slot-wrapper[data-slot-id="pants"] { top: 210px; }
+  .slot-wrapper[data-slot-id="boots"] { top: 272px; }
+  .slot-wrapper[data-slot-id="lbicep"] { top: 68px; left: 4px; }
+  .slot-wrapper[data-slot-id="lbracer"] { top: 116px; left: 4px; }
+  .slot-wrapper[data-slot-id="gloves"] { top: 164px; left: 4px; }
+  .slot-wrapper[data-slot-id="rbicep"] { top: 68px; right: 4px; }
+  .slot-wrapper[data-slot-id="rbracer"] { top: 116px; right: 4px; }
+  .slot-wrapper[data-slot-id="weapon"] { top: 164px; right: 30px; }
+  
+  /* Section headers */
+  .section-header {
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+  }
+  
+  .section-header h2 {
+    font-size: 0.875rem;
+  }
+  
+  .quick-presets {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  /* Editor: full width */
+  .editor-header h3 {
+    font-size: 0.9375rem;
+  }
+  
+  .stat-slot {
+    padding: var(--spacing-sm);
+  }
+  
+  /* Bottom bar: stack vertically on mobile */
+  .builder-bottom-bar {
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-xs);
+  }
+  
+  .gear-sources-bar {
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+  
+  .gear-sources-bar > div {
+    min-width: auto;
+  }
+  
+  /* Modals: full width on mobile */
+  .modal-content {
+    width: 95%;
+    max-height: 90vh;
+  }
+  
+  .buffs-modal-content {
+    max-height: 90vh;
+  }
+  
+  .skill-import-modal {
+    max-width: none;
+    width: 95%;
+  }
+  
+  /* Jewelry tab */
+  .jewelry-tab-content {
+    padding: var(--spacing-md);
+  }
+  
+  .jewelry-editor {
+    grid-template-columns: 1fr;
+  }
+  
+  .jewelry-slots {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Crafter tab */
+  .crafter-tab-content {
+    padding: var(--spacing-md);
+  }
+  
+  .crafter-content {
+    gap: var(--spacing-sm);
+  }
+  
+  /* Bake-in section */
+  .bakein-slot-row {
+    flex-wrap: wrap;
+  }
+  
+  /* Stats section */
+  .stats-section .section-header {
+    flex-wrap: wrap;
+  }
+  
+  /* Jedi controls */
+  .jedi-controls {
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+  }
+  
+  .jedi-cloak-select {
+    max-width: 160px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 400px) {
+  .armor-visual {
+    width: 280px;
+    height: 280px;
+  }
+  
+  .armor-visual::before {
+    width: 175px;
+    height: 245px;
+  }
+  
+  .slot-card {
+    width: 50px;
+    height: 32px;
+  }
+  
+  .slot-name {
+    font-size: 0.4375rem;
+  }
+  
+  /* Re-position for 280px visual */
+  .slot-wrapper[data-slot-id="helmet"] { top: 2px; }
+  .slot-wrapper[data-slot-id="chest"] { top: 46px; }
+  .slot-wrapper[data-slot-id="shirt"] { top: 86px; }
+  .slot-wrapper[data-slot-id="belt"] { top: 126px; }
+  .slot-wrapper[data-slot-id="pants"] { top: 182px; }
+  .slot-wrapper[data-slot-id="boots"] { top: 238px; }
+  .slot-wrapper[data-slot-id="lbicep"] { top: 58px; left: 2px; }
+  .slot-wrapper[data-slot-id="lbracer"] { top: 100px; left: 2px; }
+  .slot-wrapper[data-slot-id="gloves"] { top: 142px; left: 2px; }
+  .slot-wrapper[data-slot-id="rbicep"] { top: 58px; right: 2px; }
+  .slot-wrapper[data-slot-id="rbracer"] { top: 100px; right: 2px; }
+  .slot-wrapper[data-slot-id="weapon"] { top: 142px; right: 24px; }
+  
+  .stat-tag {
+    display: none;
+  }
+  
+  .header-actions .btn {
+    font-size: 0.6875rem;
+  }
 }
 
 /* ===== SCROLLBAR HIDING (visual only — still scrollable) ===== */

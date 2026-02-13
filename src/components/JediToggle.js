@@ -47,7 +47,8 @@ export function getJediCloakStats(cloakId) {
  * @returns {Array} - Array of { modifier, value, source }
  */
 export function getBodoBasStats(jediState) {
-  if (!jediState?.beltEquipped) return [];
+  if (!jediState?.enabled) return [];
+  if (jediState.beltEquipped === false) return [];
   return BODO_BAAS_STATS.map(s => ({ modifier: s.modifier, value: s.value, source: 'bodo-baas' }));
 }
 

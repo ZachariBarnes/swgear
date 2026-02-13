@@ -24,7 +24,7 @@ import { logShareEvent, getBuildSummary } from './utils/analytics.js';
 import modifiersData from './data/modifiers.json';
 import combinationsData from './data/combinations.json';
 import { PRESETS, applyPreset } from './data/presets.js';
-import { analyzeSkillCalcText, generateBuildRecommendation } from './utils/skillCalc.js';
+import { PROFESSIONS, CATEGORY_LABELS, analyzeProfessions, generateBuildRecommendation } from './utils/skillCalc.js';
 
 // Application state
 let currentBuild = null;
@@ -797,23 +797,95 @@ function setupBuffsModal() {
 function setupImportModal() {
   const importBtn = document.getElementById('import-calc-btn');
   const importModal = document.getElementById('import-modal');
-  const urlInput = document.getElementById('skill-calc-url');
-  const analyzeBtn = document.getElementById('analyze-build-btn');
-  const applyBtn = document.getElementById('apply-suggestions-btn');
   const resultDiv = document.getElementById('import-result');
+  const applyBtn = document.getElementById('apply-suggestions-btn');
   const closeBtn = importModal?.querySelector('.modal-close');
   
   if (!importBtn || !importModal) return;
   
   let currentAnalysis = null;
+  const selectedProfessions = new Set();
+  
+  // Build profession picker HTML grouped by category
+  const professionPickerHTML = () => {
+    const groups = {};
+    PROFESSIONS.forEach(p => {
+      if (!groups[p.category]) groups[p.category] = [];
+      groups[p.category].push(p);
+    });
+    
+    return Object.entries(groups).map(([cat, profs]) => `
+      <div class="prof-group">
+        <div class="prof-group-label">${CATEGORY_LABELS[cat]}</div>
+        <div class="prof-chips">
+          ${profs.map(p => `
+            <button class="prof-chip ${selectedProfessions.has(p.id) ? 'selected' : ''}" data-prof-id="${p.id}">
+              <span class="prof-icon">${p.icon}</span>
+              <span class="prof-name">${p.name}</span>
+            </button>
+          `).join('')}
+        </div>
+      </div>
+    `).join('');
+  };
+  
+  const updateRecommendations = () => {
+    const pickerDiv = importModal.querySelector('.profession-picker');
+    if (pickerDiv) pickerDiv.innerHTML = professionPickerHTML();
+    
+    // Attach chip listeners
+    importModal.querySelectorAll('.prof-chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        const profId = chip.dataset.profId;
+        if (selectedProfessions.has(profId)) {
+          selectedProfessions.delete(profId);
+        } else {
+          selectedProfessions.add(profId);
+        }
+        updateRecommendations();
+      });
+    });
+    
+    if (selectedProfessions.size === 0) {
+      resultDiv.hidden = true;
+      applyBtn.disabled = true;
+      currentAnalysis = null;
+      return;
+    }
+    
+    // Analyze and show recommendations
+    currentAnalysis = analyzeProfessions([...selectedProfessions]);
+    const recommendation = generateBuildRecommendation(currentAnalysis);
+    
+    let html = '<h4>Detected Build Type</h4>';
+    html += '<div class="import-tags">';
+    if (currentAnalysis.ranged) html += '<span class="stat-suggestion">🎯 Ranged</span>';
+    if (currentAnalysis.melee) html += '<span class="stat-suggestion">⚔️ Melee</span>';
+    if (currentAnalysis.jedi) html += '<span class="stat-suggestion">⚡ Jedi</span>';
+    if (currentAnalysis.healing) html += '<span class="stat-suggestion exotic">💉 Healer</span>';
+    if (currentAnalysis.crafting) html += '<span class="stat-suggestion exotic">🔧 Crafter</span>';
+    html += '</div>';
+    
+    html += '<h4>Recommended SEA Stats</h4>';
+    html += '<div class="import-tags">';
+    currentAnalysis.suggestedStats.forEach(stat => {
+      const isExotic = !['Endurance Boost', 'Defense General', 'Opportune Chance', 'Ranged General', 'Melee General', 'Toughness Boost', 'Camouflage'].includes(stat);
+      html += `<span class="stat-suggestion ${isExotic ? 'exotic' : ''}">${stat}</span>`;
+    });
+    html += '</div>';
+    
+    html += `<p class="import-note">Core slots → <strong>${recommendation.coreSlots.helmet?.join(', ')}</strong></p>`;
+    
+    resultDiv.innerHTML = html;
+    resultDiv.hidden = false;
+    applyBtn.disabled = false;
+  };
   
   // Open modal
   importBtn.addEventListener('click', () => {
     importModal.hidden = false;
-    urlInput.value = '';
-    resultDiv.hidden = true;
-    applyBtn.disabled = true;
-    setTimeout(() => urlInput.focus(), 100);
+    selectedProfessions.clear();
+    updateRecommendations();
   });
   
   // Close modal
@@ -823,60 +895,9 @@ function setupImportModal() {
   
   // Click outside to close
   importModal.addEventListener('click', (e) => {
-    if (e.target === importModal) {
+    if (e.target === importModal || e.target.classList.contains('modal-backdrop')) {
       importModal.hidden = true;
     }
-  });
-  
-  // Analyze build
-  analyzeBtn.addEventListener('click', async () => {
-    const url = urlInput.value.trim();
-    if (!url || !url.includes('swgr.org/skill-calculator')) {
-      resultDiv.innerHTML = '<p style="color: var(--color-accent-red);">Please enter a valid SWGR Skill Calculator URL</p>';
-      resultDiv.hidden = false;
-      return;
-    }
-    
-    analyzeBtn.disabled = true;
-    analyzeBtn.textContent = 'Analyzing...';
-    
-    try {
-      // Fetch the skill calculator page
-      const response = await fetch(url);
-      const pageText = await response.text();
-      
-      // Analyze the page content
-      currentAnalysis = analyzeSkillCalcText(pageText);
-      const recommendation = generateBuildRecommendation(currentAnalysis);
-      
-      // Display results
-      let html = '<h4>Build Analysis</h4>';
-      html += '<div style="margin-bottom: 8px;">';
-      if (currentAnalysis.ranged) html += '<span class="stat-suggestion">🎯 Ranged Build</span>';
-      if (currentAnalysis.melee) html += '<span class="stat-suggestion">⚔️ Melee Build</span>';
-      if (currentAnalysis.healing) html += '<span class="stat-suggestion exotic">💉 Healing Build</span>';
-      if (currentAnalysis.crafting) html += '<span class="stat-suggestion exotic">🔧 Crafter Build</span>';
-      html += '</div>';
-      
-      html += '<h4>Recommended SEA Stats</h4>';
-      html += '<div>';
-      currentAnalysis.suggestedStats.forEach(stat => {
-        const isExotic = !['Endurance Boost', 'Defense General', 'Opportune Chance', 'Ranged General', 'Melee General', 'Toughness Boost', 'Camouflage'].includes(stat);
-        html += `<span class="stat-suggestion ${isExotic ? 'exotic' : ''}">${stat}</span>`;
-      });
-      html += '</div>';
-      
-      resultDiv.innerHTML = html;
-      resultDiv.hidden = false;
-      applyBtn.disabled = false;
-      
-    } catch (error) {
-      resultDiv.innerHTML = `<p style="color: var(--color-accent-red);">Unable to fetch skill calculator. Due to CORS restrictions, you may need to manually select your build type from presets.</p>`;
-      resultDiv.hidden = false;
-    }
-    
-    analyzeBtn.disabled = false;
-    analyzeBtn.textContent = 'Analyze Build';
   });
   
   // Apply suggestions
@@ -911,9 +932,10 @@ function setupImportModal() {
     importModal.hidden = true;
     
     // Show confirmation
+    const originalText = importBtn.textContent;
     importBtn.textContent = '✓ Applied!';
     setTimeout(() => {
-      importBtn.textContent = '📥 Import Build';
+      importBtn.textContent = originalText;
     }, 2000);
   });
 }
