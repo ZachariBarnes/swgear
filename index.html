@@ -6,8 +6,8 @@
   <title>SWGear | SWG Restoration Build Planner</title>
   <meta name="description" content="SWGear - Plan your armor, SEAs, buffs, and stats for Star Wars Galaxies Restoration.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚙️</text></svg>">
-  <script type="module" crossorigin src="/swgear/assets/index--SCE-9ad.js"></script>
-  <link rel="stylesheet" crossorigin href="/swgear/assets/index-BNdNp2jM.css">
+  <script type="module" crossorigin src="/swgear/assets/index-BUVwfaKN.js"></script>
+  <link rel="stylesheet" crossorigin href="/swgear/assets/index-PMJ9hhZB.css">
 </head>
 <body>
   <div id="app">
@@ -34,7 +34,7 @@
             <!-- Populated by JS -->
           </div>
         </div>
-        <button id="import-calc-btn" class="btn btn-secondary" title="Import build from SWGR Skill Calculator">Import Build</button>
+        <button id="import-calc-btn" class="btn btn-secondary" title="Get SEA recommendations based on your professions">Build Advisor</button>
         <button id="share-btn" class="btn btn-primary">Copy Share Link</button>
         <button id="reset-btn" class="btn btn-danger">Reset All</button>
       </div>
@@ -256,21 +256,23 @@
   </div>
 
   <!-- Skill Calculator Import Modal -->
-  <div id="import-modal" class="modal-overlay" hidden>
-    <div class="modal skill-import-modal">
+  <div id="import-modal" class="modal" hidden>
+    <div class="modal-backdrop"></div>
+    <div class="modal-content skill-import-modal">
       <div class="modal-header">
-        <h3>Import from Skill Calculator</h3>
+        <h3>Build Advisor</h3>
         <button class="modal-close" aria-label="Close">X</button>
       </div>
       <div class="modal-body">
-        <p>Paste your SWGR Skill Calculator URL to get SEA recommendations based on your build.</p>
-        <input type="url" id="skill-calc-url" class="search-input" placeholder="https://swgr.org/skill-calculator/?skills=..." autocomplete="off">
+        <p>Select your combat professions and we'll recommend optimal SEA stats for your build.</p>
+        <div class="profession-picker">
+          <!-- Profession chips rendered by JS -->
+        </div>
         <div id="import-result" class="import-result" hidden>
           <!-- Recommendations will appear here -->
         </div>
         <div class="modal-actions">
-          <button id="analyze-build-btn" class="btn btn-primary">Analyze Build</button>
-          <button id="apply-suggestions-btn" class="btn btn-secondary" disabled>Apply Suggestions</button>
+          <button id="apply-suggestions-btn" class="btn btn-primary" disabled>Apply to Build</button>
         </div>
       </div>
     </div>
