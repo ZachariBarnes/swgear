@@ -306,7 +306,7 @@ export function renderCrafterView(contentContainer, shoppingContainer, build, co
               </div>
             </div>
           ` : `
-            <p class="empty-state">No combinations found for this modifier</p>
+            <p class="empty-state">No local recipe data found for this modifier yet. The stat can be planned, but its exact junk-loot pair still needs source verification.</p>
           `}
         </div>
       </div>

@@ -53,6 +53,38 @@ const CORE_ARMOR_STATS = [
   'Ranged General'
 ];
 
+// Legacy/NGE names that are intentionally replaced by SWG Restoration names.
+// These may still appear in older source exports, but showing them beside their
+// Resto equivalents reintroduces the "junk stats" this app filters out.
+const LEGACY_REPLACED_STATS = new Set([
+  'Agility',
+  'Constitution',
+  'Creature Critical Chance',
+  'Dance Knowledge',
+  'Devastation',
+  'Dodge Reduction',
+  'Droid Critical Chance',
+  'Humanoid Critical Chance',
+  'Luck',
+  'Parry Reduction',
+  'Precision',
+  'Stamina',
+  'Strength',
+  'Strikethrough Chance',
+  'Strikethrough Value',
+  'Combat Medicine Assembly',
+  'Combat Medicine Experimentation',
+  'Force Power Regeneration'
+]);
+
+const DEPRECATED_STATS = new Set([
+  'Parry Rating',
+  'Dodge Chance',
+  'Intimidation',
+  'Cybernetic Assembly',
+  'Cybernetic Experimentation'
+]);
+
 let currentModifiers = [];
 let combinationsData = null;
 let currentCallback = null;
@@ -163,9 +195,22 @@ function getActiveFilter() {
 }
 
 /**
- * Check if a modifier has known combinations
+ * Check if a modifier should be selectable.
+ *
+ * The local combinations table is still incomplete for some valid Restoration
+ * stats (for example Heavy Weapon Speed). If SWG Junkyard/source metadata says
+ * combinations exist, keep the modifier visible so users can plan builds while
+ * the exact junk-loot recipes are being reconciled. Legacy/NGE aliases remain
+ * hidden so we don't bring fake duplicate stats back into the picker.
  */
-function hasRecipe(modifierName) {
+function hasRecipe(modifier) {
+  if (!modifier) return false;
+  const modifierName = modifier.name;
+
+  if (LEGACY_REPLACED_STATS.has(modifierName) || DEPRECATED_STATS.has(modifierName)) {
+    return false;
+  }
+
   if (!combinationsData) return true; // Assume available if no data
   
   for (const item1 of Object.keys(combinationsData)) {
@@ -175,7 +220,8 @@ function hasRecipe(modifierName) {
       }
     }
   }
-  return false;
+
+  return (modifier.combinationCount || 0) > 0;
 }
 
 /**
@@ -215,8 +261,10 @@ function renderModifierList(searchQuery, categoryFilter, isExotic = false) {
     );
   }
   
-  // Filter out modifiers without known recipes (can't be crafted)
-  filtered = filtered.filter(m => hasRecipe(m.name));
+  // Filter out modifiers with no recipe/source evidence. Valid Resto stats with
+  // known source counts stay visible even if our local recipe table is missing
+  // the exact junk-loot pairs.
+  filtered = filtered.filter(m => hasRecipe(m));
   
   // Filter out already-selected stats in this slot (prevent duplicates)
   if (currentExcludedStats && currentExcludedStats.length > 0) {
