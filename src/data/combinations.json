@@ -4329,6 +4329,13 @@
     "Writing Utensil": {
       "name": "Opportune Chance",
       "ratio": 1
+    },
+    "a damaged droid memory unit": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
     }
   },
   "a Datapad Picture": {
@@ -10667,6 +10674,13 @@
     "Writing Utensil": {
       "name": "Medical Combat Speed",
       "ratio": 6
+    },
+    "a damaged droid power cell": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
     }
   },
   "a Leak Inspection System": {
@@ -21175,6 +21189,13 @@
     "Writing Utensil": {
       "name": "Endurance Boost",
       "ratio": 1
+    },
+    "a damaged droid power cell": {
+      "name": "Heavy Weapon Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Heavy Weapon Speed"
     }
   },
   "a ruptured Tauntaun stomach": {
@@ -24261,6 +24282,13 @@
     "Writing Utensil": {
       "name": "Ranged General",
       "ratio": 1
+    },
+    "a damaged droid power cell": {
+      "name": "Carbine Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Carbine Speed"
     }
   },
   "a Temperature Clamp": {
@@ -33369,6 +33397,41 @@
     "Writing Utensil": {
       "name": "Glancing Blow Increase",
       "ratio": 18
+    },
+    "a Drain Stopper": {
+      "name": "Carbine Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Carbine Speed"
+    },
+    "a Meatlump Sculpture, Style 2": {
+      "name": "Heavy Weapon Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Heavy Weapon Speed"
+    },
+    "a Plunger": {
+      "name": "Force Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Accuracy"
+    },
+    "a Temperature Clamp": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
+    },
+    "an Instrument Pouch": {
+      "name": "Foraging",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Foraging"
     }
   },
   "Burnt Out Droid Motor": {
@@ -33879,6 +33942,13 @@
     "Writing Utensil": {
       "name": "PvP Critical Chance",
       "ratio": 10
+    },
+    "a damaged droid motivator": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
     }
   },
   "Burnt Out Motivator": {
@@ -34393,6 +34463,20 @@
     "Writing Utensil": {
       "name": "Toughness Boost",
       "ratio": 1
+    },
+    "a Magnetic Locator": {
+      "name": "Force Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Accuracy"
+    },
+    "a Musty Smelling Bedroll": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
     }
   },
   "Canceled Travel Ticket": {
@@ -34927,6 +35011,13 @@
     "Writing Utensil": {
       "name": "Toughness Boost",
       "ratio": 1
+    },
+    "a Meatlump Sculpture, Style 2": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
     }
   },
   "Chassis Blueprints": {
@@ -35437,6 +35528,13 @@
     "Worn Servo Joint": {
       "name": "Music Knowledge",
       "ratio": 3
+    },
+    "A Small Missile Crate": {
+      "name": "Defense Vs. Blind",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Blind"
     }
   },
   "Chemical Dispersal Device": {
@@ -35943,6 +36041,27 @@
     "Writing Utensil": {
       "name": "Ranged General",
       "ratio": 1
+    },
+    "A Malfunctioning Capacitor": {
+      "name": "Defense Vs. Intimidate",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Intimidate"
+    },
+    "A Small Missile Crate": {
+      "name": "Pistol Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Pistol Speed"
+    },
+    "collectable Exar Kun coin": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
     }
   },
   "Chemical Dispersion Unit": {
@@ -36445,6 +36564,27 @@
     "Writing Utensil": {
       "name": "Ranged General",
       "ratio": 1
+    },
+    "A Malfunctioning Capacitor": {
+      "name": "Defense Vs. Intimidate",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Intimidate"
+    },
+    "A Small Missile Crate": {
+      "name": "Pistol Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Pistol Speed"
+    },
+    "collectable Exar Kun coin": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
     }
   },
   "Circuit": {
@@ -37433,6 +37573,13 @@
     "Writing Utensil": {
       "name": "Evasion Value",
       "ratio": 4
+    },
+    "Canceled Travel Ticket": {
+      "name": "Defense Vs. Knockdown",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Knockdown"
     }
   },
   "Circuitry": {
@@ -37923,6 +38070,41 @@
     "Writing Utensil": {
       "name": "Toughness Boost",
       "ratio": 1
+    },
+    "a Leak Inspection System": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "a Magnetic Locator": {
+      "name": "Defense Vs. Blind",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Blind"
+    },
+    "a repair kit": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "an infected Wampa liver": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
+    },
+    "AT-AT movement control module": {
+      "name": "Carbine Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Carbine Speed"
     }
   },
   "Clogged Rebreather": {
@@ -38429,6 +38611,27 @@
     "Writing Utensil": {
       "name": "Opportune Chance",
       "ratio": 1
+    },
+    "a Meatlump Sculpture, Style 2": {
+      "name": "Force Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Accuracy"
+    },
+    "Chemical Dispersal Device": {
+      "name": "Defense Vs. Stun",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Stun"
+    },
+    "Chemical Dispersion Unit": {
+      "name": "Defense Vs. Stun",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Stun"
     }
   },
   "Clothing Repair Device": {
@@ -38915,6 +39118,13 @@
     "Writing Utensil": {
       "name": "Endurance Boost",
       "ratio": 1
+    },
+    "A Disabled Homing Beacon": {
+      "name": "Heavy Weapon Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Heavy Weapon Speed"
     }
   },
   "Collapsed Artifact": {
@@ -40401,6 +40611,20 @@
     "Writing Utensil": {
       "name": "Endurance Boost",
       "ratio": 1
+    },
+    "a Lump Clip": {
+      "name": "Force Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Accuracy"
+    },
+    "Barrel": {
+      "name": "Defense Vs. Blind",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Blind"
     }
   },
   "Comlink": {
@@ -40863,6 +41087,20 @@
     "Writing Utensil": {
       "name": "Toughness Boost",
       "ratio": 1
+    },
+    "A Malfunctioning Capacitor": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "An Ancient Scroll": {
+      "name": "Carbine Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Carbine Speed"
     }
   },
   "Control Box": {
@@ -43077,6 +43315,20 @@
     "Writing Utensil": {
       "name": "Endurance Boost",
       "ratio": 1
+    },
+    "a repair kit": {
+      "name": "Defense Vs. Intimidate",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Intimidate"
+    },
+    "an ammunition crate": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
     }
   },
   "Datadisk": {
@@ -43535,6 +43787,48 @@
     "Writing Utensil": {
       "name": "Ranged General",
       "ratio": 1
+    },
+    "A Gackle Bat Wing": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
+    },
+    "a human skull": {
+      "name": "Thrown Weapon Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Speed"
+    },
+    "A Poison Canister": {
+      "name": "Force Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Accuracy"
+    },
+    "a Tauntaun eye": {
+      "name": "Defense Vs. Blind",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Blind"
+    },
+    "An Artifact Crate": {
+      "name": "Foraging",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Foraging"
+    },
+    "collectable Exar Kun coin": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
     }
   },
   "Datapad": {
@@ -43981,6 +44275,27 @@
     "Writing Utensil": {
       "name": "Food Assembly",
       "ratio": 3
+    },
+    "a repair kit": {
+      "name": "Surveying",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Surveying"
+    },
+    "a Tauntaun eye": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "An Ancient Scroll": {
+      "name": "Polearm Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Speed"
     }
   },
   "Decryptor": {
@@ -44431,6 +44746,20 @@
     "Writing Utensil": {
       "name": "Defense General",
       "ratio": 1
+    },
+    "an infected Wampa liver": {
+      "name": "Defense Vs. Intimidate",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Intimidate"
+    },
+    "AT-AT movement control module": {
+      "name": "Surveying",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Surveying"
     }
   },
   "Demagnetized Datadisk": {
@@ -44877,6 +45206,48 @@
     "Writing Utensil": {
       "name": "Ranged General",
       "ratio": 1
+    },
+    "A Gackle Bat Wing": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
+    },
+    "a human skull": {
+      "name": "Thrown Weapon Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Speed"
+    },
+    "A Poison Canister": {
+      "name": "Force Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Accuracy"
+    },
+    "a Tauntaun eye": {
+      "name": "Defense Vs. Blind",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Blind"
+    },
+    "An Artifact Crate": {
+      "name": "Foraging",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Foraging"
+    },
+    "collectable Exar Kun coin": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
     }
   },
   "Deprecated Droid Software": {
@@ -45717,6 +46088,41 @@
     "Writing Utensil": {
       "name": "Opportune Chance",
       "ratio": 1
+    },
+    "a damaged droid power cell": {
+      "name": "Defense Vs. Knockdown",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Knockdown"
+    },
+    "a human skull": {
+      "name": "Rifle Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Rifle Speed"
+    },
+    "A Malfunctioning Capacitor": {
+      "name": "Foraging",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Foraging"
+    },
+    "A Medic Kit": {
+      "name": "Foraging",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Foraging"
+    },
+    "An Artifact Crate": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
     }
   },
   "Differential Regulator": {
@@ -46147,6 +46553,13 @@
     "Writing Utensil": {
       "name": "Toughness Boost",
       "ratio": 1
+    },
+    "AT-AT movement control module": {
+      "name": "Defense Vs. Intimidate",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Intimidate"
     }
   },
   "Dispersal Unit": {
@@ -46565,6 +46978,20 @@
     "Writing Utensil": {
       "name": "Defense General",
       "ratio": 1
+    },
+    "a Leak Inspection System": {
+      "name": "Carbine Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Carbine Speed"
+    },
+    "a Plunger": {
+      "name": "Heavy Weapon Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Heavy Weapon Speed"
     }
   },
   "Droid Memory Module": {
@@ -47373,6 +47800,20 @@
     "Writing Utensil": {
       "name": "PvP Critical Chance",
       "ratio": 10
+    },
+    "a damaged droid motivator": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
+    },
+    "Burnt Out Droid Motor": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
     }
   },
   "Droid Motor (Red)": {
@@ -47771,6 +48212,27 @@
     "Writing Utensil": {
       "name": "PvP Critical Chance",
       "ratio": 10
+    },
+    "a damaged droid motivator": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
+    },
+    "Burnt Out Droid Motor": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
+    },
+    "Droid Motor (Green)": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
     }
   },
   "Droid Motor (Yellow)": {
@@ -48165,6 +48627,34 @@
     "Writing Utensil": {
       "name": "PvP Critical Chance",
       "ratio": 10
+    },
+    "a damaged droid motivator": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
+    },
+    "Burnt Out Droid Motor": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
+    },
+    "Droid Motor (Green)": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
+    },
+    "Droid Motor (Red)": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
     }
   },
   "Electronics Module": {
@@ -48571,6 +49061,13 @@
     "Writing Utensil": {
       "name": "Toughness Boost",
       "ratio": 1
+    },
+    "AT-AT movement control module": {
+      "name": "Defense Vs. Intimidate",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Intimidate"
     }
   },
   "Emergency Reactivator": {
@@ -49387,6 +49884,13 @@
     "Writing Utensil": {
       "name": "Toughness Boost",
       "ratio": 1
+    },
+    "Desh Copper Battery": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
     }
   },
   "Explosive Dud": {
@@ -49765,6 +50269,13 @@
     "Writing Utensil": {
       "name": "Heavy Weapon Critical Chance",
       "ratio": 10
+    },
+    "Burnt Out Motivator": {
+      "name": "Defense Vs. Intimidate",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Intimidate"
     }
   },
   "Frequency Jamming Wired": {
@@ -50139,6 +50650,69 @@
     "Writing Utensil": {
       "name": "Advanced Assembly",
       "ratio": 3
+    },
+    "a Flaring, Swagging and Cutting Kit": {
+      "name": "Defense Vs. Blind",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Blind"
+    },
+    "a Leak Inspection System": {
+      "name": "Pistol Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Pistol Speed"
+    },
+    "a Magnetic Locator": {
+      "name": "Thrown Weapon Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Speed"
+    },
+    "a Pipe Cutter": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "a Tauntaun heart": {
+      "name": "Foraging",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Foraging"
+    },
+    "an empty crate": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
+    },
+    "AT-AT seam sealant": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "Differential Regulator": {
+      "name": "Defense Vs. Stun",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Stun"
+    },
+    "Electronics Module": {
+      "name": "Defense Vs. Stun",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Stun"
     }
   },
   "Holorecorder": {
@@ -50899,6 +51473,13 @@
     "Writing Utensil": {
       "name": "Fast Draw/Precision Strike Freeshot Chance",
       "ratio": 8
+    },
+    "Clogged Rebreather": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
     }
   },
   "Hyperdrive Unit": {
@@ -51273,6 +51854,41 @@
     "Writing Utensil": {
       "name": "Endurance Boost",
       "ratio": 1
+    },
+    "a Clean Towel": {
+      "name": "Thrown Weapon Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Speed"
+    },
+    "a disabled navigation module": {
+      "name": "Polearm Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Speed"
+    },
+    "a Drain Stopper": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "a Hand Torch": {
+      "name": "Defense Vs. Intimidate",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Intimidate"
+    },
+    "Hydraulics System": {
+      "name": "Rifle Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Rifle Speed"
     }
   },
   "ID Badge": {
@@ -52009,6 +52625,20 @@
     "Writing Utensil": {
       "name": "Toughness Boost",
       "ratio": 1
+    },
+    "a Meatlump Sculpture, Style 2": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Circuit Board": {
+      "name": "Defense Vs. Knockdown",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Knockdown"
     }
   },
   "Impulse Detector (flat)": {
@@ -53095,6 +53725,55 @@
     "Writing Utensil": {
       "name": "Endurance Boost",
       "ratio": 1
+    },
+    "a damaged droid motivator": {
+      "name": "Surveying",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Surveying"
+    },
+    "a Magnetic Locator": {
+      "name": "Heavy Weapon Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Heavy Weapon Speed"
+    },
+    "a Plunger": {
+      "name": "Carbine Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Carbine Speed"
+    },
+    "Burnt Out Droid Motor": {
+      "name": "Surveying",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Surveying"
+    },
+    "Droid Motor (Green)": {
+      "name": "Surveying",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Surveying"
+    },
+    "Droid Motor (Red)": {
+      "name": "Surveying",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Surveying"
+    },
+    "Droid Motor (Yellow)": {
+      "name": "Surveying",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Surveying"
     }
   },
   "Launcher Tube": {
@@ -53457,6 +54136,20 @@
     "Writing Utensil": {
       "name": "Disease Absorption",
       "ratio": 4
+    },
+    "a Leak Inspection System": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "a Magnetic Locator": {
+      "name": "Carbine Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Carbine Speed"
     }
   },
   "Ledger": {
@@ -53799,6 +54492,34 @@
     "Writing Utensil": {
       "name": "Opportune Chance",
       "ratio": 1
+    },
+    "a Hand Torch": {
+      "name": "Heavy Weapon Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Heavy Weapon Speed"
+    },
+    "a Plunger": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "a Temperature Clamp": {
+      "name": "Carbine Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Carbine Speed"
+    },
+    "Explosive Dud": {
+      "name": "Defense Vs. Blind",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Blind"
     }
   },
   "Locomotor": {
@@ -54133,6 +54854,48 @@
     "Writing Utensil": {
       "name": "PvP Critical Chance",
       "ratio": 10
+    },
+    "a damaged droid motivator": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
+    },
+    "Burnt Out Droid Motor": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
+    },
+    "Droid Motor (Green)": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
+    },
+    "Droid Motor (Red)": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
+    },
+    "Droid Motor (Yellow)": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
+    },
+    "Laser Trap": {
+      "name": "Surveying",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Surveying"
     }
   },
   "Magseal Detector": {
@@ -54443,6 +55206,41 @@
     "Writing Utensil": {
       "name": "Ranged General",
       "ratio": 1
+    },
+    "a Datapad Picture": {
+      "name": "Foraging",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Foraging"
+    },
+    "a Half Eaten Pie": {
+      "name": "Heavy Weapon Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Heavy Weapon Speed"
+    },
+    "a Hand Torch": {
+      "name": "Carbine Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Carbine Speed"
+    },
+    "a Leak Inspection System": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
+    },
+    "a Magnetic Locator": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
     }
   },
   "Mark I Circuit Board": {
@@ -54785,6 +55583,20 @@
     "Writing Utensil": {
       "name": "Evasion Value",
       "ratio": 4
+    },
+    "Canceled Travel Ticket": {
+      "name": "Defense Vs. Knockdown",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Knockdown"
+    },
+    "ID Chip": {
+      "name": "Defense Vs. Knockdown",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Knockdown"
     }
   },
   "Mark II Circuit Board": {
@@ -55123,6 +55935,20 @@
     "Writing Utensil": {
       "name": "Evasion Value",
       "ratio": 4
+    },
+    "Canceled Travel Ticket": {
+      "name": "Defense Vs. Knockdown",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Knockdown"
+    },
+    "ID Chip": {
+      "name": "Defense Vs. Knockdown",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Knockdown"
     }
   },
   "Mark II Vocabulation Module": {
@@ -55461,6 +56287,13 @@
     "Writing Utensil": {
       "name": "One Handed Lightsaber Accuracy",
       "ratio": 10
+    },
+    "a damaged droid swivel joint": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
     }
   },
   "Mark III Circuit Board": {
@@ -55791,6 +56624,20 @@
     "Writing Utensil": {
       "name": "Evasion Value",
       "ratio": 4
+    },
+    "Canceled Travel Ticket": {
+      "name": "Defense Vs. Knockdown",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Knockdown"
+    },
+    "ID Chip": {
+      "name": "Defense Vs. Knockdown",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Knockdown"
     }
   },
   "Mark IV Circuit Board": {
@@ -56117,6 +56964,20 @@
     "Writing Utensil": {
       "name": "Evasion Value",
       "ratio": 4
+    },
+    "Canceled Travel Ticket": {
+      "name": "Defense Vs. Knockdown",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Knockdown"
+    },
+    "ID Chip": {
+      "name": "Defense Vs. Knockdown",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Knockdown"
     }
   },
   "Mark V Circuit Board": {
@@ -56439,6 +57300,20 @@
     "Writing Utensil": {
       "name": "Evasion Value",
       "ratio": 4
+    },
+    "Canceled Travel Ticket": {
+      "name": "Defense Vs. Knockdown",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Knockdown"
+    },
+    "ID Chip": {
+      "name": "Defense Vs. Knockdown",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Knockdown"
     }
   },
   "Mark V Vocab Module": {
@@ -56761,6 +57636,27 @@
     "Writing Utensil": {
       "name": "Defense General",
       "ratio": 1
+    },
+    "a small mining tool": {
+      "name": "Defense Vs. Blind",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Blind"
+    },
+    "Clogged Rebreather": {
+      "name": "Carbine Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Carbine Speed"
+    },
+    "Laser Trap": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
     }
   },
   "Mark VII Vocabulation Module": {
@@ -57079,6 +57975,13 @@
     "Writing Utensil": {
       "name": "One Handed Lightsaber Accuracy",
       "ratio": 10
+    },
+    "a damaged droid swivel joint": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
     }
   },
   "Mark X Vocab Module": {
@@ -57397,6 +58300,90 @@
     "Writing Utensil": {
       "name": "Endurance Boost",
       "ratio": 1
+    },
+    "a damaged droid memory unit": {
+      "name": "Unarmed Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Unarmed Speed"
+    },
+    "a damaged droid motivator": {
+      "name": "Force Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Accuracy"
+    },
+    "Burnt Out Droid Motor": {
+      "name": "Force Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Accuracy"
+    },
+    "Cracked Remote Transmitter": {
+      "name": "Defense Vs. Dizzy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Dizzy"
+    },
+    "Droid Motor (Green)": {
+      "name": "Force Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Accuracy"
+    },
+    "Droid Motor (Red)": {
+      "name": "Force Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Accuracy"
+    },
+    "Droid Motor (Yellow)": {
+      "name": "Force Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Accuracy"
+    },
+    "Impulse Detector (w/dish antenna)": {
+      "name": "Defense Vs. Dizzy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Dizzy"
+    },
+    "Ledger": {
+      "name": "Defense Vs. Intimidate",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Intimidate"
+    },
+    "Locomotor": {
+      "name": "Force Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Accuracy"
+    },
+    "Mark II Vocabulation Module": {
+      "name": "Unarmed Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Unarmed Speed"
+    },
+    "Mark VII Vocabulation Module": {
+      "name": "Unarmed Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Unarmed Speed"
     }
   },
   "Medical Console": {
@@ -57711,6 +58698,83 @@
     "Writing Utensil": {
       "name": "Melee General",
       "ratio": 1
+    },
+    "a damaged droid motivator": {
+      "name": "Defense Vs. Intimidate",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Intimidate"
+    },
+    "a Half Eaten Pie": {
+      "name": "Carbine Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Carbine Speed"
+    },
+    "a Plunger": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
+    },
+    "a Pressure Gauge": {
+      "name": "Foraging",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Foraging"
+    },
+    "a Temperature Clamp": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "Burnt Out Droid Motor": {
+      "name": "Defense Vs. Intimidate",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Intimidate"
+    },
+    "Droid Motor (Green)": {
+      "name": "Defense Vs. Intimidate",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Intimidate"
+    },
+    "Droid Motor (Red)": {
+      "name": "Defense Vs. Intimidate",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Intimidate"
+    },
+    "Droid Motor (Yellow)": {
+      "name": "Defense Vs. Intimidate",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Intimidate"
+    },
+    "Explosive Dud": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Locomotor": {
+      "name": "Defense Vs. Intimidate",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Intimidate"
     }
   },
   "Medical Device (Grey)": {
@@ -58235,6 +59299,34 @@
     "Writing Utensil": {
       "name": "Defense General",
       "ratio": 1
+    },
+    "a Hand Torch": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "a Magnetic Locator": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
+    },
+    "a Pipe Cutter": {
+      "name": "Foraging",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Foraging"
+    },
+    "Com Device": {
+      "name": "Rifle Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Rifle Speed"
     }
   },
   "Memory Encryptor": {
@@ -58529,6 +59621,20 @@
     "Writing Utensil": {
       "name": "Defense General",
       "ratio": 1
+    },
+    "an infected Wampa liver": {
+      "name": "Defense Vs. Intimidate",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Intimidate"
+    },
+    "AT-AT movement control module": {
+      "name": "Surveying",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Surveying"
     }
   },
   "Motor": {
@@ -58803,6 +59909,69 @@
     "Writing Utensil": {
       "name": "PvP Critical Chance",
       "ratio": 10
+    },
+    "a damaged droid motivator": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
+    },
+    "Burnt Out Droid Motor": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
+    },
+    "Droid Motor (Green)": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
+    },
+    "Droid Motor (Red)": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
+    },
+    "Droid Motor (Yellow)": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
+    },
+    "Laser Trap": {
+      "name": "Surveying",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Surveying"
+    },
+    "Locomotor": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
+    },
+    "Mark X Vocab Module": {
+      "name": "Force Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Accuracy"
+    },
+    "Medical Console": {
+      "name": "Defense Vs. Intimidate",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Intimidate"
     }
   },
   "Mythra Copper Battery": {
@@ -59081,6 +60250,48 @@
     "Writing Utensil": {
       "name": "Opportune Chance",
       "ratio": 1
+    },
+    "a damaged droid power cell": {
+      "name": "Defense Vs. Knockdown",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Knockdown"
+    },
+    "a human skull": {
+      "name": "Rifle Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Rifle Speed"
+    },
+    "A Malfunctioning Capacitor": {
+      "name": "Foraging",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Foraging"
+    },
+    "A Medic Kit": {
+      "name": "Foraging",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Foraging"
+    },
+    "An Artifact Crate": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "Excavation Toolchest": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
     }
   },
   "Newsfilter Module": {
@@ -59351,6 +60562,13 @@
     "Worn Servo Joint": {
       "name": "Music Knowledge",
       "ratio": 3
+    },
+    "A Small Missile Crate": {
+      "name": "Defense Vs. Blind",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Blind"
     }
   },
   "Organichem Stores": {
@@ -59629,6 +60847,41 @@
     "Writing Utensil": {
       "name": "Ranged General",
       "ratio": 1
+    },
+    "a Clean Towel": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "a Half Eaten Pie": {
+      "name": "Foraging",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Foraging"
+    },
+    "a Musty Smelling Bedroll": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
+    },
+    "an Instrument Pouch": {
+      "name": "Polearm Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Speed"
+    },
+    "Burnt Out Motivator": {
+      "name": "Defense Vs. Dizzy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Dizzy"
     }
   },
   "Outdated Aeromagnifier": {
@@ -60169,6 +61422,41 @@
     "Writing Utensil": {
       "name": "Opportune Chance",
       "ratio": 1
+    },
+    "a Hand Torch": {
+      "name": "Heavy Weapon Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Heavy Weapon Speed"
+    },
+    "a Plunger": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "a Temperature Clamp": {
+      "name": "Carbine Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Carbine Speed"
+    },
+    "Explosive Dud": {
+      "name": "Defense Vs. Blind",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Blind"
+    },
+    "Mark X Vocab Module": {
+      "name": "Defense Vs. Intimidate",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Intimidate"
     }
   },
   "Platinite Copper Battery": {
@@ -60431,6 +61719,48 @@
     "Writing Utensil": {
       "name": "Opportune Chance",
       "ratio": 1
+    },
+    "a damaged droid power cell": {
+      "name": "Defense Vs. Knockdown",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Knockdown"
+    },
+    "a human skull": {
+      "name": "Rifle Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Rifle Speed"
+    },
+    "A Malfunctioning Capacitor": {
+      "name": "Foraging",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Foraging"
+    },
+    "A Medic Kit": {
+      "name": "Foraging",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Foraging"
+    },
+    "An Artifact Crate": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "Excavation Toolchest": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
     }
   },
   "Plugged Hydraulics System": {
@@ -60701,6 +62031,20 @@
     "Writing Utensil": {
       "name": "Fast Draw/Precision Strike Freeshot Chance",
       "ratio": 8
+    },
+    "Clogged Rebreather": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
+    },
+    "Hyperdrive Unit": {
+      "name": "Rifle Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Rifle Speed"
     }
   },
   "Power Converter": {
@@ -60955,6 +62299,48 @@
     "Writing Utensil": {
       "name": "Defense General",
       "ratio": 1
+    },
+    "a human skull": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "a repair kit": {
+      "name": "Heavy Weapon Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Heavy Weapon Speed"
+    },
+    "a Tauntaun heart": {
+      "name": "Carbine Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Carbine Speed"
+    },
+    "Desh Copper Battery": {
+      "name": "Defense Vs. Knockdown",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Knockdown"
+    },
+    "Mythra Copper Battery": {
+      "name": "Defense Vs. Knockdown",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Knockdown"
+    },
+    "Platinite Copper Battery": {
+      "name": "Defense Vs. Knockdown",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Knockdown"
     }
   },
   "Power Output Analyzer": {
@@ -61209,6 +62595,34 @@
     "Writing Utensil": {
       "name": "Vital Strike Critical Chance",
       "ratio": 8
+    },
+    "a Clean Towel": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
+    },
+    "a Drain Stopper": {
+      "name": "Foraging",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Foraging"
+    },
+    "a Hand Torch": {
+      "name": "Polearm Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Speed"
+    },
+    "Barrel": {
+      "name": "Rifle Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Rifle Speed"
     }
   },
   "Power Output Device": {
@@ -61459,6 +62873,34 @@
     "Writing Utensil": {
       "name": "Vital Strike Critical Chance",
       "ratio": 8
+    },
+    "a Clean Towel": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
+    },
+    "a Drain Stopper": {
+      "name": "Foraging",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Foraging"
+    },
+    "a Hand Torch": {
+      "name": "Polearm Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Speed"
+    },
+    "Barrel": {
+      "name": "Rifle Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Rifle Speed"
     }
   },
   "Power Supply": {
@@ -61709,6 +63151,62 @@
     "Writing Utensil": {
       "name": "Chassis Experimentation",
       "ratio": 4
+    },
+    "a Flaring, Swagging and Cutting Kit": {
+      "name": "Thrown Weapon Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Speed"
+    },
+    "a Hand Torch": {
+      "name": "Surveying",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Surveying"
+    },
+    "a Leak Inspection System": {
+      "name": "Defense Vs. Intimidate",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Intimidate"
+    },
+    "a Musty Smelling Bedroll": {
+      "name": "Rifle Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Rifle Speed"
+    },
+    "a Pipe Cutter": {
+      "name": "Pistol Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Pistol Speed"
+    },
+    "a Tauntaun heart": {
+      "name": "Force Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Accuracy"
+    },
+    "an ammunition crate": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "corrupt data disk": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
     }
   },
   "Power Unit": {
@@ -61947,6 +63445,48 @@
     "Writing Utensil": {
       "name": "Defense General",
       "ratio": 1
+    },
+    "a human skull": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "a repair kit": {
+      "name": "Heavy Weapon Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Heavy Weapon Speed"
+    },
+    "a Tauntaun heart": {
+      "name": "Carbine Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Carbine Speed"
+    },
+    "Desh Copper Battery": {
+      "name": "Defense Vs. Knockdown",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Knockdown"
+    },
+    "Mythra Copper Battery": {
+      "name": "Defense Vs. Knockdown",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Knockdown"
+    },
+    "Platinite Copper Battery": {
+      "name": "Defense Vs. Knockdown",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Knockdown"
     }
   },
   "Rapid Program Module": {
@@ -62181,6 +63721,13 @@
     "Worn Servo Joint": {
       "name": "Music Knowledge",
       "ratio": 3
+    },
+    "A Small Missile Crate": {
+      "name": "Defense Vs. Blind",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Blind"
     }
   },
   "Rations Kit": {
@@ -62419,6 +63966,55 @@
     "Writing Utensil": {
       "name": "Toughness Boost",
       "ratio": 1
+    },
+    "a Lump Clip": {
+      "name": "Unarmed Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Unarmed Speed"
+    },
+    "a Meatlump Sculpture, Style 1": {
+      "name": "Foraging",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Foraging"
+    },
+    "a Musty Smelling Bedroll": {
+      "name": "Polearm Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Speed"
+    },
+    "Barrel": {
+      "name": "Surveying",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Surveying"
+    },
+    "Mark X Vocab Module": {
+      "name": "Carbine Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Carbine Speed"
+    },
+    "Medical Device (White)": {
+      "name": "Defense Vs. Blind",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Blind"
+    },
+    "Organichem Stores": {
+      "name": "Pistol Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Pistol Speed"
     }
   },
   "Recording Rod": {
@@ -62633,6 +64229,34 @@
     "Writing Utensil": {
       "name": "Ranged General",
       "ratio": 1
+    },
+    "a Clean Towel": {
+      "name": "Polearm Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Speed"
+    },
+    "a damaged droid swivel joint": {
+      "name": "Heavy Weapon Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Heavy Weapon Speed"
+    },
+    "a Meatlump Sculpture, Style 1": {
+      "name": "Force Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Accuracy"
+    },
+    "Medical Device (White)": {
+      "name": "Thrown Weapon Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Speed"
     }
   },
   "Remote Transmitter": {
@@ -62863,6 +64487,13 @@
     "Writing Utensil": {
       "name": "Advanced Component Experimentation",
       "ratio": 4
+    },
+    "Mark X Vocab Module": {
+      "name": "Defense Vs. Dizzy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Dizzy"
     }
   },
   "Restraining Device": {
@@ -63085,6 +64716,27 @@
     "Writing Utensil": {
       "name": "Endurance Boost",
       "ratio": 1
+    },
+    "a disabled navigation module": {
+      "name": "Heavy Weapon Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Heavy Weapon Speed"
+    },
+    "a Pressure Gauge": {
+      "name": "Defense Vs. Blind",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Blind"
+    },
+    "a ruptured Tauntaun stomach": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
     }
   },
   "Rocket Dud": {
@@ -63311,6 +64963,27 @@
     "Writing Utensil": {
       "name": "1-H Critical Chance",
       "ratio": 10
+    },
+    "Explosive Dud": {
+      "name": "Heavy Weapon Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Heavy Weapon Speed"
+    },
+    "Ledger": {
+      "name": "Surveying",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Surveying"
+    },
+    "Palm Diary": {
+      "name": "Surveying",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Surveying"
     }
   },
   "Self Analysis Circuit": {
@@ -63529,6 +65202,41 @@
     "Writing Utensil": {
       "name": "Toughness Boost",
       "ratio": 1
+    },
+    "a Leak Inspection System": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "a Magnetic Locator": {
+      "name": "Defense Vs. Blind",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Blind"
+    },
+    "a repair kit": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "an infected Wampa liver": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
+    },
+    "AT-AT movement control module": {
+      "name": "Carbine Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Carbine Speed"
     }
   },
   "Servo Joint": {
@@ -63739,6 +65447,48 @@
     "Writing Utensil": {
       "name": "Defense General",
       "ratio": 1
+    },
+    "a Hand Torch": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "a Magnetic Locator": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
+    },
+    "a Pipe Cutter": {
+      "name": "Foraging",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Foraging"
+    },
+    "Com Device": {
+      "name": "Rifle Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Rifle Speed"
+    },
+    "Rations Kit": {
+      "name": "Defense Vs. Blind",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Blind"
+    },
+    "Recording Rod": {
+      "name": "Thrown Weapon Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Speed"
     }
   },
   "Shield Module": {
@@ -63945,6 +65695,34 @@
     "Writing Utensil": {
       "name": "Opportune Chance",
       "ratio": 1
+    },
+    "a damaged droid memory unit": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
+    },
+    "Mark II Vocabulation Module": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
+    },
+    "Mark VII Vocabulation Module": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
+    },
+    "Recording Rod": {
+      "name": "Heavy Weapon Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Heavy Weapon Speed"
     }
   },
   "Software Module (Black)": {
@@ -64345,6 +66123,27 @@
     "Writing Utensil": {
       "name": "One Handed Lightsaber Accuracy",
       "ratio": 10
+    },
+    "a damaged droid swivel joint": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
+    },
+    "Mark X Vocab Module": {
+      "name": "Unarmed Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Unarmed Speed"
+    },
+    "Shield Module": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
     }
   },
   "Software Module (Blue)": {
@@ -64915,6 +66714,76 @@
     "Writing Utensil": {
       "name": "Toughness Boost",
       "ratio": 1
+    },
+    "a damaged droid memory unit": {
+      "name": "Polearm Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Speed"
+    },
+    "a damaged droid swivel joint": {
+      "name": "Force Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Accuracy"
+    },
+    "a small mining tool": {
+      "name": "Thrown Weapon Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Speed"
+    },
+    "Laser Trap": {
+      "name": "Pistol Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Pistol Speed"
+    },
+    "Mark II Vocabulation Module": {
+      "name": "Polearm Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Speed"
+    },
+    "Mark VII Vocabulation Module": {
+      "name": "Polearm Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Speed"
+    },
+    "Recording Rod": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "Rocket Dud": {
+      "name": "Foraging",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Foraging"
+    },
+    "Shield Module": {
+      "name": "Force Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Accuracy"
+    },
+    "Software Module (Blue Flat)": {
+      "name": "Polearm Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Speed"
     }
   },
   "Speeder Drive": {
@@ -65101,6 +66970,48 @@
     "Writing Utensil": {
       "name": "Endurance Boost",
       "ratio": 1
+    },
+    "a Clean Towel": {
+      "name": "Thrown Weapon Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Speed"
+    },
+    "a disabled navigation module": {
+      "name": "Polearm Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Speed"
+    },
+    "a Drain Stopper": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "a Hand Torch": {
+      "name": "Defense Vs. Intimidate",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Intimidate"
+    },
+    "Hydraulics System": {
+      "name": "Rifle Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Rifle Speed"
+    },
+    "Plugged Hydraulics System": {
+      "name": "Rifle Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Rifle Speed"
     }
   },
   "Spent Bacta Ampules": {
@@ -65393,6 +67304,83 @@
     "Writing Utensil": {
       "name": "Opportune Chance",
       "ratio": 1
+    },
+    "a damaged droid motivator": {
+      "name": "Polearm Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Speed"
+    },
+    "Burnt Out Droid Motor": {
+      "name": "Polearm Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Speed"
+    },
+    "Clogged Rebreather": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "Damaged Transceiver": {
+      "name": "Surveying",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Surveying"
+    },
+    "Droid Motor (Green)": {
+      "name": "Polearm Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Speed"
+    },
+    "Droid Motor (Red)": {
+      "name": "Polearm Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Speed"
+    },
+    "Droid Motor (Yellow)": {
+      "name": "Polearm Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Speed"
+    },
+    "Explosive Dud": {
+      "name": "Foraging",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Foraging"
+    },
+    "Impulse Detector (flat)": {
+      "name": "Surveying",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Surveying"
+    },
+    "Locomotor": {
+      "name": "Polearm Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Speed"
+    },
+    "Motor": {
+      "name": "Polearm Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Speed"
     }
   },
   "Survival Gear": {
@@ -65571,6 +67559,27 @@
     "Writing Utensil": {
       "name": "Sure Shot Freeshot Chance",
       "ratio": 8
+    },
+    "Damaged Transceiver": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Impulse Detector (flat)": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Recording Rod": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
     }
   },
   "Tauntaun bones": {
@@ -65745,6 +67754,27 @@
     "Writing Utensil": {
       "name": "Opportune Chance",
       "ratio": 1
+    },
+    "Datadisk": {
+      "name": "Rifle Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Rifle Speed"
+    },
+    "Datapad": {
+      "name": "Thrown Weapon Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Speed"
+    },
+    "Demagnetized Datadisk": {
+      "name": "Rifle Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Rifle Speed"
     }
   },
   "Tauntaun skull and bones": {
@@ -65915,6 +67945,48 @@
     "Writing Utensil": {
       "name": "Toughness Boost",
       "ratio": 1
+    },
+    "Circuitry": {
+      "name": "Foraging",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Foraging"
+    },
+    "Datadisk": {
+      "name": "Surveying",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Surveying"
+    },
+    "Demagnetized Datadisk": {
+      "name": "Surveying",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Surveying"
+    },
+    "Frequency Jamming Wired": {
+      "name": "Force Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Accuracy"
+    },
+    "Power Supply": {
+      "name": "Polearm Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Speed"
+    },
+    "Self Analysis Circuit": {
+      "name": "Foraging",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Foraging"
     }
   },
   "Tech Canister": {
@@ -66223,6 +68295,62 @@
     "Writing Utensil": {
       "name": "Opportune Chance",
       "ratio": 1
+    },
+    "a damaged droid power cell": {
+      "name": "Defense Vs. Knockdown",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Knockdown"
+    },
+    "a human skull": {
+      "name": "Rifle Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Rifle Speed"
+    },
+    "A Malfunctioning Capacitor": {
+      "name": "Foraging",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Foraging"
+    },
+    "A Medic Kit": {
+      "name": "Foraging",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Foraging"
+    },
+    "An Artifact Crate": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "Excavation Toolchest": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "Power Converter": {
+      "name": "Defense Vs. Knockdown",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Knockdown"
+    },
+    "Power Unit": {
+      "name": "Defense Vs. Knockdown",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Knockdown"
     }
   },
   "Transceiver": {
@@ -66377,6 +68505,20 @@
     "Writing Utensil": {
       "name": "Ranged General",
       "ratio": 1
+    },
+    "Substance Analyzer": {
+      "name": "Surveying",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Surveying"
+    },
+    "Survival Gear": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
     }
   },
   "Tubing": {
@@ -66531,6 +68673,27 @@
     "Writing Utensil": {
       "name": "Fast Draw/Precision Strike Freeshot Chance",
       "ratio": 8
+    },
+    "Clogged Rebreather": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
+    },
+    "Hyperdrive Unit": {
+      "name": "Rifle Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Rifle Speed"
+    },
+    "Speeder Drive": {
+      "name": "Rifle Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Rifle Speed"
     }
   },
   "unidentified bones": {
@@ -66681,6 +68844,20 @@
     "Writing Utensil": {
       "name": "Opportune Chance",
       "ratio": 1
+    },
+    "Datapad": {
+      "name": "Pistol Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Pistol Speed"
+    },
+    "Emergency Reactivator": {
+      "name": "Carbine Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Carbine Speed"
     }
   },
   "Unidentified Chemicals": {
@@ -66819,6 +68996,41 @@
     "Worn Servo Joint": {
       "name": "Toughness Boost",
       "ratio": 1
+    },
+    "a disabled navigation module": {
+      "name": "Force Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Accuracy"
+    },
+    "a Drain Stopper": {
+      "name": "Surveying",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Surveying"
+    },
+    "a Hand Torch": {
+      "name": "Pistol Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Pistol Speed"
+    },
+    "a Lump Clip": {
+      "name": "Thrown Weapon Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Speed"
+    },
+    "a Rebel medic kit": {
+      "name": "Polearm Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Speed"
     }
   },
   "Unpowered Installation Repair Device": {
@@ -66961,6 +69173,20 @@
     "Writing Utensil": {
       "name": "Melee General",
       "ratio": 1
+    },
+    "Mark V Vocab Module": {
+      "name": "Defense Vs. Blind",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Blind"
+    },
+    "Speakers": {
+      "name": "Thrown Weapon Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Speed"
     }
   },
   "Unpowered Memory Encryptor": {
@@ -67099,6 +69325,20 @@
     "Writing Utensil": {
       "name": "Defense General",
       "ratio": 1
+    },
+    "an infected Wampa liver": {
+      "name": "Defense Vs. Intimidate",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Intimidate"
+    },
+    "AT-AT movement control module": {
+      "name": "Surveying",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Surveying"
     }
   },
   "Unpowered Survey Pad": {
@@ -67229,6 +69469,76 @@
     "Writing Utensil": {
       "name": "Vital Strike Freeshot Chance",
       "ratio": 8
+    },
+    "a damaged droid swivel joint": {
+      "name": "Polearm Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Speed"
+    },
+    "Canceled Travel Ticket": {
+      "name": "Rifle Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Rifle Speed"
+    },
+    "Damaged Transceiver": {
+      "name": "Thrown Weapon Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Speed"
+    },
+    "ID Chip": {
+      "name": "Rifle Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Rifle Speed"
+    },
+    "Impulse Detector (flat)": {
+      "name": "Thrown Weapon Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Speed"
+    },
+    "Laser Trap": {
+      "name": "Defense Vs. Intimidate",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Intimidate"
+    },
+    "Rations Kit": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "Rocket Dud": {
+      "name": "Force Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Accuracy"
+    },
+    "Shield Module": {
+      "name": "Polearm Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Speed"
+    },
+    "Transceiver": {
+      "name": "Thrown Weapon Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Speed"
     }
   },
   "Untuned Circuit": {
@@ -67485,6 +69795,62 @@
     "Writing Utensil": {
       "name": "Toughness Boost",
       "ratio": 1
+    },
+    "a Meatlump Sculpture, Style 2": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Circuit Board": {
+      "name": "Defense Vs. Knockdown",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Knockdown"
+    },
+    "Mark I Circuit Board": {
+      "name": "Defense Vs. Knockdown",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Knockdown"
+    },
+    "Mark II Circuit Board": {
+      "name": "Defense Vs. Knockdown",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Knockdown"
+    },
+    "Mark III Circuit Board": {
+      "name": "Defense Vs. Knockdown",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Knockdown"
+    },
+    "Mark IV Circuit Board": {
+      "name": "Defense Vs. Knockdown",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Knockdown"
+    },
+    "Mark V Circuit Board": {
+      "name": "Defense Vs. Knockdown",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Knockdown"
+    },
+    "Unpowered Survey Pad": {
+      "name": "Rifle Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Rifle Speed"
     }
   },
   "Used Ledger": {
@@ -67607,6 +69973,48 @@
     "Writing Utensil": {
       "name": "Opportune Chance",
       "ratio": 1
+    },
+    "a Hand Torch": {
+      "name": "Heavy Weapon Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Heavy Weapon Speed"
+    },
+    "a Plunger": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "a Temperature Clamp": {
+      "name": "Carbine Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Carbine Speed"
+    },
+    "Explosive Dud": {
+      "name": "Defense Vs. Blind",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Blind"
+    },
+    "Mark X Vocab Module": {
+      "name": "Defense Vs. Intimidate",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Intimidate"
+    },
+    "Rocket Dud": {
+      "name": "Surveying",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Surveying"
     }
   },
   "Used Notebook": {
@@ -67721,6 +70129,62 @@
     "Writing Utensil": {
       "name": "Opportune Chance",
       "ratio": 1
+    },
+    "a Meatlump Sculpture, Style 1": {
+      "name": "Carbine Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Carbine Speed"
+    },
+    "a Petrified Meatlump": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
+    },
+    "a Pipe Cutter": {
+      "name": "Polearm Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Speed"
+    },
+    "a Temperature Clamp": {
+      "name": "Force Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Accuracy"
+    },
+    "Clogged Rebreather": {
+      "name": "Pistol Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Pistol Speed"
+    },
+    "Hydraulics System": {
+      "name": "Heavy Weapon Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Heavy Weapon Speed"
+    },
+    "Plugged Hydraulics System": {
+      "name": "Heavy Weapon Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Heavy Weapon Speed"
+    },
+    "Tubing": {
+      "name": "Heavy Weapon Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Heavy Weapon Speed"
     }
   },
   "Used Vidscreen": {
@@ -67831,6 +70295,41 @@
     "Writing Utensil": {
       "name": "Melee General",
       "ratio": 1
+    },
+    "a Hand Torch": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "a Lump Clip": {
+      "name": "Defense Vs. Blind",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Blind"
+    },
+    "a Pipe Cutter": {
+      "name": "Defense Vs. Intimidate",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Intimidate"
+    },
+    "an empty crate": {
+      "name": "Unarmed Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Unarmed Speed"
+    },
+    "an Imperial ration kit": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
     }
   },
   "Used Wiring": {
@@ -67941,6 +70440,13 @@
     "Writing Utensil": {
       "name": "Melee General",
       "ratio": 1
+    },
+    "Mark X Vocab Module": {
+      "name": "Defense Vs. Knockdown",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Knockdown"
     }
   },
   "Vocabulator": {
@@ -68047,6 +70553,34 @@
     "Writing Utensil": {
       "name": "Endurance Boost",
       "ratio": 1
+    },
+    "a Lump Clip": {
+      "name": "Force Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Accuracy"
+    },
+    "Barrel": {
+      "name": "Defense Vs. Blind",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Blind"
+    },
+    "Medical Device (White)": {
+      "name": "Rifle Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Rifle Speed"
+    },
+    "Servo Joint": {
+      "name": "Rifle Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Rifle Speed"
     }
   },
   "Weak Copper Battery": {
@@ -68149,6 +70683,62 @@
     "Writing Utensil": {
       "name": "Opportune Chance",
       "ratio": 1
+    },
+    "a damaged droid power cell": {
+      "name": "Defense Vs. Knockdown",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Knockdown"
+    },
+    "a human skull": {
+      "name": "Rifle Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Rifle Speed"
+    },
+    "A Malfunctioning Capacitor": {
+      "name": "Foraging",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Foraging"
+    },
+    "A Medic Kit": {
+      "name": "Foraging",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Foraging"
+    },
+    "An Artifact Crate": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "Excavation Toolchest": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "Power Converter": {
+      "name": "Defense Vs. Knockdown",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Knockdown"
+    },
+    "Power Unit": {
+      "name": "Defense Vs. Knockdown",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Knockdown"
     }
   },
   "Weapon Scope": {
@@ -68247,6 +70837,83 @@
     "Writing Utensil": {
       "name": "Toughness Boost",
       "ratio": 1
+    },
+    "Chassis Blueprints": {
+      "name": "Defense Vs. Stun",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Stun"
+    },
+    "Ledger": {
+      "name": "Thrown Weapon Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Speed"
+    },
+    "Mark V Vocab Module": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
+    },
+    "Mark X Vocab Module": {
+      "name": "Foraging",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Foraging"
+    },
+    "Medical Console": {
+      "name": "Pistol Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Pistol Speed"
+    },
+    "Newsfilter Module": {
+      "name": "Defense Vs. Stun",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Stun"
+    },
+    "Palm Diary": {
+      "name": "Thrown Weapon Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Speed"
+    },
+    "Rapid Program Module": {
+      "name": "Defense Vs. Stun",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Stun"
+    },
+    "Substance Analyzer": {
+      "name": "Force Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Accuracy"
+    },
+    "Survival Gear": {
+      "name": "Polearm Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Speed"
+    },
+    "Used Ledger": {
+      "name": "Thrown Weapon Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Speed"
     }
   },
   "Wiped Software Module": {
@@ -68337,6 +71004,34 @@
     "Writing Utensil": {
       "name": "One Handed Lightsaber Accuracy",
       "ratio": 10
+    },
+    "a damaged droid swivel joint": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
+    },
+    "Mark X Vocab Module": {
+      "name": "Unarmed Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Unarmed Speed"
+    },
+    "Shield Module": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
+    },
+    "Speakers": {
+      "name": "Polearm Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Speed"
     }
   },
   "Wire Element": {
@@ -68427,6 +71122,76 @@
     "Writing Utensil": {
       "name": "Advanced Assembly",
       "ratio": 3
+    },
+    "a Flaring, Swagging and Cutting Kit": {
+      "name": "Defense Vs. Blind",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Blind"
+    },
+    "a Leak Inspection System": {
+      "name": "Pistol Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Pistol Speed"
+    },
+    "a Magnetic Locator": {
+      "name": "Thrown Weapon Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Speed"
+    },
+    "a Pipe Cutter": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "a Tauntaun heart": {
+      "name": "Foraging",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Foraging"
+    },
+    "an empty crate": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
+    },
+    "AT-AT seam sealant": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "Differential Regulator": {
+      "name": "Defense Vs. Stun",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Stun"
+    },
+    "Electronics Module": {
+      "name": "Defense Vs. Stun",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Stun"
+    },
+    "Tauntaun skull and bones": {
+      "name": "Force Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Accuracy"
     }
   },
   "Wiring (Blue/White) V1": {
@@ -68513,6 +71278,13 @@
     "Writing Utensil": {
       "name": "Melee General",
       "ratio": 1
+    },
+    "Mark X Vocab Module": {
+      "name": "Defense Vs. Knockdown",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Knockdown"
     }
   },
   "Wiring (Blue/White) V2": {
@@ -68595,6 +71367,48 @@
     "Writing Utensil": {
       "name": "Endurance Boost",
       "ratio": 1
+    },
+    "Cracked Remote Transmitter": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Impulse Detector (w/dish antenna)": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Power Output Analyzer": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "Power Output Device": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "Remote Transmitter": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Unidentified Chemicals": {
+      "name": "Defense Vs. Dizzy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Dizzy"
     }
   },
   "Wiring (Blue/Yellow)": {
@@ -68673,6 +71487,48 @@
     "Writing Utensil": {
       "name": "Endurance Boost",
       "ratio": 1
+    },
+    "Cracked Remote Transmitter": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Impulse Detector (w/dish antenna)": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Power Output Analyzer": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "Power Output Device": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "Remote Transmitter": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Unidentified Chemicals": {
+      "name": "Defense Vs. Dizzy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Dizzy"
     }
   },
   "Wiring (Cyan/White)": {
@@ -68747,6 +71603,48 @@
     "Writing Utensil": {
       "name": "Endurance Boost",
       "ratio": 1
+    },
+    "Cracked Remote Transmitter": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Impulse Detector (w/dish antenna)": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Power Output Analyzer": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "Power Output Device": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "Remote Transmitter": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Unidentified Chemicals": {
+      "name": "Defense Vs. Dizzy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Dizzy"
     }
   },
   "Wiring (Green/White)": {
@@ -68817,6 +71715,48 @@
     "Writing Utensil": {
       "name": "Endurance Boost",
       "ratio": 1
+    },
+    "Cracked Remote Transmitter": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Impulse Detector (w/dish antenna)": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Power Output Analyzer": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "Power Output Device": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "Remote Transmitter": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Unidentified Chemicals": {
+      "name": "Defense Vs. Dizzy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Dizzy"
     }
   },
   "Wiring (Green/Yellow)": {
@@ -68883,6 +71823,48 @@
     "Writing Utensil": {
       "name": "Endurance Boost",
       "ratio": 1
+    },
+    "Cracked Remote Transmitter": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Impulse Detector (w/dish antenna)": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Power Output Analyzer": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "Power Output Device": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "Remote Transmitter": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Unidentified Chemicals": {
+      "name": "Defense Vs. Dizzy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Dizzy"
     }
   },
   "Wiring (Grey/White)": {
@@ -68945,6 +71927,48 @@
     "Writing Utensil": {
       "name": "Endurance Boost",
       "ratio": 1
+    },
+    "Cracked Remote Transmitter": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Impulse Detector (w/dish antenna)": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Power Output Analyzer": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "Power Output Device": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "Remote Transmitter": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Unidentified Chemicals": {
+      "name": "Defense Vs. Dizzy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Dizzy"
     }
   },
   "Wiring (Grey/Yellow)": {
@@ -69003,6 +72027,48 @@
     "Writing Utensil": {
       "name": "Endurance Boost",
       "ratio": 1
+    },
+    "Cracked Remote Transmitter": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Impulse Detector (w/dish antenna)": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Power Output Analyzer": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "Power Output Device": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "Remote Transmitter": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Unidentified Chemicals": {
+      "name": "Defense Vs. Dizzy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Dizzy"
     }
   },
   "Wiring (Lime/White)": {
@@ -69057,6 +72123,48 @@
     "Writing Utensil": {
       "name": "Endurance Boost",
       "ratio": 1
+    },
+    "Cracked Remote Transmitter": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Impulse Detector (w/dish antenna)": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Power Output Analyzer": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "Power Output Device": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "Remote Transmitter": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Unidentified Chemicals": {
+      "name": "Defense Vs. Dizzy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Dizzy"
     }
   },
   "Wiring (Orange/White)": {
@@ -69107,6 +72215,48 @@
     "Writing Utensil": {
       "name": "Endurance Boost",
       "ratio": 1
+    },
+    "Cracked Remote Transmitter": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Impulse Detector (w/dish antenna)": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Power Output Analyzer": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "Power Output Device": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "Remote Transmitter": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Unidentified Chemicals": {
+      "name": "Defense Vs. Dizzy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Dizzy"
     }
   },
   "Wiring (Purple/White)": {
@@ -69153,6 +72303,48 @@
     "Writing Utensil": {
       "name": "Endurance Boost",
       "ratio": 1
+    },
+    "Cracked Remote Transmitter": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Impulse Detector (w/dish antenna)": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Power Output Analyzer": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "Power Output Device": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "Remote Transmitter": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Unidentified Chemicals": {
+      "name": "Defense Vs. Dizzy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Dizzy"
     }
   },
   "Wiring (Red/White) V1": {
@@ -69195,6 +72387,20 @@
     "Writing Utensil": {
       "name": "Carbine Critical Chance",
       "ratio": 10
+    },
+    "a Meatlump Sculpture, Style 2": {
+      "name": "Polearm Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Speed"
+    },
+    "Weapon Scope": {
+      "name": "Heavy Weapon Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Heavy Weapon Speed"
     }
   },
   "Wiring (Red/White) V2": {
@@ -69233,6 +72439,48 @@
     "Writing Utensil": {
       "name": "Endurance Boost",
       "ratio": 1
+    },
+    "Cracked Remote Transmitter": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Impulse Detector (w/dish antenna)": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Power Output Analyzer": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "Power Output Device": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "Remote Transmitter": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Unidentified Chemicals": {
+      "name": "Defense Vs. Dizzy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Dizzy"
     }
   },
   "Wiring (Red/Yellow)": {
@@ -69267,6 +72515,48 @@
     "Writing Utensil": {
       "name": "Endurance Boost",
       "ratio": 1
+    },
+    "Cracked Remote Transmitter": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Impulse Detector (w/dish antenna)": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Power Output Analyzer": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "Power Output Device": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "Remote Transmitter": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Unidentified Chemicals": {
+      "name": "Defense Vs. Dizzy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Dizzy"
     }
   },
   "Wiring (Teal/White)": {
@@ -69297,6 +72587,48 @@
     "Writing Utensil": {
       "name": "Endurance Boost",
       "ratio": 1
+    },
+    "Cracked Remote Transmitter": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Impulse Detector (w/dish antenna)": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Power Output Analyzer": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "Power Output Device": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "Remote Transmitter": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Unidentified Chemicals": {
+      "name": "Defense Vs. Dizzy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Dizzy"
     }
   },
   "Wiring (Violet/White)": {
@@ -69323,6 +72655,48 @@
     "Writing Utensil": {
       "name": "Endurance Boost",
       "ratio": 1
+    },
+    "Cracked Remote Transmitter": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Impulse Detector (w/dish antenna)": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Power Output Analyzer": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "Power Output Device": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "Remote Transmitter": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Unidentified Chemicals": {
+      "name": "Defense Vs. Dizzy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Dizzy"
     }
   },
   "Wiring (White/White)": {
@@ -69345,6 +72719,48 @@
     "Writing Utensil": {
       "name": "Endurance Boost",
       "ratio": 1
+    },
+    "Cracked Remote Transmitter": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Impulse Detector (w/dish antenna)": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Power Output Analyzer": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "Power Output Device": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "Remote Transmitter": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Unidentified Chemicals": {
+      "name": "Defense Vs. Dizzy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Dizzy"
     }
   },
   "Wiring (White/Yellow)": {
@@ -69363,6 +72779,48 @@
     "Writing Utensil": {
       "name": "Endurance Boost",
       "ratio": 1
+    },
+    "Cracked Remote Transmitter": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Impulse Detector (w/dish antenna)": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Power Output Analyzer": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "Power Output Device": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "Remote Transmitter": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Unidentified Chemicals": {
+      "name": "Defense Vs. Dizzy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Dizzy"
     }
   },
   "Wiring (Yellow/White)": {
@@ -69377,6 +72835,48 @@
     "Writing Utensil": {
       "name": "Endurance Boost",
       "ratio": 1
+    },
+    "Cracked Remote Transmitter": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Impulse Detector (w/dish antenna)": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Power Output Analyzer": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "Power Output Device": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "Remote Transmitter": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Unidentified Chemicals": {
+      "name": "Defense Vs. Dizzy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Dizzy"
     }
   },
   "Worklight": {
@@ -69393,6 +72893,55 @@
     "Writing Utensil": {
       "name": "Defense General",
       "ratio": 1
+    },
+    "a Hand Torch": {
+      "name": "Thrown Weapon Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Accuracy"
+    },
+    "a Magnetic Locator": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
+    },
+    "a Pipe Cutter": {
+      "name": "Foraging",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Foraging"
+    },
+    "Com Device": {
+      "name": "Rifle Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Rifle Speed"
+    },
+    "Rations Kit": {
+      "name": "Defense Vs. Blind",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Blind"
+    },
+    "Recording Rod": {
+      "name": "Thrown Weapon Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Thrown Weapon Speed"
+    },
+    "Vocabulator": {
+      "name": "Rifle Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Rifle Speed"
     }
   },
   "a Damaged Droid Actuator": {
@@ -69445,6 +72994,115 @@
     "Circuit Board": {
       "name": "Two-handed Melee Accuracy",
       "ratio": 2
+    }
+  },
+  "collectable Exar Kun coin": {
+    "Chemical Dispersal Device": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Chemical Dispersion Unit": {
+      "name": "Force Power Max",
+      "ratio": 5,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Power Max"
+    },
+    "Datadisk": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
+    },
+    "Demagnetized Datadisk": {
+      "name": "Polearm Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Polearm Accuracy"
+    }
+  },
+  "Writing Utensil": {
+    "a Petrified Meatlump": {
+      "name": "Force Accuracy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Force Accuracy"
+    },
+    "Barrel": {
+      "name": "Defense Vs. Dizzy",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Dizzy"
+    },
+    "Circuit Board": {
+      "name": "Defense Vs. Stun",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Stun"
+    },
+    "Holorecorder": {
+      "name": "Defense Vs. Knockdown",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Knockdown"
+    },
+    "Mark I Circuit Board": {
+      "name": "Defense Vs. Stun",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Stun"
+    },
+    "Mark II Circuit Board": {
+      "name": "Defense Vs. Stun",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Stun"
+    },
+    "Mark III Circuit Board": {
+      "name": "Defense Vs. Stun",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Stun"
+    },
+    "Mark IV Circuit Board": {
+      "name": "Defense Vs. Stun",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Stun"
+    },
+    "Mark V Circuit Board": {
+      "name": "Defense Vs. Stun",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Stun"
+    },
+    "Survival Gear": {
+      "name": "Carbine Speed",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Carbine Speed"
+    },
+    "Worklight": {
+      "name": "Defense Vs. Knockdown",
+      "ratio": 2,
+      "source": "google-sheet",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1Zb3kFdBGYVaSSarAWATFmzChffEN0UIR_f6yH-v8Xk4",
+      "sourceModifierName": "Defense Vs. Knockdown"
     }
   }
 }
