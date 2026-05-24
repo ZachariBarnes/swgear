@@ -187,6 +187,7 @@ body {
   border-bottom: 1px solid var(--color-border);
   flex-shrink: 0;
   display: flex;
+  flex-wrap: wrap;
   gap: var(--spacing-md);
   align-items: center;
 }
@@ -204,6 +205,23 @@ body {
 
 .tool-hint {
   color: var(--color-accent-gold);
+}
+
+.tool-contact,
+.support-contact {
+  color: var(--color-text-muted);
+}
+
+.tool-contact a,
+.support-contact a {
+  color: var(--color-accent-primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.tool-contact a:hover,
+.support-contact a:hover {
+  text-decoration: underline;
 }
 
 /* Buttons - SWGR Style */
@@ -2504,6 +2522,12 @@ body {
   flex-shrink: 0;
 }
 
+.help-panel[open] {
+  display: flex;
+  flex-direction: column;
+  max-height: min(72vh, 720px);
+}
+
 .help-panel-toggle {
   display: flex;
   align-items: center;
@@ -2544,6 +2568,8 @@ body {
   border-top: 1px solid var(--color-border);
   font-size: 0.9375rem;
   line-height: 1.6;
+  overflow-y: auto;
+  overscroll-behavior: contain;
 }
 
 .help-panel-content h4 {
