@@ -5,7 +5,7 @@
  * BAKE-IN RULES (per SWGR wiki):
  * - Core stats only (Defense General, Ranged/Melee General, Toughness, Endurance, Opportune)
  * - Max +14 per slot at 35 powerbit
- * - Only applies to chest and weapon slots
+ * - Only applies to the chest armor slot and the weapon
  * - In Jedi mode, locked slots (biceps, bracers, belt) are excluded
  */
 
@@ -64,7 +64,7 @@ export function renderBakeInEditor(container, bakeInStats, onUpdate, jediLockedS
       </div>
       
       ${enabled ? `
-        <p class="bakein-hint">Core stats only, +${DEFAULT_BAKEIN_VALUE} per slot at 35 powerbit. Only chest and weapon can have bake-in stats.</p>
+        <p class="bakein-hint">Core stats only for chest and weapon, +${DEFAULT_BAKEIN_VALUE} per slot at 35 powerbit.</p>
         
         <div class="bakein-global">
           <div class="bakein-global-row">
