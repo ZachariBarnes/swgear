@@ -14,7 +14,7 @@ export const FAMILIARS = {
   gackle_bat: {
     name: 'Gackle Bat',
     icon: '🦇',
-    description: '+40 Ranged, +40 Melee',
+    description: '+40 Ranged General, +40 Melee General',
     stats: [
       { modifier: 'Ranged General', value: 40 },
       { modifier: 'Melee General', value: 40 }
