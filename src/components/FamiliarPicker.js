@@ -16,8 +16,8 @@ export const FAMILIARS = {
     icon: '🦇',
     description: '+40 Ranged, +40 Melee',
     stats: [
-      { modifier: 'Ranged Defense', value: 40 },
-      { modifier: 'Melee Defense', value: 40 }
+      { modifier: 'Ranged General', value: 40 },
+      { modifier: 'Melee General', value: 40 }
     ]
   },
   xwing_tie: {
