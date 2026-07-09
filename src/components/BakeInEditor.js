@@ -6,10 +6,9 @@
  * - Core stats only (Defense General, Ranged/Melee General, Toughness, Endurance, Opportune)
  * - Max +14 per slot at 35 powerbit
  * - Only applies to the chest armor slot and the weapon
- * - In Jedi mode, locked slots (biceps, bracers, belt) are excluded
  */
 
-// Armor slots that can have bake-in stats (only chest and weapon)
+// Slots that can have bake-in stats (chest and weapon)
 const BAKEABLE_SLOTS = ['chest', 'weapon'];
 
 // Core stats that can be baked in (confirmed by SWGR wiki)
