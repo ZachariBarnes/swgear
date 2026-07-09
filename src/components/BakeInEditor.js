@@ -5,14 +5,12 @@
  * BAKE-IN RULES (per SWGR wiki):
  * - Core stats only (Defense General, Ranged/Melee General, Toughness, Endurance, Opportune)
  * - Max +14 per slot at 35 powerbit
+ * - Only applies to chest and weapon slots
  * - In Jedi mode, locked slots (biceps, bracers, belt) are excluded
  */
 
-// Armor slots that can have bake-in stats (excludes weapon)
-const BAKEABLE_SLOTS = [
-  'helmet', 'chest', 'shirt', 'lbicep', 'rbicep', 
-  'lbracer', 'rbracer', 'gloves', 'belt', 'pants', 'boots'
-];
+// Armor slots that can have bake-in stats (only chest and weapon)
+const BAKEABLE_SLOTS = ['chest', 'weapon'];
 
 // Core stats that can be baked in (confirmed by SWGR wiki)
 const BAKEABLE_STATS = [
@@ -29,10 +27,7 @@ const DEFAULT_BAKEIN_VALUE = 14;
 
 // Slot display names
 const SLOT_NAMES = {
-  helmet: 'Head', chest: 'Chest', shirt: 'Shirt',
-  lbicep: 'L. Bicep', rbicep: 'R. Bicep',
-  lbracer: 'L. Bracer', rbracer: 'R. Bracer',
-  gloves: 'Gloves', belt: 'Belt', pants: 'Leggings', boots: 'Boots'
+  chest: 'Chest', weapon: 'Weapon'
 };
 
 /**
@@ -69,11 +64,11 @@ export function renderBakeInEditor(container, bakeInStats, onUpdate, jediLockedS
       </div>
       
       ${enabled ? `
-        <p class="bakein-hint">Core stats only, +${DEFAULT_BAKEIN_VALUE} per slot at 35 powerbit.</p>
+        <p class="bakein-hint">Core stats only, +${DEFAULT_BAKEIN_VALUE} per slot at 35 powerbit. Only chest and weapon can have bake-in stats.</p>
         
         <div class="bakein-global">
           <div class="bakein-global-row">
-            <span class="bakein-label">Apply to all armor:</span>
+            <span class="bakein-label">Apply to chest &amp; weapon:</span>
             <select class="bakein-select" id="bakein-global-stat">
               <option value="">— None —</option>
               ${BAKEABLE_STATS.map(stat => 
